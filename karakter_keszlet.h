@@ -95,7 +95,7 @@ const bool kk[256]{
 	false,// 5B '['
 	true ,// 5C '\'
 	false,// 5D ']'
-	false,// 5E ก^'
+	false,// 5E ยก^'
 	true ,// 5F '_'
 	false,// 60 '`'
 	true ,// 61 'a'
