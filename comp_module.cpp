@@ -52,15 +52,15 @@ comp_module_t::comp_module_t(char* modules_coms, lista<prot_module_t>& prot_modu
         ki_wires[i] = new wire_t();
     modules = new module_t * [m_db];
     if (max_inner >= 'A')
-        w_db = max_inner - 'A' + 1 + ki_db;
+        w_db = max_inner - 'A' + 2 + ki_db;
     else
-        w_db = ki_db;
+        w_db = ki_db + 1;
     wires = new wire_t[w_db];
     for (size_t i = 0; i < m_db; i++) {
         size_t j = 0;
         while (!eggyezik(prot_modules[j].nev, modules_coms, kezk[i], vegk[i]))
             j++;
-        modules[i] = prot_modules[j].prot->copy();//itt baszÛdik el, copy f¸ggvÈny megÌr·sa
+        modules[i] = prot_modules[j].prot->copy();//itt basz√≥dik el, copy f√ºggv√©ny meg√≠r√°sa
         j = vegk[i] + 1;
         size_t k = 0;
         while (modules_coms[j] != ',') {
@@ -76,7 +76,9 @@ comp_module_t::comp_module_t(char* modules_coms, lista<prot_module_t>& prot_modu
         j++;
         k = 0;
         while (modules_coms[j] != ')') {
-            if (modules_coms[j] - 'a' < be_db + ki_db)
+            if (modules_coms[j] == '-')
+                modules[i]->set_wire(k++, &(wires[w_db - 1]));
+            else if (modules_coms[j] - 'a' < be_db + ki_db)
                 modules[i]->set_wire(k++, &(wires[modules_coms[j++] - 'a' - be_db]));
             else
                 modules[i]->set_wire(k++, &(wires[modules_coms[j++] - 'A' + ki_db]));
@@ -122,7 +124,9 @@ module_t* comp_module_t::copy() {
         j++;
         k = 0;
         while (modules_coms[j] != ')') {
-            if (modules_coms[j] - 'a' < be_db + ki_db)
+            if (modules_coms[j] == '-')
+                modules[i]->set_wire(k++, &(wires[w_db - 1]));
+            else if (modules_coms[j] - 'a' < be_db + ki_db)
                 ret->modules[i]->set_wire(k++, &(ret->wires[modules_coms[j++] - 'a' - be_db]));
             else
                 ret->modules[i]->set_wire(k++, &(ret->wires[modules_coms[j++] - 'A' + ki_db]));
