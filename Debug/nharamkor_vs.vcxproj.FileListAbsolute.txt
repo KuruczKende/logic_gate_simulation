@@ -1,1 +1,2 @@
 E:\Desktop\Cpp\nharamkor_vs\Debug\nharamkor_vs.exe
+E:\Desktop\Cpp\logic_gate_simulation\Debug\nharamkor_vs.exe

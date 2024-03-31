@@ -5,13 +5,14 @@
 #include "comp_module.h"
 #include "text_module.h"
 #include "wire.h"
-#include "karakter_kesulet.h"
+#include "karakter_keszlet.h"
 
 bool ismod(char c) {
     switch (c) {
     case '%':
     case '-':
     case '+':
+    case '!':
         return true;
     default: return false;
     }
@@ -43,24 +44,32 @@ bool ujmnev_ell(const char* nev, lista<prot_module_t>& modules) {
 
 bool kisbetujo(const char* str) {
     bool b[26]{ false };
-    for (size_t i = 0; i < strlen(str); i++)
+    for (size_t i = 0; i < strlen(str); i++){
         if (islower(str[i])) b[str[i] - 'a'] = true;
+    }
     int j = 0;
     while (b[j++]);
     while (j < 26) if (b[j++]) return false;
     return true;
 }
 bool kisbetujo2(const char* str) {
-    bool b[26]{ false };
+    bool ib[26]{ false };
+    bool ob[26]{ false };
+    bool outp = false;
     bool port = false;
     for (size_t i = 0; i < strlen(str); i++) {
-        if (str[i] == '(') port = true;
+        if (str[i] == '(') { port = true; outp = false;}
         else if (str[i] == ')') port = false;
-        else if (islower(str[i])&&port) b[str[i] - 'a'] = true;
+        else if (str[i] == ',') outp = true;
+        else if (islower(str[i])&&port) {
+            if (outp && ob[str[i] - 'a']) return false;
+            (outp ? ob : ib)[str[i] - 'a'] = true;
+        }
     }
     int j = 0;
-    while (b[j++]);
-    while (j < 26) if (b[j++]) return false;
+    while (ib[j] && j++ < 26);
+    while (ob[j] && j < 26)if (ib[j++]) return false;
+    while (j < 26)if (ib[j] || ob[j++]) return false;
     return true;
 }
 
@@ -72,21 +81,37 @@ bool nagybetujo(const char* str) {
     for (size_t i = 0; i < strlen(str); i++) {
         if (str[i] == '(') { port = true; outp = false;}
         else if (str[i] == ')') port = false;
-        else if (str[i] == ',')outp = true;
+        else if (str[i] == ',') outp = true;
         else if (isupper(str[i])&&port) {
             if (outp && ob[str[i] - 'A']) return false;
             (outp ? ob : ib)[str[i] - 'A'] = true;
         }
     }
     int j = 0;
-    while (ob[j])if (ob[j] ^ ib[j++]) return false;
+    while (ob[j])if (ob[j] != ib[j++]) return false;
     while (j < 26)if (ob[j] || ib[j++]) return false;
+    return true;
+}
+
+bool karaktercheck(const char* str, bool is_comp){
+    bool outp = false;
+    for(size_t i=0;i<strlen(str);i++){
+        if(str[i] == ',')outp = true;
+        else if(islower(str[i]));
+        else if(is_comp){
+            if(isupper(str[i] || str[i] == ')'));
+            else if(str[i] == '(') outp = false;
+            else if(outp && str[i] == '-');
+            else return false;
+        }
+        else return false;
+    }
     return true;
 }
 
 bool modulesteszt(const char* str, lista<prot_module_t>& modules) {
     size_t k = 0, v = 0;
-    while (k < strlen(str) - 1) {
+    while (k < strlen(str)) {
         while (str[v] != '(' && v < strlen(str)) v++;
         size_t j = -1;
         for (size_t i = 0; i < modules.length(); i++)
@@ -109,7 +134,7 @@ bool test_module(const char* str, lista<prot_module_t>& modulok, bool add = true
     char* nev = new char[strlen(str)+1];
     char* parancsok = nev;
     strcpy(nev, str);
-    while (*parancsok != '(' && *parancsok != '\0') parancsok++;
+    while (*parancsok != ':' && *parancsok != '\0') parancsok++;
     if (*parancsok == '\0') {
         delete[] nev; return false;
     }
@@ -131,7 +156,7 @@ bool test_module(const char* str, lista<prot_module_t>& modulok, bool add = true
         }
         for (size_t i = 0; i < strlen(parancsok)-1; i++) {
             char c = parancsok[i];
-            if (!(islower(c) || c == '|' || c == '&' || c == '^' || c == '~' || c == ',' || c == '[' || c == ']')) {
+            if (!(islower(c) || c == '|' || c == '&' || c == '^' || c == '~' || c == ',' || c == '[' || c == ']' || c == '(' || c == ')')) {
                 delete[] nev; return false;
             }
         }
@@ -182,7 +207,8 @@ void input_handler(std::istream& in, wire_t (&w_inputs)[26], lista<wire_t*>& wai
                 wait_to_do_wires.add(&(w_inputs[i]));
             }
 }
-void printend(module_t& m_main, size_t i) {
+
+void printend(module_t& m_main, int i) {
     if(i<0)std::cout << '\n';
     else std::cout << i << '\n';
 
@@ -198,16 +224,50 @@ int main()
 {
     lista<prot_module_t> modulok;
     wire_t inputs[26];
-    if (!test_module("_xor(a^b)", modulok))std::cout<<"0";
-    if (!test_module("_up([a]a^b)", modulok))std::cout << "1";
-    if (!test_module("_adder(a^b,a&b)", modulok))std::cout << "2";
-    if (!test_module("_dff([b]a)", modulok))std::cout << "3";
-    if (!test_module("_dff_adder(_adder(ab,Ae)_dff(Ac,d))", modulok))std::cout << "4";
-    if (!test_module("_xor_c(_xor(ab,b))", modulok))std::cout << "5";
-    test_module("_m_main(_up(aA,A)_dff_adder(bcA,cB)_dff_adder(BdA,de))", modulok);
+    if (!test_module("_xor:a^b", modulok))std::cout << "0";
+    if (!test_module("_or:a|b", modulok))std::cout << "0";
+    if (!test_module("_andnot:a&~b", modulok))std::cout << "0";
+    if (!test_module("_up:[a]a^b", modulok))std::cout << "0";
+    if (!test_module("_hadder:a^b,a&b", modulok))std::cout << "0";
+    if (!test_module("_dff:[b]a", modulok))std::cout << "0";
+    if (!test_module("_sr_in:(c|a)&~b", modulok))std::cout << "0";
+    if (!test_module("_sr:_sr_in(abc,c)", modulok))std::cout << "0";
+    if (!test_module("_d_in:[b]b&a|(~b&c)", modulok))std::cout << "0";
+    if (!test_module("_d:_d_in(abc,c)", modulok))std::cout << "0";
+    if (!test_module("_d_r_in:[bc](b&a|(~b&d))&~c", modulok))std::cout << "0";
+    if (!test_module("_d_r:_d_r_in(abcd,d)", modulok))std::cout << "0";
+    if (!test_module("_d_hadder:_hadder(ad,Ae)_d_r(Abc,d)", modulok))std::cout << "0";
+    if (!test_module("_xor_c:_xor(ab,b)", modulok))std::cout << "0";
+
+    if (!test_module("_mux2:(a&~c)|(b&c)", modulok))std::cout << "1";
+    if (!test_module("_mux4b2:_mux2(aei,j)_mux2(bfi,k)_mux2(cgi,l)_mux2(dhi,m)", modulok))std::cout << "1";
+    if (!test_module("_mux4:(a&~e&~f)|(b&~e&f)|(c&e&~f)|(d&e&f)", modulok))std::cout << "1";
+    if (!test_module("_mux4b4:_mux4(aeimqr,s)_mux4(bfjnqr,t)_mux4(cgkoqr,u)_mux4(dhlpqr,v)", modulok))std::cout << "1";
+
+    if (!test_module("_and4:a&e,b&f,c&g,d&h", modulok))std::cout << "1";
+    if (!test_module("_or4:a|e,b|f,c|g,d|h", modulok))std::cout << "1";
+    if (!test_module("_xor4:a^e,b^f,c^g,d^h", modulok))std::cout << "1";
+    if (!test_module("_not4:~a,~b,~c,~d", modulok))std::cout << "1";
+
+    if (!test_module("_alu_log:_and4(abcdefgh,ABCD)_or4(abcdefgh,EFGH)_xor4(abcdefgh,IJKL)_not4(abcd,MNOP)_mux4b4(ABCDEFGHIJKLMNOPij,klmn)", modulok))std::cout << "2";
+
+    if (!test_module("_adder:_hadder(ab,AB)_hadder(Ac,dC)_or(BC,e)", modulok))std::cout << "3";
+    if (!test_module("_adder4:_adder(aei,jA)_adder(bfA,kB)_adder(cgB,lC)_adder(dhC,mn)", modulok))std::cout << "3";
+    if (!test_module("_suber:a^b^c,b&c|~a&(b^c)", modulok))std::cout << "3";
+    if (!test_module("_suber4:_suber(aei,jA)_suber(bfA,kB)_suber(cgB,lC)_suber(dhC,mn)", modulok))std::cout << "3";
+
+    if (!test_module("_alu_alg:_adder4(abcdefghj,ABCDE)_adder4(abcdefghk,FGHIJ)_suber4(abcdefgh0,KLMNO)_mux4b4(ABCDABCDFGHIKLMNij,lmno)_mux4(EEJOij,p)", modulok))std::cout << "4";
+
+    if (!test_module("_alu:_alu_log(abcdefghij,ABCD)_alu_alg(abcdefghijl,EFGHI)_mux4b2(ABCDEFGHk,mnop)_mux2(0Ik,q)", modulok))std::cout << "5";
+
+
+
+
+
+    if (!test_module("_m_main:_d_hadder(1ab,cA)_d_hadder(Aab,dB)_d_hadder(Bab,eC)_d_hadder(Cab,f-)", modulok))std::cout << "bad_main\n";
     module_t* m_main = modulok[modulok.length() - 1].prot;
-    inputs[0].add(m_main, 0);
-    //inputs[1].add(&m_main, 1);
+    for(size_t i=0;i<m_main->get_in_num();i++)
+        inputs[i].add(m_main, i);
     lista<module_t*> wait_to_do_modules;
     lista<wire_t*> wait_to_do_wires;
     uint8_t mode=0;
@@ -236,7 +296,7 @@ int main()
 }
 
 /*
-* TODO: nem haszn·lt kimenetek '-'
+* TODO: nem haszn√°lt kimenetek '-'
 * 
 * comp_module_t::copy()
 * comp_module_t::comp_module_t(char* modules_coms, lista<prot_module_t>& prot_modules)

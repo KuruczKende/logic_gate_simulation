@@ -71,9 +71,12 @@ text_module_t::text_module_t(const char* parancsok) {
         be_db -= 'a' - 1;
     else
         be_db = 0;
-    ki_ertek = new uint8_t[ki_db]{ undet };
-    be_ertek = new uint8_t[be_db]{ undet };
-    be_old = new uint8_t[be_db]{ undet };
+    ki_ertek = new uint8_t[ki_db];
+    for (size_t i = 0; i < ki_db; i++) ki_ertek[i] = undet;
+    be_ertek = new uint8_t[be_db];
+    for (size_t i = 0; i < be_db; i++) be_ertek[i] = undet;
+    be_old = new uint8_t[be_db];
+    for (size_t i = 0; i < be_db; i++) be_old[i] = undet;
     ki_wires = new wire_t * [ki_db];
 }
 text_module_t::text_module_t(const text_module_t& refe) {

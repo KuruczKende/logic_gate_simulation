@@ -1,5 +1,6 @@
 #include "comp_module.h"
 bool eggyezik(const char* str, const char* str2, size_t kez, size_t veg) {
+    if (strlen(str) != veg - kez) return false;
     for (size_t i = 0; i + kez < veg; i++)
         if (str[i] != str2[kez + i])
             return false;
@@ -76,8 +77,10 @@ comp_module_t::comp_module_t(char* modules_coms, lista<prot_module_t>& prot_modu
         j++;
         k = 0;
         while (modules_coms[j] != ')') {
-            if (modules_coms[j] == '-')
+            if (modules_coms[j] == '-') {
                 modules[i]->set_wire(k++, &(wires[w_db - 1]));
+                j++;
+            }
             else if (modules_coms[j] - 'a' < be_db + ki_db)
                 modules[i]->set_wire(k++, &(wires[modules_coms[j++] - 'a' - be_db]));
             else
