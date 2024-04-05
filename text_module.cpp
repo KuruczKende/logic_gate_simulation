@@ -34,7 +34,7 @@ void lepteto(size_t torlendo, size_t index, lista<size_t>& hely, char*& ideiglen
     hossz -= torlendo;
 }
 bool muvs(size_t index, lista<size_t>& hely, char*& ideiglenes, size_t& hossz, bool neg, uint8_t& ertek, size_t& nertek) {
-    uint8_t findex = hely[index] + (neg ? 1 : 0);
+    size_t findex = hely[index] + (size_t)(neg ? 1 : 0);
     switch (ideiglenes[findex]) {
     case '&':
         ertek = myand(ideiglenes[hely[index] - 1], ideiglenes[findex + 1]);
@@ -184,6 +184,9 @@ void text_module_t::vegrehajtas(lista<wire_t*>& wait_for_do) {
     }
     for (size_t i = 0; i < be_db; i++)
         be_old[i] = be_ertek[i];
+}
+uint8_t text_module_t::get_in_ertek(size_t i) {
+    return be_ertek[i];
 }
 void text_module_t::setin(size_t index, uint8_t ertek) {
     if (index >= be_db)throw "over indexed";

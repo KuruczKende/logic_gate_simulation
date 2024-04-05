@@ -15,6 +15,9 @@ bool shell_module_t::tri_mods(lista<module_t*>& wait_for_do, size_t idx) {
 size_t shell_module_t::get_out_num() {
     return be_db;
 }
+uint8_t shell_module_t::get_in_ertek(size_t i) {
+    return ki_wires[i]->get();
+}
 void shell_module_t::setin(size_t index, uint8_t ertek) {
     if (index >= be_db)throw "over indexed";
     if (index < 0)throw "under indexed";

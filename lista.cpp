@@ -221,3 +221,25 @@ void lista<prot_module_t>::add(prot_module_t ertek) {
 }
 
 
+template<>
+void lista<char*>::add(char* ertek) {
+    if (next == NULL) {
+        next = new lista();
+        elem = ertek;
+    }
+    else
+        next->add(ertek);
+}
+template<>
+size_t lista<char*>::length() {
+    if (next == NULL)
+        return 0;
+    return next->length() + 1;
+}
+template<>
+char*& lista<char*>::operator[](size_t i) {
+    if (0 > i)throw "under indexed";
+    if (length() > i)
+        return *getin(i);
+    throw "over indexed";
+}

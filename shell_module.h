@@ -8,6 +8,7 @@ public:
     bool tri_mods(lista<module_t*>& wait_for_do, size_t idx) override;//trigger next modules
     size_t get_out_num() override;
     uint8_t get_out_ertek(size_t i) override;
+    uint8_t get_in_ertek(size_t i) override;
     void setin(size_t index, uint8_t ertek) override;
     ~shell_module_t() {}
 };
