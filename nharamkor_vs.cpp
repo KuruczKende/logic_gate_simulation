@@ -137,7 +137,7 @@ uint8_t test_module(const char* str, lista<prot_module_t>& modulok, bool add = t
     }
     else {//text_module
         uint8_t kb = kisbetujo(parancsok);
-        if (kb != 0) { delete[] nev; return kb; }
+        if (kb != 0) { delete[] nev; return kb+10; }
         for (size_t i = 0; i < strlen(parancsok)-1; i++) {
             char c = parancsok[i];
             if (!(islower(c) || c == '|' || c == '&' || c == '^' || c == '~' || c == ',' || c == '[' || c == ']' || c == '(' || c == ')')) {
@@ -150,42 +150,44 @@ uint8_t test_module(const char* str, lista<prot_module_t>& modulok, bool add = t
 
 }
 template<typename T>
-void instruct_handler_char_handler(uint8_t* inputs, uint8_t c, T& state, uint8_t& mods, size_t& number) {
+bool instruct_handler_char_handler(uint8_t* inputs, uint8_t c, T& state, uint8_t& mods, size_t& number) {
     enum { input, num, mod };
     if (isalpha(c) && state == input) {
         if (isupper(c))
             inputs[c - 'A'] = '1';
         if (islower(c))
             inputs[c - 'a'] = '0';
+        return true;
     }
     else if (isdigit(c) && (state == input || state == num)) {
         state = (T)num;
         number *= 10;
         number += c - '0';
+        return true;
     }
     else if (ismod(c) && (state == input || state == num || state == mod)) {
         state = (T)mod;
         modulator(c, mods);
+        return true;
     }
-    else {
-        throw "nem jo parancs";
-    }
+    return false;
 }
 
-void instruct_handler(char* s, wire_t (&w_inputs)[26], lista<wire_t*>& wait_to_do_wires, uint8_t& mods, size_t& number) {
+bool instruct_handler(char* s, wire_t (&w_inputs)[26], lista<wire_t*>& wait_to_do_wires, uint8_t& mods, size_t& number) {
     enum{input, num, mod}state = input;
     uint8_t inputs[26];
     for (size_t i = 0; i < 26; i++)
         inputs[i] = '?';
     number = 0;
     for(size_t i=0;i<strlen(s);i++)
-        instruct_handler_char_handler(inputs, s[i], state, mods, number);
+        if(!instruct_handler_char_handler(inputs, s[i], state, mods, number))return false;
     for (size_t i = 0; i < 26; i++)
         if(inputs[i]!='?')
             if (inputs[i] != w_inputs[i].get()) {
                 w_inputs[i].set(inputs[i]);
                 wait_to_do_wires.add(&(w_inputs[i]));
             }
+    return true;
 }
 char* getstring(std::istream& in, size_t h = 0) {
     char c;
@@ -215,10 +217,12 @@ bool print_module_error(uint8_t err) {
     case 8:  std::cout << "nemletezo module comp_module-ban\n"; return false;
     case 9:  std::cout << "rossz inputszam comp_module-ban\n"; return false;
     case 10: std::cout << "rossz outputszam comp_module-ban\n"; return false;
+    case 11: std::cout << "nem jo bekotes text_module-ban\n"; return false;
     default: std::cout << "unhandlered error\n"; return false;
     }
 }
 void print(module_t*& m_main, bool kezd = true, bool lezar = true) {
+    if (m_main == NULL) return;
     size_t in = m_main->get_in_num();
     size_t out = m_main->get_out_num();
     if (kezd) {
@@ -226,30 +230,89 @@ void print(module_t*& m_main, bool kezd = true, bool lezar = true) {
         for(size_t i=0;i<in;i++)std::cout << (char)196;
         std::cout << (char)194;
         for (size_t i = 0; i < out; i++)std::cout << (char)196;
-        std::cout << (char)191;
-        std::cout << '\n';
-        std::cout << (char)179;
+        std::cout << (char)191 << '\n' << (char)179;
         for (size_t j = 0; j < out + in; j++) {
             if (j == in)std::cout << (char)179;
             std::cout << (char)(j + 'a');
         }
-        std::cout << (char)179;
-        std::cout << '\n';
+        std::cout << (char)179 << '\n';
     }
     std::cout << (char)179;
     for (size_t j = 0; j < in; j++)std::cout << (char)m_main->get_in_ertek(j);
     std::cout << (char)179;
     for (size_t j = 0; j < out; j++)std::cout << (char)m_main->get_out_ertek(j);
-    std::cout << (char)179;
-    std::cout << '\n';
+    std::cout << (char)179 << '\n';
     if (lezar) {
         std::cout << (char)192;
         for (size_t i = 0; i < in; i++)std::cout << (char)196;
         std::cout << (char)193;
         for (size_t i = 0; i < out; i++)std::cout << (char)196;
-        std::cout << (char)217;
-        std::cout << '\n';
+        std::cout << (char)217 << '\n';
     }
+}
+void input_handler(std::istream& in, wire_t(&w_inputs)[26], lista<wire_t*>& wait_to_do_wires, uint8_t& mods, lista<prot_module_t>& modulok, module_t*& m_main, lista<char*>& insts);
+void input_handler_module(char* s, wire_t(&w_inputs)[26], lista<prot_module_t>& modulok, module_t*& m_main) {
+    if (print_module_error(test_module(s, modulok))) {
+        if (strcmp(modulok[modulok.length() - 1].nev, "_main") == 0) {
+            std::cout << "main setted\n";
+            m_main = modulok[modulok.length() - 1].prot->copy();
+            for (size_t i = 0; i < m_main->get_out_num(); i++)
+                m_main->set_wire(i, new wire_t);
+            for (size_t i = 0; i < m_main->get_in_num(); i++)
+                w_inputs[i].add(m_main, i);
+        }
+    }
+}
+void input_handler_read(char* s, wire_t(&w_inputs)[26], lista<wire_t*>& wait_to_do_wires, uint8_t& mods, lista<prot_module_t>& modulok, module_t*& m_main, lista<char*>& insts) {
+    std::ifstream inf(&(s[1]));
+    if (inf.fail()) {
+        inf.clear(); return;
+    }
+    std::cout << "sikeres megnyitas\n";
+    while (!inf.eof()) {
+        input_handler(inf, w_inputs, wait_to_do_wires, mods, modulok, m_main, insts);
+    }
+    inf.close();
+}
+void input_handler_write(char* s, lista<char*>& insts) {
+    std::ofstream outf(&(s[1]));
+    if (outf.fail()) {
+        outf.clear(); return;
+    }
+    std::cout << "sikeres megnyitas\n";
+    for (size_t i = 0; i < insts.length(); i++) {
+        if (insts[i][0] != '>') {
+            std::cout << insts[i] << "\nI/N: ";
+            char c;
+            std::cin >> c;
+            if (c == 'I')
+                outf << insts[i] << '\n';
+        }
+    }
+    outf.close();
+}
+bool input_handler_do(char* s, wire_t(&w_inputs)[26], lista<wire_t*>& wait_to_do_wires, uint8_t& mods, module_t*& m_main) {
+    size_t number;
+    if(!instruct_handler(s, w_inputs, wait_to_do_wires, mods, number))return false;
+    if ((mods & 0b00000010) == 0b00000010) {
+        mods &= 0b11111101;
+        //console clear
+    }
+    lista<module_t*> wait_to_do_modules;
+    for (size_t i = 0; i < number; i++) {
+        while (wait_to_do_wires.length() > 0) {
+            wait_to_do_wires[0]->doit(wait_to_do_modules);
+            wait_to_do_wires.rem(0);
+        }
+        while (wait_to_do_modules.length() > 0) {
+            wait_to_do_modules[0]->vegrehajtas(wait_to_do_wires);
+            wait_to_do_modules.rem(0);
+        }
+        if ((mods & 0b00000001) == 0b00000001)
+            print(m_main, i == 0, i == number - 1);
+    }
+    if ((mods & 0b00000001) != 0b00000001 && number != 0)
+        print(m_main);
 }
 
 void input_handler(std::istream& in, wire_t(&w_inputs)[26], lista<wire_t*>& wait_to_do_wires, uint8_t& mods, lista<prot_module_t>& modulok, module_t*& m_main, lista<char*>& insts) {
@@ -258,65 +321,16 @@ void input_handler(std::istream& in, wire_t(&w_inputs)[26], lista<wire_t*>& wait
     if (s[0] == '\0') return;
     insts.add(s);
     if (s[0] == '_') {//új module
-        if (print_module_error(test_module(s, modulok))) {
-            if (strcmp(modulok[modulok.length() - 1].nev, "_main") == 0) {
-                std::cout << "main setted\n";
-                m_main = modulok[modulok.length() - 1].prot->copy();
-                for (size_t i = 0; i < m_main->get_in_num(); i++)
-                    w_inputs[i].add(m_main, i);
-            }
-        }
+        input_handler_module(s, w_inputs, modulok, m_main);
     }
     else if (s[0] == '<') {//fájlból olvasás
-        std::ifstream inf(&(s[1]));
-        if (inf.fail()) {
-            inf.clear(); return;
-        }
-        std::cout << "sikeres megnyias\n";
-        while (!inf.eof()) {
-            input_handler(inf, w_inputs, wait_to_do_wires, mods, modulok, m_main, insts);
-        }
-        inf.close();
+        input_handler_read(s, w_inputs, wait_to_do_wires, mods, modulok, m_main, insts);
     }
     else if (s[0] == '>') {//fájlba írás
-        std::ofstream outf(&(s[1]));
-        if (outf.fail()) {
-            outf.clear(); return;
-        }
-        std::cout << "sikeres megnyias\n";
-        for (size_t i = 0; i < insts.length(); i++) {
-            if (insts[i][0] != '>') {
-                std::cout << insts[i] << "\nI/N: ";
-                char c;
-                std::cin >> c;
-                if (c == 'I')
-                    outf << insts[i] << '\n';
-            }
-        }
-        outf.close();
+        input_handler_write(s, insts);
     }
-    else {
-        size_t number;
-        instruct_handler(s, w_inputs, wait_to_do_wires, mods, number);
-        if ((mods & 0b00000010) == 0b00000010) {
-            mods &= 0b11111101;
-            //console clear
-        }
-        lista<module_t*> wait_to_do_modules;
-        for (size_t i = 0; i < number; i++) {
-            while (wait_to_do_wires.length() > 0) {
-                wait_to_do_wires[0]->doit(wait_to_do_modules);
-                wait_to_do_wires.rem(0);
-            }
-            while (wait_to_do_modules.length() > 0) {
-                wait_to_do_modules[0]->vegrehajtas(wait_to_do_wires);
-                wait_to_do_modules.rem(0);
-            }
-            if ((mods & 0b00000001) == 0b00000001)
-                print(m_main, i==0,i==number-1);
-        }
-        if ((mods & 0b00000001) != 0b00000001 && number != 0)
-            print(m_main);
+    else {//végrehajtás
+        if(!input_handler_do(s, w_inputs, wait_to_do_wires, mods, m_main))std::cout<<"rossz vegrehajtas utasitas\n";
     }
 }
 
@@ -335,22 +349,3 @@ int main()
     }
     return 0;
 }
-
-/*
-* TODO: nem használt kimenetek '-'
-* 
-* comp_module_t::copy()
-* comp_module_t::comp_module_t(char* modules_coms, lista<prot_module_t>& prot_modules)
-* text_module_t::vegrehajtas(lista<wire_t*>& wait_for_do)
-*/
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

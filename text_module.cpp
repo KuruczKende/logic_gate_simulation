@@ -85,6 +85,71 @@ text_module_t::text_module_t(const text_module_t& refe) {
 module_t* text_module_t::copy() {
     return new text_module_t(this->parancsok);
 }
+void muv_list(char& c, char& cn, size_t& index, lista<size_t>& hely, lista<size_t>& fsag, size_t& moz, size_t& fs, size_t& maxfsag, uint8_t*& be_ertek) {
+    switch (c) {
+    case '~':
+        if (cn == '|' || cn == '&' || cn == '^') {
+            hely.add(index);
+            fsag.add(fs);
+            if (fs > maxfsag)maxfsag = fs;
+            moz++;
+            index++;
+        }
+        else {//bemenet/const/zarojeles ertek
+            hely.add(index);
+            fsag.add(fs + 1);
+            if (fs + 1 > maxfsag)maxfsag = fs + 1;
+        }
+        break;
+    case '(':
+        fs += 2;
+        break;
+    case ')':
+        fs -= 2;
+        break;
+    case '|':
+    case '&':
+    case '^':
+        hely.add(index);
+        fsag.add(fs);
+        if (fs > maxfsag)maxfsag = fs;
+        break;
+    default://bemenet/const
+        if (c != '0' && c != '1')
+            c = be_ertek[c - 'a'];
+        break;
+    }
+    moz++;
+    index++;
+}
+void vegrehajt(size_t& maxfsag, lista<size_t>& hely, lista<size_t>& fsag, char*& ideiglenes, size_t& hossz) {
+    for (int j = maxfsag; j >= 0; j--) {
+        for (size_t i = 0; i < hely.length(); i++) {
+            if (fsag[i] == j) {
+                size_t nertek;
+                uint8_t ertek;
+                if (ideiglenes[hely[i]] == '~') {
+                    if (!muvs(i, hely, ideiglenes, hossz, true, ertek, nertek)) {
+                        nertek = hely[i];
+                        ertek = mynot(ideiglenes[hely[i] + 1]);
+                        lepteto(1, i, hely, ideiglenes, hossz);
+                    }
+                }
+                else
+                    muvs(i, hely, ideiglenes, hossz, false, ertek, nertek);
+                if (nertek > 0 && nertek < hossz)
+                    if (ideiglenes[nertek - 1] == '(' && ideiglenes[nertek + 1] == ')') {
+                        for (size_t k = i; k < hely.length(); k++)
+                            hely[k] -= 2;
+                        for (size_t k = nertek; k < hossz - 2; k++)
+                            ideiglenes[k] = ideiglenes[k + 2];
+                        nertek--;
+                    }
+                ideiglenes[nertek] = ertek;
+            }
+        }
+    }
+}
 void text_module_t::vegrehajtas(lista<wire_t*>& wait_for_do) {
     size_t kez = 0, veg = 0;
     for (size_t i = 0; i < ki_db; i++) {
@@ -109,69 +174,10 @@ void text_module_t::vegrehajtas(lista<wire_t*>& wait_for_do) {
             size_t maxfsag = 0;
             while (moz < veg) {
                 ideiglenes[index] = parancsok[moz];
-                switch (ideiglenes[index]) {
-                case '~':
-                    if (parancsok[moz + 1] == '|' || parancsok[moz + 1] == '&' || parancsok[moz + 1] == '^') {
-                        hely.add(index);
-                        fsag.add(fs);
-                        if (fs > maxfsag)maxfsag = fs;
-                        moz++;
-                        index++;
-                        ideiglenes[index] = parancsok[moz];
-                    }
-                    else {//bemenet/const/zarojeles ertek
-                        hely.add(index);
-                        fsag.add(fs + 1);
-                        if (fs + 1 > maxfsag)maxfsag = fs + 1;
-                    }
-                    break;
-                case '(':
-                    fs += 2;
-                    break;
-                case ')':
-                    fs -= 2;
-                    break;
-                case '|':
-                case '&':
-                case '^':
-                    hely.add(index);
-                    fsag.add(fs);
-                    if (fs > maxfsag)maxfsag = fs;
-                    break;
-                default://bemenet/const
-                    if (ideiglenes[index] != '0' && ideiglenes[index] != '1')
-                        ideiglenes[index] = be_ertek[ideiglenes[index] - 'a'];
-                    break;
-                }
-                moz++;
-                index++;
+                if(parancsok[moz] == '~' && (parancsok[moz + 1] == '|' || parancsok[moz + 1] == '&' || parancsok[moz + 1] == '^'))ideiglenes[index + 1] = parancsok[moz + 1];
+                muv_list(ideiglenes[index], ideiglenes[index + 1], index, hely, fsag, moz, fs, maxfsag, be_ertek);
             }//mûveleti lista befejezve
-            for (int j = maxfsag; j >= 0; j--) {
-                for (size_t i = 0; i < hely.length(); i++) {
-                    if (fsag[i] == j) {
-                        size_t nertek;
-                        uint8_t ertek;
-                        if (ideiglenes[hely[i]] == '~') {
-                            if (!muvs(i, hely, ideiglenes, hossz, true, ertek, nertek)) {
-                                nertek = hely[i];
-                                ertek = mynot(ideiglenes[hely[i] + 1]);
-                                lepteto(1, i, hely, ideiglenes, hossz);
-                            }
-                        }
-                        else
-                            muvs(i, hely, ideiglenes, hossz, false, ertek, nertek);
-                        if (nertek > 0 && nertek < hossz)
-                            if (ideiglenes[nertek - 1] == '(' && ideiglenes[nertek + 1] == ')') {
-                                for (size_t k = i; k < hely.length(); k++)
-                                    hely[k] -= 2;
-                                for (size_t k = nertek; k < hossz - 2; k++)
-                                    ideiglenes[k] = ideiglenes[k + 2];
-                                nertek--;
-                            }
-                        ideiglenes[nertek] = ertek;
-                    }
-                }
-            }
+            vegrehajt(maxfsag, hely, fsag, ideiglenes, hossz);
             if (ideiglenes[0] != ki_ertek[i]) {
                 ki_ertek[i] = ideiglenes[0];
                 ki_wires[i]->set(ki_ertek[i]);

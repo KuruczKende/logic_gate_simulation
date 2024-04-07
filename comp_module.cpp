@@ -6,19 +6,10 @@ bool eggyezik(const char* str, const char* str2, size_t kez, size_t veg) {
             return false;
     return true;
 }
-comp_module_t::comp_module_t(char* modules_coms, lista<prot_module_t>& prot_modules) {
-    this->modules_coms = new char[strlen(modules_coms) + 1];
-    strcpy(this->modules_coms, modules_coms);
+void muvcount(char* modules_coms, lista<size_t>& vegk, lista<size_t>& kezk, size_t& m_db, size_t& be_db, size_t& ki_db, size_t& w_db) {
     m_db = 0;
-    size_t max_inner = 'A' - 1;
-    size_t max_in = 'a' - 1;
-    size_t max_out = 'a' - 1;
-    size_t min_out = 'z' + 1;
-
-    bool port = false;
-    bool outport = false;
-    lista<size_t> vegk;
-    lista<size_t> kezk;
+    bool port = false, outport = false;
+    size_t max_inner = 'A' - 1, max_in = 'a' - 1, max_out = 'a' - 1, min_out = 'z' + 1;
     kezk.add(0);
     for (size_t i = 0; i < strlen(modules_coms); i++) {
         if (modules_coms[i] == '(') {
@@ -44,24 +35,22 @@ comp_module_t::comp_module_t(char* modules_coms, lista<prot_module_t>& prot_modu
                 min_out = modules_coms[i];
         }
     }
-    size_t be_db = (min_out - 1 < max_in ? min_out - 1 : max_in) - 'a' + 1;
-    size_t ki_db = max_out - 'a' + 1 - be_db;
-    this->be_db = this->ki_db = be_db;
-    end_module = shell_module_t(ki_db);
-    ki_wires = new wire_t * [be_db];
-    for (size_t i = 0; i < be_db; i++)
-        ki_wires[i] = new wire_t();
-    modules = new module_t * [m_db];
+    be_db = (min_out - 1 < max_in ? min_out - 1 : max_in) - 'a' + 1;
+    ki_db = max_out - 'a' + 1 - be_db;
     if (max_inner >= 'A')
         w_db = max_inner - 'A' + 2 + ki_db;
     else
         w_db = ki_db + 1;
-    wires = new wire_t[w_db];
+}
+void comp_fill_module(bool copy, size_t m_db, size_t be_db, size_t ki_db, size_t w_db, char* modules_coms, lista<size_t>& vegk, lista<size_t>& kezk, module_t**& modules, module_t& end_module, wire_t**& ki_wires, wire_t*& wires, lista<prot_module_t>* prot_modules, module_t**& modules_ref) {
     for (size_t i = 0; i < m_db; i++) {
         size_t j = 0;
-        while (!eggyezik(prot_modules[j].nev, modules_coms, kezk[i], vegk[i]))
-            j++;
-        modules[i] = prot_modules[j].prot->copy();//itt baszódik el, copy függvény megírása
+        if (!copy) {
+            while (!eggyezik((*prot_modules)[j].nev, modules_coms, kezk[i], vegk[i])) j++;
+            modules[i] = (*prot_modules)[j].prot->copy();
+        }
+        else
+            modules[i] = modules_ref[i]->copy();
         j = vegk[i] + 1;
         size_t k = 0;
         while (modules_coms[j] != ',') {
@@ -87,9 +76,25 @@ comp_module_t::comp_module_t(char* modules_coms, lista<prot_module_t>& prot_modu
                 modules[i]->set_wire(k++, &(wires[modules_coms[j++] - 'A' + ki_db]));
         }
     }
-    for (size_t i = 0; i < ki_db; i++) {
+    for (size_t i = 0; i < ki_db; i++)
         wires[i].add(&end_module, i);
-    }
+}
+
+comp_module_t::comp_module_t(char* modules_coms, lista<prot_module_t>& prot_modules) {
+    this->modules_coms = new char[strlen(modules_coms) + 1];
+    strcpy(this->modules_coms, modules_coms);
+    size_t ki_db;
+    lista<size_t> vegk;
+    lista<size_t> kezk;
+    muvcount(modules_coms, vegk, kezk, m_db, this->be_db, ki_db, w_db);
+    this->ki_db = be_db;
+    end_module = shell_module_t(ki_db);
+    ki_wires = new wire_t * [be_db];
+    for (size_t i = 0; i < be_db; i++)
+        ki_wires[i] = new wire_t();
+    modules = new module_t * [m_db];
+    wires = new wire_t[w_db];
+    comp_fill_module(false, m_db, be_db, ki_db, w_db, modules_coms, vegk, kezk, modules, end_module, ki_wires, wires, &prot_modules, modules);
 }
 comp_module_t::comp_module_t(size_t be_db, size_t ki_db, size_t m_db, size_t w_db) {
     this->be_db = this->ki_db = be_db;
@@ -107,37 +112,11 @@ module_t* comp_module_t::copy() {
     comp_module_t* ret = new comp_module_t(be_db, ki_db, m_db, w_db);
     ret->modules_coms = new char[strlen(modules_coms) + 1];
     strcpy(ret->modules_coms, modules_coms);
-    size_t j = 0;
-    for (size_t i = 0; i < m_db; i++) {
-        ret->modules[i] = this->modules[i]->copy();
-        while (modules_coms[j] != '(')
-            j++;
-        j++;
-        size_t k = 0;
-        while (modules_coms[j] != ',') {
-            if (modules_coms[j] == '0' || modules_coms[j] == '1')
-                ret->modules[i]->setin(k++, modules_coms[j++]);
-            else if (modules_coms[j] - 'a' < be_db)
-                ret->ki_wires[modules_coms[j++] - 'a']->add(ret->modules[i], k++);
-            else if (modules_coms[j] - 'a' < be_db + ki_db)
-                ret->wires[modules_coms[j++] - 'a' - be_db].add(ret->modules[i], k++);
-            else
-                ret->wires[modules_coms[j++] - 'A' + ki_db].add(ret->modules[i], k++);
-        }
-        j++;
-        k = 0;
-        while (modules_coms[j] != ')') {
-            if (modules_coms[j] == '-')
-                modules[i]->set_wire(k++, &(wires[w_db - 1]));
-            else if (modules_coms[j] - 'a' < be_db + ki_db)
-                ret->modules[i]->set_wire(k++, &(ret->wires[modules_coms[j++] - 'a' - be_db]));
-            else
-                ret->modules[i]->set_wire(k++, &(ret->wires[modules_coms[j++] - 'A' + ki_db]));
-        }
-    }
-    for (size_t i = 0; i < ki_db; i++) {
-        ret->wires[i].add(&(ret->end_module), i);
-    }
+    lista<size_t> vegk;
+    lista<size_t> kezk;
+    size_t kuka;
+    muvcount(modules_coms, vegk, kezk, kuka, kuka, kuka, kuka);
+    comp_fill_module(true, m_db, be_db, ki_db, w_db, modules_coms, vegk, kezk, ret->modules, ret->end_module, ret->ki_wires, ret->wires, NULL, this->modules);
     ki_db = be_db;
     return ret;
 }
