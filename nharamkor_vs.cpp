@@ -65,16 +65,39 @@ uint8_t ujmnev_ell(const char* nev, lista<prot_module_t*>& modules) {
 }
 
 /**
- * Checks if the input string contains at least one of each lowercase letter up to the "biggest" letter in use.
+ * Checks if the input string contains at least one of each lowercase letter up to the "biggest" letter in use. And not contains syntactic error.
  *
  * @param str pointer to the input string
  *
- * @return 1 if it's not valid, 0 if it's valid
+ * @return 2 if wrong format, 1 if wrong character usage, 0 if it's valid
  */
 uint8_t kisbetujo(const char* str) {
     bool b[26]{ false };
+    bool ertek = false;
+    bool notch = false;
+    bool iserz = false;
     for (size_t i = 0; i < strlen(str); i++){
-        if (islower(str[i])) b[str[i] - 'a'] = true;
+        if (str[i] == '[')iserz = true;
+        else if (str[i] == ']')iserz = false;
+        else if (iserz) {
+            if (islower(str[i])) b[str[i] - 'a'] = true;
+        }
+        else if (str[i] == '~') {
+            if (notch) return 2;//hibas forma
+            ertek = false;
+            notch = true;
+        }
+        else if (str[i] == '&' || str[i] == '|' || str[i] == '^' || str[i] == ',') {
+            if(!(ertek || notch)) return 2;//hibas forma
+            ertek = false;
+            notch = false;
+        }
+        else if (islower(str[i]) || str[i] == '0' || str[i] == '1') {
+            if(ertek) return 2;//hibas forma
+            ertek = true;
+            notch = false;
+            if (islower(str[i])) b[str[i] - 'a'] = true;
+        }
     }
     int j = 0;
     while (b[j++]);
@@ -156,8 +179,9 @@ uint8_t modulesteszt(const char* str, lista<prot_module_t*>& modules) {
         for (size_t i = 0; i < modules.length(); i++)
             if (eggyezik(modules[i]->getnev(), str, k, v)) j = i;
         if (j == -1) return 1;//nemlétező modul
-        size_t in = modules[j]->getprot()->get_in_num();
-        size_t out = modules[j]->getprot()->get_out_num();
+        module_t* ref = modules[j]->getprot();
+        size_t in = ref->get_in_num();
+        size_t out = ref->get_out_num();
         v = k = v + 1;
         while (str[v] != ',' && v < k + in) v++;
         if (str[v] != ',' || v != k + in) return 2;//rossz inputszám
@@ -320,6 +344,7 @@ bool print_module_error(uint8_t err) {
     case 9:  std::cout << "rossz inputszam comp_module-ban\n"; return false;
     case 10: std::cout << "rossz outputszam comp_module-ban\n"; return false;
     case 11: std::cout << "nem jo bekotes text_module-ban\n"; return false;
+    case 12: std::cout << "nem jo forma text_module-ban\n"; return false;
     default: std::cout << "unhandlered error\n"; return false;
     }
 }
@@ -493,7 +518,7 @@ void input_handler(std::istream& in, wire_t(&w_inputs)[26], lista<wire_t*>& wait
 
 
 /**
- * Main function. That's all.
+ * Main function... That's all.
  */
 int main()
 {

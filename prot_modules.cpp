@@ -1,4 +1,5 @@
 #include "prot_modules.h"
+#include "module.h"
 /**
  * Constructor for prot_module_t class.
  *

@@ -84,12 +84,11 @@ void lista<T>::rem(size_t i){
     }
     else throw "over indexed";
 }
-
 /**
  * A function that recursively deletes inner elements.
  */
 template<typename T>
-void din(){//delete inner
+void lista<T>::din(){//delete inner
     if(next == NULL)return;
     next->din();
     delete elem;
@@ -98,7 +97,7 @@ void din(){//delete inner
  * A function that recursively deletes inner lists.
  */
 template<typename T>
-void dinl(){//delete inner list
+void lista<T>::dinl(){//delete inner list
     if(next == NULL)return;
     next->dinl();
     delete[] elem;
@@ -171,6 +170,12 @@ template<>
 void lista<port_t*>::add(lista<port_t*>& addlist) {
     for (size_t i = 0; i < addlist.length(); i++)
         add(addlist[i]);
+}
+template<>
+void lista<port_t*>::din() {//delete inner
+    if (next == NULL)return;
+    next->din();
+    delete elem;
 }
 //module_t*
 template<>
@@ -247,6 +252,12 @@ void lista<wire_t*>::rem(size_t i) {
     }
     else throw "over indexed";
 }
+template<>
+void lista<wire_t*>::din() {//delete inner list
+    if (next == NULL)return;
+    next->din();
+    delete elem;
+}
 //prot_module_t*
 template<>
 size_t lista<prot_module_t*>::length(){
@@ -271,6 +282,12 @@ void lista<prot_module_t*>::add(prot_module_t* ertek) {
     else
         next->add(ertek);
 }
+template<>
+void lista<prot_module_t*>::din() {//delete inner list
+    if (next == NULL)return;
+    next->din();
+    delete elem;
+}
 //char*
 template<>
 void lista<char*>::add(char* ertek) {
@@ -293,4 +310,10 @@ char*& lista<char*>::operator[](size_t i) {
     if (length() > i)
         return *getin(i);
     throw "over indexed";
+}
+template<>
+void lista<char*>::dinl() {//delete inner list
+    if (next == NULL)return;
+    next->dinl();
+    delete[] elem;
 }
