@@ -12,5 +12,6 @@ public:
     void setin();
     uint8_t get();
     void doit(lista<module_t*>& wait_for_do);
+    ~wire_t();
 };
 #endif

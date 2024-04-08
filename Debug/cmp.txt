@@ -1,4 +1,3 @@
 _xor:a^b
 _not:~a
 _main:_xor(ab,c)
-ab10

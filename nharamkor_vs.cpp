@@ -8,6 +8,13 @@
 #include "wire.h"
 #include "karakter_keszlet.h"
 
+/**
+ * Check if the character is a special symbol.
+ *
+ * @param c the character to be checked
+ *
+ * @return true if the character is '%', '-', '+', or '!', false otherwise
+ */
 bool ismod(char c) {
     switch (c) {
     case '%':
@@ -18,6 +25,12 @@ bool ismod(char c) {
     default: return false;
     }
 }
+/**
+ * Modifies the given mods variable based on the input character.
+ *
+ * @param c the character input to determine the modification
+ * @param mods the variable to be modified based on the input character
+ */
 void modulator(uint8_t c, uint8_t& mods) {
     switch (c) {
     case '%':
@@ -34,15 +47,30 @@ void modulator(uint8_t c, uint8_t& mods) {
         break;
     }
 }
-uint8_t ujmnev_ell(const char* nev, lista<prot_module_t>& modules) {
+/**
+ * Check if the given name meets certain criteria and is not already in use.
+ *
+ * @param nev The name to be checked
+ * @param modules A list of modules to compare the name against
+ *
+ * @return 0 if the name is valid and not in use, 1 if the name not starts with '_', 2 if the name contains invalid characters, 3 if the name is already in use
+ */
+uint8_t ujmnev_ell(const char* nev, lista<prot_module_t*>& modules) {
     if (nev[0] != '_') return 1;//nincs _
     for (size_t i = 0; i < strlen(nev); i++)
-        if (!kk[nev[i]]) return 2;// rossz karakterek
+        if (!kk[(size_t)(nev[i])]) return 2;// rossz karakterek
     for (size_t i = 0; i < modules.length(); i++)
-        if (strcmp(nev, modules[i].nev)==0) return 3;//már foglalt
+        if (strcmp(nev, modules[i]->getnev())==0) return 3;//már foglalt
     return 0;
 }
 
+/**
+ * Checks if the input string contains at least one of each lowercase letter up to the "biggest" letter in use.
+ *
+ * @param str pointer to the input string
+ *
+ * @return 1 if it's not valid, 0 if it's valid
+ */
 uint8_t kisbetujo(const char* str) {
     bool b[26]{ false };
     for (size_t i = 0; i < strlen(str); i++){
@@ -53,6 +81,13 @@ uint8_t kisbetujo(const char* str) {
     while (j < 26) if (b[j++]) return 1;
     return 0;
 }
+/**
+ * Checks if the input string contains at least one of each lowercase letter up to the "biggest" letter in use and after a specific character every letter used as output.
+ *
+ * @param str pointer to the input string
+ *
+ * @return 1 if a letter used as an output more than once, 2 if it's not valid, 0 if it's valid
+ */
 uint8_t kisbetujo2(const char* str) {
     bool ib[26]{ false };
     bool ob[26]{ false };
@@ -74,6 +109,13 @@ uint8_t kisbetujo2(const char* str) {
     return 0;
 }
 
+/**
+ * A function that checks the wiring connections of uppercase letters in the input string.
+ *
+ * @param str a pointer to the input string to be checked
+ *
+ * @return 0 if the wiring connections are correct, 1 if a letter used as an output more than once, 2 if there are incorrect wiring connections
+ */
 uint8_t nagybetujo(const char* str) {
     bool ib[26]{ false };
     bool ob[26]{ false };
@@ -88,22 +130,34 @@ uint8_t nagybetujo(const char* str) {
             (outp ? ob : ib)[str[i] - 'A'] = true;
         }
     }
-    int j = 0;
-    while (ob[j])if (ob[j] != ib[j++]) return 2;//nem jó bekötések
-    while (j < 26)if (ob[j] || ib[j++]) return 2;//nem jó bekötések
+    size_t j = 0;
+    while (ob[j]){
+        if (ob[j] != ib[j])return 2;//nem jó bekötések
+        j++;}
+    while (j < 26){
+        if (ob[j] || ib[j])return 2;//nem jó bekötések
+        j++;}
     return 0;
 }
 
-uint8_t modulesteszt(const char* str, lista<prot_module_t>& modules) {
+/**
+ * Function to check and validate modules based on input string.
+ *
+ * @param str The input string to check against modules.
+ * @param modules A list of modules to compare against the input string.
+ *
+ * @return 0 if successful, 1 if module does not exist, 2 if wrong input number, 3 if wrong output number.
+ */
+uint8_t modulesteszt(const char* str, lista<prot_module_t*>& modules) {
     size_t k = 0, v = 0;
     while (k < strlen(str)) {
         while (str[v] != '(' && v < strlen(str)) v++;
-        size_t j = -1;
+        int j = -1;
         for (size_t i = 0; i < modules.length(); i++)
-            if (eggyezik(modules[i].nev, str, k, v)) j = i;
+            if (eggyezik(modules[i]->getnev(), str, k, v)) j = i;
         if (j == -1) return 1;//nemlétező modul
-        size_t in = modules[j].prot->get_in_num();
-        size_t out = modules[j].prot->get_out_num();
+        size_t in = modules[j]->getprot()->get_in_num();
+        size_t out = modules[j]->getprot()->get_out_num();
         v = k = v + 1;
         while (str[v] != ',' && v < k + in) v++;
         if (str[v] != ',' || v != k + in) return 2;//rossz inputszám
@@ -115,7 +169,16 @@ uint8_t modulesteszt(const char* str, lista<prot_module_t>& modules) {
     return 0;
 }
 
-uint8_t test_module(const char* str, lista<prot_module_t>& modulok, bool add = true) {
+/**
+ * Function to test a module with the given name and commands.
+ *
+ * @param str the name and commands of the module to be tested
+ * @param modulok a list of module pointers to be tested against
+ * @param add flag to indicate whether to add the module
+ * 
+ * @return 0 if successful, error code otherwise
+ */
+uint8_t test_module(const char* str, lista<prot_module_t*>& modulok, bool add = true) {
     char* nev = new char[strlen(str)+1];
     char* parancsok = nev;
     strcpy(nev, str);
@@ -132,7 +195,7 @@ uint8_t test_module(const char* str, lista<prot_module_t>& modulok, bool add = t
         if (kb != 0) { delete[] nev; return kb+5; }
         if (nb != 0) { delete[] nev; return nb+5; }
         if (mt != 0) { delete[] nev; return mt+7; }
-        if(add) modulok.add(prot_module_t(nev, (module_t*) new comp_module_t(parancsok, modulok)));
+        if(add) modulok.add(new prot_module_t(nev, (module_t*) new comp_module_t(parancsok, modulok)));
         delete[] nev; return 0;
     }
     else {//text_module
@@ -144,28 +207,41 @@ uint8_t test_module(const char* str, lista<prot_module_t>& modulok, bool add = t
                 delete[] nev; return 2;//nem megfelelő karakterek
             }
         }
-        if (add) modulok.add(prot_module_t(nev, (module_t*) new text_module_t(parancsok)));
+        if (add){
+            modulok.add(new prot_module_t(nev, (module_t*) new text_module_t(parancsok)));
+        }
         delete[] nev; return 0;
     }
 
 }
+/**
+ * A template function to handle different types of input characters and modify state accordingly.
+ *
+ * @param inputs pointer to an array of uint8_t to store inputs
+ * @param c the input character to handle
+ * @param state a reference to a template type T representing the current state
+ * @param mods a reference to a uint8_t to store modifiers
+ * @param number a reference to a size_t to store a number
+ *
+ * @return true if the input character is processed successfully, false otherwise
+ */
 template<typename T>
 bool instruct_handler_char_handler(uint8_t* inputs, uint8_t c, T& state, uint8_t& mods, size_t& number) {
     enum { input, num, mod };
-    if (isalpha(c) && state == input) {
+    if (isalpha(c) && state == (T)input) {
         if (isupper(c))
             inputs[c - 'A'] = '1';
         if (islower(c))
             inputs[c - 'a'] = '0';
         return true;
     }
-    else if (isdigit(c) && (state == input || state == num)) {
+    else if (isdigit(c) && (state == (T)input || state == (T)num)) {
         state = (T)num;
         number *= 10;
         number += c - '0';
         return true;
     }
-    else if (ismod(c) && (state == input || state == num || state == mod)) {
+    else if (ismod(c) && (state == (T)input || state == (T)num || state == (T)mod)) {
         state = (T)mod;
         modulator(c, mods);
         return true;
@@ -173,6 +249,17 @@ bool instruct_handler_char_handler(uint8_t* inputs, uint8_t c, T& state, uint8_t
     return false;
 }
 
+/**
+ * A function to handle instructions.
+ *
+ * @param s the instruction string
+ * @param w_inputs an array of wire_t inputs
+ * @param wait_to_do_wires a list of wire_t pointers to wires, waiting to be processed
+ * @param mods a uint8_t representing modifications
+ * @param number a size_t representing a number
+ *
+ * @return true if the function execution is successful, false otherwise
+ */
 bool instruct_handler(char* s, wire_t (&w_inputs)[26], lista<wire_t*>& wait_to_do_wires, uint8_t& mods, size_t& number) {
     enum{input, num, mod}state = input;
     uint8_t inputs[26];
@@ -189,6 +276,14 @@ bool instruct_handler(char* s, wire_t (&w_inputs)[26], lista<wire_t*>& wait_to_d
             }
     return true;
 }
+/**
+ * Recursively reads characters from the input stream and stores them in a dynamically allocated char array.
+ *
+ * @param in the input stream to read from
+ * @param h the current size of the char array being built
+ *
+ * @return a dynamically allocated char array containing the characters read from the input stream
+ */
 char* getstring(std::istream& in, size_t h = 0) {
     char c;
     char* ret;
@@ -203,6 +298,13 @@ char* getstring(std::istream& in, size_t h = 0) {
     }
     return ret;
 }
+/**
+ * A function that prints error messages based on the error code passed in.
+ *
+ * @param err the error code to determine which error message to print
+ *
+ * @return true if error code is 0, false otherwise
+ */
 bool print_module_error(uint8_t err) {
     switch (err)
     {
@@ -221,6 +323,13 @@ bool print_module_error(uint8_t err) {
     default: std::cout << "unhandlered error\n"; return false;
     }
 }
+/**
+ * Prints the contents of the module to the console in a formatted manner.
+ *
+ * @param m_main a pointer to the module to be printed
+ * @param kezd flag indicating whether to include the beginning formatting
+ * @param lezar flag indicating whether to include the ending formatting
+ */
 void print(module_t*& m_main, bool kezd = true, bool lezar = true) {
     if (m_main == NULL) return;
     size_t in = m_main->get_in_num();
@@ -250,20 +359,39 @@ void print(module_t*& m_main, bool kezd = true, bool lezar = true) {
         std::cout << (char)217 << '\n';
     }
 }
-void input_handler(std::istream& in, wire_t(&w_inputs)[26], lista<wire_t*>& wait_to_do_wires, uint8_t& mods, lista<prot_module_t>& modulok, module_t*& m_main, lista<char*>& insts);
-void input_handler_module(char* s, wire_t(&w_inputs)[26], lista<prot_module_t>& modulok, module_t*& m_main) {
+void input_handler(std::istream& in, wire_t(&w_inputs)[26], lista<wire_t*>& wait_to_do_wires, uint8_t& mods, lista<prot_module_t*>& modulok, module_t*& m_main, lista<char*>& insts);
+/**
+ * Handles input for new module and sets the main module if the module is "_main".
+ *
+ * @param s input string
+ * @param w_inputs array of wire inputs
+ * @param modulok list of modules
+ * @param m_main pointer to the main module
+ */
+void input_handler_module(char* s, wire_t(&w_inputs)[26], lista<prot_module_t*>& modulok, module_t*& m_main) {
     if (print_module_error(test_module(s, modulok))) {
-        if (strcmp(modulok[modulok.length() - 1].nev, "_main") == 0) {
+        if (strcmp(modulok[modulok.length() - 1]->getnev(), "_main") == 0) {
             std::cout << "main setted\n";
-            m_main = modulok[modulok.length() - 1].prot->copy();
+            m_main = modulok[modulok.length() - 1]->getprot()->copy();
             for (size_t i = 0; i < m_main->get_out_num(); i++)
-                m_main->set_wire(i, new wire_t);
+                m_main->set_wire(i, new wire_t, true);
             for (size_t i = 0; i < m_main->get_in_num(); i++)
                 w_inputs[i].add(m_main, i);
         }
     }
 }
-void input_handler_read(char* s, wire_t(&w_inputs)[26], lista<wire_t*>& wait_to_do_wires, uint8_t& mods, lista<prot_module_t>& modulok, module_t*& m_main, lista<char*>& insts) {
+/**
+ * A function to handle reading file, processing it.
+ *
+ * @param s the input file name
+ * @param w_inputs array of wire inputs
+ * @param wait_to_do_wires list of wire_t pointers to wires, waiting to be processed
+ * @param mods a uint8_t representing modifications
+ * @param modulok list of modules
+ * @param m_main pointer to the main module
+ * @param insts list of instructions
+ */
+void input_handler_read(char* s, wire_t(&w_inputs)[26], lista<wire_t*>& wait_to_do_wires, uint8_t& mods, lista<prot_module_t*>& modulok, module_t*& m_main, lista<char*>& insts) {
     std::ifstream inf(&(s[1]));
     if (inf.fail()) {
         inf.clear(); return;
@@ -274,6 +402,12 @@ void input_handler_read(char* s, wire_t(&w_inputs)[26], lista<wire_t*>& wait_to_
     }
     inf.close();
 }
+/**
+ * A function to handle writing instructions to file if the user wants.
+ *
+ * @param s the output file name
+ * @param insts list of instructions
+ */
 void input_handler_write(char* s, lista<char*>& insts) {
     std::ofstream outf(&(s[1]));
     if (outf.fail()) {
@@ -291,6 +425,17 @@ void input_handler_write(char* s, lista<char*>& insts) {
     }
     outf.close();
 }
+/**
+ * A function that handles input based on the given parameters.
+ *
+ * @param s the input character array
+ * @param w_inputs array of wire inputs
+ * @param wait_to_do_wires list of wire_t pointers to wires, waiting to be processed
+ * @param mods  a uint8_t representing modifications
+ * @param m_main pointer to the main module
+ *
+ * @return true if input handling is successful, false otherwise
+ */
 bool input_handler_do(char* s, wire_t(&w_inputs)[26], lista<wire_t*>& wait_to_do_wires, uint8_t& mods, module_t*& m_main) {
     size_t number;
     if(!instruct_handler(s, w_inputs, wait_to_do_wires, mods, number))return false;
@@ -313,12 +458,24 @@ bool input_handler_do(char* s, wire_t(&w_inputs)[26], lista<wire_t*>& wait_to_do
     }
     if ((mods & 0b00000001) != 0b00000001 && number != 0)
         print(m_main);
+    return true;
 }
 
-void input_handler(std::istream& in, wire_t(&w_inputs)[26], lista<wire_t*>& wait_to_do_wires, uint8_t& mods, lista<prot_module_t>& modulok, module_t*& m_main, lista<char*>& insts) {
+/**
+ * Handles input from the given input stream and performs various operations based on the input.
+ *
+ * @param in the input stream to read from
+ * @param w_inputs array of wire inputs
+ * @param wait_to_do_wires list of wire_t pointers to wires, waiting to be processed
+ * @param mods uint8_t representing modifications
+ * @param modulok list of prot_module_t pointers representing modules
+ * @param m_main pointer to the main module
+ * @param insts list of instructions
+ */
+void input_handler(std::istream& in, wire_t(&w_inputs)[26], lista<wire_t*>& wait_to_do_wires, uint8_t& mods, lista<prot_module_t*>& modulok, module_t*& m_main, lista<char*>& insts) {
     if ((mods & 0b10000000) == 0b10000000) return;
     char* s = getstring(in);
-    if (s[0] == '\0') return;
+    if (s[0] == '\0'){delete[] s; return;}
     insts.add(s);
     if (s[0] == '_') {//új module
         input_handler_module(s, w_inputs, modulok, m_main);
@@ -335,17 +492,24 @@ void input_handler(std::istream& in, wire_t(&w_inputs)[26], lista<wire_t*>& wait
 }
 
 
+/**
+ * Main function. That's all.
+ */
 int main()
 {
-    lista<prot_module_t> modulok;
+    lista<prot_module_t*> modulok;
     module_t* m_main = NULL;
     wire_t inputs[26];
     lista<wire_t*> wait_to_do_wires;
     lista<char*> insts;
     uint8_t mode=0;
-    size_t number = 0;
     while (!((mode&0b10000000) == 0b10000000)) {
         input_handler(std::cin, inputs, wait_to_do_wires, mode, modulok, m_main, insts);
     }
+    wait_to_do_wires.din();
+    modulok.din();
+    insts.dinl();
+    delete m_main;
+
     return 0;
 }

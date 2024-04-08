@@ -1,5 +1,2 @@
 ﻿  nharamkor_vs.cpp
-E:\Desktop\Cpp\nharamkor_vs\nharamkor_vs.cpp(201,23): warning C4018: '<': signed/unsigned mismatch
-E:\Desktop\Cpp\nharamkor_vs\nharamkor_vs.cpp(204,23): warning C4018: '<': signed/unsigned mismatch
-E:\Desktop\Cpp\nharamkor_vs\nharamkor_vs.cpp(154): warning C4715: 'test_module': not all control paths return a value
-  nharamkor_vs.vcxproj -> E:\Desktop\Cpp\nharamkor_vs\Debug\nharamkor_vs.exe
+  nharamkor_vs.vcxproj -> E:\Desktop\Cpp\logic_gate_simulation\Debug\nharamkor_vs.exe

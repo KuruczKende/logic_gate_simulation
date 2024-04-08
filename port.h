@@ -10,6 +10,6 @@ public:
     void setin(uint8_t ertek);
     module_t* get_module();
     size_t get_idx();
-    ~port_t() {}
+    ~port_t();
 };
 #endif

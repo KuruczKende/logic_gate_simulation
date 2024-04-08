@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cstring>
+#include "memtrace.h"
 
 #define low '0'
 #define high '1'
@@ -20,6 +21,8 @@ public:
     void add(lista<T>& addlist);
     size_t length();
     void rem(size_t i);
+    void din();
+    void dinl();
     ~lista(){
         delete next;
     }
