@@ -107,13 +107,13 @@ void comp_fill_module(bool copy, size_t m_db, size_t be_db, size_t ki_db, size_t
         k = 0;
         while (modules_coms[j] != ')') {
             if (modules_coms[j] == '-') {
-                modules[i]->set_wire(k++, &(wires[w_db - 1]), true);
+                modules[i]->set_wire(k++, &(wires[w_db - 1]));
                 j++;
             }
             else if ((size_t)(modules_coms[j] - 'a') < be_db + ki_db)
-                modules[i]->set_wire(k++, &(wires[modules_coms[j++] - 'a' - be_db]), true);
+                modules[i]->set_wire(k++, &(wires[modules_coms[j++] - 'a' - be_db]));
             else
-                modules[i]->set_wire(k++, &(wires[modules_coms[j++] - 'A' + ki_db]), true);
+                modules[i]->set_wire(k++, &(wires[modules_coms[j++] - 'A' + ki_db]));
         }
     }
     for (size_t i = 0; i < ki_db; i++)
@@ -134,7 +134,7 @@ comp_module_t::comp_module_t(char* modules_coms, lista<prot_module_t*>& prot_mod
         this->ki_wires = NULL;
     }
     this->modules_coms = new char[strlen(modules_coms) + 1];
-    strcpy(this->modules_coms, modules_coms);
+    strcpy_s(this->modules_coms, strlen(modules_coms) + 1, modules_coms);
     size_t ki_db;
     lista<size_t> vegk;
     lista<size_t> kezk;
@@ -178,7 +178,7 @@ module_t* comp_module_t::copy() {
     ki_db = get_out_num();
     comp_module_t* ret = new comp_module_t(be_db, ki_db, m_db, w_db);
     ret->modules_coms = new char[strlen(modules_coms) + 1];
-    strcpy(ret->modules_coms, modules_coms);
+    strcpy_s(ret->modules_coms, strlen(modules_coms) + 1, modules_coms);
     lista<size_t> vegk;
     lista<size_t> kezk;
     size_t kuka;
@@ -212,25 +212,23 @@ uint8_t comp_module_t::get_out_ertek(size_t i) {
  * @param wire the wire to set at the specified index
  * @param del a boolean indicating whether to delete the existing wire at the index before setting the new wire
  */
-void comp_module_t::set_wire(size_t index, wire_t* wire, bool del) {
-    end_module.set_wire(index, wire, del);
+void comp_module_t::set_wire(size_t index, wire_t* wire) {
+    end_module.set_wire(index, wire);
 }
 /**
  * Destructor for the comp_module_t class, responsible for cleaning up memory and resources.
  */
 comp_module_t::~comp_module_t(){
     delete[] wires;
+    wires = NULL;
     if (modules != NULL) {
         for (size_t i = 0; i < m_db; i++) {
-            for(int j=0;j<modules[i]->get_out_num();j++)
-                modules[i]->set_wire(j, NULL, false);
-            delete (modules[i]);
+            delete modules[i];
             modules[i] = NULL;
         }
         delete[] modules;
         modules = NULL;
     }
     delete[] modules_coms;
-    wires = NULL;
     modules_coms = NULL;
 }

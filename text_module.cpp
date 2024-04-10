@@ -116,7 +116,7 @@ text_module_t::text_module_t(const char* parancsok) {
     be_db = 0;
     int idx = -1;
     this->parancsok = new char[strlen(parancsok) + 1];
-    strcpy(this->parancsok, parancsok);
+    strcpy_s(this->parancsok, strlen(parancsok) + 1, parancsok);
     while (parancsok[++idx] != '\0') {
         if (parancsok[idx] == ',')
             ki_db++;
@@ -136,7 +136,7 @@ text_module_t::text_module_t(const char* parancsok) {
     be_old = new uint8_t[be_db];
     for (size_t i = 0; i < be_db; i++) be_old[i] = undet;
     ki_wires = new wire_t * [ki_db];
-    for (size_t i = 0; i < ki_db; i++) ki_wires[i] = new wire_t();
+    for (size_t i = 0; i < ki_db; i++) ki_wires[i] = NULL;
 }
 text_module_t::text_module_t(const text_module_t& refe):text_module_t(refe.parancsok) {
 }

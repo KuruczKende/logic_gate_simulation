@@ -12,7 +12,7 @@ public:
     virtual module_t* copy() = 0;
     virtual void vegrehajtas(lista<wire_t*>& wait_for_do) {};
     virtual void setin(size_t index, uint8_t ertek) = 0;
-    virtual void set_wire(size_t index, wire_t* wire, bool del);
+    virtual void set_wire(size_t index, wire_t* wire);
     virtual bool tri_mods(lista<module_t*>& wait_for_do, size_t idx) { return true; };
     virtual size_t get_out_num() { return ki_db; }
     virtual uint8_t get_out_ertek(size_t i) { return ki_wires[i]->get(); }

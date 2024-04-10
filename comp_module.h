@@ -16,7 +16,7 @@ public:
     module_t* copy() override;
     size_t get_out_num();
     uint8_t get_out_ertek(size_t i);
-    void set_wire(size_t index, wire_t* wire, bool del)override;
+    void set_wire(size_t index, wire_t* wire)override;
     ~comp_module_t();
 };
 #endif

@@ -88,16 +88,17 @@ uint8_t kisbetujo(const char* str) {
             notch = true;
         }
         else if (str[i] == '&' || str[i] == '|' || str[i] == '^' || str[i] == ',') {
-            if(!(ertek || notch)) return 2;//hibas forma
+            if (!(ertek || notch)) return 2;//hibas forma
             ertek = false;
             notch = false;
         }
         else if (islower(str[i]) || str[i] == '0' || str[i] == '1') {
-            if(ertek) return 2;//hibas forma
+            if (ertek) return 2;//hibas forma
             ertek = true;
             notch = false;
             if (islower(str[i])) b[str[i] - 'a'] = true;
         }
+        else return 3;
     }
     int j = 0;
     while (b[j++]);
@@ -205,7 +206,7 @@ uint8_t modulesteszt(const char* str, lista<prot_module_t*>& modules) {
 uint8_t test_module(const char* str, lista<prot_module_t*>& modulok, bool add = true) {
     char* nev = new char[strlen(str)+1];
     char* parancsok = nev;
-    strcpy(nev, str);
+    strcpy_s(nev, strlen(str) + 1, str);
     while (*parancsok != ':' && *parancsok != '\0') parancsok++;
     if (*parancsok == '\0') {
         delete[] nev; return 1;//nincs :
@@ -345,6 +346,7 @@ bool print_module_error(uint8_t err) {
     case 10: std::cout << "rossz outputszam comp_module-ban\n"; return false;
     case 11: std::cout << "nem jo bekotes text_module-ban\n"; return false;
     case 12: std::cout << "nem jo forma text_module-ban\n"; return false;
+    case 13: std::cout << "nagybetu a text_module-ban\n"; return false;
     default: std::cout << "unhandlered error\n"; return false;
     }
 }
@@ -399,7 +401,7 @@ void input_handler_module(char* s, wire_t(&w_inputs)[26], lista<prot_module_t*>&
             std::cout << "main setted\n";
             m_main = modulok[modulok.length() - 1]->getprot()->copy();
             for (size_t i = 0; i < m_main->get_out_num(); i++)
-                m_main->set_wire(i, new wire_t, true);
+                m_main->set_wire(i, new wire_t);
             for (size_t i = 0; i < m_main->get_in_num(); i++)
                 w_inputs[i].add(m_main, i);
         }
