@@ -5,7 +5,6 @@
 #include <fstream>
 #include "comp_module.h"
 #include "text_module.h"
-#include "wire.h"
 #include "karakter_keszlet.h"
 
 /**
@@ -285,7 +284,7 @@ bool instruct_handler_char_handler(uint8_t* inputs, uint8_t c, T& state, uint8_t
  *
  * @return true if the function execution is successful, false otherwise
  */
-bool instruct_handler(char* s, wire_t (&w_inputs)[26], lista<wire_t*>& wait_to_do_wires, uint8_t& mods, size_t& number) {
+bool instruct_handler(char* s, wire_t (&w_inputs)[26], lista<module_t*>& wait_to_do_wires, uint8_t& mods, size_t& number) {
     enum{input, num, mod}state = input;
     uint8_t inputs[26];
     for (size_t i = 0; i < 26; i++)
@@ -386,7 +385,7 @@ void print(module_t*& m_main, bool kezd = true, bool lezar = true) {
         std::cout << (char)217 << '\n';
     }
 }
-void input_handler(std::istream& in, wire_t(&w_inputs)[26], lista<wire_t*>& wait_to_do_wires, uint8_t& mods, lista<prot_module_t*>& modulok, module_t*& m_main, lista<char*>& insts);
+void input_handler(std::istream& in, wire_t(&w_inputs)[26], lista<module_t*>& wait_to_do_wires, uint8_t& mods, lista<prot_module_t*>& modulok, module_t*& m_main, lista<char*>& insts);
 /**
  * Handles input for new module and sets the main module if the module is "_main".
  *
@@ -418,7 +417,7 @@ void input_handler_module(char* s, wire_t(&w_inputs)[26], lista<prot_module_t*>&
  * @param m_main pointer to the main module
  * @param insts list of instructions
  */
-void input_handler_read(char* s, wire_t(&w_inputs)[26], lista<wire_t*>& wait_to_do_wires, uint8_t& mods, lista<prot_module_t*>& modulok, module_t*& m_main, lista<char*>& insts) {
+void input_handler_read(char* s, wire_t(&w_inputs)[26], lista<module_t*>& wait_to_do_wires, uint8_t& mods, lista<prot_module_t*>& modulok, module_t*& m_main, lista<char*>& insts) {
     std::ifstream inf(&(s[1]));
     if (inf.fail()) {
         inf.clear(); return;
@@ -463,19 +462,15 @@ void input_handler_write(char* s, lista<char*>& insts) {
  *
  * @return true if input handling is successful, false otherwise
  */
-bool input_handler_do(char* s, wire_t(&w_inputs)[26], lista<wire_t*>& wait_to_do_wires, uint8_t& mods, module_t*& m_main) {
+bool input_handler_do(char* s, uint8_t(&w_inputs)[26], lista<module_t*>& wait_to_do_wires, uint8_t& mods, module_t*& m_main) {
     size_t number;
     if(!instruct_handler(s, w_inputs, wait_to_do_wires, mods, number))return false;
     if ((mods & 0b00000010) == 0b00000010) {
         mods &= 0b11111101;
         //console clear
     }
-    lista<module_t*> wait_to_do_modules;
+    lista<module_t*> wait_to_do_modules2;
     for (size_t i = 0; i < number; i++) {
-        while (wait_to_do_wires.length() > 0) {
-            wait_to_do_wires[0]->doit(wait_to_do_modules);
-            wait_to_do_wires.rem(0);
-        }
         while (wait_to_do_modules.length() > 0) {
             wait_to_do_modules[0]->vegrehajtas(wait_to_do_wires);
             wait_to_do_modules.rem(0);
@@ -499,7 +494,7 @@ bool input_handler_do(char* s, wire_t(&w_inputs)[26], lista<wire_t*>& wait_to_do
  * @param m_main pointer to the main module
  * @param insts list of instructions
  */
-void input_handler(std::istream& in, wire_t(&w_inputs)[26], lista<wire_t*>& wait_to_do_wires, uint8_t& mods, lista<prot_module_t*>& modulok, module_t*& m_main, lista<char*>& insts) {
+void input_handler(std::istream& in, uint8_t(&w_inputs)[26], lista<module_t*>& wait_to_do_modules, uint8_t& mods, lista<prot_module_t*>& modulok, module_t*& m_main, lista<char*>& insts) {
     if ((mods & 0b10000000) == 0b10000000) return;
     char* s = getstring(in);
     if (s[0] == '\0'){delete[] s; return;}
@@ -508,13 +503,13 @@ void input_handler(std::istream& in, wire_t(&w_inputs)[26], lista<wire_t*>& wait
         input_handler_module(s, w_inputs, modulok, m_main);
     }
     else if (s[0] == '<') {//fájlból olvasás
-        input_handler_read(s, w_inputs, wait_to_do_wires, mods, modulok, m_main, insts);
+        input_handler_read(s, w_inputs, wait_to_do_modules, mods, modulok, m_main, insts);
     }
     else if (s[0] == '>') {//fájlba írás
         input_handler_write(s, insts);
     }
     else {//végrehajtás
-        if(!input_handler_do(s, w_inputs, wait_to_do_wires, mods, m_main))std::cout<<"rossz vegrehajtas utasitas\n";
+        if(!input_handler_do(s, w_inputs, wait_to_do_modules, mods, m_main))std::cout<<"rossz vegrehajtas utasitas\n";
     }
 }
 
@@ -526,17 +521,18 @@ int main()
 {
     lista<prot_module_t*> modulok;
     module_t* m_main = NULL;
-    wire_t inputs[26];
-    lista<wire_t*> wait_to_do_wires;
+    uint8_t inputs[26];
+    lista<module_t*> wait_to_do_modules;
     lista<char*> insts;
     uint8_t mode=0;
     while (!((mode&0b10000000) == 0b10000000)) {
-        input_handler(std::cin, inputs, wait_to_do_wires, mode, modulok, m_main, insts);
+        input_handler(std::cin, inputs, wait_to_do_modules, mode, modulok, m_main, insts);
     }
-    wait_to_do_wires.din();
+    wait_to_do_modules.din();
     modulok.din();
     insts.dinl();
     delete m_main;
 
     return 0;
 }
+//TODO ez a file

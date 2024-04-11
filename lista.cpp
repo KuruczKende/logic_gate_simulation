@@ -143,7 +143,38 @@ void lista<size_t>::rem(size_t i){
     }
     else throw "over indexed";
 }
-//port_t*
+//module_t*
+template<>
+void lista<module_t*>::add(module_t* ertek) {
+    if (next == NULL){
+        next = new lista<module_t*>();
+        elem=ertek;
+    }
+    else
+        next->add(ertek);
+}
+template<>
+void lista<module_t*>::add(lista<module_t*>& addlist) {
+    for (size_t i = 0; i < addlist.length(); i++)
+        add(addlist[i]);
+}
+template<>
+void lista<module_t*>::rem(size_t i) {
+    if (0 > i)throw "under indexed";
+    if (length() > i) {
+        if (i == 0) {
+            lista<module_t*>* n = next;
+            elem = n->elem;
+            next = n->next;
+            n->next = NULL;
+            delete n;
+        }
+        else
+            next->rem(i - 1);
+    }
+    else throw "over indexed";
+}
+/*//port_t*
 template<>
 size_t lista<port_t*>::length() {
     if (next == NULL)
@@ -180,10 +211,23 @@ void lista<port_t*>::din() {//delete inner
 }
 //module_t*
 template<>
+size_t lista<module_t*>::length() {
+    if (next == NULL)
+        return 0;
+    return next->length() + 1;
+}
+template<>
+module_t*& lista<module_t*>::operator[](size_t i) {
+    if (0 > i)throw "under indexed";
+    if (length() > i)
+        return *getin(i);
+    throw "over indexed";
+}
+template<>
 void lista<module_t*>::add(module_t* ertek) {
-    if (next == NULL){
+    if (next == NULL) {
         next = new lista<module_t*>();
-        elem=ertek;
+        elem = ertek;
     }
     else
         next->add(ertek);
@@ -209,56 +253,12 @@ void lista<module_t*>::rem(size_t i) {
     }
     else throw "over indexed";
 }
-//wire_t*
 template<>
-size_t lista<wire_t*>::length() {
-    if (next == NULL)
-        return 0;
-    return next->length() + 1;
-}
-template<>
-wire_t*& lista<wire_t*>::operator[](size_t i) {
-    if (0 > i)throw "under indexed";
-    if (length() > i)
-        return *getin(i);
-    throw "over indexed";
-}
-template<>
-void lista<wire_t*>::add(wire_t* ertek) {
-    if (next == NULL) {
-        next = new lista<wire_t*>();
-        elem = ertek;
-    }
-    else
-        next->add(ertek);
-}
-template<>
-void lista<wire_t*>::add(lista<wire_t*>& addlist) {
-    for (size_t i = 0; i < addlist.length(); i++)
-        add(addlist[i]);
-}
-template<>
-void lista<wire_t*>::rem(size_t i) {
-    if (0 > i)throw "under indexed";
-    if (length() > i) {
-        if (i == 0) {
-            lista<wire_t*>* n = next;
-            elem = n->elem;
-            next = n->next;
-            n->next = NULL;
-            delete n;
-        }
-        else
-            next->rem(i - 1);
-    }
-    else throw "over indexed";
-}
-template<>
-void lista<wire_t*>::din() {//delete inner list
+void lista<module_t*>::din() {//delete inner list
     if (next == NULL)return;
     next->din();
     delete elem;
-}
+}*/
 //prot_module_t*
 template<>
 size_t lista<prot_module_t*>::length(){

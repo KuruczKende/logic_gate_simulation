@@ -28,7 +28,7 @@ bool eggyezik(const char* str, const char* str2, size_t kez, size_t veg) {
  * @param ki_db the calculated number of outputs based on characters in modules_coms
  * @param w_db the calculated number of wires based on characters in modules_coms
  */
-void muvcount(char* modules_coms, lista<size_t>& vegk, lista<size_t>& kezk, size_t& m_db, size_t& be_db, size_t& ki_db, size_t& w_db) {
+void muvcount(char* modules_coms, lista<size_t>& vegk, lista<size_t>& kezk, size_t& m_db, size_t& be_db, size_t& ki_db) {
     m_db = 0;
     bool port = false, outport = false;
     uint8_t max_inner = 'A' - 1, max_in = 'a' - 1, max_out = 'a' - 1, min_out = 'z' + 1;
@@ -59,10 +59,28 @@ void muvcount(char* modules_coms, lista<size_t>& vegk, lista<size_t>& kezk, size
     }
     be_db = (min_out - 1 < max_in ? min_out - 1 : max_in) - 'a' + 1;
     ki_db = max_out - 'a' + 1 - be_db;
-    if (max_inner >= 'A')
-        w_db = max_inner - 'A' + 2 + ki_db;
-    else
-        w_db = ki_db + 1;
+}
+void comp_module_t::set_connection(char c, module_t*& base, size_t ki_index) {
+    size_t m_index = 0;
+    size_t portszam = 0;
+    for (size_t i = 0; i < strlen(modules_coms); i++) {
+        while (modules_coms[i] != '(' && i < strlen(modules_coms))i++;
+        if (i < strlen(modules_coms)) {
+            i++;
+            portszam = 0;
+            while (modules_coms[i] != ',') {
+                if (modules_coms[i] == c) {
+                    if (c < be_db + 'a')
+                        ki_ports[be_db - 'a'].add(port<module_t*>{modules[m_index], portszam});
+                    else
+                        base->set_ki_port(ki_index, modules[m_index], portszam);
+                }
+                i++;
+                portszam++;
+            }
+        }
+        m_index++;
+    }
 }
 /**
  * Fills modules based on previous calculations.
@@ -82,7 +100,7 @@ void muvcount(char* modules_coms, lista<size_t>& vegk, lista<size_t>& kezk, size
  * @param prot_modules list of modules prototypes
  * @param modules_ref reference to modules
  */
-void comp_fill_module(bool copy, size_t m_db, size_t be_db, size_t ki_db, size_t w_db, char* modules_coms, lista<size_t>& vegk, lista<size_t>& kezk, module_t**& modules, module_t& end_module, wire_t**& ki_wires, wire_t*& wires, lista<prot_module_t*>* prot_modules, module_t**& modules_ref) {
+void comp_module_t::comp_fill_module(bool copy, lista<size_t>& vegk, lista<size_t>& kezk, lista<prot_module_t*>* prot_modules, module_t**& modules_ref) {
     for (size_t i = 0; i < m_db; i++) {
         size_t j = 0;
         if (!copy) {
@@ -95,29 +113,19 @@ void comp_fill_module(bool copy, size_t m_db, size_t be_db, size_t ki_db, size_t
         size_t k = 0;
         while (modules_coms[j] != ',') {
             if (modules_coms[j] == '0' || modules_coms[j] == '1')
-                modules[i]->setin(k++, modules_coms[j++]);
-            else if ((size_t)(modules_coms[j] - 'a') < be_db)
-                ki_wires[modules_coms[j++] - 'a']->add(modules[i], k++);
-            else if ((size_t)(modules_coms[j] - 'a') < be_db + ki_db)
-                wires[modules_coms[j++] - 'a' - be_db].add(modules[i], k++);
-            else
-                wires[modules_coms[j++] - 'A' + ki_db].add(modules[i], k++);
+                modules[i]->set_be(k++, modules_coms[j++]);
         }
         j++;
         k = 0;
         while (modules_coms[j] != ')') {
             if (modules_coms[j] == '-') {
-                modules[i]->set_wire(k++, &(wires[w_db - 1]));
+                k++;
                 j++;
             }
-            else if ((size_t)(modules_coms[j] - 'a') < be_db + ki_db)
-                modules[i]->set_wire(k++, &(wires[modules_coms[j++] - 'a' - be_db]));
             else
-                modules[i]->set_wire(k++, &(wires[modules_coms[j++] - 'A' + ki_db]));
+                set_connection(modules_coms[j++], modules[i], k++);
         }
     }
-    for (size_t i = 0; i < ki_db; i++)
-        wires[i].add(&end_module, i);
 }
 
 /**
@@ -127,26 +135,16 @@ void comp_fill_module(bool copy, size_t m_db, size_t be_db, size_t ki_db, size_t
  * @param prot_modules list of modules prototypes
  */
 comp_module_t::comp_module_t(char* modules_coms, lista<prot_module_t*>& prot_modules) {
-    if (this->ki_wires != NULL) {
-        for (size_t i = 0; i < this->ki_db; i++)
-            delete this->ki_wires[i];
-        delete[] this->ki_wires;
-        this->ki_wires = NULL;
-    }
     this->modules_coms = new char[strlen(modules_coms) + 1];
     strcpy_s(this->modules_coms, strlen(modules_coms) + 1, modules_coms);
     size_t ki_db;
     lista<size_t> vegk;
     lista<size_t> kezk;
-    muvcount(modules_coms, vegk, kezk, m_db, this->be_db, ki_db, w_db);
+    muvcount(modules_coms, vegk, kezk, m_db, this->be_db, ki_db);
     this->ki_db = be_db;
     end_module.init(ki_db);
-    ki_wires = new wire_t * [be_db];
-    for (size_t i = 0; i < be_db; i++)
-        ki_wires[i] = new wire_t();
     modules = new module_t * [m_db];
-    wires = new wire_t[w_db];
-    comp_fill_module(false, m_db, be_db, ki_db, w_db, modules_coms, vegk, kezk, modules, end_module, ki_wires, wires, &prot_modules, modules);
+    comp_fill_module(false, vegk, kezk, &prot_modules, modules);
 }
 /**
  * Constructor for comp_module_t class.
@@ -156,79 +154,34 @@ comp_module_t::comp_module_t(char* modules_coms, lista<prot_module_t*>& prot_mod
  * @param m_db number of the modules
  * @param w_db number of wires
  */
-comp_module_t::comp_module_t(size_t be_db, size_t ki_db, size_t m_db, size_t w_db) {
-    modules_coms = NULL;
-    if (this->ki_wires != NULL) {
-        for (size_t i = 0; i < this->ki_db; i++)
-            delete this->ki_wires[i];
-        delete[] this->ki_wires;
-        this->ki_wires = NULL;
-    }
+comp_module_t::comp_module_t(size_t be_db, size_t ki_db, size_t m_db) {
     this->be_db = this->ki_db = be_db;
     this->m_db = m_db;
-    this->w_db = w_db;
     end_module.init(ki_db);
     modules = new module_t * [m_db];
-    ki_wires = new wire_t * [be_db];
-    for (size_t i = 0; i < be_db; i++)
-        ki_wires[i] = new wire_t();
-    wires = new wire_t[w_db];
 }
 module_t* comp_module_t::copy() {
-    ki_db = get_out_num();
-    comp_module_t* ret = new comp_module_t(be_db, ki_db, m_db, w_db);
+    ki_db = get_ki_num();
+    comp_module_t* ret = new comp_module_t(be_db, ki_db, m_db);
     ret->modules_coms = new char[strlen(modules_coms) + 1];
     strcpy_s(ret->modules_coms, strlen(modules_coms) + 1, modules_coms);
     lista<size_t> vegk;
     lista<size_t> kezk;
     size_t kuka;
-    muvcount(modules_coms, vegk, kezk, kuka, kuka, kuka, kuka);
-    comp_fill_module(true, m_db, be_db, ki_db, w_db, modules_coms, vegk, kezk, ret->modules, ret->end_module, ret->ki_wires, ret->wires, NULL, this->modules);
+    muvcount(modules_coms, vegk, kezk, kuka, kuka, kuka);
+    ret->comp_fill_module(true, vegk, kezk, nullptr, modules);
     ki_db = be_db;
     return ret;
-}
-/**
- * Retrieves the output number of the comp module.
- *
- * @return the value of the output number
- */
-size_t comp_module_t::get_out_num() {
-    return end_module.get_out_num();
-}
-/**
- * Retrieves a value from the text module outputs at the specified index.
- *
- * @param i index of the value in outputs to retrieve
- *
- * @return the value of outputs at the specified index
- */
-uint8_t comp_module_t::get_out_ertek(size_t i) {
-    return end_module.get_out_ertek(i);
-}
-/**
- * Sets the output wire at the specified index in the module.
- *
- * @param index the index where the wire will be set
- * @param wire the wire to set at the specified index
- * @param del a boolean indicating whether to delete the existing wire at the index before setting the new wire
- */
-void comp_module_t::set_wire(size_t index, wire_t* wire) {
-    end_module.set_wire(index, wire);
 }
 /**
  * Destructor for the comp_module_t class, responsible for cleaning up memory and resources.
  */
 comp_module_t::~comp_module_t(){
-    delete[] wires;
-    wires = NULL;
-    if (modules != NULL) {
+    if (modules != nullptr) {
         for (size_t i = 0; i < m_db; i++) {
             delete modules[i];
-            modules[i] = NULL;
         }
         delete[] modules;
-        modules = NULL;
     }
     delete[] modules_coms;
-    modules_coms = NULL;
 }

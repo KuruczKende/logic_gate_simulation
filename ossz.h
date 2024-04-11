@@ -27,12 +27,11 @@ public:
         delete next;
     }
 };
-class wire_t;
 class module_t;
 class text_module_t;
 class shell_module_t;
 class comp_module_t;
-class port_t;
+
 class prot_module_t;
 
 bool eggyezik(const char* str, const char* str2, size_t kez, size_t veg);

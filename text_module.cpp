@@ -135,8 +135,7 @@ text_module_t::text_module_t(const char* parancsok) {
     for (size_t i = 0; i < be_db; i++) be_ertek[i] = undet;
     be_old = new uint8_t[be_db];
     for (size_t i = 0; i < be_db; i++) be_old[i] = undet;
-    ki_wires = new wire_t * [ki_db];
-    for (size_t i = 0; i < ki_db; i++) ki_wires[i] = NULL;
+    ki_ports = new lista<port<module_t*>> [ki_db];
 }
 text_module_t::text_module_t(const text_module_t& refe):text_module_t(refe.parancsok) {
 }
@@ -230,12 +229,19 @@ void vegrehajt(size_t& maxfsag, lista<size_t>& hely, lista<size_t>& fsag, char*&
         }
     }
 }
+void text_module_t::set_ki(size_t index, uint8_t ertek, lista<module_t*>& wait_for_do) {
+    ki_ertek[index] = ertek;
+    for (size_t i = 0; i < ki_ports[index].length(); i++) {
+        port<module_t*> p = ki_ports[index][i];
+        p.modulep->set_be(p.portszam, ertek, wait_for_do);
+    }
+}
 /**
  * Executes the logic for vegrehajtas.
  *
  * @param wait_for_do list of wire_t pointers to wires, waiting to be processed
  */
-void text_module_t::vegrehajtas(lista<wire_t*>& wait_for_do) {
+void text_module_t::vegrehajtas(lista<module_t*>& wait_for_do) {
     size_t kez = 0, veg = 0;
     for (size_t i = 0; i < ki_db; i++) {
         while (parancsok[veg] != ',' && parancsok[veg] != '\0')veg++;
@@ -266,9 +272,7 @@ void text_module_t::vegrehajtas(lista<wire_t*>& wait_for_do) {
             }//m�veleti lista befejezve
             vegrehajt(maxfsag, hely, fsag, ideiglenes, hossz);
             if (ideiglenes[0] != ki_ertek[i]) {
-                ki_ertek[i] = ideiglenes[0];
-                ki_wires[i]->set(ki_ertek[i]);
-                wait_for_do.add(ki_wires[i]);
+                set_ki(i, ideiglenes[0], wait_for_do);
             }
             delete[] ideiglenes;
         }
@@ -277,27 +281,6 @@ void text_module_t::vegrehajtas(lista<wire_t*>& wait_for_do) {
     }
     for (size_t i = 0; i < be_db; i++)
         be_old[i] = be_ertek[i];
-}
-/**
- * Retrieves a value from the text module inputs at the specified index.
- *
- * @param i index of the value in inputs to retrieve
- *
- * @return the value of inputs at the specified index
- */
-uint8_t text_module_t::get_in_ertek(size_t i) {
-    return be_ertek[i];
-}
-/**
- * Sets the value at the specified index in the inputs.
- *
- * @param index the index at which to set the value
- * @param ertek the value to set
- */
-void text_module_t::setin(size_t index, uint8_t ertek) {
-    if (index >= be_db)throw "over indexed";
-    if (index < 0)throw "under indexed";
-    be_ertek[index] = ertek;
 }
 /**
  * Destructor for the text_module_t class. Deletes the dynamically allocated memory.
