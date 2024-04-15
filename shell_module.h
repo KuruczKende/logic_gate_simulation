@@ -6,6 +6,7 @@ public:
     shell_module_t(size_t ports = 0);
     void init(size_t ports);
     module_t* copy() override;
+    void add_to_list(lista<module_t*>& wait_for_do, size_t be) override;
     void set_be(size_t index, uint8_t ertek) override;
     virtual ~shell_module_t();
 };

@@ -1,6 +1,6 @@
 #include "ossz.h"
+#include "module.h"
 #include "prot_modules.h"
-#include "port.h"
 
 /**
  * Retrieve the element at index i in the lista.
@@ -144,7 +144,7 @@ void lista<size_t>::rem(size_t i){
     else throw "over indexed";
 }
 //module_t*
-template<>
+/*template<>
 void lista<module_t*>::add(module_t* ertek) {
     if (next == NULL){
         next = new lista<module_t*>();
@@ -152,7 +152,7 @@ void lista<module_t*>::add(module_t* ertek) {
     }
     else
         next->add(ertek);
-}
+}*/
 template<>
 void lista<module_t*>::add(lista<module_t*>& addlist) {
     for (size_t i = 0; i < addlist.length(); i++)
@@ -174,15 +174,15 @@ void lista<module_t*>::rem(size_t i) {
     }
     else throw "over indexed";
 }
-/*//port_t*
+//port_t*
 template<>
-size_t lista<port_t*>::length() {
+size_t lista<port<module_t*>>::length() {
     if (next == NULL)
         return 0;
     return next->length() + 1;
 }
 template<>
-port_t*& lista<port_t*>::operator[](size_t i) {
+port<module_t*>& lista<port<module_t*>>::operator[](size_t i) {
     if (0 > i)throw "under indexed";
     if (length() > i)
         return *getin(i);
@@ -190,75 +190,26 @@ port_t*& lista<port_t*>::operator[](size_t i) {
 }
 
 template<>
-void lista<port_t*>::add(port_t* ertek) {
+void lista<port<module_t*>>::add(port<module_t*> ertek) {
     if (next == NULL){
-        next = new lista<port_t*>();
+        next = new lista<port<module_t*>>();
         elem=ertek;
     }
     else
         next->add(ertek);
 }
 template<>
-void lista<port_t*>::add(lista<port_t*>& addlist) {
+void lista<port<module_t*>>::add(lista<port<module_t*>>& addlist) {
     for (size_t i = 0; i < addlist.length(); i++)
         add(addlist[i]);
-}
-template<>
-void lista<port_t*>::din() {//delete inner
-    if (next == NULL)return;
-    next->din();
-    delete elem;
 }
 //module_t*
-template<>
-size_t lista<module_t*>::length() {
-    if (next == NULL)
-        return 0;
-    return next->length() + 1;
-}
-template<>
-module_t*& lista<module_t*>::operator[](size_t i) {
-    if (0 > i)throw "under indexed";
-    if (length() > i)
-        return *getin(i);
-    throw "over indexed";
-}
-template<>
-void lista<module_t*>::add(module_t* ertek) {
-    if (next == NULL) {
-        next = new lista<module_t*>();
-        elem = ertek;
-    }
-    else
-        next->add(ertek);
-}
-template<>
-void lista<module_t*>::add(lista<module_t*>& addlist) {
-    for (size_t i = 0; i < addlist.length(); i++)
-        add(addlist[i]);
-}
-template<>
-void lista<module_t*>::rem(size_t i) {
-    if (0 > i)throw "under indexed";
-    if (length() > i) {
-        if (i == 0) {
-            lista<module_t*>* n = next;
-            elem = n->elem;
-            next = n->next;
-            n->next = NULL;
-            delete n;
-        }
-        else
-            next->rem(i - 1);
-    }
-    else throw "over indexed";
-}
 template<>
 void lista<module_t*>::din() {//delete inner list
     if (next == NULL)return;
     next->din();
     delete elem;
-}*/
+}
 //prot_module_t*
 template<>
 size_t lista<prot_module_t*>::length(){

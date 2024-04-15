@@ -24,12 +24,6 @@
     <ClCompile Include="module.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="port.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="wire.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="comp_module.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -60,12 +54,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="shell_module.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="wire.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="port.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="prot_modules.h">

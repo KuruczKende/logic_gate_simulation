@@ -144,11 +144,9 @@
     <ClCompile Include="memtrace.cpp" />
     <ClCompile Include="module.cpp" />
     <ClCompile Include="nharamkor_vs.cpp" />
-    <ClCompile Include="port.cpp" />
     <ClCompile Include="prot_modules.cpp" />
     <ClCompile Include="shell_module.cpp" />
     <ClCompile Include="text_module.cpp" />
-    <ClCompile Include="wire.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="comp_module.h" />
@@ -156,11 +154,9 @@
     <ClInclude Include="memtrace.h" />
     <ClInclude Include="module.h" />
     <ClInclude Include="ossz.h" />
-    <ClInclude Include="port.h" />
     <ClInclude Include="prot_modules.h" />
     <ClInclude Include="shell_module.h" />
     <ClInclude Include="text_module.h" />
-    <ClInclude Include="wire.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

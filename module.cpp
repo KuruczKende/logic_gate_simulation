@@ -1,5 +1,4 @@
 #include "module.h"
-#include "wire.h"
 
 void module_t::set_ki_port(size_t ki_index, module_t* modulep, size_t be_index) {
     if (ki_index >= ki_db)throw "over indexed";

@@ -33,6 +33,8 @@ void shell_module_t::init(size_t ports) {
     }
     else {
         ki_ertek = be_ertek = new uint8_t[ports];
+        for (size_t i = 0; i < ports; i++)
+            ki_ertek[i] = '?';
         ki_ports = new lista<port<module_t*>>[ports];
     }
 }
@@ -49,6 +51,13 @@ void shell_module_t::set_be(size_t index, uint8_t ertek) {
     for (size_t i = 0; i < ki_ports[index].length(); i++) {
         port<module_t*> p = ki_ports[index][i];
         p.modulep->set_be(p.portszam, ertek);
+    }
+}
+
+void shell_module_t::add_to_list(lista<module_t*>& wait_for_do, size_t be) {
+    for (size_t i = 0; i < ki_ports[be].length(); i++) {
+        port<module_t*> p = ki_ports[be][i];
+        p.modulep->add_to_list(wait_for_do, p.portszam);
     }
 }
 /**

@@ -20,6 +20,7 @@ public:
     module_t() :be_db(0), ki_db(0), be_ertek(nullptr), ki_ertek(nullptr), ki_ports(nullptr){};
     virtual module_t* copy() = 0;
     virtual void vegrehajtas(lista<module_t*>& wait_for_do) { return; }
+    virtual void add_to_list(lista<module_t*>& wait_for_do, size_t be) { wait_for_do.add(this); }
     virtual void set_be(size_t index, uint8_t ertek) { be_ertek[index] = ertek; };
     virtual void set_ki_port(size_t ki_index, module_t* modulep, size_t be_index);
     virtual size_t get_ki_num() { return ki_db; }
@@ -27,5 +28,12 @@ public:
     size_t get_be_num() { return be_db; }
     uint8_t get_be_ertek(size_t i) { return be_ertek[i]; }
     virtual ~module_t();
+};
+
+template<>
+struct port<module_t*>
+{
+    module_t* modulep;
+    size_t portszam;
 };
 #endif

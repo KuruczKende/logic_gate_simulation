@@ -137,8 +137,7 @@ text_module_t::text_module_t(const char* parancsok) {
     for (size_t i = 0; i < be_db; i++) be_old[i] = undet;
     ki_ports = new lista<port<module_t*>> [ki_db];
 }
-text_module_t::text_module_t(const text_module_t& refe):text_module_t(refe.parancsok) {
-}
+text_module_t::text_module_t(const text_module_t& refe):text_module_t(refe.parancsok) {}
 module_t* text_module_t::copy() {
     return new text_module_t(*this);
 }
@@ -233,7 +232,8 @@ void text_module_t::set_ki(size_t index, uint8_t ertek, lista<module_t*>& wait_f
     ki_ertek[index] = ertek;
     for (size_t i = 0; i < ki_ports[index].length(); i++) {
         port<module_t*> p = ki_ports[index][i];
-        p.modulep->set_be(p.portszam, ertek, wait_for_do);
+        p.modulep->set_be(p.portszam, ertek);
+        p.modulep->add_to_list(wait_for_do, p.portszam);
     }
 }
 /**

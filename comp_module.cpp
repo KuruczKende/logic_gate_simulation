@@ -70,10 +70,7 @@ void comp_module_t::set_connection(char c, module_t*& base, size_t ki_index) {
             portszam = 0;
             while (modules_coms[i] != ',') {
                 if (modules_coms[i] == c) {
-                    if (c < be_db + 'a')
-                        ki_ports[be_db - 'a'].add(port<module_t*>{modules[m_index], portszam});
-                    else
-                        base->set_ki_port(ki_index, modules[m_index], portszam);
+                    base->set_ki_port(ki_index, modules[m_index], portszam);
                 }
                 i++;
                 portszam++;
@@ -102,18 +99,24 @@ void comp_module_t::set_connection(char c, module_t*& base, size_t ki_index) {
  */
 void comp_module_t::comp_fill_module(bool copy, lista<size_t>& vegk, lista<size_t>& kezk, lista<prot_module_t*>* prot_modules, module_t**& modules_ref) {
     for (size_t i = 0; i < m_db; i++) {
-        size_t j = 0;
         if (!copy) {
+            size_t j = 0;
             while (!eggyezik((*prot_modules)[j]->getnev(), modules_coms, kezk[i], vegk[i])) j++;
             modules[i] = (*prot_modules)[j]->getprot()->copy();
         }
         else
             modules[i] = modules_ref[i]->copy();
-        j = vegk[i] + 1;
+    }
+    for (size_t i = 0; i < m_db; i++) {
+        size_t j = vegk[i] + 1;
         size_t k = 0;
         while (modules_coms[j] != ',') {
             if (modules_coms[j] == '0' || modules_coms[j] == '1')
-                modules[i]->set_be(k++, modules_coms[j++]);
+                modules[i]->set_be(k, modules_coms[j]);
+            else if (modules_coms[j] >= 'a' && modules_coms[j] < 'a' + be_db)
+                ki_ports[modules_coms[j] - 'a'].add(port<module_t*>{modules[i], k});
+            k++;
+            j++;
         }
         j++;
         k = 0;
@@ -122,11 +125,15 @@ void comp_module_t::comp_fill_module(bool copy, lista<size_t>& vegk, lista<size_
                 k++;
                 j++;
             }
-            else
+            else {
+                if (modules_coms[j] >= 'a' + be_db)
+                    modules[i]->set_ki_port(k, &end_module, modules_coms[j] - 'a' - be_db);
                 set_connection(modules_coms[j++], modules[i], k++);
+            }
         }
     }
-}
+
+}//ezt ketté kell választani elõször minden modult létre kell hozni, majd utána csinálni a bekötéseket
 
 /**
  * Constructor for the comp_module_t class.
@@ -137,12 +144,17 @@ void comp_module_t::comp_fill_module(bool copy, lista<size_t>& vegk, lista<size_
 comp_module_t::comp_module_t(char* modules_coms, lista<prot_module_t*>& prot_modules) {
     this->modules_coms = new char[strlen(modules_coms) + 1];
     strcpy_s(this->modules_coms, strlen(modules_coms) + 1, modules_coms);
-    size_t ki_db;
+    size_t ki_dab;
     lista<size_t> vegk;
     lista<size_t> kezk;
-    muvcount(modules_coms, vegk, kezk, m_db, this->be_db, ki_db);
+    muvcount(modules_coms, vegk, kezk, m_db, be_db, ki_dab);
     this->ki_db = be_db;
-    end_module.init(ki_db);
+    be_ertek = ki_ertek = new uint8_t[be_db];
+    for (size_t i = 0; i < be_db; i++) {
+        be_ertek[i] = '?';
+    }
+    ki_ports = new lista<port<module_t*>>[be_db];
+    end_module.init(ki_dab);
     modules = new module_t * [m_db];
     comp_fill_module(false, vegk, kezk, &prot_modules, modules);
 }
@@ -154,15 +166,23 @@ comp_module_t::comp_module_t(char* modules_coms, lista<prot_module_t*>& prot_mod
  * @param m_db number of the modules
  * @param w_db number of wires
  */
-comp_module_t::comp_module_t(size_t be_db, size_t ki_db, size_t m_db) {
-    this->be_db = this->ki_db = be_db;
-    this->m_db = m_db;
-    end_module.init(ki_db);
-    modules = new module_t * [m_db];
+comp_module_t::comp_module_t(size_t be_dab, size_t ki_dab, size_t m_dab) {
+    this->be_db = this->ki_db = be_dab;
+    this->m_db = m_dab;
+    end_module.init(ki_dab);
+    modules = new module_t * [m_dab];
+    be_ertek = ki_ertek = new uint8_t[be_dab];
+    for (size_t i = 0; i < be_dab; i++) {
+        be_ertek[i] = '?';
+    }
+    ki_ports = new lista<port<module_t*>>[be_dab];
+    for (size_t i = 0; i < be_dab; i++) {
+        ki_ertek[i] = '?';
+    }
 }
 module_t* comp_module_t::copy() {
-    ki_db = get_ki_num();
-    comp_module_t* ret = new comp_module_t(be_db, ki_db, m_db);
+    size_t ki_dab = get_ki_num();
+    comp_module_t* ret = new comp_module_t(be_db, ki_dab, m_db);
     ret->modules_coms = new char[strlen(modules_coms) + 1];
     strcpy_s(ret->modules_coms, strlen(modules_coms) + 1, modules_coms);
     lista<size_t> vegk;
@@ -170,7 +190,6 @@ module_t* comp_module_t::copy() {
     size_t kuka;
     muvcount(modules_coms, vegk, kezk, kuka, kuka, kuka);
     ret->comp_fill_module(true, vegk, kezk, nullptr, modules);
-    ki_db = be_db;
     return ret;
 }
 /**

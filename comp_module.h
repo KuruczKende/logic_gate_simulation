@@ -16,7 +16,10 @@ public:
         end_module.set_ki_port(ki_index, modulep, be_index);
     }
     uint8_t get_ki_ertek(size_t i) {
-        return end_module.get_be_ertek(i);
+        return end_module.get_ki_ertek(i);
+    }
+    size_t get_ki_num() {
+        return end_module.get_ki_num();
     }
     void set_connection(char c, module_t*& base, size_t ki_index);
     void comp_fill_module(bool copy, lista<size_t>& vegk, lista<size_t>& kezk, lista<prot_module_t*>* prot_modules, module_t**& modules_ref);
