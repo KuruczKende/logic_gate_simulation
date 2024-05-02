@@ -100,7 +100,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;MEMCHECK;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -144,19 +144,25 @@
     <ClCompile Include="memtrace.cpp" />
     <ClCompile Include="module.cpp" />
     <ClCompile Include="nharamkor_vs.cpp" />
-    <ClCompile Include="prot_modules.cpp" />
     <ClCompile Include="shell_module.cpp" />
+    <ClCompile Include="simulator.cpp" />
+    <ClCompile Include="tester.cpp" />
     <ClCompile Include="text_module.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="comp_module.h" />
-    <ClInclude Include="karakter_kesulet.h" />
+    <ClInclude Include="gtest_lite.h" />
+    <ClInclude Include="karakter_keszlet.h" />
     <ClInclude Include="memtrace.h" />
     <ClInclude Include="module.h" />
     <ClInclude Include="ossz.h" />
-    <ClInclude Include="prot_modules.h" />
     <ClInclude Include="shell_module.h" />
+    <ClInclude Include="simulator.h" />
+    <ClInclude Include="tester.h" />
     <ClInclude Include="text_module.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="doxygen\doxyfile" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

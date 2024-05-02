@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="module_8h" kind="file" language="C++">
+    <compoundname>module.h</compoundname>
+    <includes refid="ossz_8h" local="yes">ossz.h</includes>
+    <includedby refid="lista_8cpp" local="yes">lista.cpp</includedby>
+    <includedby refid="module_8cpp" local="yes">module.cpp</includedby>
+    <includedby refid="port_8cpp" local="yes">port.cpp</includedby>
+    <includedby refid="prot__modules_8cpp" local="yes">prot_modules.cpp</includedby>
+    <includedby refid="prot__modules_8h" local="yes">prot_modules.h</includedby>
+    <includedby refid="shell__module_8h" local="yes">shell_module.h</includedby>
+    <includedby refid="text__module_8h" local="yes">text_module.h</includedby>
+    <includedby refid="wire_8cpp" local="yes">wire.cpp</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>memtrace.h</label>
+        <link refid="memtrace_8h"/>
+      </node>
+      <node id="1">
+        <label>module.h</label>
+        <link refid="module_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ossz.h</label>
+        <link refid="ossz_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>cstring</label>
+      </node>
+      <node id="3">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="8">
+        <label>comp_module.cpp</label>
+        <link refid="comp__module_8cpp"/>
+      </node>
+      <node id="7">
+        <label>comp_module.h</label>
+        <link refid="comp__module_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lista.cpp</label>
+        <link refid="lista_8cpp"/>
+      </node>
+      <node id="3">
+        <label>module.cpp</label>
+        <link refid="module_8cpp"/>
+      </node>
+      <node id="1">
+        <label>module.h</label>
+        <link refid="module_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>nharamkor_vs.cpp</label>
+        <link refid="nharamkor__vs_8cpp"/>
+      </node>
+      <node id="4">
+        <label>port.cpp</label>
+        <link refid="port_8cpp"/>
+      </node>
+      <node id="5">
+        <label>prot_modules.cpp</label>
+        <link refid="prot__modules_8cpp"/>
+      </node>
+      <node id="6">
+        <label>prot_modules.h</label>
+        <link refid="prot__modules_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>shell_module.cpp</label>
+        <link refid="shell__module_8cpp"/>
+      </node>
+      <node id="10">
+        <label>shell_module.h</label>
+        <link refid="shell__module_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>text_module.cpp</label>
+        <link refid="text__module_8cpp"/>
+      </node>
+      <node id="12">
+        <label>text_module.h</label>
+        <link refid="text__module_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>wire.cpp</label>
+        <link refid="wire_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structport" prot="public">port</innerclass>
+    <innerclass refid="classmodule__t" prot="public">module_t</innerclass>
+    <innerclass refid="structport_3_01module__t_01_5_01_4" prot="public">port&lt; module_t * &gt;</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>MODULE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MODULE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ossz_8h" kindref="compound">ossz.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="6" refid="structport" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structport" kindref="compound">port</ref></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8" refid="structport_1a4b9f62c49ef7b3ea2be54ed1aecf78b2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">T</ref><sp/><ref refid="structport_1a4b9f62c49ef7b3ea2be54ed1aecf78b2" kindref="member">modulep</ref>;</highlight></codeline>
+<codeline lineno="9" refid="structport_1aaa7e87c1b80e07ec806910492d97b067" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structport_1aaa7e87c1b80e07ec806910492d97b067" kindref="member">portszam</ref>;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="classmodule__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmodule__t" kindref="compound">module_t</ref><sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="14" refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" kindref="member">be_db</ref>;</highlight></codeline>
+<codeline lineno="15" refid="classmodule__t_1a525593566e11dc7186152b4770e12253" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classmodule__t_1a525593566e11dc7186152b4770e12253" kindref="member">ki_db</ref>;</highlight></codeline>
+<codeline lineno="16" refid="classmodule__t_1a7d61b23e49096510cf223ffbced16f5f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">uint8_t</ref>*<sp/><ref refid="classmodule__t_1a7d61b23e49096510cf223ffbced16f5f" kindref="member">be_ertek</ref>;</highlight></codeline>
+<codeline lineno="17" refid="classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">uint8_t</ref>*<sp/><ref refid="classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a" kindref="member">ki_ertek</ref>;</highlight></codeline>
+<codeline lineno="18" refid="classmodule__t_1a7e972df261abe0ad96181db1f0f004d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">lista&lt;port&lt;module_t*&gt;</ref>&gt;*<sp/><ref refid="classmodule__t_1a7e972df261abe0ad96181db1f0f004d5" kindref="member">ki_ports</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20" refid="classmodule__t_1a37273f61cb094f04a2d42f519a498d68" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1a37273f61cb094f04a2d42f519a498d68" kindref="member">module_t</ref>()<sp/>:<ref refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" kindref="member">be_db</ref>(0),<sp/><ref refid="classmodule__t_1a525593566e11dc7186152b4770e12253" kindref="member">ki_db</ref>(0),<sp/><ref refid="classmodule__t_1a7d61b23e49096510cf223ffbced16f5f" kindref="member">be_ertek</ref>(<ref refid="classlista" kindref="compound">nullptr</ref>),<sp/><ref refid="classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a" kindref="member">ki_ertek</ref>(<ref refid="classlista" kindref="compound">nullptr</ref>),<sp/><ref refid="classmodule__t_1a7e972df261abe0ad96181db1f0f004d5" kindref="member">ki_ports</ref>(<ref refid="classlista" kindref="compound">nullptr</ref>){};</highlight></codeline>
+<codeline lineno="21" refid="classmodule__t_1ac55b2034283f3488767d6c110ddad55d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classmodule__t" kindref="compound">module_t</ref>*<sp/><ref refid="classmodule__t_1ac55b2034283f3488767d6c110ddad55d" kindref="member">copy</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="22" refid="classmodule__t_1ab299b7a5380d778a6c6d9d78285c837e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmodule__t_1ab299b7a5380d778a6c6d9d78285c837e" kindref="member">vegrehajtas</ref>(<ref refid="classlista" kindref="compound">lista&lt;module_t*&gt;</ref>&amp;<sp/><ref refid="classlista" kindref="compound">wait_for_do</ref>)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="23" refid="classmodule__t_1a1261616ace799b6efe1050be4355e697" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmodule__t_1a1261616ace799b6efe1050be4355e697" kindref="member">add_to_list</ref>(<ref refid="classlista" kindref="compound">lista&lt;module_t*&gt;</ref>&amp;<sp/><ref refid="classlista" kindref="compound">wait_for_do</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">be</ref>)<sp/>{<sp/><ref refid="classlista" kindref="compound">wait_for_do</ref>.<ref refid="classlista_1a3f48539cd27ef435ea20315183a7c48e" kindref="member">add</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);<sp/>}</highlight></codeline>
+<codeline lineno="24" refid="classmodule__t_1a67f5c31043ebfd97506f367b83b02f14" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmodule__t_1a67f5c31043ebfd97506f367b83b02f14" kindref="member">set_be</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">index</ref>,<sp/><ref refid="classlista" kindref="compound">uint8_t</ref><sp/>ertek)<sp/>{<sp/><ref refid="classmodule__t_1a7d61b23e49096510cf223ffbced16f5f" kindref="member">be_ertek</ref>[<ref refid="classlista" kindref="compound">index</ref>]<sp/>=<sp/>ertek;<sp/>};</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmodule__t_1a57c0215cd97886fdbbf55a59ead9205a" kindref="member">set_ki_port</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">ki_index</ref>,<sp/><ref refid="classmodule__t" kindref="compound">module_t</ref>*<sp/>modulep,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">be_index</ref>);</highlight></codeline>
+<codeline lineno="26" refid="classmodule__t_1a5bfb7a115938e38ae555af4c83bb431c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classmodule__t_1a5bfb7a115938e38ae555af4c83bb431c" kindref="member">get_ki_num</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classmodule__t_1a525593566e11dc7186152b4770e12253" kindref="member">ki_db</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="27" refid="classmodule__t_1a74f223430fdcfa4e8cb9b143b29dab5d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">uint8_t</ref><sp/><ref refid="classmodule__t_1a74f223430fdcfa4e8cb9b143b29dab5d" kindref="member">get_ki_ertek</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">i</ref>)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a" kindref="member">ki_ertek</ref>[<ref refid="classlista" kindref="compound">i</ref>];<sp/>}</highlight></codeline>
+<codeline lineno="28" refid="classmodule__t_1a3986b0f8ab95dbccec8616f2196e7bba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classmodule__t_1a3986b0f8ab95dbccec8616f2196e7bba" kindref="member">get_be_num</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" kindref="member">be_db</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="29" refid="classmodule__t_1afc483f4ee25f18ae47b5b1bdad294785" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">uint8_t</ref><sp/><ref refid="classmodule__t_1afc483f4ee25f18ae47b5b1bdad294785" kindref="member">get_be_ertek</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">i</ref>)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classmodule__t_1a7d61b23e49096510cf223ffbced16f5f" kindref="member">be_ertek</ref>[<ref refid="classlista" kindref="compound">i</ref>];<sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classmodule__t_1a74181e5ee6b99a623d75ce02304c1340" kindref="member">~module_t</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;&gt;</highlight></codeline>
+<codeline lineno="34" refid="structport_3_01module__t_01_5_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structport" kindref="compound">port</ref>&lt;<ref refid="classmodule__t" kindref="compound">module_t</ref>*&gt;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36" refid="structport_3_01module__t_01_5_01_4_1abc6c880243f0f83358600d9352a5e46e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmodule__t" kindref="compound">module_t</ref>*<sp/><ref refid="structport_3_01module__t_01_5_01_4_1abc6c880243f0f83358600d9352a5e46e" kindref="member">modulep</ref>;</highlight></codeline>
+<codeline lineno="37" refid="structport_3_01module__t_01_5_01_4_1af634c74d5bcc68e929e444d37791b763" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structport_3_01module__t_01_5_01_4_1af634c74d5bcc68e929e444d37791b763" kindref="member">portszam</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="module.h"/>
+  </compounddef>
+</doxygen>

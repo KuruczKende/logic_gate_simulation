@@ -1,0 +1,466 @@
+\doxysection{nharamkor\+\_\+vs.\+cpp File Reference}
+\label{nharamkor__vs_8cpp}\index{nharamkor\_vs.cpp@{nharamkor\_vs.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include "{}comp\+\_\+module.\+h"{}}\newline
+{\ttfamily \#include "{}text\+\_\+module.\+h"{}}\newline
+{\ttfamily \#include "{}karakter\+\_\+keszlet.\+h"{}}\newline
+Include dependency graph for nharamkor\+\_\+vs.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ bool} \textbf{ ismod} (\textbf{ char} \textbf{ c})
+\item 
+\textbf{ void} \textbf{ modulator} (\textbf{ uint8\+\_\+t} \textbf{ c}, \textbf{ uint8\+\_\+t} \&\textbf{ mods})
+\item 
+\textbf{ uint8\+\_\+t} \textbf{ ujmnev\+\_\+ell} (\textbf{ const} \textbf{ char} $\ast$nev, \textbf{ lista}$<$ \textbf{ prot\+\_\+module\+\_\+t} $\ast$ $>$ \&modules)
+\item 
+\textbf{ uint8\+\_\+t} \textbf{ kisbetujo} (\textbf{ const} \textbf{ char} $\ast$\textbf{ str})
+\item 
+\textbf{ uint8\+\_\+t} \textbf{ kisbetujo2} (\textbf{ const} \textbf{ char} $\ast$\textbf{ str})
+\item 
+\textbf{ uint8\+\_\+t} \textbf{ nagybetujo} (\textbf{ const} \textbf{ char} $\ast$\textbf{ str})
+\item 
+\textbf{ uint8\+\_\+t} \textbf{ modulesteszt} (\textbf{ const} \textbf{ char} $\ast$\textbf{ str}, \textbf{ lista}$<$ \textbf{ prot\+\_\+module\+\_\+t} $\ast$ $>$ \&modules)
+\item 
+\textbf{ uint8\+\_\+t} \textbf{ test\+\_\+module} (\textbf{ const} \textbf{ char} $\ast$\textbf{ str}, \textbf{ lista}$<$ \textbf{ prot\+\_\+module\+\_\+t} $\ast$ $>$ \&\textbf{ modulok}, \textbf{ bool} add=\textbf{ true})
+\item 
+{\footnotesize template$<$\textbf{ typename} \textbf{ T} $>$ }\\\textbf{ bool} \textbf{ instruct\+\_\+handler\+\_\+char\+\_\+handler} (\textbf{ uint8\+\_\+t} $\ast$\textbf{ inputs}, \textbf{ uint8\+\_\+t} \textbf{ c}, \textbf{ T} \&\textbf{ state}, \textbf{ uint8\+\_\+t} \&\textbf{ mods}, \textbf{ size\+\_\+t} \&\textbf{ number})
+\item 
+\textbf{ bool} \textbf{ instruct\+\_\+handler} (\textbf{ char} $\ast$\textbf{ s}, \textbf{ module\+\_\+t} $\ast$\&\textbf{ m\+\_\+main}, \textbf{ uint8\+\_\+t} \&\textbf{ mods}, \textbf{ size\+\_\+t} \&\textbf{ number}, \textbf{ lista}$<$ \textbf{ module\+\_\+t} $\ast$ $>$ \&\textbf{ wait\+\_\+to\+\_\+do\+\_\+modules})
+\item 
+\textbf{ char} $\ast$ \textbf{ getstring} (\textbf{ std\+::istream} \&\textbf{ in}, \textbf{ size\+\_\+t} \textbf{ h}=0)
+\item 
+\textbf{ bool} \textbf{ print\+\_\+module\+\_\+error} (\textbf{ uint8\+\_\+t} \textbf{ err})
+\item 
+\textbf{ void} \textbf{ print} (\textbf{ module\+\_\+t} $\ast$\&\textbf{ m\+\_\+main}, \textbf{ bool} \textbf{ kezd}=\textbf{ true}, \textbf{ bool} \textbf{ lezar}=\textbf{ true})
+\item 
+\textbf{ void} \textbf{ input\+\_\+handler} (\textbf{ std\+::istream} \&\textbf{ in}, \textbf{ lista}$<$ \textbf{ module\+\_\+t} $\ast$ $>$ \&\textbf{ wait\+\_\+to\+\_\+do\+\_\+modules}, \textbf{ uint8\+\_\+t} \&\textbf{ mods}, \textbf{ lista}$<$ \textbf{ prot\+\_\+module\+\_\+t} $\ast$ $>$ \&\textbf{ modulok}, \textbf{ module\+\_\+t} $\ast$\&\textbf{ m\+\_\+main}, \textbf{ lista}$<$ \textbf{ char} $\ast$ $>$ \&\textbf{ insts})
+\item 
+\textbf{ void} \textbf{ input\+\_\+handler\+\_\+module} (\textbf{ char} $\ast$\textbf{ s}, \textbf{ lista}$<$ \textbf{ prot\+\_\+module\+\_\+t} $\ast$ $>$ \&\textbf{ modulok}, \textbf{ module\+\_\+t} $\ast$\&\textbf{ m\+\_\+main})
+\item 
+\textbf{ void} \textbf{ input\+\_\+handler\+\_\+read} (\textbf{ char} $\ast$\textbf{ s}, \textbf{ lista}$<$ \textbf{ module\+\_\+t} $\ast$ $>$ \&\textbf{ wait\+\_\+to\+\_\+do\+\_\+wires}, \textbf{ uint8\+\_\+t} \&\textbf{ mods}, \textbf{ lista}$<$ \textbf{ prot\+\_\+module\+\_\+t} $\ast$ $>$ \&\textbf{ modulok}, \textbf{ module\+\_\+t} $\ast$\&\textbf{ m\+\_\+main}, \textbf{ lista}$<$ \textbf{ char} $\ast$ $>$ \&\textbf{ insts})
+\item 
+\textbf{ void} \textbf{ input\+\_\+handler\+\_\+write} (\textbf{ char} $\ast$\textbf{ s}, \textbf{ lista}$<$ \textbf{ char} $\ast$ $>$ \&\textbf{ insts})
+\item 
+\textbf{ bool} \textbf{ input\+\_\+handler\+\_\+do} (\textbf{ char} $\ast$\textbf{ s}, \textbf{ lista}$<$ \textbf{ module\+\_\+t} $\ast$ $>$ \&\textbf{ wait\+\_\+to\+\_\+do\+\_\+modules}, \textbf{ uint8\+\_\+t} \&\textbf{ mods}, \textbf{ module\+\_\+t} $\ast$\&\textbf{ m\+\_\+main})
+\item 
+\textbf{ int} \textbf{ main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\label{nharamkor__vs_8cpp_abe6c24302d4150af8e6211ec3a45ad0d} 
+\index{nharamkor\_vs.cpp@{nharamkor\_vs.cpp}!getstring@{getstring}}
+\index{getstring@{getstring}!nharamkor\_vs.cpp@{nharamkor\_vs.cpp}}
+\doxysubsubsection{getstring()}
+{\footnotesize\ttfamily \textbf{ char} $\ast$ getstring (\begin{DoxyParamCaption}\item[{\textbf{ std\+::istream} \&}]{in,  }\item[{\textbf{ size\+\_\+t}}]{h = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Recursively reads characters from the input stream and stores them in a dynamically allocated char array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & the input stream to read from \\
+\hline
+{\em h} & the current size of the char array being built\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a dynamically allocated char array containing the characters read from the input stream 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\label{nharamkor__vs_8cpp_ab44d8e6ed4c39cb1c0cf792429db848e} 
+\index{nharamkor\_vs.cpp@{nharamkor\_vs.cpp}!input\_handler@{input\_handler}}
+\index{input\_handler@{input\_handler}!nharamkor\_vs.cpp@{nharamkor\_vs.cpp}}
+\doxysubsubsection{input\_handler()}
+{\footnotesize\ttfamily \textbf{ void} input\+\_\+handler (\begin{DoxyParamCaption}\item[{\textbf{ std\+::istream} \&}]{in,  }\item[{\textbf{ lista}$<$ \textbf{ module\+\_\+t} $\ast$ $>$ \&}]{wait\+\_\+to\+\_\+do\+\_\+modules,  }\item[{\textbf{ uint8\+\_\+t} \&}]{mods,  }\item[{\textbf{ lista}$<$ \textbf{ prot\+\_\+module\+\_\+t} $\ast$ $>$ \&}]{modulok,  }\item[{\textbf{ module\+\_\+t} $\ast$\&}]{m\+\_\+main,  }\item[{\textbf{ lista}$<$ \textbf{ char} $\ast$ $>$ \&}]{insts }\end{DoxyParamCaption})}
+
+Handles input from the given input stream and performs various operations based on the input.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & the input stream to read from \\
+\hline
+{\em w\+\_\+inputs} & array of wire inputs \\
+\hline
+{\em wait\+\_\+to\+\_\+do\+\_\+wires} & list of \doxyref{wire\+\_\+t}{p.}{classwire__t} pointers to wires, waiting to be processed \\
+\hline
+{\em mods} & uint8\+\_\+t representing modifications \\
+\hline
+{\em modulok} & list of \doxyref{prot\+\_\+module\+\_\+t}{p.}{classprot__module__t} pointers representing modules \\
+\hline
+{\em m\+\_\+main} & pointer to the main module \\
+\hline
+{\em insts} & list of instructions \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\label{nharamkor__vs_8cpp_af09a2309c4133585955f671c2be21293} 
+\index{nharamkor\_vs.cpp@{nharamkor\_vs.cpp}!input\_handler\_do@{input\_handler\_do}}
+\index{input\_handler\_do@{input\_handler\_do}!nharamkor\_vs.cpp@{nharamkor\_vs.cpp}}
+\doxysubsubsection{input\_handler\_do()}
+{\footnotesize\ttfamily \textbf{ bool} input\+\_\+handler\+\_\+do (\begin{DoxyParamCaption}\item[{\textbf{ char} $\ast$}]{s,  }\item[{\textbf{ lista}$<$ \textbf{ module\+\_\+t} $\ast$ $>$ \&}]{wait\+\_\+to\+\_\+do\+\_\+modules,  }\item[{\textbf{ uint8\+\_\+t} \&}]{mods,  }\item[{\textbf{ module\+\_\+t} $\ast$\&}]{m\+\_\+main }\end{DoxyParamCaption})}
+
+A function that handles input based on the given parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the input character array \\
+\hline
+{\em w\+\_\+inputs} & array of wire inputs \\
+\hline
+{\em wait\+\_\+to\+\_\+do\+\_\+wires} & list of \doxyref{wire\+\_\+t}{p.}{classwire__t} pointers to wires, waiting to be processed \\
+\hline
+{\em mods} & a uint8\+\_\+t representing modifications \\
+\hline
+{\em m\+\_\+main} & pointer to the main module\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if input handling is successful, false otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+\label{nharamkor__vs_8cpp_a28f543ce27108ae4de42d9991865237e} 
+\index{nharamkor\_vs.cpp@{nharamkor\_vs.cpp}!input\_handler\_module@{input\_handler\_module}}
+\index{input\_handler\_module@{input\_handler\_module}!nharamkor\_vs.cpp@{nharamkor\_vs.cpp}}
+\doxysubsubsection{input\_handler\_module()}
+{\footnotesize\ttfamily \textbf{ void} input\+\_\+handler\+\_\+module (\begin{DoxyParamCaption}\item[{\textbf{ char} $\ast$}]{s,  }\item[{\textbf{ lista}$<$ \textbf{ prot\+\_\+module\+\_\+t} $\ast$ $>$ \&}]{modulok,  }\item[{\textbf{ module\+\_\+t} $\ast$\&}]{m\+\_\+main }\end{DoxyParamCaption})}
+
+Handles input for new module and sets the main module if the module is "{}\+\_\+main"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & input string \\
+\hline
+{\em w\+\_\+inputs} & array of wire inputs \\
+\hline
+{\em modulok} & list of modules \\
+\hline
+{\em m\+\_\+main} & pointer to the main module \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 7
+Here is the caller graph for this function\+:
+% FIG 8
+\label{nharamkor__vs_8cpp_ab7c916fb6815401293901bf9e02feb5d} 
+\index{nharamkor\_vs.cpp@{nharamkor\_vs.cpp}!input\_handler\_read@{input\_handler\_read}}
+\index{input\_handler\_read@{input\_handler\_read}!nharamkor\_vs.cpp@{nharamkor\_vs.cpp}}
+\doxysubsubsection{input\_handler\_read()}
+{\footnotesize\ttfamily \textbf{ void} input\+\_\+handler\+\_\+read (\begin{DoxyParamCaption}\item[{\textbf{ char} $\ast$}]{s,  }\item[{\textbf{ lista}$<$ \textbf{ module\+\_\+t} $\ast$ $>$ \&}]{wait\+\_\+to\+\_\+do\+\_\+wires,  }\item[{\textbf{ uint8\+\_\+t} \&}]{mods,  }\item[{\textbf{ lista}$<$ \textbf{ prot\+\_\+module\+\_\+t} $\ast$ $>$ \&}]{modulok,  }\item[{\textbf{ module\+\_\+t} $\ast$\&}]{m\+\_\+main,  }\item[{\textbf{ lista}$<$ \textbf{ char} $\ast$ $>$ \&}]{insts }\end{DoxyParamCaption})}
+
+A function to handle reading file, processing it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the input file name \\
+\hline
+{\em w\+\_\+inputs} & array of wire inputs \\
+\hline
+{\em wait\+\_\+to\+\_\+do\+\_\+wires} & list of \doxyref{wire\+\_\+t}{p.}{classwire__t} pointers to wires, waiting to be processed \\
+\hline
+{\em mods} & a uint8\+\_\+t representing modifications \\
+\hline
+{\em modulok} & list of modules \\
+\hline
+{\em m\+\_\+main} & pointer to the main module \\
+\hline
+{\em insts} & list of instructions \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 9
+Here is the caller graph for this function\+:
+% FIG 10
+\label{nharamkor__vs_8cpp_aedc7074de3b40368806c1c432f215d92} 
+\index{nharamkor\_vs.cpp@{nharamkor\_vs.cpp}!input\_handler\_write@{input\_handler\_write}}
+\index{input\_handler\_write@{input\_handler\_write}!nharamkor\_vs.cpp@{nharamkor\_vs.cpp}}
+\doxysubsubsection{input\_handler\_write()}
+{\footnotesize\ttfamily \textbf{ void} input\+\_\+handler\+\_\+write (\begin{DoxyParamCaption}\item[{\textbf{ char} $\ast$}]{s,  }\item[{\textbf{ lista}$<$ \textbf{ char} $\ast$ $>$ \&}]{insts }\end{DoxyParamCaption})}
+
+A function to handle writing instructions to file if the user wants.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the output file name \\
+\hline
+{\em insts} & list of instructions \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 11
+Here is the caller graph for this function\+:
+% FIG 12
+\label{nharamkor__vs_8cpp_a989b6e5b3b8815b8088e8f8ba6d7752c} 
+\index{nharamkor\_vs.cpp@{nharamkor\_vs.cpp}!instruct\_handler@{instruct\_handler}}
+\index{instruct\_handler@{instruct\_handler}!nharamkor\_vs.cpp@{nharamkor\_vs.cpp}}
+\doxysubsubsection{instruct\_handler()}
+{\footnotesize\ttfamily \textbf{ bool} instruct\+\_\+handler (\begin{DoxyParamCaption}\item[{\textbf{ char} $\ast$}]{s,  }\item[{\textbf{ module\+\_\+t} $\ast$\&}]{m\+\_\+main,  }\item[{\textbf{ uint8\+\_\+t} \&}]{mods,  }\item[{\textbf{ size\+\_\+t} \&}]{number,  }\item[{\textbf{ lista}$<$ \textbf{ module\+\_\+t} $\ast$ $>$ \&}]{wait\+\_\+to\+\_\+do\+\_\+modules }\end{DoxyParamCaption})}
+
+A function to handle instructions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the instruction string \\
+\hline
+{\em w\+\_\+inputs} & an array of \doxyref{wire\+\_\+t}{p.}{classwire__t} inputs \\
+\hline
+{\em wait\+\_\+to\+\_\+do\+\_\+wires} & a list of \doxyref{wire\+\_\+t}{p.}{classwire__t} pointers to wires, waiting to be processed \\
+\hline
+{\em mods} & a uint8\+\_\+t representing modifications \\
+\hline
+{\em number} & a size\+\_\+t representing a number\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the function execution is successful, false otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 13
+Here is the caller graph for this function\+:
+% FIG 14
+\label{nharamkor__vs_8cpp_a89f3b5151cdc6346dcca285bca7084a6} 
+\index{nharamkor\_vs.cpp@{nharamkor\_vs.cpp}!instruct\_handler\_char\_handler@{instruct\_handler\_char\_handler}}
+\index{instruct\_handler\_char\_handler@{instruct\_handler\_char\_handler}!nharamkor\_vs.cpp@{nharamkor\_vs.cpp}}
+\doxysubsubsection{instruct\_handler\_char\_handler()}
+{\footnotesize\ttfamily template$<$\textbf{ typename} \textbf{ T} $>$ \\
+\textbf{ bool} instruct\+\_\+handler\+\_\+char\+\_\+handler (\begin{DoxyParamCaption}\item[{\textbf{ uint8\+\_\+t} $\ast$}]{inputs,  }\item[{\textbf{ uint8\+\_\+t}}]{c,  }\item[{\textbf{ T} \&}]{state,  }\item[{\textbf{ uint8\+\_\+t} \&}]{mods,  }\item[{\textbf{ size\+\_\+t} \&}]{number }\end{DoxyParamCaption})}
+
+A template function to handle different types of input characters and modify state accordingly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inputs} & pointer to an array of uint8\+\_\+t to store inputs \\
+\hline
+{\em c} & the input character to handle \\
+\hline
+{\em state} & a reference to a template type T representing the current state \\
+\hline
+{\em mods} & a reference to a uint8\+\_\+t to store modifiers \\
+\hline
+{\em number} & a reference to a size\+\_\+t to store a number\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the input character is processed successfully, false otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 15
+Here is the caller graph for this function\+:
+% FIG 16
+\label{nharamkor__vs_8cpp_ac668e8600ca0b3a3afa71eccef9ce070} 
+\index{nharamkor\_vs.cpp@{nharamkor\_vs.cpp}!ismod@{ismod}}
+\index{ismod@{ismod}!nharamkor\_vs.cpp@{nharamkor\_vs.cpp}}
+\doxysubsubsection{ismod()}
+{\footnotesize\ttfamily \textbf{ bool} ismod (\begin{DoxyParamCaption}\item[{\textbf{ char}}]{c }\end{DoxyParamCaption})}
+
+Check if the character is a special symbol.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & the character to be checked\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the character is \textquotesingle{}\textquotesingle{}, \textquotesingle{}-\/\textquotesingle{}, \textquotesingle{}+\textquotesingle{}, or \textquotesingle{}!\textquotesingle{}, false otherwise 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 17
+\label{nharamkor__vs_8cpp_adce48f6d81618ca9096f5b88a6e333ab} 
+\index{nharamkor\_vs.cpp@{nharamkor\_vs.cpp}!kisbetujo@{kisbetujo}}
+\index{kisbetujo@{kisbetujo}!nharamkor\_vs.cpp@{nharamkor\_vs.cpp}}
+\doxysubsubsection{kisbetujo()}
+{\footnotesize\ttfamily \textbf{ uint8\+\_\+t} kisbetujo (\begin{DoxyParamCaption}\item[{\textbf{ const} \textbf{ char} $\ast$}]{str }\end{DoxyParamCaption})}
+
+Checks if the input string contains at least one of each lowercase letter up to the "{}biggest"{} letter in use. And not contains syntactic error.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & pointer to the input string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2 if wrong format, 1 if wrong character usage, 0 if it\textquotesingle{}s valid 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 18
+\label{nharamkor__vs_8cpp_afb58d022f3fcaf90e41950da473cca92} 
+\index{nharamkor\_vs.cpp@{nharamkor\_vs.cpp}!kisbetujo2@{kisbetujo2}}
+\index{kisbetujo2@{kisbetujo2}!nharamkor\_vs.cpp@{nharamkor\_vs.cpp}}
+\doxysubsubsection{kisbetujo2()}
+{\footnotesize\ttfamily \textbf{ uint8\+\_\+t} kisbetujo2 (\begin{DoxyParamCaption}\item[{\textbf{ const} \textbf{ char} $\ast$}]{str }\end{DoxyParamCaption})}
+
+Checks if the input string contains at least one of each lowercase letter up to the "{}biggest"{} letter in use and after a specific character every letter used as output.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & pointer to the input string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if a letter used as an output more than once, 2 if it\textquotesingle{}s not valid, 0 if it\textquotesingle{}s valid 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 19
+\label{nharamkor__vs_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{nharamkor\_vs.cpp@{nharamkor\_vs.cpp}!main@{main}}
+\index{main@{main}!nharamkor\_vs.cpp@{nharamkor\_vs.cpp}}
+\doxysubsubsection{main()}
+{\footnotesize\ttfamily \textbf{ int} main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Main function... That\textquotesingle{}s all. Here is the call graph for this function\+:
+% FIG 20
+\label{nharamkor__vs_8cpp_afbce817d76bf9bc1a433c1d83fc15d0b} 
+\index{nharamkor\_vs.cpp@{nharamkor\_vs.cpp}!modulator@{modulator}}
+\index{modulator@{modulator}!nharamkor\_vs.cpp@{nharamkor\_vs.cpp}}
+\doxysubsubsection{modulator()}
+{\footnotesize\ttfamily \textbf{ void} modulator (\begin{DoxyParamCaption}\item[{\textbf{ uint8\+\_\+t}}]{c,  }\item[{\textbf{ uint8\+\_\+t} \&}]{mods }\end{DoxyParamCaption})}
+
+Modifies the given mods variable based on the input character.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & the character input to determine the modification \\
+\hline
+{\em mods} & the variable to be modified based on the input character \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 21
+\label{nharamkor__vs_8cpp_a079dcfedb64af966eab0a78d9a4c979d} 
+\index{nharamkor\_vs.cpp@{nharamkor\_vs.cpp}!modulesteszt@{modulesteszt}}
+\index{modulesteszt@{modulesteszt}!nharamkor\_vs.cpp@{nharamkor\_vs.cpp}}
+\doxysubsubsection{modulesteszt()}
+{\footnotesize\ttfamily \textbf{ uint8\+\_\+t} modulesteszt (\begin{DoxyParamCaption}\item[{\textbf{ const} \textbf{ char} $\ast$}]{str,  }\item[{\textbf{ lista}$<$ \textbf{ prot\+\_\+module\+\_\+t} $\ast$ $>$ \&}]{modules }\end{DoxyParamCaption})}
+
+Function to check and validate modules based on input string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The input string to check against modules. \\
+\hline
+{\em modules} & A list of modules to compare against the input string.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 if module does not exist, 2 if wrong input number, 3 if wrong output number. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 22
+Here is the caller graph for this function\+:
+% FIG 23
+\label{nharamkor__vs_8cpp_a7f4e4e25704216d56a1bbe815546d655} 
+\index{nharamkor\_vs.cpp@{nharamkor\_vs.cpp}!nagybetujo@{nagybetujo}}
+\index{nagybetujo@{nagybetujo}!nharamkor\_vs.cpp@{nharamkor\_vs.cpp}}
+\doxysubsubsection{nagybetujo()}
+{\footnotesize\ttfamily \textbf{ uint8\+\_\+t} nagybetujo (\begin{DoxyParamCaption}\item[{\textbf{ const} \textbf{ char} $\ast$}]{str }\end{DoxyParamCaption})}
+
+A function that checks the wiring connections of uppercase letters in the input string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & a pointer to the input string to be checked\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the wiring connections are correct, 1 if a letter used as an output more than once, 2 if there are incorrect wiring connections 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 24
+\label{nharamkor__vs_8cpp_a8e7995ef24cddb91ed4b4d47a03deb4d} 
+\index{nharamkor\_vs.cpp@{nharamkor\_vs.cpp}!print@{print}}
+\index{print@{print}!nharamkor\_vs.cpp@{nharamkor\_vs.cpp}}
+\doxysubsubsection{print()}
+{\footnotesize\ttfamily \textbf{ void} print (\begin{DoxyParamCaption}\item[{\textbf{ module\+\_\+t} $\ast$\&}]{m\+\_\+main,  }\item[{\textbf{ bool}}]{kezd = {\ttfamily \textbf{ true}},  }\item[{\textbf{ bool}}]{lezar = {\ttfamily \textbf{ true}} }\end{DoxyParamCaption})}
+
+Prints the contents of the module to the console in a formatted manner.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+main} & a pointer to the module to be printed \\
+\hline
+{\em kezd} & flag indicating whether to include the beginning formatting \\
+\hline
+{\em lezar} & flag indicating whether to include the ending formatting \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 25
+Here is the caller graph for this function\+:
+% FIG 26
+\label{nharamkor__vs_8cpp_a3e0f7cbe319cdfbb528b924d817885fd} 
+\index{nharamkor\_vs.cpp@{nharamkor\_vs.cpp}!print\_module\_error@{print\_module\_error}}
+\index{print\_module\_error@{print\_module\_error}!nharamkor\_vs.cpp@{nharamkor\_vs.cpp}}
+\doxysubsubsection{print\_module\_error()}
+{\footnotesize\ttfamily \textbf{ bool} print\+\_\+module\+\_\+error (\begin{DoxyParamCaption}\item[{\textbf{ uint8\+\_\+t}}]{err }\end{DoxyParamCaption})}
+
+A function that prints error messages based on the error code passed in.
+
+
+\begin{DoxyParams}{Parameters}
+{\em err} & the error code to determine which error message to print\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if error code is 0, false otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 27
+Here is the caller graph for this function\+:
+% FIG 28
+\label{nharamkor__vs_8cpp_a079960085332785c1fb971533a9912a9} 
+\index{nharamkor\_vs.cpp@{nharamkor\_vs.cpp}!test\_module@{test\_module}}
+\index{test\_module@{test\_module}!nharamkor\_vs.cpp@{nharamkor\_vs.cpp}}
+\doxysubsubsection{test\_module()}
+{\footnotesize\ttfamily \textbf{ uint8\+\_\+t} test\+\_\+module (\begin{DoxyParamCaption}\item[{\textbf{ const} \textbf{ char} $\ast$}]{str,  }\item[{\textbf{ lista}$<$ \textbf{ prot\+\_\+module\+\_\+t} $\ast$ $>$ \&}]{modulok,  }\item[{\textbf{ bool}}]{add = {\ttfamily \textbf{ true}} }\end{DoxyParamCaption})}
+
+Function to test a module with the given name and commands.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & the name and commands of the module to be tested \\
+\hline
+{\em modulok} & a list of module pointers to be tested against \\
+\hline
+{\em add} & flag to indicate whether to add the module\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, error code otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 29
+Here is the caller graph for this function\+:
+% FIG 30
+\label{nharamkor__vs_8cpp_a8394f5d2589de5e083e551414e4d1a92} 
+\index{nharamkor\_vs.cpp@{nharamkor\_vs.cpp}!ujmnev\_ell@{ujmnev\_ell}}
+\index{ujmnev\_ell@{ujmnev\_ell}!nharamkor\_vs.cpp@{nharamkor\_vs.cpp}}
+\doxysubsubsection{ujmnev\_ell()}
+{\footnotesize\ttfamily \textbf{ uint8\+\_\+t} ujmnev\+\_\+ell (\begin{DoxyParamCaption}\item[{\textbf{ const} \textbf{ char} $\ast$}]{nev,  }\item[{\textbf{ lista}$<$ \textbf{ prot\+\_\+module\+\_\+t} $\ast$ $>$ \&}]{modules }\end{DoxyParamCaption})}
+
+Check if the given name meets certain criteria and is not already in use.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nev} & The name to be checked \\
+\hline
+{\em modules} & A list of modules to compare the name against\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the name is valid and not in use, 1 if the name not starts with \textquotesingle{}\+\_\+\textquotesingle{}, 2 if the name contains invalid characters, 3 if the name is already in use 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 31
+Here is the caller graph for this function\+:
+% FIG 32

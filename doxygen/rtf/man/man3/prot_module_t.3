@@ -1,0 +1,51 @@
+.TH "prot_module_t" 3 "nharamkkor_vs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+prot_module_t
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <prot_modules\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBprot_module_t\fP (\fBconst\fP \fBchar\fP *nev=\fBNULL\fP, \fBmodule_t\fP *prot=\fBNULL\fP)"
+.br
+.ti -1c
+.RI "\fBchar\fP *& \fBgetnev\fP ()"
+.br
+.ti -1c
+.RI "\fBmodule_t\fP *& \fBgetprot\fP ()"
+.br
+.ti -1c
+.RI "\fB~prot_module_t\fP ()"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "prot_module_t::prot_module_t (\fBconst\fP \fBchar\fP * nev = \fR\fBNULL\fP\fP, \fBmodule_t\fP * prot = \fR\fBNULL\fP\fP)"
+Constructor for \fBprot_module_t\fP class\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fInev\fP string containing the name\&. 
+.br
+\fIprot\fP Pointer to a module\&. 
+.RE
+.PP
+
+.SS "prot_module_t::~prot_module_t ()"
+Destructor for the \fBprot_module_t\fP class\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBchar\fP *& prot_module_t::getnev ()\fR [inline]\fP"
+
+.SS "\fBmodule_t\fP *& prot_module_t::getprot ()\fR [inline]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for nharamkkor_vs from the source code\&.

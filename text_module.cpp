@@ -6,7 +6,7 @@
  *
  * @return The result of the NOT operation.
  */
-uint8_t mynot(uint8_t a) {
+uint8_t text_module_t::mynot(uint8_t a) {
     switch (a) {
     case low:return high;
     case high:return low;
@@ -21,7 +21,7 @@ uint8_t mynot(uint8_t a) {
  *
  * @return the result of the AND operation between the two inputs
  */
-uint8_t myand(uint8_t a, uint8_t b) {
+uint8_t text_module_t::myand(uint8_t a, uint8_t b) {
     switch (a + b) {
     case undet + high:return undet;
     case undet + undet:return undet;
@@ -37,7 +37,7 @@ uint8_t myand(uint8_t a, uint8_t b) {
  *
  * @return the result of the OR operation between the two inputs
  */
-uint8_t myor(uint8_t a, uint8_t b) {
+uint8_t text_module_t::myor(uint8_t a, uint8_t b) {
     switch (a + b) {
     case undet + low:return undet;
     case undet + undet:return undet;
@@ -53,7 +53,7 @@ uint8_t myor(uint8_t a, uint8_t b) {
  *
  * @return the result of the XOR operation between the two inputs
  */
-uint8_t myxor(uint8_t a, uint8_t b) {
+uint8_t text_module_t::myxor(uint8_t a, uint8_t b) {
     if (a == undet || b == undet)return undet;
     return a != b ? high : low;
 }
@@ -66,7 +66,7 @@ uint8_t myxor(uint8_t a, uint8_t b) {
  * @param ideiglenes the temporary character array
  * @param hossz the length of the character array
  */
-void lepteto(size_t torlendo, size_t index, lista<size_t>& hely, char*& ideiglenes, size_t& hossz) {
+void text_module_t::lepteto(size_t torlendo, size_t index, lista<size_t>& hely, char*& ideiglenes, size_t& hossz) {
     for (size_t k = hely[index]; k < hossz - torlendo; k++)
         ideiglenes[k] = ideiglenes[k + torlendo];
     for (size_t k = index; k < hely.length(); k++)
@@ -86,7 +86,7 @@ void lepteto(size_t torlendo, size_t index, lista<size_t>& hely, char*& ideiglen
  *
  * @return True if the task is successfully performed, false otherwise
  */
-bool muvs(size_t index, lista<size_t>& hely, char*& ideiglenes, size_t& hossz, bool neg, uint8_t& ertek, size_t& iertek) {
+bool text_module_t::muvs(size_t index, lista<size_t>& hely, char*& ideiglenes, size_t& hossz, bool neg, uint8_t& ertek, size_t& iertek) {
     size_t findex = hely[index] + (size_t)(neg ? 1 : 0);
     switch (ideiglenes[findex]) {
     case '&':
@@ -154,7 +154,7 @@ module_t* text_module_t::copy() {
  * @param maxfsag the maximum priority value in the list
  * @param be_ertek the input values
  */
-void muv_list(char& c, char& cn, size_t& index, lista<size_t>& hely, lista<size_t>& fsag, size_t& moz, size_t& fs, size_t& maxfsag, uint8_t*& be_ertek) {
+void text_module_t::muv_list(char& c, char& cn, size_t& index, lista<size_t>& hely, lista<size_t>& fsag, size_t& moz, size_t& fs, size_t& maxfsag) {
     switch (c) {
     case '~':
         if (cn == '|' || cn == '&' || cn == '^') {
@@ -200,7 +200,7 @@ void muv_list(char& c, char& cn, size_t& index, lista<size_t>& hely, lista<size_
  * @param ideiglenes the character array to be modified
  * @param hossz the length of ideiglenes
  */
-void vegrehajt(size_t& maxfsag, lista<size_t>& hely, lista<size_t>& fsag, char*& ideiglenes, size_t& hossz) {
+void text_module_t::vegrehajt(size_t& maxfsag, lista<size_t>& hely, lista<size_t>& fsag, char*& ideiglenes, size_t& hossz) {
     for (int j = maxfsag; j >= 0; j--) {
         for (size_t i = 0; i < hely.length(); i++) {
             if ((int)fsag[i] == j) {
@@ -268,7 +268,7 @@ void text_module_t::vegrehajtas(lista<module_t*>& wait_for_do) {
             while (moz < veg) {
                 ideiglenes[index] = parancsok[moz];
                 if(parancsok[moz] == '~' && (parancsok[moz + 1] == '|' || parancsok[moz + 1] == '&' || parancsok[moz + 1] == '^'))ideiglenes[index + 1] = parancsok[moz + 1];
-                muv_list(ideiglenes[index], ideiglenes[index + 1], index, hely, fsag, moz, fs, maxfsag, be_ertek);
+                muv_list(ideiglenes[index], ideiglenes[index + 1], index, hely, fsag, moz, fs, maxfsag);
             }//m�veleti lista befejezve
             vegrehajt(maxfsag, hely, fsag, ideiglenes, hossz);
             if (ideiglenes[0] != ki_ertek[i]) {

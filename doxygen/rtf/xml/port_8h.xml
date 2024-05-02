@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="port_8h" kind="file" language="C++">
+    <compoundname>port.h</compoundname>
+    <includes refid="ossz_8h" local="yes">ossz.h</includes>
+    <includedby refid="port_8cpp" local="yes">port.cpp</includedby>
+    <includedby refid="wire_8cpp" local="yes">wire.cpp</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>memtrace.h</label>
+        <link refid="memtrace_8h"/>
+      </node>
+      <node id="2">
+        <label>ossz.h</label>
+        <link refid="ossz_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>port.h</label>
+        <link refid="port_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>cstring</label>
+      </node>
+      <node id="3">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>port.cpp</label>
+        <link refid="port_8cpp"/>
+      </node>
+      <node id="1">
+        <label>port.h</label>
+        <link refid="port_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wire.cpp</label>
+        <link refid="wire_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classport__t" prot="public">port_t</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>PORT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PORT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ossz_8h" kindref="compound">ossz.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="classport__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classport__t" kindref="compound">port_t</ref><sp/>{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmodule__t" kindref="compound">module_t</ref>*<sp/>modulep;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idx;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="8" refid="classport__t_1adea50f5f8958c8004d5a6b2b78ecf224" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classport__t_1adea50f5f8958c8004d5a6b2b78ecf224" kindref="member">port_t</ref>(<ref refid="classmodule__t" kindref="compound">module_t</ref>*<sp/>modulep,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>idx)<sp/>:modulep(modulep),<sp/>idx(idx)<sp/>{}</highlight></codeline>
+<codeline lineno="9" refid="classport__t_1a4c14574cc72efb7ad610854eb1e8dc65" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmodule__t" kindref="compound">module_t</ref>*<sp/><ref refid="classport__t_1a4c14574cc72efb7ad610854eb1e8dc65" kindref="member">doit</ref>(<ref refid="classlista" kindref="compound">uint8_t</ref><sp/>ertek);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classport__t_1a2278dcab6ec2cef8ccd16b50d3a11a30" kindref="member">setin</ref>(<ref refid="classlista" kindref="compound">uint8_t</ref><sp/>ertek);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmodule__t" kindref="compound">module_t</ref>*<sp/><ref refid="classport__t_1a938e73e0989342ca72ca9d8bafb07215" kindref="member">get_module</ref>();</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classport__t_1aa0f1926935279c428585bdd5ba6d2c64" kindref="member">get_idx</ref>();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classport__t_1a69908e74e365a3eefac6391db550c6a3" kindref="member">~port_t</ref>();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="port.h"/>
+  </compounddef>
+</doxygen>

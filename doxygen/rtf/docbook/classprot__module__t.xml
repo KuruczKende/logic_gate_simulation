@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classprot__module__t" xml:lang="en-US">
+<title>prot_module_t Class Reference</title>
+<indexterm><primary>prot_module_t</primary></indexterm>
+<para>
+<computeroutput>#include &lt;prot_modules.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classprot__module__t_1a640322af18b531fb4028fb3a1d3b31a3">prot_module_t</link> (<link linkend="_classlista">const</link> <link linkend="_classlista">char</link> *nev=<link linkend="_classlista">NULL</link>, <link linkend="_classmodule__t">module_t</link> *prot=<link linkend="_classlista">NULL</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">char</link> *&amp; <link linkend="_classprot__module__t_1a5194bb873cf8059008b9622b5539445c">getnev</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classmodule__t">module_t</link> *&amp; <link linkend="_classprot__module__t_1a4de31208867af3c8b5cec052a5d374c8">getprot</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classprot__module__t_1a4fe49a54cfc0d3a54f59e472bd31533b">~prot_module_t</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classprot__module__t_1a640322af18b531fb4028fb3a1d3b31a3"/><section>
+    <title>prot_module_t()</title>
+<indexterm><primary>prot_module_t</primary><secondary>prot_module_t</secondary></indexterm>
+<indexterm><primary>prot_module_t</primary><secondary>prot_module_t</secondary></indexterm>
+<para><computeroutput>prot_module_t::prot_module_t (<link linkend="_classlista">const</link> <link linkend="_classlista">char</link> * nev = <computeroutput><link linkend="_classlista">NULL</link></computeroutput>
+, <link linkend="_classmodule__t">module_t</link> * prot = <computeroutput><link linkend="_classlista">NULL</link></computeroutput>
+)</computeroutput></para>
+<para>Constructor for <link linkend="_classprot__module__t">prot_module_t</link> class.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>nev</entry><entry>
+<para>string containing the name. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>prot</entry><entry>
+<para>Pointer to a module. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classprot__module__t_1a4fe49a54cfc0d3a54f59e472bd31533b"/><section>
+    <title>~prot_module_t()</title>
+<indexterm><primary>~prot_module_t</primary><secondary>prot_module_t</secondary></indexterm>
+<indexterm><primary>prot_module_t</primary><secondary>~prot_module_t</secondary></indexterm>
+<para><computeroutput>prot_module_t::~prot_module_t ( )</computeroutput></para>
+<para>Destructor for the <link linkend="_classprot__module__t">prot_module_t</link> class. </para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classprot__module__t_1a5194bb873cf8059008b9622b5539445c"/><section>
+    <title>getnev()</title>
+<indexterm><primary>getnev</primary><secondary>prot_module_t</secondary></indexterm>
+<indexterm><primary>prot_module_t</primary><secondary>getnev</secondary></indexterm>
+<para><computeroutput><link linkend="_classlista">char</link> *&amp; prot_module_t::getnev ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classprot__module__t_1a4de31208867af3c8b5cec052a5d374c8"/><section>
+    <title>getprot()</title>
+<indexterm><primary>getprot</primary><secondary>prot_module_t</secondary></indexterm>
+<indexterm><primary>prot_module_t</primary><secondary>getprot</secondary></indexterm>
+<para><computeroutput><link linkend="_classmodule__t">module_t</link> *&amp; prot_module_t::getprot ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following files:</para>
+<link linkend="_prot__modules_8h">prot_modules.h</link><link linkend="_prot__modules_8cpp">prot_modules.cpp</link></section>
+</section>

@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structport" kind="struct" language="C++" prot="public">
+    <compoundname>port</compoundname>
+    <includes refid="module_8h" local="no">module.h</includes>
+    <templateparamlist>
+      <param>
+        <type><ref refid="classlista" kindref="compound">typename</ref> <ref refid="classlista" kindref="compound">T</ref></type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structport_1a4b9f62c49ef7b3ea2be54ed1aecf78b2" prot="public" static="no" mutable="no">
+        <type><ref refid="classlista" kindref="compound">T</ref></type>
+        <definition>T port&lt; T &gt;::modulep</definition>
+        <argsstring></argsstring>
+        <name>modulep</name>
+        <qualifiedname>port::modulep</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module.h" line="8" column="7" bodyfile="module.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structport_1aaa7e87c1b80e07ec806910492d97b067" prot="public" static="no" mutable="no">
+        <type><ref refid="classlista" kindref="compound">size_t</ref></type>
+        <definition>size_t port&lt; T &gt;::portszam</definition>
+        <argsstring></argsstring>
+        <name>portszam</name>
+        <qualifiedname>port::portszam</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module.h" line="9" column="12" bodyfile="module.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="module.h" line="6" column="1" bodyfile="module.h" bodystart="7" bodyend="10"/>
+    <listofallmembers>
+      <member refid="structport_1a4b9f62c49ef7b3ea2be54ed1aecf78b2" prot="public" virt="non-virtual"><scope>port</scope><name>modulep</name></member>
+      <member refid="structport_1aaa7e87c1b80e07ec806910492d97b067" prot="public" virt="non-virtual"><scope>port</scope><name>portszam</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

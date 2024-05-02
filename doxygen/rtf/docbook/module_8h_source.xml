@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_module_8h_source" xml:lang="en-US">
+<title>module.h</title>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;MODULE_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;MODULE_H</emphasis>
+3 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_ossz_8h">ossz.h</link>&quot;</emphasis>
+4 
+5 <emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+6 <emphasis role="keyword">struct&#32;</emphasis><link linkend="_structport">port</link>
+7 {
+8 &#32;&#32;&#32;&#32;<link linkend="_classlista">T</link>&#32;<link linkend="_structport_1a4b9f62c49ef7b3ea2be54ed1aecf78b2">modulep</link>;
+9 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_structport_1aaa7e87c1b80e07ec806910492d97b067">portszam</link>;
+10 };
+11 
+12 <emphasis role="keyword">class&#32;</emphasis><link linkend="_classmodule__t">module_t</link>&#32;{
+13 <emphasis role="keyword">protected</emphasis>:
+14 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232">be_db</link>;
+15 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_classmodule__t_1a525593566e11dc7186152b4770e12253">ki_db</link>;
+16 &#32;&#32;&#32;&#32;<link linkend="_classlista">uint8_t</link>*&#32;<link linkend="_classmodule__t_1a7d61b23e49096510cf223ffbced16f5f">be_ertek</link>;
+17 &#32;&#32;&#32;&#32;<link linkend="_classlista">uint8_t</link>*&#32;<link linkend="_classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a">ki_ertek</link>;
+18 &#32;&#32;&#32;&#32;<link linkend="_classlista">lista&lt;port&lt;module_t*&gt;</link>&gt;*&#32;<link linkend="_classmodule__t_1a7e972df261abe0ad96181db1f0f004d5">ki_ports</link>;
+19 <emphasis role="keyword">public</emphasis>:
+20 &#32;&#32;&#32;&#32;<link linkend="_classmodule__t_1a37273f61cb094f04a2d42f519a498d68">module_t</link>()&#32;:<link linkend="_classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232">be_db</link>(0),&#32;<link linkend="_classmodule__t_1a525593566e11dc7186152b4770e12253">ki_db</link>(0),&#32;<link linkend="_classmodule__t_1a7d61b23e49096510cf223ffbced16f5f">be_ertek</link>(<link linkend="_classlista">nullptr</link>),&#32;<link linkend="_classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a">ki_ertek</link>(<link linkend="_classlista">nullptr</link>),&#32;<link linkend="_classmodule__t_1a7e972df261abe0ad96181db1f0f004d5">ki_ports</link>(<link linkend="_classlista">nullptr</link>){};
+21 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_classmodule__t">module_t</link>*&#32;<link linkend="_classmodule__t_1ac55b2034283f3488767d6c110ddad55d">copy</link>()&#32;=&#32;0;
+22 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classmodule__t_1ab299b7a5380d778a6c6d9d78285c837e">vegrehajtas</link>(<link linkend="_classlista">lista&lt;module_t*&gt;</link>&amp;&#32;<link linkend="_classlista">wait_for_do</link>)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>;&#32;}
+23 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classmodule__t_1a1261616ace799b6efe1050be4355e697">add_to_list</link>(<link linkend="_classlista">lista&lt;module_t*&gt;</link>&amp;&#32;<link linkend="_classlista">wait_for_do</link>,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_classlista">be</link>)&#32;{&#32;<link linkend="_classlista">wait_for_do</link>.<link linkend="_classlista_1a3f48539cd27ef435ea20315183a7c48e">add</link>(<emphasis role="keyword">this</emphasis>);&#32;}
+24 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classmodule__t_1a67f5c31043ebfd97506f367b83b02f14">set_be</link>(<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_classlista">index</link>,&#32;<link linkend="_classlista">uint8_t</link>&#32;ertek)&#32;{&#32;<link linkend="_classmodule__t_1a7d61b23e49096510cf223ffbced16f5f">be_ertek</link>[<link linkend="_classlista">index</link>]&#32;=&#32;ertek;&#32;};
+25 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classmodule__t_1a57c0215cd97886fdbbf55a59ead9205a">set_ki_port</link>(<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_classlista">ki_index</link>,&#32;<link linkend="_classmodule__t">module_t</link>*&#32;modulep,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_classlista">be_index</link>);
+26 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_classmodule__t_1a5bfb7a115938e38ae555af4c83bb431c">get_ki_num</link>()&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_classmodule__t_1a525593566e11dc7186152b4770e12253">ki_db</link>;&#32;}
+27 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_classlista">uint8_t</link>&#32;<link linkend="_classmodule__t_1a74f223430fdcfa4e8cb9b143b29dab5d">get_ki_ertek</link>(<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_classlista">i</link>)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a">ki_ertek</link>[<link linkend="_classlista">i</link>];&#32;}
+28 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_classmodule__t_1a3986b0f8ab95dbccec8616f2196e7bba">get_be_num</link>()&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232">be_db</link>;&#32;}
+29 &#32;&#32;&#32;&#32;<link linkend="_classlista">uint8_t</link>&#32;<link linkend="_classmodule__t_1afc483f4ee25f18ae47b5b1bdad294785">get_be_ertek</link>(<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_classlista">i</link>)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_classmodule__t_1a7d61b23e49096510cf223ffbced16f5f">be_ertek</link>[<link linkend="_classlista">i</link>];&#32;}
+30 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_classmodule__t_1a74181e5ee6b99a623d75ce02304c1340">~module_t</link>();
+31 };
+32 
+33 <emphasis role="keyword">template</emphasis>&lt;&gt;
+34 <emphasis role="keyword">struct&#32;</emphasis><link linkend="_structport">port</link>&lt;<link linkend="_classmodule__t">module_t</link>*&gt;
+35 {
+36 &#32;&#32;&#32;&#32;<link linkend="_classmodule__t">module_t</link>*&#32;<link linkend="_structport_3_01module__t_01_5_01_4_1abc6c880243f0f83358600d9352a5e46e">modulep</link>;
+37 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_structport_3_01module__t_01_5_01_4_1af634c74d5bcc68e929e444d37791b763">portszam</link>;
+38 };
+39 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

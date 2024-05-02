@@ -27,5 +27,4 @@ public:
         delete next;
     }
 };
-bool eggyezik(const char* str, const char* str2, size_t kez, size_t veg);
 #endif

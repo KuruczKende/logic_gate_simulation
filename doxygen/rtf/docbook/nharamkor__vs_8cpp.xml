@@ -1,0 +1,1109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_nharamkor__vs_8cpp" xml:lang="en-US">
+<title>nharamkor_vs.cpp File Reference</title>
+<indexterm><primary>nharamkor_vs.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;iostream&gt;<?linebreak?>#include &lt;fstream&gt;<?linebreak?>#include &quot;comp_module.h&quot;<?linebreak?>#include &quot;text_module.h&quot;<?linebreak?>#include &quot;karakter_keszlet.h&quot;<?linebreak?></programlisting>Include dependency graph for nharamkor_vs.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classlista">bool</link> <link linkend="_nharamkor__vs_8cpp_1ac668e8600ca0b3a3afa71eccef9ce070">ismod</link> (<link linkend="_classlista">char</link> <link linkend="_classlista">c</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">void</link> <link linkend="_nharamkor__vs_8cpp_1afbce817d76bf9bc1a433c1d83fc15d0b">modulator</link> (<link linkend="_classlista">uint8_t</link> <link linkend="_classlista">c</link>, <link linkend="_classlista">uint8_t</link> &amp;<link linkend="_classlista">mods</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">uint8_t</link> <link linkend="_nharamkor__vs_8cpp_1a8394f5d2589de5e083e551414e4d1a92">ujmnev_ell</link> (<link linkend="_classlista">const</link> <link linkend="_classlista">char</link> *nev, <link linkend="_classlista">lista</link>&lt; <link linkend="_classprot__module__t">prot_module_t</link> * &gt; &amp;modules)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">uint8_t</link> <link linkend="_nharamkor__vs_8cpp_1adce48f6d81618ca9096f5b88a6e333ab">kisbetujo</link> (<link linkend="_classlista">const</link> <link linkend="_classlista">char</link> *<link linkend="_classlista">str</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">uint8_t</link> <link linkend="_nharamkor__vs_8cpp_1afb58d022f3fcaf90e41950da473cca92">kisbetujo2</link> (<link linkend="_classlista">const</link> <link linkend="_classlista">char</link> *<link linkend="_classlista">str</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">uint8_t</link> <link linkend="_nharamkor__vs_8cpp_1a7f4e4e25704216d56a1bbe815546d655">nagybetujo</link> (<link linkend="_classlista">const</link> <link linkend="_classlista">char</link> *<link linkend="_classlista">str</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">uint8_t</link> <link linkend="_nharamkor__vs_8cpp_1a079dcfedb64af966eab0a78d9a4c979d">modulesteszt</link> (<link linkend="_classlista">const</link> <link linkend="_classlista">char</link> *<link linkend="_classlista">str</link>, <link linkend="_classlista">lista</link>&lt; <link linkend="_classprot__module__t">prot_module_t</link> * &gt; &amp;modules)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">uint8_t</link> <link linkend="_nharamkor__vs_8cpp_1a079960085332785c1fb971533a9912a9">test_module</link> (<link linkend="_classlista">const</link> <link linkend="_classlista">char</link> *<link linkend="_classlista">str</link>, <link linkend="_classlista">lista</link>&lt; <link linkend="_classprot__module__t">prot_module_t</link> * &gt; &amp;<link linkend="_classlista">modulok</link>, <link linkend="_classlista">bool</link> add=<link linkend="_classlista">true</link>)</para>
+</listitem>
+            <listitem><para>template&lt;<link linkend="_classlista">typename</link> <link linkend="_classlista">T</link> &gt; </para><para><link linkend="_classlista">bool</link> <link linkend="_nharamkor__vs_8cpp_1a89f3b5151cdc6346dcca285bca7084a6">instruct_handler_char_handler</link> (<link linkend="_classlista">uint8_t</link> *<link linkend="_classlista">inputs</link>, <link linkend="_classlista">uint8_t</link> <link linkend="_classlista">c</link>, <link linkend="_classlista">T</link> &amp;<link linkend="_classlista">state</link>, <link linkend="_classlista">uint8_t</link> &amp;<link linkend="_classlista">mods</link>, <link linkend="_classlista">size_t</link> &amp;<link linkend="_classlista">number</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">bool</link> <link linkend="_nharamkor__vs_8cpp_1a989b6e5b3b8815b8088e8f8ba6d7752c">instruct_handler</link> (<link linkend="_classlista">char</link> *<link linkend="_classlista">s</link>, <link linkend="_classmodule__t">module_t</link> *&amp;<link linkend="_classlista">m_main</link>, <link linkend="_classlista">uint8_t</link> &amp;<link linkend="_classlista">mods</link>, <link linkend="_classlista">size_t</link> &amp;<link linkend="_classlista">number</link>, <link linkend="_classlista">lista</link>&lt; <link linkend="_classmodule__t">module_t</link> * &gt; &amp;<link linkend="_classlista">wait_to_do_modules</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">char</link> * <link linkend="_nharamkor__vs_8cpp_1abe6c24302d4150af8e6211ec3a45ad0d">getstring</link> (<link linkend="_classlista_1adfa22c0202d7ac7abfe006dbd3b5a12a">std::istream</link> &amp;<link linkend="_classlista">in</link>, <link linkend="_classlista">size_t</link> <link linkend="_classlista">h</link>=0)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">bool</link> <link linkend="_nharamkor__vs_8cpp_1a3e0f7cbe319cdfbb528b924d817885fd">print_module_error</link> (<link linkend="_classlista">uint8_t</link> <link linkend="_classlista">err</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">void</link> <link linkend="_nharamkor__vs_8cpp_1a8e7995ef24cddb91ed4b4d47a03deb4d">print</link> (<link linkend="_classmodule__t">module_t</link> *&amp;<link linkend="_classlista">m_main</link>, <link linkend="_classlista">bool</link> <link linkend="_classlista">kezd</link>=<link linkend="_classlista">true</link>, <link linkend="_classlista">bool</link> <link linkend="_classlista">lezar</link>=<link linkend="_classlista">true</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">void</link> <link linkend="_nharamkor__vs_8cpp_1ab44d8e6ed4c39cb1c0cf792429db848e">input_handler</link> (<link linkend="_classlista_1adfa22c0202d7ac7abfe006dbd3b5a12a">std::istream</link> &amp;<link linkend="_classlista">in</link>, <link linkend="_classlista">lista</link>&lt; <link linkend="_classmodule__t">module_t</link> * &gt; &amp;<link linkend="_classlista">wait_to_do_modules</link>, <link linkend="_classlista">uint8_t</link> &amp;<link linkend="_classlista">mods</link>, <link linkend="_classlista">lista</link>&lt; <link linkend="_classprot__module__t">prot_module_t</link> * &gt; &amp;<link linkend="_classlista">modulok</link>, <link linkend="_classmodule__t">module_t</link> *&amp;<link linkend="_classlista">m_main</link>, <link linkend="_classlista">lista</link>&lt; <link linkend="_classlista">char</link> * &gt; &amp;<link linkend="_classlista">insts</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">void</link> <link linkend="_nharamkor__vs_8cpp_1a28f543ce27108ae4de42d9991865237e">input_handler_module</link> (<link linkend="_classlista">char</link> *<link linkend="_classlista">s</link>, <link linkend="_classlista">lista</link>&lt; <link linkend="_classprot__module__t">prot_module_t</link> * &gt; &amp;<link linkend="_classlista">modulok</link>, <link linkend="_classmodule__t">module_t</link> *&amp;<link linkend="_classlista">m_main</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">void</link> <link linkend="_nharamkor__vs_8cpp_1ab7c916fb6815401293901bf9e02feb5d">input_handler_read</link> (<link linkend="_classlista">char</link> *<link linkend="_classlista">s</link>, <link linkend="_classlista">lista</link>&lt; <link linkend="_classmodule__t">module_t</link> * &gt; &amp;<link linkend="_classlista">wait_to_do_wires</link>, <link linkend="_classlista">uint8_t</link> &amp;<link linkend="_classlista">mods</link>, <link linkend="_classlista">lista</link>&lt; <link linkend="_classprot__module__t">prot_module_t</link> * &gt; &amp;<link linkend="_classlista">modulok</link>, <link linkend="_classmodule__t">module_t</link> *&amp;<link linkend="_classlista">m_main</link>, <link linkend="_classlista">lista</link>&lt; <link linkend="_classlista">char</link> * &gt; &amp;<link linkend="_classlista">insts</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">void</link> <link linkend="_nharamkor__vs_8cpp_1aedc7074de3b40368806c1c432f215d92">input_handler_write</link> (<link linkend="_classlista">char</link> *<link linkend="_classlista">s</link>, <link linkend="_classlista">lista</link>&lt; <link linkend="_classlista">char</link> * &gt; &amp;<link linkend="_classlista">insts</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">bool</link> <link linkend="_nharamkor__vs_8cpp_1af09a2309c4133585955f671c2be21293">input_handler_do</link> (<link linkend="_classlista">char</link> *<link linkend="_classlista">s</link>, <link linkend="_classlista">lista</link>&lt; <link linkend="_classmodule__t">module_t</link> * &gt; &amp;<link linkend="_classlista">wait_to_do_modules</link>, <link linkend="_classlista">uint8_t</link> &amp;<link linkend="_classlista">mods</link>, <link linkend="_classmodule__t">module_t</link> *&amp;<link linkend="_classlista">m_main</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">int</link> <link linkend="_nharamkor__vs_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_nharamkor__vs_8cpp_1abe6c24302d4150af8e6211ec3a45ad0d"/><section>
+    <title>getstring()</title>
+<indexterm><primary>getstring</primary><secondary>nharamkor_vs.cpp</secondary></indexterm>
+<indexterm><primary>nharamkor_vs.cpp</primary><secondary>getstring</secondary></indexterm>
+<para><computeroutput><link linkend="_classlista">char</link> * getstring (<link linkend="_classlista_1adfa22c0202d7ac7abfe006dbd3b5a12a">std::istream</link> &amp; in, <link linkend="_classlista">size_t</link> h = <computeroutput>0</computeroutput>
+)</computeroutput></para>
+<para>Recursively reads characters from the input stream and stores them in a dynamically allocated char array.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>
+<para>the input stream to read from </para>
+</entry>
+                            </row>
+                            <row>
+<entry>h</entry><entry>
+<para>the current size of the char array being built</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a dynamically allocated char array containing the characters read from the input stream </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_abe6c24302d4150af8e6211ec3a45ad0d_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_abe6c24302d4150af8e6211ec3a45ad0d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_nharamkor__vs_8cpp_1ab44d8e6ed4c39cb1c0cf792429db848e"/><section>
+    <title>input_handler()</title>
+<indexterm><primary>input_handler</primary><secondary>nharamkor_vs.cpp</secondary></indexterm>
+<indexterm><primary>nharamkor_vs.cpp</primary><secondary>input_handler</secondary></indexterm>
+<para><computeroutput><link linkend="_classlista">void</link> input_handler (<link linkend="_classlista_1adfa22c0202d7ac7abfe006dbd3b5a12a">std::istream</link> &amp; in, <link linkend="_classlista">lista</link>&lt; <link linkend="_classmodule__t">module_t</link> * &gt; &amp; wait_to_do_modules, <link linkend="_classlista">uint8_t</link> &amp; mods, <link linkend="_classlista">lista</link>&lt; <link linkend="_classprot__module__t">prot_module_t</link> * &gt; &amp; modulok, <link linkend="_classmodule__t">module_t</link> *&amp; m_main, <link linkend="_classlista">lista</link>&lt; <link linkend="_classlista">char</link> * &gt; &amp; insts)</computeroutput></para>
+<para>Handles input from the given input stream and performs various operations based on the input.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>
+<para>the input stream to read from </para>
+</entry>
+                            </row>
+                            <row>
+<entry>w_inputs</entry><entry>
+<para>array of wire inputs </para>
+</entry>
+                            </row>
+                            <row>
+<entry>wait_to_do_wires</entry><entry>
+<para>list of <link linkend="_classwire__t">wire_t</link> pointers to wires, waiting to be processed </para>
+</entry>
+                            </row>
+                            <row>
+<entry>mods</entry><entry>
+<para>uint8_t representing modifications </para>
+</entry>
+                            </row>
+                            <row>
+<entry>modulok</entry><entry>
+<para>list of <link linkend="_classprot__module__t">prot_module_t</link> pointers representing modules </para>
+</entry>
+                            </row>
+                            <row>
+<entry>m_main</entry><entry>
+<para>pointer to the main module </para>
+</entry>
+                            </row>
+                            <row>
+<entry>insts</entry><entry>
+<para>list of instructions </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_ab44d8e6ed4c39cb1c0cf792429db848e_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_ab44d8e6ed4c39cb1c0cf792429db848e_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_nharamkor__vs_8cpp_1af09a2309c4133585955f671c2be21293"/><section>
+    <title>input_handler_do()</title>
+<indexterm><primary>input_handler_do</primary><secondary>nharamkor_vs.cpp</secondary></indexterm>
+<indexterm><primary>nharamkor_vs.cpp</primary><secondary>input_handler_do</secondary></indexterm>
+<para><computeroutput><link linkend="_classlista">bool</link> input_handler_do (<link linkend="_classlista">char</link> * s, <link linkend="_classlista">lista</link>&lt; <link linkend="_classmodule__t">module_t</link> * &gt; &amp; wait_to_do_modules, <link linkend="_classlista">uint8_t</link> &amp; mods, <link linkend="_classmodule__t">module_t</link> *&amp; m_main)</computeroutput></para>
+<para>A function that handles input based on the given parameters.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>s</entry><entry>
+<para>the input character array </para>
+</entry>
+                            </row>
+                            <row>
+<entry>w_inputs</entry><entry>
+<para>array of wire inputs </para>
+</entry>
+                            </row>
+                            <row>
+<entry>wait_to_do_wires</entry><entry>
+<para>list of <link linkend="_classwire__t">wire_t</link> pointers to wires, waiting to be processed </para>
+</entry>
+                            </row>
+                            <row>
+<entry>mods</entry><entry>
+<para>a uint8_t representing modifications </para>
+</entry>
+                            </row>
+                            <row>
+<entry>m_main</entry><entry>
+<para>pointer to the main module</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if input handling is successful, false otherwise </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_af09a2309c4133585955f671c2be21293_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_af09a2309c4133585955f671c2be21293_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_nharamkor__vs_8cpp_1a28f543ce27108ae4de42d9991865237e"/><section>
+    <title>input_handler_module()</title>
+<indexterm><primary>input_handler_module</primary><secondary>nharamkor_vs.cpp</secondary></indexterm>
+<indexterm><primary>nharamkor_vs.cpp</primary><secondary>input_handler_module</secondary></indexterm>
+<para><computeroutput><link linkend="_classlista">void</link> input_handler_module (<link linkend="_classlista">char</link> * s, <link linkend="_classlista">lista</link>&lt; <link linkend="_classprot__module__t">prot_module_t</link> * &gt; &amp; modulok, <link linkend="_classmodule__t">module_t</link> *&amp; m_main)</computeroutput></para>
+<para>Handles input for new module and sets the main module if the module is &quot;_main&quot;.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>s</entry><entry>
+<para>input string </para>
+</entry>
+                            </row>
+                            <row>
+<entry>w_inputs</entry><entry>
+<para>array of wire inputs </para>
+</entry>
+                            </row>
+                            <row>
+<entry>modulok</entry><entry>
+<para>list of modules </para>
+</entry>
+                            </row>
+                            <row>
+<entry>m_main</entry><entry>
+<para>pointer to the main module </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_a28f543ce27108ae4de42d9991865237e_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_a28f543ce27108ae4de42d9991865237e_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_nharamkor__vs_8cpp_1ab7c916fb6815401293901bf9e02feb5d"/><section>
+    <title>input_handler_read()</title>
+<indexterm><primary>input_handler_read</primary><secondary>nharamkor_vs.cpp</secondary></indexterm>
+<indexterm><primary>nharamkor_vs.cpp</primary><secondary>input_handler_read</secondary></indexterm>
+<para><computeroutput><link linkend="_classlista">void</link> input_handler_read (<link linkend="_classlista">char</link> * s, <link linkend="_classlista">lista</link>&lt; <link linkend="_classmodule__t">module_t</link> * &gt; &amp; wait_to_do_wires, <link linkend="_classlista">uint8_t</link> &amp; mods, <link linkend="_classlista">lista</link>&lt; <link linkend="_classprot__module__t">prot_module_t</link> * &gt; &amp; modulok, <link linkend="_classmodule__t">module_t</link> *&amp; m_main, <link linkend="_classlista">lista</link>&lt; <link linkend="_classlista">char</link> * &gt; &amp; insts)</computeroutput></para>
+<para>A function to handle reading file, processing it.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>s</entry><entry>
+<para>the input file name </para>
+</entry>
+                            </row>
+                            <row>
+<entry>w_inputs</entry><entry>
+<para>array of wire inputs </para>
+</entry>
+                            </row>
+                            <row>
+<entry>wait_to_do_wires</entry><entry>
+<para>list of <link linkend="_classwire__t">wire_t</link> pointers to wires, waiting to be processed </para>
+</entry>
+                            </row>
+                            <row>
+<entry>mods</entry><entry>
+<para>a uint8_t representing modifications </para>
+</entry>
+                            </row>
+                            <row>
+<entry>modulok</entry><entry>
+<para>list of modules </para>
+</entry>
+                            </row>
+                            <row>
+<entry>m_main</entry><entry>
+<para>pointer to the main module </para>
+</entry>
+                            </row>
+                            <row>
+<entry>insts</entry><entry>
+<para>list of instructions </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_ab7c916fb6815401293901bf9e02feb5d_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_ab7c916fb6815401293901bf9e02feb5d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_nharamkor__vs_8cpp_1aedc7074de3b40368806c1c432f215d92"/><section>
+    <title>input_handler_write()</title>
+<indexterm><primary>input_handler_write</primary><secondary>nharamkor_vs.cpp</secondary></indexterm>
+<indexterm><primary>nharamkor_vs.cpp</primary><secondary>input_handler_write</secondary></indexterm>
+<para><computeroutput><link linkend="_classlista">void</link> input_handler_write (<link linkend="_classlista">char</link> * s, <link linkend="_classlista">lista</link>&lt; <link linkend="_classlista">char</link> * &gt; &amp; insts)</computeroutput></para>
+<para>A function to handle writing instructions to file if the user wants.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>s</entry><entry>
+<para>the output file name </para>
+</entry>
+                            </row>
+                            <row>
+<entry>insts</entry><entry>
+<para>list of instructions </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_aedc7074de3b40368806c1c432f215d92_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_aedc7074de3b40368806c1c432f215d92_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_nharamkor__vs_8cpp_1a989b6e5b3b8815b8088e8f8ba6d7752c"/><section>
+    <title>instruct_handler()</title>
+<indexterm><primary>instruct_handler</primary><secondary>nharamkor_vs.cpp</secondary></indexterm>
+<indexterm><primary>nharamkor_vs.cpp</primary><secondary>instruct_handler</secondary></indexterm>
+<para><computeroutput><link linkend="_classlista">bool</link> instruct_handler (<link linkend="_classlista">char</link> * s, <link linkend="_classmodule__t">module_t</link> *&amp; m_main, <link linkend="_classlista">uint8_t</link> &amp; mods, <link linkend="_classlista">size_t</link> &amp; number, <link linkend="_classlista">lista</link>&lt; <link linkend="_classmodule__t">module_t</link> * &gt; &amp; wait_to_do_modules)</computeroutput></para>
+<para>A function to handle instructions.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>s</entry><entry>
+<para>the instruction string </para>
+</entry>
+                            </row>
+                            <row>
+<entry>w_inputs</entry><entry>
+<para>an array of <link linkend="_classwire__t">wire_t</link> inputs </para>
+</entry>
+                            </row>
+                            <row>
+<entry>wait_to_do_wires</entry><entry>
+<para>a list of <link linkend="_classwire__t">wire_t</link> pointers to wires, waiting to be processed </para>
+</entry>
+                            </row>
+                            <row>
+<entry>mods</entry><entry>
+<para>a uint8_t representing modifications </para>
+</entry>
+                            </row>
+                            <row>
+<entry>number</entry><entry>
+<para>a size_t representing a number</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if the function execution is successful, false otherwise </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_a989b6e5b3b8815b8088e8f8ba6d7752c_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_a989b6e5b3b8815b8088e8f8ba6d7752c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_nharamkor__vs_8cpp_1a89f3b5151cdc6346dcca285bca7084a6"/><section>
+    <title>instruct_handler_char_handler()</title>
+<indexterm><primary>instruct_handler_char_handler</primary><secondary>nharamkor_vs.cpp</secondary></indexterm>
+<indexterm><primary>nharamkor_vs.cpp</primary><secondary>instruct_handler_char_handler</secondary></indexterm>
+<computeroutput>template&lt;<link linkend="_classlista">typename</link> <link linkend="_classlista">T</link> &gt; </computeroutput><para><computeroutput><link linkend="_classlista">bool</link> instruct_handler_char_handler (<link linkend="_classlista">uint8_t</link> * inputs, <link linkend="_classlista">uint8_t</link> c, <link linkend="_classlista">T</link> &amp; state, <link linkend="_classlista">uint8_t</link> &amp; mods, <link linkend="_classlista">size_t</link> &amp; number)</computeroutput></para>
+<para>A template function to handle different types of input characters and modify state accordingly.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>inputs</entry><entry>
+<para>pointer to an array of uint8_t to store inputs </para>
+</entry>
+                            </row>
+                            <row>
+<entry>c</entry><entry>
+<para>the input character to handle </para>
+</entry>
+                            </row>
+                            <row>
+<entry>state</entry><entry>
+<para>a reference to a template type T representing the current state </para>
+</entry>
+                            </row>
+                            <row>
+<entry>mods</entry><entry>
+<para>a reference to a uint8_t to store modifiers </para>
+</entry>
+                            </row>
+                            <row>
+<entry>number</entry><entry>
+<para>a reference to a size_t to store a number</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if the input character is processed successfully, false otherwise </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_a89f3b5151cdc6346dcca285bca7084a6_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_a89f3b5151cdc6346dcca285bca7084a6_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_nharamkor__vs_8cpp_1ac668e8600ca0b3a3afa71eccef9ce070"/><section>
+    <title>ismod()</title>
+<indexterm><primary>ismod</primary><secondary>nharamkor_vs.cpp</secondary></indexterm>
+<indexterm><primary>nharamkor_vs.cpp</primary><secondary>ismod</secondary></indexterm>
+<para><computeroutput><link linkend="_classlista">bool</link> ismod (<link linkend="_classlista">char</link> c)</computeroutput></para>
+<para>Check if the character is a special symbol.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>c</entry><entry>
+<para>the character to be checked</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if the character is &apos;&apos;, &apos;-&apos;, &apos;+&apos;, or &apos;!&apos;, false otherwise </para>
+</formalpara>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_ac668e8600ca0b3a3afa71eccef9ce070_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_nharamkor__vs_8cpp_1adce48f6d81618ca9096f5b88a6e333ab"/><section>
+    <title>kisbetujo()</title>
+<indexterm><primary>kisbetujo</primary><secondary>nharamkor_vs.cpp</secondary></indexterm>
+<indexterm><primary>nharamkor_vs.cpp</primary><secondary>kisbetujo</secondary></indexterm>
+<para><computeroutput><link linkend="_classlista">uint8_t</link> kisbetujo (<link linkend="_classlista">const</link> <link linkend="_classlista">char</link> * str)</computeroutput></para>
+<para>Checks if the input string contains at least one of each lowercase letter up to the &quot;biggest&quot; letter in use. And not contains syntactic error.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>str</entry><entry>
+<para>pointer to the input string</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>2 if wrong format, 1 if wrong character usage, 0 if it&apos;s valid </para>
+</formalpara>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_adce48f6d81618ca9096f5b88a6e333ab_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_nharamkor__vs_8cpp_1afb58d022f3fcaf90e41950da473cca92"/><section>
+    <title>kisbetujo2()</title>
+<indexterm><primary>kisbetujo2</primary><secondary>nharamkor_vs.cpp</secondary></indexterm>
+<indexterm><primary>nharamkor_vs.cpp</primary><secondary>kisbetujo2</secondary></indexterm>
+<para><computeroutput><link linkend="_classlista">uint8_t</link> kisbetujo2 (<link linkend="_classlista">const</link> <link linkend="_classlista">char</link> * str)</computeroutput></para>
+<para>Checks if the input string contains at least one of each lowercase letter up to the &quot;biggest&quot; letter in use and after a specific character every letter used as output.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>str</entry><entry>
+<para>pointer to the input string</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>1 if a letter used as an output more than once, 2 if it&apos;s not valid, 0 if it&apos;s valid </para>
+</formalpara>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_afb58d022f3fcaf90e41950da473cca92_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_nharamkor__vs_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4"/><section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>nharamkor_vs.cpp</secondary></indexterm>
+<indexterm><primary>nharamkor_vs.cpp</primary><secondary>main</secondary></indexterm>
+<para><computeroutput><link linkend="_classlista">int</link> main ( )</computeroutput></para>
+<para>Main function... That&apos;s all. </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_nharamkor__vs_8cpp_1afbce817d76bf9bc1a433c1d83fc15d0b"/><section>
+    <title>modulator()</title>
+<indexterm><primary>modulator</primary><secondary>nharamkor_vs.cpp</secondary></indexterm>
+<indexterm><primary>nharamkor_vs.cpp</primary><secondary>modulator</secondary></indexterm>
+<para><computeroutput><link linkend="_classlista">void</link> modulator (<link linkend="_classlista">uint8_t</link> c, <link linkend="_classlista">uint8_t</link> &amp; mods)</computeroutput></para>
+<para>Modifies the given mods variable based on the input character.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>c</entry><entry>
+<para>the character input to determine the modification </para>
+</entry>
+                            </row>
+                            <row>
+<entry>mods</entry><entry>
+<para>the variable to be modified based on the input character </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_afbce817d76bf9bc1a433c1d83fc15d0b_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_nharamkor__vs_8cpp_1a079dcfedb64af966eab0a78d9a4c979d"/><section>
+    <title>modulesteszt()</title>
+<indexterm><primary>modulesteszt</primary><secondary>nharamkor_vs.cpp</secondary></indexterm>
+<indexterm><primary>nharamkor_vs.cpp</primary><secondary>modulesteszt</secondary></indexterm>
+<para><computeroutput><link linkend="_classlista">uint8_t</link> modulesteszt (<link linkend="_classlista">const</link> <link linkend="_classlista">char</link> * str, <link linkend="_classlista">lista</link>&lt; <link linkend="_classprot__module__t">prot_module_t</link> * &gt; &amp; modules)</computeroutput></para>
+<para>Function to check and validate modules based on input string.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>str</entry><entry>
+<para>The input string to check against modules. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>modules</entry><entry>
+<para>A list of modules to compare against the input string.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 if successful, 1 if module does not exist, 2 if wrong input number, 3 if wrong output number. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_a079dcfedb64af966eab0a78d9a4c979d_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_a079dcfedb64af966eab0a78d9a4c979d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_nharamkor__vs_8cpp_1a7f4e4e25704216d56a1bbe815546d655"/><section>
+    <title>nagybetujo()</title>
+<indexterm><primary>nagybetujo</primary><secondary>nharamkor_vs.cpp</secondary></indexterm>
+<indexterm><primary>nharamkor_vs.cpp</primary><secondary>nagybetujo</secondary></indexterm>
+<para><computeroutput><link linkend="_classlista">uint8_t</link> nagybetujo (<link linkend="_classlista">const</link> <link linkend="_classlista">char</link> * str)</computeroutput></para>
+<para>A function that checks the wiring connections of uppercase letters in the input string.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>str</entry><entry>
+<para>a pointer to the input string to be checked</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 if the wiring connections are correct, 1 if a letter used as an output more than once, 2 if there are incorrect wiring connections </para>
+</formalpara>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_a7f4e4e25704216d56a1bbe815546d655_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_nharamkor__vs_8cpp_1a8e7995ef24cddb91ed4b4d47a03deb4d"/><section>
+    <title>print()</title>
+<indexterm><primary>print</primary><secondary>nharamkor_vs.cpp</secondary></indexterm>
+<indexterm><primary>nharamkor_vs.cpp</primary><secondary>print</secondary></indexterm>
+<para><computeroutput><link linkend="_classlista">void</link> print (<link linkend="_classmodule__t">module_t</link> *&amp; m_main, <link linkend="_classlista">bool</link> kezd = <computeroutput><link linkend="_classlista">true</link></computeroutput>
+, <link linkend="_classlista">bool</link> lezar = <computeroutput><link linkend="_classlista">true</link></computeroutput>
+)</computeroutput></para>
+<para>Prints the contents of the module to the console in a formatted manner.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>m_main</entry><entry>
+<para>a pointer to the module to be printed </para>
+</entry>
+                            </row>
+                            <row>
+<entry>kezd</entry><entry>
+<para>flag indicating whether to include the beginning formatting </para>
+</entry>
+                            </row>
+                            <row>
+<entry>lezar</entry><entry>
+<para>flag indicating whether to include the ending formatting </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_a8e7995ef24cddb91ed4b4d47a03deb4d_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_a8e7995ef24cddb91ed4b4d47a03deb4d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_nharamkor__vs_8cpp_1a3e0f7cbe319cdfbb528b924d817885fd"/><section>
+    <title>print_module_error()</title>
+<indexterm><primary>print_module_error</primary><secondary>nharamkor_vs.cpp</secondary></indexterm>
+<indexterm><primary>nharamkor_vs.cpp</primary><secondary>print_module_error</secondary></indexterm>
+<para><computeroutput><link linkend="_classlista">bool</link> print_module_error (<link linkend="_classlista">uint8_t</link> err)</computeroutput></para>
+<para>A function that prints error messages based on the error code passed in.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>err</entry><entry>
+<para>the error code to determine which error message to print</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if error code is 0, false otherwise </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_a3e0f7cbe319cdfbb528b924d817885fd_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_a3e0f7cbe319cdfbb528b924d817885fd_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_nharamkor__vs_8cpp_1a079960085332785c1fb971533a9912a9"/><section>
+    <title>test_module()</title>
+<indexterm><primary>test_module</primary><secondary>nharamkor_vs.cpp</secondary></indexterm>
+<indexterm><primary>nharamkor_vs.cpp</primary><secondary>test_module</secondary></indexterm>
+<para><computeroutput><link linkend="_classlista">uint8_t</link> test_module (<link linkend="_classlista">const</link> <link linkend="_classlista">char</link> * str, <link linkend="_classlista">lista</link>&lt; <link linkend="_classprot__module__t">prot_module_t</link> * &gt; &amp; modulok, <link linkend="_classlista">bool</link> add = <computeroutput><link linkend="_classlista">true</link></computeroutput>
+)</computeroutput></para>
+<para>Function to test a module with the given name and commands.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>str</entry><entry>
+<para>the name and commands of the module to be tested </para>
+</entry>
+                            </row>
+                            <row>
+<entry>modulok</entry><entry>
+<para>a list of module pointers to be tested against </para>
+</entry>
+                            </row>
+                            <row>
+<entry>add</entry><entry>
+<para>flag to indicate whether to add the module</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 if successful, error code otherwise </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_a079960085332785c1fb971533a9912a9_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_a079960085332785c1fb971533a9912a9_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_nharamkor__vs_8cpp_1a8394f5d2589de5e083e551414e4d1a92"/><section>
+    <title>ujmnev_ell()</title>
+<indexterm><primary>ujmnev_ell</primary><secondary>nharamkor_vs.cpp</secondary></indexterm>
+<indexterm><primary>nharamkor_vs.cpp</primary><secondary>ujmnev_ell</secondary></indexterm>
+<para><computeroutput><link linkend="_classlista">uint8_t</link> ujmnev_ell (<link linkend="_classlista">const</link> <link linkend="_classlista">char</link> * nev, <link linkend="_classlista">lista</link>&lt; <link linkend="_classprot__module__t">prot_module_t</link> * &gt; &amp; modules)</computeroutput></para>
+<para>Check if the given name meets certain criteria and is not already in use.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>nev</entry><entry>
+<para>The name to be checked </para>
+</entry>
+                            </row>
+                            <row>
+<entry>modules</entry><entry>
+<para>A list of modules to compare the name against</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 if the name is valid and not in use, 1 if the name not starts with &apos;_&apos;, 2 if the name contains invalid characters, 3 if the name is already in use </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_a8394f5d2589de5e083e551414e4d1a92_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nharamkor__vs_8cpp_a8394f5d2589de5e083e551414e4d1a92_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

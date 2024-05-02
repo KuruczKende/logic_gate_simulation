@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classshell__module__t" xml:lang="en-US">
+<title>shell_module_t Class Reference</title>
+<indexterm><primary>shell_module_t</primary></indexterm>
+<para>
+<computeroutput>#include &lt;shell_module.h&gt;</computeroutput>
+</para>
+Inheritance diagram for shell_module_t:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classshell__module__t__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for shell_module_t:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classshell__module__t__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classshell__module__t_1a4a7a9a6a40113732874939fa57900d5b">shell_module_t</link> (<link linkend="_classlista">size_t</link> ports=0)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">void</link> <link linkend="_classshell__module__t_1a93ba970d90ff94f92e355ea110ba0f45">init</link> (<link linkend="_classlista">size_t</link> ports)</para>
+</listitem>
+            <listitem><para><link linkend="_classmodule__t">module_t</link> * <link linkend="_classshell__module__t_1a61c53afecd1b6308eaba06c685420371">copy</link> () <link linkend="_classlista">override</link></para>
+</listitem>
+            <listitem><para><link linkend="_classlista">void</link> <link linkend="_classshell__module__t_1a4e060254af234565da1f0381e82a4afa">add_to_list</link> (<link linkend="_classlista">lista</link>&lt; <link linkend="_classmodule__t">module_t</link> * &gt; &amp;<link linkend="_classlista">wait_for_do</link>, <link linkend="_classlista">size_t</link> <link linkend="_classlista">be</link>) <link linkend="_classlista">override</link></para>
+</listitem>
+            <listitem><para><link linkend="_classlista">void</link> <link linkend="_classshell__module__t_1ad51fd55322054ad381801aaeae0bcecb">set_be</link> (<link linkend="_classlista">size_t</link> <link linkend="_classlista">index</link>, <link linkend="_classlista">uint8_t</link> ertek) <link linkend="_classlista">override</link></para>
+</listitem>
+            <listitem><para><link linkend="_classlista">virtual</link> <link linkend="_classshell__module__t_1a03b36f2ced4390eb8512e94cfb8c2b81">~shell_module_t</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_classmodule__t">module_t</link>        <itemizedlist>
+            <listitem><para><link linkend="_classmodule__t_1a37273f61cb094f04a2d42f519a498d68">module_t</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">virtual</link> <link linkend="_classlista">void</link> <link linkend="_classmodule__t_1ab299b7a5380d778a6c6d9d78285c837e">vegrehajtas</link> (<link linkend="_classlista">lista</link>&lt; <link linkend="_classmodule__t">module_t</link> * &gt; &amp;<link linkend="_classlista">wait_for_do</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">virtual</link> <link linkend="_classlista">void</link> <link linkend="_classmodule__t_1a57c0215cd97886fdbbf55a59ead9205a">set_ki_port</link> (<link linkend="_classlista">size_t</link> <link linkend="_classlista">ki_index</link>, <link linkend="_classmodule__t">module_t</link> *modulep, <link linkend="_classlista">size_t</link> <link linkend="_classlista">be_index</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">virtual</link> <link linkend="_classlista">size_t</link> <link linkend="_classmodule__t_1a5bfb7a115938e38ae555af4c83bb431c">get_ki_num</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">virtual</link> <link linkend="_classlista">uint8_t</link> <link linkend="_classmodule__t_1a74f223430fdcfa4e8cb9b143b29dab5d">get_ki_ertek</link> (<link linkend="_classlista">size_t</link> <link linkend="_classlista">i</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">size_t</link> <link linkend="_classmodule__t_1a3986b0f8ab95dbccec8616f2196e7bba">get_be_num</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">uint8_t</link> <link linkend="_classmodule__t_1afc483f4ee25f18ae47b5b1bdad294785">get_be_ertek</link> (<link linkend="_classlista">size_t</link> <link linkend="_classlista">i</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classlista">virtual</link> <link linkend="_classmodule__t_1a74181e5ee6b99a623d75ce02304c1340">~module_t</link> ()</para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+Protected Attributes inherited from <link linkend="_classmodule__t">module_t</link>        <itemizedlist>
+            <listitem><para><link linkend="_classlista">size_t</link> <link linkend="_classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232">be_db</link></para>
+</listitem>
+            <listitem><para><link linkend="_classlista">size_t</link> <link linkend="_classmodule__t_1a525593566e11dc7186152b4770e12253">ki_db</link></para>
+</listitem>
+            <listitem><para><link linkend="_classlista">uint8_t</link> * <link linkend="_classmodule__t_1a7d61b23e49096510cf223ffbced16f5f">be_ertek</link></para>
+</listitem>
+            <listitem><para><link linkend="_classlista">uint8_t</link> * <link linkend="_classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a">ki_ertek</link></para>
+</listitem>
+            <listitem><para><link linkend="_classlista">lista</link>&lt; <link linkend="_structport">port</link>&lt; <link linkend="_classmodule__t">module_t</link> * &gt; &gt; * <link linkend="_classmodule__t_1a7e972df261abe0ad96181db1f0f004d5">ki_ports</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classshell__module__t_1a4a7a9a6a40113732874939fa57900d5b"/><section>
+    <title>shell_module_t()</title>
+<indexterm><primary>shell_module_t</primary><secondary>shell_module_t</secondary></indexterm>
+<indexterm><primary>shell_module_t</primary><secondary>shell_module_t</secondary></indexterm>
+<para><computeroutput>shell_module_t::shell_module_t (<link linkend="_classlista">size_t</link> ports = <computeroutput>0</computeroutput>
+)</computeroutput></para>
+<para>Constructor for <link linkend="_classshell__module__t">shell_module_t</link> class.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>ports</entry><entry>
+<para>the number of ports to initialize </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classshell__module__t_a4a7a9a6a40113732874939fa57900d5b_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_classshell__module__t_1a03b36f2ced4390eb8512e94cfb8c2b81"/><section>
+    <title>~shell_module_t()</title>
+<indexterm><primary>~shell_module_t</primary><secondary>shell_module_t</secondary></indexterm>
+<indexterm><primary>shell_module_t</primary><secondary>~shell_module_t</secondary></indexterm>
+<para><computeroutput>shell_module_t::~shell_module_t ( )<computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Destructor for the <link linkend="_classshell__module__t">shell_module_t</link> class. </para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classshell__module__t_1a4e060254af234565da1f0381e82a4afa"/><section>
+    <title>add_to_list()</title>
+<indexterm><primary>add_to_list</primary><secondary>shell_module_t</secondary></indexterm>
+<indexterm><primary>shell_module_t</primary><secondary>add_to_list</secondary></indexterm>
+<para><computeroutput><link linkend="_classlista">void</link> shell_module_t::add_to_list (<link linkend="_classlista">lista</link>&lt; <link linkend="_classmodule__t">module_t</link> * &gt; &amp; wait_for_do, <link linkend="_classlista">size_t</link> be)<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Reimplemented from <link linkend="_classmodule__t_1a1261616ace799b6efe1050be4355e697">module_t</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classshell__module__t_a4e060254af234565da1f0381e82a4afa_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_classshell__module__t_1a61c53afecd1b6308eaba06c685420371"/><section>
+    <title>copy()</title>
+<indexterm><primary>copy</primary><secondary>shell_module_t</secondary></indexterm>
+<indexterm><primary>shell_module_t</primary><secondary>copy</secondary></indexterm>
+<para><computeroutput><link linkend="_classmodule__t">module_t</link> * shell_module_t::copy ( )<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_classmodule__t_1ac55b2034283f3488767d6c110ddad55d">module_t</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classshell__module__t_a61c53afecd1b6308eaba06c685420371_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_classshell__module__t_1a93ba970d90ff94f92e355ea110ba0f45"/><section>
+    <title>init()</title>
+<indexterm><primary>init</primary><secondary>shell_module_t</secondary></indexterm>
+<indexterm><primary>shell_module_t</primary><secondary>init</secondary></indexterm>
+<para><computeroutput><link linkend="_classlista">void</link> shell_module_t::init (<link linkend="_classlista">size_t</link> ports)</computeroutput></para>
+<para>Initializes the shell module with the given number of ports.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>ports</entry><entry>
+<para>the number of ports to initialize </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classshell__module__t_a93ba970d90ff94f92e355ea110ba0f45_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_classshell__module__t_1ad51fd55322054ad381801aaeae0bcecb"/><section>
+    <title>set_be()</title>
+<indexterm><primary>set_be</primary><secondary>shell_module_t</secondary></indexterm>
+<indexterm><primary>shell_module_t</primary><secondary>set_be</secondary></indexterm>
+<para><computeroutput><link linkend="_classlista">void</link> shell_module_t::set_be (<link linkend="_classlista">size_t</link> index, <link linkend="_classlista">uint8_t</link> ertek)<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Sets the value at the specified index in the inputs.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>index</entry><entry>
+<para>the index at which to set the value </para>
+</entry>
+                            </row>
+                            <row>
+<entry>ertek</entry><entry>
+<para>the value to set </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classmodule__t_1a67f5c31043ebfd97506f367b83b02f14">module_t</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classshell__module__t_ad51fd55322054ad381801aaeae0bcecb_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+<link linkend="_shell__module_8h">shell_module.h</link><link linkend="_shell__module_8cpp">shell_module.cpp</link></section>
+</section>

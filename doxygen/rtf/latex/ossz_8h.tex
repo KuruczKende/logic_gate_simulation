@@ -1,0 +1,76 @@
+\doxysection{ossz.\+h File Reference}
+\label{ossz_8h}\index{ossz.h@{ossz.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include "{}memtrace.\+h"{}}\newline
+Include dependency graph for ossz.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ lista$<$ T $>$}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#\textbf{ define} \textbf{ low}~\textquotesingle{}0\textquotesingle{}
+\item 
+\#\textbf{ define} \textbf{ high}~\textquotesingle{}1\textquotesingle{}
+\item 
+\#\textbf{ define} \textbf{ undet}~\textquotesingle{}?\textquotesingle{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ bool} \textbf{ eggyezik} (\textbf{ const} \textbf{ char} $\ast$\textbf{ str}, \textbf{ const} \textbf{ char} $\ast$\textbf{ str2}, \textbf{ size\+\_\+t} \textbf{ kez}, \textbf{ size\+\_\+t} \textbf{ veg})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\label{ossz_8h_a9ce2716323ceb0e2133340a161f33a6c} 
+\index{ossz.h@{ossz.h}!high@{high}}
+\index{high@{high}!ossz.h@{ossz.h}}
+\doxysubsubsection{high}
+{\footnotesize\ttfamily \#\textbf{ define} high~\textquotesingle{}1\textquotesingle{}}
+
+\label{ossz_8h_a4c601b4f90966724c2de786d8bd9eb82} 
+\index{ossz.h@{ossz.h}!low@{low}}
+\index{low@{low}!ossz.h@{ossz.h}}
+\doxysubsubsection{low}
+{\footnotesize\ttfamily \#\textbf{ define} low~\textquotesingle{}0\textquotesingle{}}
+
+\label{ossz_8h_a0caf0c0a211316c3867bcd0975c086b0} 
+\index{ossz.h@{ossz.h}!undet@{undet}}
+\index{undet@{undet}!ossz.h@{ossz.h}}
+\doxysubsubsection{undet}
+{\footnotesize\ttfamily \#\textbf{ define} undet~\textquotesingle{}?\textquotesingle{}}
+
+
+
+\doxysubsection{Function Documentation}
+\label{ossz_8h_a4e937192165d4187e4bd5e4d70967eb5} 
+\index{ossz.h@{ossz.h}!eggyezik@{eggyezik}}
+\index{eggyezik@{eggyezik}!ossz.h@{ossz.h}}
+\doxysubsubsection{eggyezik()}
+{\footnotesize\ttfamily \textbf{ bool} eggyezik (\begin{DoxyParamCaption}\item[{\textbf{ const} \textbf{ char} $\ast$}]{str,  }\item[{\textbf{ const} \textbf{ char} $\ast$}]{str2,  }\item[{\textbf{ size\+\_\+t}}]{kez,  }\item[{\textbf{ size\+\_\+t}}]{veg }\end{DoxyParamCaption})}
+
+Checks if a substring of str matches str2 within the specified range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & pointer to the string to be checked \\
+\hline
+{\em str2} & pointer to the string to compare against \\
+\hline
+{\em kez} & starting index of the substring to compare \\
+\hline
+{\em veg} & ending index of the substring to compare (exclusive)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the substring matches, false otherwise 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 2

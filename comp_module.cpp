@@ -10,7 +10,7 @@
  *
  * @return true if the substring matches, false otherwise
  */
-bool eggyezik(const char* str, const char* str2, size_t kez, size_t veg) {
+bool comp_module_t::eggyezik(const char* str, const char* str2, size_t kez, size_t veg) {
     if (strlen(str) != veg - kez) return false;
     for (size_t i = 0; i + kez < veg; i++)
         if (str[i] != str2[kez + i])
@@ -28,7 +28,7 @@ bool eggyezik(const char* str, const char* str2, size_t kez, size_t veg) {
  * @param ki_db the calculated number of outputs based on characters in modules_coms
  * @param w_db the calculated number of wires based on characters in modules_coms
  */
-void muvcount(char* modules_coms, lista<size_t>& vegk, lista<size_t>& kezk, size_t& m_db, size_t& be_db, size_t& ki_db) {
+void comp_module_t::muvcount( lista<size_t>& vegk, lista<size_t>& kezk) {
     m_db = 0;
     bool port = false, outport = false;
     uint8_t max_inner = 'A' - 1, max_in = 'a' - 1, max_out = 'a' - 1, min_out = 'z' + 1;
@@ -97,16 +97,18 @@ void comp_module_t::set_connection(char c, module_t*& base, size_t ki_index) {
  * @param prot_modules list of modules prototypes
  * @param modules_ref reference to modules
  */
-void comp_module_t::comp_fill_module(bool copy, lista<size_t>& vegk, lista<size_t>& kezk, lista<prot_module_t*>* prot_modules, module_t**& modules_ref) {
+void comp_module_t::comp_create_modules(bool copy, lista<size_t>& vegk, lista<size_t>& kezk, lista<prot_module_t*>* prot_modules, module_t**& modules_ref) {
     for (size_t i = 0; i < m_db; i++) {
         if (!copy) {
             size_t j = 0;
-            while (!eggyezik((*prot_modules)[j]->getnev(), modules_coms, kezk[i], vegk[i])) j++;
-            modules[i] = (*prot_modules)[j]->getprot()->copy();
+            while (!eggyezik((*prot_modules)[j]->nev, modules_coms, kezk[i], vegk[i])) j++;
+            modules[i] = (*prot_modules)[j]->prot->copy();
         }
         else
             modules[i] = modules_ref[i]->copy();
     }
+}
+void comp_module_t::comp_fill_module(lista<size_t>& vegk) {
     for (size_t i = 0; i < m_db; i++) {
         size_t j = vegk[i] + 1;
         size_t k = 0;
@@ -115,15 +117,12 @@ void comp_module_t::comp_fill_module(bool copy, lista<size_t>& vegk, lista<size_
                 modules[i]->set_be(k, modules_coms[j]);
             else if (modules_coms[j] >= 'a' && modules_coms[j] < 'a' + be_db)
                 ki_ports[modules_coms[j] - 'a'].add(port<module_t*>{modules[i], k});
-            k++;
-            j++;
+            k++;j++;
         }
-        j++;
-        k = 0;
+        j++;k = 0;
         while (modules_coms[j] != ')') {
             if (modules_coms[j] == '-') {
-                k++;
-                j++;
+                k++;j++;
             }
             else {
                 if (modules_coms[j] >= 'a' + be_db)
@@ -147,8 +146,8 @@ comp_module_t::comp_module_t(char* modules_coms, lista<prot_module_t*>& prot_mod
     size_t ki_dab;
     lista<size_t> vegk;
     lista<size_t> kezk;
-    muvcount(modules_coms, vegk, kezk, m_db, be_db, ki_dab);
-    this->ki_db = be_db;
+    muvcount(vegk, kezk);
+    ki_dab = ki_db;
     be_ertek = ki_ertek = new uint8_t[be_db];
     for (size_t i = 0; i < be_db; i++) {
         be_ertek[i] = '?';
@@ -156,7 +155,9 @@ comp_module_t::comp_module_t(char* modules_coms, lista<prot_module_t*>& prot_mod
     ki_ports = new lista<port<module_t*>>[be_db];
     end_module.init(ki_dab);
     modules = new module_t * [m_db];
-    comp_fill_module(false, vegk, kezk, &prot_modules, modules);
+    comp_create_modules(false, vegk, kezk, &prot_modules, modules);
+    comp_fill_module(vegk);
+    ki_db = be_db;
 }
 /**
  * Constructor for comp_module_t class.
@@ -188,8 +189,10 @@ module_t* comp_module_t::copy() {
     lista<size_t> vegk;
     lista<size_t> kezk;
     size_t kuka;
-    muvcount(modules_coms, vegk, kezk, kuka, kuka, kuka);
-    ret->comp_fill_module(true, vegk, kezk, nullptr, modules);
+    ret->muvcount(vegk, kezk);
+    ret->comp_create_modules(true, vegk, kezk, nullptr, modules);
+    ret->comp_fill_module(vegk);
+    ret->ki_db = ret->be_db;
     return ret;
 }
 /**

@@ -1,0 +1,69 @@
+.TH "comp_module.cpp" 3 "nharamkkor_vs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+comp_module.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'comp_module\&.h'\fP
+.br
+\fR#include 'text_module\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBbool\fP \fBeggyezik\fP (\fBconst\fP \fBchar\fP *\fBstr\fP, \fBconst\fP \fBchar\fP *\fBstr2\fP, \fBsize_t\fP \fBkez\fP, \fBsize_t\fP \fBveg\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmuvcount\fP (\fBchar\fP *modules_coms, \fBlista\fP< \fBsize_t\fP > &\fBvegk\fP, \fBlista\fP< \fBsize_t\fP > &\fBkezk\fP, \fBsize_t\fP &m_db, \fBsize_t\fP &be_db, \fBsize_t\fP &ki_db)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBbool\fP eggyezik (\fBconst\fP \fBchar\fP * str, \fBconst\fP \fBchar\fP * str2, \fBsize_t\fP kez, \fBsize_t\fP veg)"
+Checks if a substring of str matches str2 within the specified range\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIstr\fP pointer to the string to be checked 
+.br
+\fIstr2\fP pointer to the string to compare against 
+.br
+\fIkez\fP starting index of the substring to compare 
+.br
+\fIveg\fP ending index of the substring to compare (exclusive)
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the substring matches, false otherwise 
+.RE
+.PP
+
+.SS "\fBvoid\fP muvcount (\fBchar\fP * modules_coms, \fBlista\fP< \fBsize_t\fP > & vegk, \fBlista\fP< \fBsize_t\fP > & kezk, \fBsize_t\fP & m_db, \fBsize_t\fP & be_db, \fBsize_t\fP & ki_db)"
+Calculates various counts and values based on the input string\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImodules_coms\fP the character array containing module command 
+.br
+\fIvegk\fP the list of the starter indexes 
+.br
+\fIkezk\fP the list of the end indexes 
+.br
+\fIm_db\fP the calculated number of modules based on characters in modules_coms 
+.br
+\fIbe_db\fP the calculated number of inputs based on characters in modules_coms 
+.br
+\fIki_db\fP the calculated number of outputs based on characters in modules_coms 
+.br
+\fIw_db\fP the calculated number of wires based on characters in modules_coms 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for nharamkkor_vs from the source code\&.

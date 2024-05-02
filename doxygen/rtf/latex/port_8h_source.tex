@@ -1,0 +1,20 @@
+\doxysection{port.\+h}
+\label{port_8h_source}\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PORT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PORT\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ossz.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }port\_t\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ module\_t*\ modulep;}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{int}\ idx;}
+\DoxyCodeLine{00007\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00008\ \ \ \ \ port\_t(module\_t*\ modulep,\ \textcolor{keywordtype}{size\_t}\ idx)\ :modulep(modulep),\ idx(idx)\ \{\}}
+\DoxyCodeLine{00009\ \ \ \ \ module\_t*\ doit(uint8\_t\ ertek);}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{void}\ setin(uint8\_t\ ertek);}
+\DoxyCodeLine{00011\ \ \ \ \ module\_t*\ get\_module();}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ get\_idx();}
+\DoxyCodeLine{00013\ \ \ \ \ \string~port\_t();}
+\DoxyCodeLine{00014\ \};}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

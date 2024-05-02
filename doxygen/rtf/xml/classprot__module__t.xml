@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classprot__module__t" kind="class" language="C++" prot="public">
+    <compoundname>prot_module_t</compoundname>
+    <includes refid="prot__modules_8h" local="no">prot_modules.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classprot__module__t_1ae30a7f7f68afbaf3826b99005139a261" prot="private" static="no" mutable="no">
+        <type><ref refid="classlista" kindref="compound">char</ref> *</type>
+        <definition>char* prot_module_t::nev</definition>
+        <argsstring></argsstring>
+        <name>nev</name>
+        <qualifiedname>prot_module_t::nev</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="prot_modules.h" line="5" column="10" bodyfile="prot_modules.h" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classprot__module__t_1a6a8b0d47d35565a7b5bb0ae2e6644927" prot="private" static="no" mutable="no">
+        <type><ref refid="classmodule__t" kindref="compound">module_t</ref> *</type>
+        <definition>module_t* prot_module_t::prot</definition>
+        <argsstring></argsstring>
+        <name>prot</name>
+        <qualifiedname>prot_module_t::prot</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="prot_modules.h" line="6" column="14" bodyfile="prot_modules.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classprot__module__t_1a640322af18b531fb4028fb3a1d3b31a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prot_module_t::prot_module_t</definition>
+        <argsstring>(const char *nev=NULL, module_t *prot=NULL)</argsstring>
+        <name>prot_module_t</name>
+        <qualifiedname>prot_module_t::prot_module_t</qualifiedname>
+        <param>
+          <type><ref refid="classlista" kindref="compound">const</ref> <ref refid="classlista" kindref="compound">char</ref> *</type>
+          <declname>nev</declname>
+          <defval><ref refid="classlista" kindref="compound">NULL</ref></defval>
+        </param>
+        <param>
+          <type><ref refid="classmodule__t" kindref="compound">module_t</ref> *</type>
+          <declname>prot</declname>
+          <defval><ref refid="classlista" kindref="compound">NULL</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor for <ref refid="classprot__module__t" kindref="compound">prot_module_t</ref> class.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string containing the name. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>prot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a module. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="prot_modules.h" line="8" column="5" bodyfile="prot_modules.cpp" bodystart="9" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classprot__module__t_1a5194bb873cf8059008b9622b5539445c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classlista" kindref="compound">char</ref> *&amp;</type>
+        <definition>char *&amp; prot_module_t::getnev</definition>
+        <argsstring>()</argsstring>
+        <name>getnev</name>
+        <qualifiedname>prot_module_t::getnev</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="prot_modules.h" line="9" column="10" bodyfile="prot_modules.h" bodystart="9" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classprot__module__t_1a4de31208867af3c8b5cec052a5d374c8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classmodule__t" kindref="compound">module_t</ref> *&amp;</type>
+        <definition>module_t *&amp; prot_module_t::getprot</definition>
+        <argsstring>()</argsstring>
+        <name>getprot</name>
+        <qualifiedname>prot_module_t::getprot</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="prot_modules.h" line="10" column="14" bodyfile="prot_modules.h" bodystart="10" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classprot__module__t_1a4fe49a54cfc0d3a54f59e472bd31533b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prot_module_t::~prot_module_t</definition>
+        <argsstring>()</argsstring>
+        <name>~prot_module_t</name>
+        <qualifiedname>prot_module_t::~prot_module_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destructor for the <ref refid="classprot__module__t" kindref="compound">prot_module_t</ref> class. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="prot_modules.h" line="11" column="5" bodyfile="prot_modules.cpp" bodystart="18" bodyend="21"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="prot_modules.h" line="4" column="1" bodyfile="prot_modules.h" bodystart="4" bodyend="12"/>
+    <listofallmembers>
+      <member refid="classprot__module__t_1a5194bb873cf8059008b9622b5539445c" prot="public" virt="non-virtual"><scope>prot_module_t</scope><name>getnev</name></member>
+      <member refid="classprot__module__t_1a4de31208867af3c8b5cec052a5d374c8" prot="public" virt="non-virtual"><scope>prot_module_t</scope><name>getprot</name></member>
+      <member refid="classprot__module__t_1ae30a7f7f68afbaf3826b99005139a261" prot="private" virt="non-virtual"><scope>prot_module_t</scope><name>nev</name></member>
+      <member refid="classprot__module__t_1a6a8b0d47d35565a7b5bb0ae2e6644927" prot="private" virt="non-virtual"><scope>prot_module_t</scope><name>prot</name></member>
+      <member refid="classprot__module__t_1a640322af18b531fb4028fb3a1d3b31a3" prot="public" virt="non-virtual"><scope>prot_module_t</scope><name>prot_module_t</name></member>
+      <member refid="classprot__module__t_1a4fe49a54cfc0d3a54f59e472bd31533b" prot="public" virt="non-virtual"><scope>prot_module_t</scope><name>~prot_module_t</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,832 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="text__module_8cpp" kind="file" language="C++">
+    <compoundname>text_module.cpp</compoundname>
+    <includes refid="text__module_8h" local="yes">text_module.h</includes>
+    <incdepgraph>
+      <node id="7">
+        <label>memtrace.h</label>
+        <link refid="memtrace_8h"/>
+      </node>
+      <node id="3">
+        <label>module.h</label>
+        <link refid="module_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ossz.h</label>
+        <link refid="ossz_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>text_module.cpp</label>
+        <link refid="text__module_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>text_module.h</label>
+        <link refid="text__module_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>cstring</label>
+      </node>
+      <node id="5">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="text__module_8cpp_1ad670db7bf59a28c821825d5c379811bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlista" kindref="compound">uint8_t</ref></type>
+        <definition>uint8_t mynot</definition>
+        <argsstring>(uint8_t a)</argsstring>
+        <name>mynot</name>
+        <param>
+          <type><ref refid="classlista" kindref="compound">uint8_t</ref></type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A function that performs a NOT operation on the inputs.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The input value to perform the NOT operation on.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The result of the NOT operation. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="text_module.cpp" line="9" column="9" bodyfile="text_module.cpp" bodystart="9" bodyend="15"/>
+        <references refid="ossz_8h_1a9ce2716323ceb0e2133340a161f33a6c" compoundref="ossz_8h" startline="9">high</references>
+        <references refid="ossz_8h_1a4c601b4f90966724c2de786d8bd9eb82" compoundref="ossz_8h" startline="8">low</references>
+        <references refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" compoundref="ossz_8h" startline="10">undet</references>
+        <referencedby refid="text__module_8cpp_1a0409fbc3d883fb339196f392b177dab7" compoundref="text__module_8cpp" startline="89" endline="108">muvs</referencedby>
+        <referencedby refid="text__module_8cpp_1a5e761d3e1f203f5db1ab8e87710494bf" compoundref="text__module_8cpp" startline="203" endline="230">vegrehajt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="text__module_8cpp_1a5a820a0e7dd4578abeb30e7d82396f01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlista" kindref="compound">uint8_t</ref></type>
+        <definition>uint8_t myand</definition>
+        <argsstring>(uint8_t a, uint8_t b)</argsstring>
+        <name>myand</name>
+        <param>
+          <type><ref refid="classlista" kindref="compound">uint8_t</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">uint8_t</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculates the AND operation between two input values.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the first input </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the second input</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the result of the AND operation between the two inputs </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="text_module.cpp" line="24" column="9" bodyfile="text_module.cpp" bodystart="24" bodyend="31"/>
+        <references refid="ossz_8h_1a9ce2716323ceb0e2133340a161f33a6c" compoundref="ossz_8h" startline="9">high</references>
+        <references refid="ossz_8h_1a4c601b4f90966724c2de786d8bd9eb82" compoundref="ossz_8h" startline="8">low</references>
+        <references refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" compoundref="ossz_8h" startline="10">undet</references>
+        <referencedby refid="text__module_8cpp_1a0409fbc3d883fb339196f392b177dab7" compoundref="text__module_8cpp" startline="89" endline="108">muvs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="text__module_8cpp_1adc5c1b52d18783f933cb564cea81b221" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlista" kindref="compound">uint8_t</ref></type>
+        <definition>uint8_t myor</definition>
+        <argsstring>(uint8_t a, uint8_t b)</argsstring>
+        <name>myor</name>
+        <param>
+          <type><ref refid="classlista" kindref="compound">uint8_t</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">uint8_t</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculates the OR operation between two input values.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the first input </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the second input</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the result of the OR operation between the two inputs </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="text_module.cpp" line="40" column="9" bodyfile="text_module.cpp" bodystart="40" bodyend="47"/>
+        <references refid="ossz_8h_1a9ce2716323ceb0e2133340a161f33a6c" compoundref="ossz_8h" startline="9">high</references>
+        <references refid="ossz_8h_1a4c601b4f90966724c2de786d8bd9eb82" compoundref="ossz_8h" startline="8">low</references>
+        <references refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" compoundref="ossz_8h" startline="10">undet</references>
+        <referencedby refid="text__module_8cpp_1a0409fbc3d883fb339196f392b177dab7" compoundref="text__module_8cpp" startline="89" endline="108">muvs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="text__module_8cpp_1a42e733bd26080ab8d6cb4213dc6c4cfc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlista" kindref="compound">uint8_t</ref></type>
+        <definition>uint8_t myxor</definition>
+        <argsstring>(uint8_t a, uint8_t b)</argsstring>
+        <name>myxor</name>
+        <param>
+          <type><ref refid="classlista" kindref="compound">uint8_t</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">uint8_t</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculates the XOR operation between two input values.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the first input </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the second input</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the result of the XOR operation between the two inputs </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="text_module.cpp" line="56" column="9" bodyfile="text_module.cpp" bodystart="56" bodyend="59"/>
+        <references refid="ossz_8h_1a9ce2716323ceb0e2133340a161f33a6c" compoundref="ossz_8h" startline="9">high</references>
+        <references refid="ossz_8h_1a4c601b4f90966724c2de786d8bd9eb82" compoundref="ossz_8h" startline="8">low</references>
+        <references refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" compoundref="ossz_8h" startline="10">undet</references>
+        <referencedby refid="text__module_8cpp_1a0409fbc3d883fb339196f392b177dab7" compoundref="text__module_8cpp" startline="89" endline="108">muvs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="text__module_8cpp_1a03a0ce27639dfeafbf0b8e3e94741651" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlista" kindref="compound">void</ref></type>
+        <definition>void lepteto</definition>
+        <argsstring>(size_t torlendo, size_t index, lista&lt; size_t &gt; &amp;hely, char *&amp;ideiglenes, size_t &amp;hossz)</argsstring>
+        <name>lepteto</name>
+        <param>
+          <type><ref refid="classlista" kindref="compound">size_t</ref></type>
+          <declname>torlendo</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">size_t</ref></type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">lista</ref>&lt; <ref refid="classlista" kindref="compound">size_t</ref> &gt; &amp;</type>
+          <declname>hely</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">char</ref> *&amp;</type>
+          <declname>ideiglenes</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">size_t</ref> &amp;</type>
+          <declname>hossz</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Remove a specified number of elements from the given index in the list and update the list accordingly.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>torlendo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number of elements to remove </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the index from which to start removal </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hely</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the list containing the indices </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ideiglenes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the temporary character array </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hossz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the length of the character array </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="text_module.cpp" line="69" column="6" bodyfile="text_module.cpp" bodystart="69" bodyend="75"/>
+        <references refid="classlista_1a5baaf78ac201a75e49f18110daed7fd6" compoundref="lista_8cpp" startline="62" endline="66">lista&lt; T &gt;::length</references>
+        <referencedby refid="text__module_8cpp_1a0409fbc3d883fb339196f392b177dab7" compoundref="text__module_8cpp" startline="89" endline="108">muvs</referencedby>
+        <referencedby refid="text__module_8cpp_1a5e761d3e1f203f5db1ab8e87710494bf" compoundref="text__module_8cpp" startline="203" endline="230">vegrehajt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="text__module_8cpp_1a0409fbc3d883fb339196f392b177dab7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlista" kindref="compound">bool</ref></type>
+        <definition>bool muvs</definition>
+        <argsstring>(size_t index, lista&lt; size_t &gt; &amp;hely, char *&amp;ideiglenes, size_t &amp;hossz, bool neg, uint8_t &amp;ertek, size_t &amp;iertek)</argsstring>
+        <name>muvs</name>
+        <param>
+          <type><ref refid="classlista" kindref="compound">size_t</ref></type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">lista</ref>&lt; <ref refid="classlista" kindref="compound">size_t</ref> &gt; &amp;</type>
+          <declname>hely</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">char</ref> *&amp;</type>
+          <declname>ideiglenes</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">size_t</ref> &amp;</type>
+          <declname>hossz</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">bool</ref></type>
+          <declname>neg</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">uint8_t</ref> &amp;</type>
+          <declname>ertek</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">size_t</ref> &amp;</type>
+          <declname>iertek</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function for performing a specific operation based on the input parameters.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index parameter for the operation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hely</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the list containing the indices </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ideiglenes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the temporary character array </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hossz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the length of the character array </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>neg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean value indicating negation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ertek</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the return value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>iertek</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the index of the return value to be placed</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the task is successfully performed, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="text_module.cpp" line="89" column="6" bodyfile="text_module.cpp" bodystart="89" bodyend="108"/>
+        <references refid="text__module_8cpp_1a03a0ce27639dfeafbf0b8e3e94741651" compoundref="text__module_8cpp" startline="69" endline="75">lepteto</references>
+        <references refid="text__module_8cpp_1a5a820a0e7dd4578abeb30e7d82396f01" compoundref="text__module_8cpp" startline="24" endline="31">myand</references>
+        <references refid="text__module_8cpp_1ad670db7bf59a28c821825d5c379811bb" compoundref="text__module_8cpp" startline="9" endline="15">mynot</references>
+        <references refid="text__module_8cpp_1adc5c1b52d18783f933cb564cea81b221" compoundref="text__module_8cpp" startline="40" endline="47">myor</references>
+        <references refid="text__module_8cpp_1a42e733bd26080ab8d6cb4213dc6c4cfc" compoundref="text__module_8cpp" startline="56" endline="59">myxor</references>
+        <referencedby refid="text__module_8cpp_1a5e761d3e1f203f5db1ab8e87710494bf" compoundref="text__module_8cpp" startline="203" endline="230">vegrehajt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="text__module_8cpp_1a9529dd0d41184fa0192241df7e922780" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlista" kindref="compound">void</ref></type>
+        <definition>void muv_list</definition>
+        <argsstring>(char &amp;c, char &amp;cn, size_t &amp;index, lista&lt; size_t &gt; &amp;hely, lista&lt; size_t &gt; &amp;fsag, size_t &amp;moz, size_t &amp;fs, size_t &amp;maxfsag, uint8_t *&amp;be_ertek)</argsstring>
+        <name>muv_list</name>
+        <param>
+          <type><ref refid="classlista" kindref="compound">char</ref> &amp;</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">char</ref> &amp;</type>
+          <declname>cn</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">size_t</ref> &amp;</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">lista</ref>&lt; <ref refid="classlista" kindref="compound">size_t</ref> &gt; &amp;</type>
+          <declname>hely</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">lista</ref>&lt; <ref refid="classlista" kindref="compound">size_t</ref> &gt; &amp;</type>
+          <declname>fsag</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">size_t</ref> &amp;</type>
+          <declname>moz</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">size_t</ref> &amp;</type>
+          <declname>fs</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">size_t</ref> &amp;</type>
+          <declname>maxfsag</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">uint8_t</ref> *&amp;</type>
+          <declname>be_ertek</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Updates the muv list based on the given character.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the current character </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the next character </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the index </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hely</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the list of locations </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fsag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the list of priorities </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>moz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number of moves </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the current priority value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxfsag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the maximum priority value in the list </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>be_ertek</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the input values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="text_module.cpp" line="157" column="6" bodyfile="text_module.cpp" bodystart="157" bodyend="193"/>
+        <references refid="classlista_1a3f48539cd27ef435ea20315183a7c48e" compoundref="lista_8cpp" startline="38" endline="45">lista&lt; T &gt;::add</references>
+        <referencedby refid="classtext__module__t_1a85cea3d8a0adb3b18631c8f1a9f249ff" compoundref="text__module_8cpp" startline="244" endline="284">text_module_t::vegrehajtas</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="text__module_8cpp_1a5e761d3e1f203f5db1ab8e87710494bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlista" kindref="compound">void</ref></type>
+        <definition>void vegrehajt</definition>
+        <argsstring>(size_t &amp;maxfsag, lista&lt; size_t &gt; &amp;hely, lista&lt; size_t &gt; &amp;fsag, char *&amp;ideiglenes, size_t &amp;hossz)</argsstring>
+        <name>vegrehajt</name>
+        <param>
+          <type><ref refid="classlista" kindref="compound">size_t</ref> &amp;</type>
+          <declname>maxfsag</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">lista</ref>&lt; <ref refid="classlista" kindref="compound">size_t</ref> &gt; &amp;</type>
+          <declname>hely</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">lista</ref>&lt; <ref refid="classlista" kindref="compound">size_t</ref> &gt; &amp;</type>
+          <declname>fsag</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">char</ref> *&amp;</type>
+          <declname>ideiglenes</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">size_t</ref> &amp;</type>
+          <declname>hossz</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Executes a series of operations on the input parameters to modify the ideiglenes array and the hely list.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>maxfsag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the maximum priority value in the list </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hely</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the list of locations </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fsag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the list of priorities </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ideiglenes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the character array to be modified </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hossz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the length of ideiglenes </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="text_module.cpp" line="203" column="6" bodyfile="text_module.cpp" bodystart="203" bodyend="230"/>
+        <references refid="classlista_1a5baaf78ac201a75e49f18110daed7fd6" compoundref="lista_8cpp" startline="62" endline="66">lista&lt; T &gt;::length</references>
+        <references refid="text__module_8cpp_1a03a0ce27639dfeafbf0b8e3e94741651" compoundref="text__module_8cpp" startline="69" endline="75">lepteto</references>
+        <references refid="text__module_8cpp_1a0409fbc3d883fb339196f392b177dab7" compoundref="text__module_8cpp" startline="89" endline="108">muvs</references>
+        <references refid="text__module_8cpp_1ad670db7bf59a28c821825d5c379811bb" compoundref="text__module_8cpp" startline="9" endline="15">mynot</references>
+        <referencedby refid="classtext__module__t_1a85cea3d8a0adb3b18631c8f1a9f249ff" compoundref="text__module_8cpp" startline="244" endline="284">text_module_t::vegrehajtas</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="text__module_8h" kindref="compound">text_module.h</ref>&quot;</highlight></codeline>
+<codeline lineno="9" refid="text__module_8cpp_1ad670db7bf59a28c821825d5c379811bb" refkind="member"><highlight class="normal"><ref refid="classlista" kindref="compound">uint8_t</ref><sp/><ref refid="text__module_8cpp_1ad670db7bf59a28c821825d5c379811bb" kindref="member">mynot</ref>(<ref refid="classlista" kindref="compound">uint8_t</ref><sp/><ref refid="classlista" kindref="compound">a</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">a</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="ossz_8h_1a4c601b4f90966724c2de786d8bd9eb82" kindref="member">low</ref>:</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="ossz_8h_1a9ce2716323ceb0e2133340a161f33a6c" kindref="member">high</ref>;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="ossz_8h_1a9ce2716323ceb0e2133340a161f33a6c" kindref="member">high</ref>:</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="ossz_8h_1a4c601b4f90966724c2de786d8bd9eb82" kindref="member">low</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" kindref="member">undet</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24" refid="text__module_8cpp_1a5a820a0e7dd4578abeb30e7d82396f01" refkind="member"><highlight class="normal"><ref refid="classlista" kindref="compound">uint8_t</ref><sp/><ref refid="text__module_8cpp_1a5a820a0e7dd4578abeb30e7d82396f01" kindref="member">myand</ref>(<ref refid="classlista" kindref="compound">uint8_t</ref><sp/><ref refid="classlista" kindref="compound">a</ref>,<sp/><ref refid="classlista" kindref="compound">uint8_t</ref><sp/><ref refid="classlista" kindref="compound">b</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">a</ref><sp/>+<sp/><ref refid="classlista" kindref="compound">b</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" kindref="member">undet</ref><sp/>+<sp/><ref refid="ossz_8h_1a9ce2716323ceb0e2133340a161f33a6c" kindref="member">high</ref>:</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" kindref="member">undet</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" kindref="member">undet</ref><sp/>+<sp/><ref refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" kindref="member">undet</ref>:</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" kindref="member">undet</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="ossz_8h_1a9ce2716323ceb0e2133340a161f33a6c" kindref="member">high</ref><sp/>+<sp/><ref refid="ossz_8h_1a9ce2716323ceb0e2133340a161f33a6c" kindref="member">high</ref>:</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="ossz_8h_1a9ce2716323ceb0e2133340a161f33a6c" kindref="member">high</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="ossz_8h_1a4c601b4f90966724c2de786d8bd9eb82" kindref="member">low</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40" refid="text__module_8cpp_1adc5c1b52d18783f933cb564cea81b221" refkind="member"><highlight class="normal"><ref refid="classlista" kindref="compound">uint8_t</ref><sp/><ref refid="text__module_8cpp_1adc5c1b52d18783f933cb564cea81b221" kindref="member">myor</ref>(<ref refid="classlista" kindref="compound">uint8_t</ref><sp/><ref refid="classlista" kindref="compound">a</ref>,<sp/><ref refid="classlista" kindref="compound">uint8_t</ref><sp/><ref refid="classlista" kindref="compound">b</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">a</ref><sp/>+<sp/><ref refid="classlista" kindref="compound">b</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" kindref="member">undet</ref><sp/>+<sp/><ref refid="ossz_8h_1a4c601b4f90966724c2de786d8bd9eb82" kindref="member">low</ref>:</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" kindref="member">undet</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" kindref="member">undet</ref><sp/>+<sp/><ref refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" kindref="member">undet</ref>:</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" kindref="member">undet</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="ossz_8h_1a4c601b4f90966724c2de786d8bd9eb82" kindref="member">low</ref><sp/>+<sp/><ref refid="ossz_8h_1a4c601b4f90966724c2de786d8bd9eb82" kindref="member">low</ref>:</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="ossz_8h_1a4c601b4f90966724c2de786d8bd9eb82" kindref="member">low</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="ossz_8h_1a9ce2716323ceb0e2133340a161f33a6c" kindref="member">high</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56" refid="text__module_8cpp_1a42e733bd26080ab8d6cb4213dc6c4cfc" refkind="member"><highlight class="normal"><ref refid="classlista" kindref="compound">uint8_t</ref><sp/><ref refid="text__module_8cpp_1a42e733bd26080ab8d6cb4213dc6c4cfc" kindref="member">myxor</ref>(<ref refid="classlista" kindref="compound">uint8_t</ref><sp/><ref refid="classlista" kindref="compound">a</ref>,<sp/><ref refid="classlista" kindref="compound">uint8_t</ref><sp/><ref refid="classlista" kindref="compound">b</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">a</ref><sp/>==<sp/><ref refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" kindref="member">undet</ref><sp/>||<sp/><ref refid="classlista" kindref="compound">b</ref><sp/>==<sp/><ref refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" kindref="member">undet</ref>)</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" kindref="member">undet</ref>;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">a</ref><sp/>!=<sp/><ref refid="classlista" kindref="compound">b</ref><sp/>?<sp/><ref refid="ossz_8h_1a9ce2716323ceb0e2133340a161f33a6c" kindref="member">high</ref><sp/>:<sp/><ref refid="ossz_8h_1a4c601b4f90966724c2de786d8bd9eb82" kindref="member">low</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69" refid="text__module_8cpp_1a03a0ce27639dfeafbf0b8e3e94741651" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="text__module_8cpp_1a03a0ce27639dfeafbf0b8e3e94741651" kindref="member">lepteto</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">torlendo</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">index</ref>,<sp/><ref refid="classlista" kindref="compound">lista&lt;size_t&gt;</ref>&amp;<sp/><ref refid="classlista" kindref="compound">hely</ref>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*&amp;<sp/><ref refid="classlista" kindref="compound">ideiglenes</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">&amp;<sp/><ref refid="classlista" kindref="compound">hossz</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">k</ref><sp/>=<sp/><ref refid="classlista" kindref="compound">hely</ref>[<ref refid="classlista" kindref="compound">index</ref>];<sp/><ref refid="classlista" kindref="compound">k</ref><sp/>&lt;<sp/><ref refid="classlista" kindref="compound">hossz</ref><sp/>-<sp/><ref refid="classlista" kindref="compound">torlendo</ref>;<sp/><ref refid="classlista" kindref="compound">k</ref>++)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">ideiglenes</ref>[<ref refid="classlista" kindref="compound">k</ref>]<sp/>=<sp/><ref refid="classlista" kindref="compound">ideiglenes</ref>[<ref refid="classlista" kindref="compound">k</ref><sp/>+<sp/><ref refid="classlista" kindref="compound">torlendo</ref>];</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">k</ref><sp/>=<sp/><ref refid="classlista" kindref="compound">index</ref>;<sp/><ref refid="classlista" kindref="compound">k</ref><sp/>&lt;<sp/><ref refid="classlista" kindref="compound">hely</ref>.<ref refid="classlista_1a5baaf78ac201a75e49f18110daed7fd6" kindref="member">length</ref>();<sp/><ref refid="classlista" kindref="compound">k</ref>++)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">hely</ref>[<ref refid="classlista" kindref="compound">k</ref>]<sp/>-=<sp/><ref refid="classlista" kindref="compound">torlendo</ref>;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">hossz</ref><sp/>-=<sp/><ref refid="classlista" kindref="compound">torlendo</ref>;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89" refid="text__module_8cpp_1a0409fbc3d883fb339196f392b177dab7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="text__module_8cpp_1a0409fbc3d883fb339196f392b177dab7" kindref="member">muvs</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">index</ref>,<sp/><ref refid="classlista" kindref="compound">lista&lt;size_t&gt;</ref>&amp;<sp/><ref refid="classlista" kindref="compound">hely</ref>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*&amp;<sp/><ref refid="classlista" kindref="compound">ideiglenes</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">&amp;<sp/><ref refid="classlista" kindref="compound">hossz</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">neg</ref>,<sp/><ref refid="classlista" kindref="compound">uint8_t</ref>&amp;<sp/>ertek,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">&amp;<sp/><ref refid="classlista" kindref="compound">iertek</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">findex</ref><sp/>=<sp/><ref refid="classlista" kindref="compound">hely</ref>[<ref refid="classlista" kindref="compound">index</ref>]<sp/>+<sp/>(<ref refid="classlista" kindref="compound">size_t</ref>)(<ref refid="classlista" kindref="compound">neg</ref><sp/>?<sp/>1<sp/>:<sp/>0);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">ideiglenes</ref>[<ref refid="classlista" kindref="compound">findex</ref>])<sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;&amp;&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ertek<sp/>=<sp/><ref refid="text__module_8cpp_1a5a820a0e7dd4578abeb30e7d82396f01" kindref="member">myand</ref>(<ref refid="classlista" kindref="compound">ideiglenes</ref>[<ref refid="classlista" kindref="compound">hely</ref>[<ref refid="classlista" kindref="compound">index</ref>]<sp/>-<sp/>1],<sp/><ref refid="classlista" kindref="compound">ideiglenes</ref>[<ref refid="classlista" kindref="compound">findex</ref><sp/>+<sp/>1]);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;|&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ertek<sp/>=<sp/><ref refid="text__module_8cpp_1adc5c1b52d18783f933cb564cea81b221" kindref="member">myor</ref>(<ref refid="classlista" kindref="compound">ideiglenes</ref>[<ref refid="classlista" kindref="compound">hely</ref>[<ref refid="classlista" kindref="compound">index</ref>]<sp/>-<sp/>1],<sp/><ref refid="classlista" kindref="compound">ideiglenes</ref>[<ref refid="classlista" kindref="compound">findex</ref><sp/>+<sp/>1]);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;^&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ertek<sp/>=<sp/><ref refid="text__module_8cpp_1a42e733bd26080ab8d6cb4213dc6c4cfc" kindref="member">myxor</ref>(<ref refid="classlista" kindref="compound">ideiglenes</ref>[<ref refid="classlista" kindref="compound">hely</ref>[<ref refid="classlista" kindref="compound">index</ref>]<sp/>-<sp/>1],<sp/><ref refid="classlista" kindref="compound">ideiglenes</ref>[<ref refid="classlista" kindref="compound">findex</ref><sp/>+<sp/>1]);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">iertek</ref><sp/>=<sp/><ref refid="classlista" kindref="compound">hely</ref>[<ref refid="classlista" kindref="compound">index</ref>]<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="text__module_8cpp_1a03a0ce27639dfeafbf0b8e3e94741651" kindref="member">lepteto</ref>(<ref refid="classlista" kindref="compound">neg</ref><sp/>?<sp/>3<sp/>:<sp/>2,<sp/><ref refid="classlista" kindref="compound">index</ref>,<sp/><ref refid="classlista" kindref="compound">hely</ref>,<sp/><ref refid="classlista" kindref="compound">ideiglenes</ref>,<sp/><ref refid="classlista" kindref="compound">hossz</ref>);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">neg</ref>)ertek<sp/>=<sp/><ref refid="text__module_8cpp_1ad670db7bf59a28c821825d5c379811bb" kindref="member">mynot</ref>(ertek);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="114" refid="classtext__module__t_1a0005ad3d2530fb2880040ecc0b04cdf7" refkind="member"><highlight class="normal"><ref refid="classtext__module__t_1a0005ad3d2530fb2880040ecc0b04cdf7" kindref="member">text_module_t::text_module_t</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>parancsok)<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1a525593566e11dc7186152b4770e12253" kindref="member">ki_db</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" kindref="member">be_db</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idx<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;parancsok<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[<ref refid="classlista" kindref="compound">strlen</ref>(parancsok)<sp/>+<sp/>1];</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">strcpy_s</ref>(this-&gt;parancsok,<sp/><ref refid="classlista" kindref="compound">strlen</ref>(parancsok)<sp/>+<sp/>1,<sp/>parancsok);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(parancsok[++idx]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(parancsok[idx]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1a525593566e11dc7186152b4770e12253" kindref="member">ki_db</ref>++;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(parancsok[idx]<sp/>&lt;=<sp/></highlight><highlight class="charliteral">&apos;z&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">)parancsok[idx]<sp/>&gt;<sp/><ref refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" kindref="member">be_db</ref>)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" kindref="member">be_db</ref><sp/>=<sp/>parancsok[idx];</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(idx<sp/>==<sp/>0)</highlight><highlight class="comment">//nincs<sp/>parancs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1a525593566e11dc7186152b4770e12253" kindref="member">ki_db</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" kindref="member">be_db</ref><sp/>&gt;=<sp/></highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">)</highlight><highlight class="comment">//van<sp/>input</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" kindref="member">be_db</ref><sp/>-=<sp/></highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal"><sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" kindref="member">be_db</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a" kindref="member">ki_ertek</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">uint8_t</ref>[<ref refid="classmodule__t_1a525593566e11dc7186152b4770e12253" kindref="member">ki_db</ref>];</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">i</ref><sp/>=<sp/>0;<sp/><ref refid="classlista" kindref="compound">i</ref><sp/>&lt;<sp/><ref refid="classmodule__t_1a525593566e11dc7186152b4770e12253" kindref="member">ki_db</ref>;<sp/><ref refid="classlista" kindref="compound">i</ref>++)<sp/><ref refid="classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a" kindref="member">ki_ertek</ref>[<ref refid="classlista" kindref="compound">i</ref>]<sp/>=<sp/><ref refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" kindref="member">undet</ref>;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1a7d61b23e49096510cf223ffbced16f5f" kindref="member">be_ertek</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">uint8_t</ref>[<ref refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" kindref="member">be_db</ref>];</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">i</ref><sp/>=<sp/>0;<sp/><ref refid="classlista" kindref="compound">i</ref><sp/>&lt;<sp/><ref refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" kindref="member">be_db</ref>;<sp/><ref refid="classlista" kindref="compound">i</ref>++)<sp/><ref refid="classmodule__t_1a7d61b23e49096510cf223ffbced16f5f" kindref="member">be_ertek</ref>[<ref refid="classlista" kindref="compound">i</ref>]<sp/>=<sp/><ref refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" kindref="member">undet</ref>;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>be_old<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">uint8_t</ref>[<ref refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" kindref="member">be_db</ref>];</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">i</ref><sp/>=<sp/>0;<sp/><ref refid="classlista" kindref="compound">i</ref><sp/>&lt;<sp/><ref refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" kindref="member">be_db</ref>;<sp/><ref refid="classlista" kindref="compound">i</ref>++)<sp/>be_old[<ref refid="classlista" kindref="compound">i</ref>]<sp/>=<sp/><ref refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" kindref="member">undet</ref>;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1a7e972df261abe0ad96181db1f0f004d5" kindref="member">ki_ports</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">lista&lt;port&lt;module_t*&gt;</ref>&gt;<sp/>[<ref refid="classmodule__t_1a525593566e11dc7186152b4770e12253" kindref="member">ki_db</ref>];</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="140" refid="classtext__module__t_1ab587f38fd7f0b7970abbd63550dfa252" refkind="member"><highlight class="normal"><ref refid="classtext__module__t_1a0005ad3d2530fb2880040ecc0b04cdf7" kindref="member">text_module_t::text_module_t</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classtext__module__t" kindref="compound">text_module_t</ref>&amp;<sp/><ref refid="classlista" kindref="compound">refe</ref>):<ref refid="classtext__module__t" kindref="compound">text_module_t</ref>(<ref refid="classlista" kindref="compound">refe</ref>.parancsok)<sp/>{}</highlight></codeline>
+<codeline lineno="141" refid="classtext__module__t_1aaf977a7392dec08258e5e7dcee94f6a1" refkind="member"><highlight class="normal"><ref refid="classmodule__t" kindref="compound">module_t</ref>*<sp/><ref refid="classtext__module__t_1aaf977a7392dec08258e5e7dcee94f6a1" kindref="member">text_module_t::copy</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classtext__module__t_1a0005ad3d2530fb2880040ecc0b04cdf7" kindref="member">text_module_t</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="157" refid="text__module_8cpp_1a9529dd0d41184fa0192241df7e922780" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="text__module_8cpp_1a9529dd0d41184fa0192241df7e922780" kindref="member">muv_list</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">&amp;<sp/><ref refid="classlista" kindref="compound">c</ref>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">&amp;<sp/><ref refid="classlista" kindref="compound">cn</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">&amp;<sp/><ref refid="classlista" kindref="compound">index</ref>,<sp/><ref refid="classlista" kindref="compound">lista&lt;size_t&gt;</ref>&amp;<sp/><ref refid="classlista" kindref="compound">hely</ref>,<sp/><ref refid="classlista" kindref="compound">lista&lt;size_t&gt;</ref>&amp;<sp/><ref refid="classlista" kindref="compound">fsag</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">&amp;<sp/><ref refid="classlista" kindref="compound">moz</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">&amp;<sp/><ref refid="classlista" kindref="compound">fs</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">&amp;<sp/><ref refid="classlista" kindref="compound">maxfsag</ref>,<sp/><ref refid="classlista" kindref="compound">uint8_t</ref>*&amp;<sp/>be_ertek)<sp/>{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">c</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;~&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">cn</ref><sp/>==<sp/></highlight><highlight class="charliteral">&apos;|&apos;</highlight><highlight class="normal"><sp/>||<sp/><ref refid="classlista" kindref="compound">cn</ref><sp/>==<sp/></highlight><highlight class="charliteral">&apos;&amp;&apos;</highlight><highlight class="normal"><sp/>||<sp/><ref refid="classlista" kindref="compound">cn</ref><sp/>==<sp/></highlight><highlight class="charliteral">&apos;^&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">hely</ref>.<ref refid="classlista_1a3f48539cd27ef435ea20315183a7c48e" kindref="member">add</ref>(<ref refid="classlista" kindref="compound">index</ref>);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">fsag</ref>.<ref refid="classlista_1a3f48539cd27ef435ea20315183a7c48e" kindref="member">add</ref>(<ref refid="classlista" kindref="compound">fs</ref>);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">fs</ref><sp/>&gt;<sp/><ref refid="classlista" kindref="compound">maxfsag</ref>)<ref refid="classlista" kindref="compound">maxfsag</ref><sp/>=<sp/><ref refid="classlista" kindref="compound">fs</ref>;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">moz</ref>++;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">index</ref>++;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight><highlight class="comment">//bemenet/const/zarojeles<sp/>ertek</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">hely</ref>.<ref refid="classlista_1a3f48539cd27ef435ea20315183a7c48e" kindref="member">add</ref>(<ref refid="classlista" kindref="compound">index</ref>);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">fsag</ref>.<ref refid="classlista_1a3f48539cd27ef435ea20315183a7c48e" kindref="member">add</ref>(<ref refid="classlista" kindref="compound">fs</ref><sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">fs</ref><sp/>+<sp/>1<sp/>&gt;<sp/><ref refid="classlista" kindref="compound">maxfsag</ref>)<ref refid="classlista" kindref="compound">maxfsag</ref><sp/>=<sp/><ref refid="classlista" kindref="compound">fs</ref><sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">fs</ref><sp/>+=<sp/>2;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">fs</ref><sp/>-=<sp/>2;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;|&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;&amp;&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;^&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">hely</ref>.<ref refid="classlista_1a3f48539cd27ef435ea20315183a7c48e" kindref="member">add</ref>(<ref refid="classlista" kindref="compound">index</ref>);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">fsag</ref>.<ref refid="classlista_1a3f48539cd27ef435ea20315183a7c48e" kindref="member">add</ref>(<ref refid="classlista" kindref="compound">fs</ref>);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">fs</ref><sp/>&gt;<sp/><ref refid="classlista" kindref="compound">maxfsag</ref>)<ref refid="classlista" kindref="compound">maxfsag</ref><sp/>=<sp/><ref refid="classlista" kindref="compound">fs</ref>;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight><highlight class="comment">//bemenet/const</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">c</ref><sp/>!=<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/><ref refid="classlista" kindref="compound">c</ref><sp/>!=<sp/></highlight><highlight class="charliteral">&apos;1&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">c</ref><sp/>=<sp/>be_ertek[<ref refid="classlista" kindref="compound">c</ref><sp/>-<sp/></highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">moz</ref>++;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">index</ref>++;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="203" refid="text__module_8cpp_1a5e761d3e1f203f5db1ab8e87710494bf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="text__module_8cpp_1a5e761d3e1f203f5db1ab8e87710494bf" kindref="member">vegrehajt</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">&amp;<sp/><ref refid="classlista" kindref="compound">maxfsag</ref>,<sp/><ref refid="classlista" kindref="compound">lista&lt;size_t&gt;</ref>&amp;<sp/><ref refid="classlista" kindref="compound">hely</ref>,<sp/><ref refid="classlista" kindref="compound">lista&lt;size_t&gt;</ref>&amp;<sp/><ref refid="classlista" kindref="compound">fsag</ref>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*&amp;<sp/><ref refid="classlista" kindref="compound">ideiglenes</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">&amp;<sp/><ref refid="classlista" kindref="compound">hossz</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">j</ref><sp/>=<sp/><ref refid="classlista" kindref="compound">maxfsag</ref>;<sp/><ref refid="classlista" kindref="compound">j</ref><sp/>&gt;=<sp/>0;<sp/><ref refid="classlista" kindref="compound">j</ref>--)<sp/>{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">i</ref><sp/>=<sp/>0;<sp/><ref refid="classlista" kindref="compound">i</ref><sp/>&lt;<sp/><ref refid="classlista" kindref="compound">hely</ref>.<ref refid="classlista_1a5baaf78ac201a75e49f18110daed7fd6" kindref="member">length</ref>();<sp/><ref refid="classlista" kindref="compound">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<ref refid="classlista" kindref="compound">fsag</ref>[<ref refid="classlista" kindref="compound">i</ref>]<sp/>==<sp/><ref refid="classlista" kindref="compound">j</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">iertek</ref>;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">uint8_t</ref><sp/>ertek;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">ideiglenes</ref>[<ref refid="classlista" kindref="compound">hely</ref>[<ref refid="classlista" kindref="compound">i</ref>]]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;~&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="text__module_8cpp_1a0409fbc3d883fb339196f392b177dab7" kindref="member">muvs</ref>(<ref refid="classlista" kindref="compound">i</ref>,<sp/><ref refid="classlista" kindref="compound">hely</ref>,<sp/><ref refid="classlista" kindref="compound">ideiglenes</ref>,<sp/><ref refid="classlista" kindref="compound">hossz</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>ertek,<sp/><ref refid="classlista" kindref="compound">iertek</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">iertek</ref><sp/>=<sp/><ref refid="classlista" kindref="compound">hely</ref>[<ref refid="classlista" kindref="compound">i</ref>];</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ertek<sp/>=<sp/><ref refid="text__module_8cpp_1ad670db7bf59a28c821825d5c379811bb" kindref="member">mynot</ref>(<ref refid="classlista" kindref="compound">ideiglenes</ref>[<ref refid="classlista" kindref="compound">hely</ref>[<ref refid="classlista" kindref="compound">i</ref>]<sp/>+<sp/>1]);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="text__module_8cpp_1a03a0ce27639dfeafbf0b8e3e94741651" kindref="member">lepteto</ref>(1,<sp/><ref refid="classlista" kindref="compound">i</ref>,<sp/><ref refid="classlista" kindref="compound">hely</ref>,<sp/><ref refid="classlista" kindref="compound">ideiglenes</ref>,<sp/><ref refid="classlista" kindref="compound">hossz</ref>);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="text__module_8cpp_1a0409fbc3d883fb339196f392b177dab7" kindref="member">muvs</ref>(<ref refid="classlista" kindref="compound">i</ref>,<sp/><ref refid="classlista" kindref="compound">hely</ref>,<sp/><ref refid="classlista" kindref="compound">ideiglenes</ref>,<sp/><ref refid="classlista" kindref="compound">hossz</ref>,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>ertek,<sp/><ref refid="classlista" kindref="compound">iertek</ref>);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">iertek</ref><sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/><ref refid="classlista" kindref="compound">iertek</ref><sp/>&lt;<sp/><ref refid="classlista" kindref="compound">hossz</ref>)</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">ideiglenes</ref>[<ref refid="classlista" kindref="compound">iertek</ref><sp/>-<sp/>1]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/><ref refid="classlista" kindref="compound">ideiglenes</ref>[<ref refid="classlista" kindref="compound">iertek</ref><sp/>+<sp/>1]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">k</ref><sp/>=<sp/><ref refid="classlista" kindref="compound">i</ref>;<sp/><ref refid="classlista" kindref="compound">k</ref><sp/>&lt;<sp/><ref refid="classlista" kindref="compound">hely</ref>.<ref refid="classlista_1a5baaf78ac201a75e49f18110daed7fd6" kindref="member">length</ref>();<sp/><ref refid="classlista" kindref="compound">k</ref>++)</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">hely</ref>[<ref refid="classlista" kindref="compound">k</ref>]<sp/>-=<sp/>2;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">k</ref><sp/>=<sp/><ref refid="classlista" kindref="compound">iertek</ref>;<sp/><ref refid="classlista" kindref="compound">k</ref><sp/>&lt;<sp/><ref refid="classlista" kindref="compound">hossz</ref><sp/>-<sp/>2;<sp/><ref refid="classlista" kindref="compound">k</ref>++)</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">ideiglenes</ref>[<ref refid="classlista" kindref="compound">k</ref>]<sp/>=<sp/><ref refid="classlista" kindref="compound">ideiglenes</ref>[<ref refid="classlista" kindref="compound">k</ref><sp/>+<sp/>2];</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">iertek</ref>--;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">ideiglenes</ref>[<ref refid="classlista" kindref="compound">iertek</ref>]<sp/>=<sp/>ertek;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="231" refid="classtext__module__t_1a316e7ea9bed76e5ef68bbb4cd4da95ef" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtext__module__t_1a316e7ea9bed76e5ef68bbb4cd4da95ef" kindref="member">text_module_t::set_ki</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">index</ref>,<sp/><ref refid="classlista" kindref="compound">uint8_t</ref><sp/>ertek,<sp/><ref refid="classlista" kindref="compound">lista&lt;module_t*&gt;</ref>&amp;<sp/><ref refid="classlista" kindref="compound">wait_for_do</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a" kindref="member">ki_ertek</ref>[<ref refid="classlista" kindref="compound">index</ref>]<sp/>=<sp/>ertek;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">i</ref><sp/>=<sp/>0;<sp/><ref refid="classlista" kindref="compound">i</ref><sp/>&lt;<sp/><ref refid="classmodule__t_1a7e972df261abe0ad96181db1f0f004d5" kindref="member">ki_ports</ref>[<ref refid="classlista" kindref="compound">index</ref>].<ref refid="classlista_1a5baaf78ac201a75e49f18110daed7fd6" kindref="member">length</ref>();<sp/><ref refid="classlista" kindref="compound">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">port&lt;module_t*&gt;</ref><sp/><ref refid="classlista" kindref="compound">p</ref><sp/>=<sp/><ref refid="classmodule__t_1a7e972df261abe0ad96181db1f0f004d5" kindref="member">ki_ports</ref>[<ref refid="classlista" kindref="compound">index</ref>][<ref refid="classlista" kindref="compound">i</ref>];</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">p</ref>.modulep-&gt;set_be(<ref refid="classlista" kindref="compound">p</ref>.portszam,<sp/>ertek);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">p</ref>.modulep-&gt;add_to_list(<ref refid="classlista" kindref="compound">wait_for_do</ref>,<sp/><ref refid="classlista" kindref="compound">p</ref>.portszam);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="244" refid="classtext__module__t_1a85cea3d8a0adb3b18631c8f1a9f249ff" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtext__module__t_1a85cea3d8a0adb3b18631c8f1a9f249ff" kindref="member">text_module_t::vegrehajtas</ref>(<ref refid="classlista" kindref="compound">lista&lt;module_t*&gt;</ref>&amp;<sp/><ref refid="classlista" kindref="compound">wait_for_do</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">kez</ref><sp/>=<sp/>0,<sp/><ref refid="classlista" kindref="compound">veg</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">i</ref><sp/>=<sp/>0;<sp/><ref refid="classlista" kindref="compound">i</ref><sp/>&lt;<sp/><ref refid="classmodule__t_1a525593566e11dc7186152b4770e12253" kindref="member">ki_db</ref>;<sp/><ref refid="classlista" kindref="compound">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(parancsok[<ref refid="classlista" kindref="compound">veg</ref>]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>parancsok[<ref refid="classlista" kindref="compound">veg</ref>]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">)<ref refid="classlista" kindref="compound">veg</ref>++;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">trigger</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(parancsok[<ref refid="classlista" kindref="compound">kez</ref>]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">trigger</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">kez</ref>++;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(parancsok[<ref refid="classlista" kindref="compound">kez</ref>]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmodule__t_1a7d61b23e49096510cf223ffbced16f5f" kindref="member">be_ertek</ref>[parancsok[<ref refid="classlista" kindref="compound">kez</ref>]<sp/>-<sp/></highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">]<sp/>!=<sp/>be_old[parancsok[<ref refid="classlista" kindref="compound">kez</ref>]<sp/>-<sp/></highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">])</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">trigger</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">kez</ref>++;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">kez</ref>++;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">trigger</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">hossz</ref><sp/>=<sp/><ref refid="classlista" kindref="compound">veg</ref><sp/>-<sp/><ref refid="classlista" kindref="compound">kez</ref>;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classlista" kindref="compound">ideiglenes</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[<ref refid="classlista" kindref="compound">hossz</ref>];</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">lista&lt;size_t&gt;</ref><sp/><ref refid="classlista" kindref="compound">hely</ref>;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">lista&lt;size_t&gt;</ref><sp/><ref refid="classlista" kindref="compound">fsag</ref>;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">moz</ref><sp/>=<sp/><ref refid="classlista" kindref="compound">kez</ref>;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">fs</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">index</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">maxfsag</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">moz</ref><sp/>&lt;<sp/><ref refid="classlista" kindref="compound">veg</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">ideiglenes</ref>[<ref refid="classlista" kindref="compound">index</ref>]<sp/>=<sp/>parancsok[<ref refid="classlista" kindref="compound">moz</ref>];</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(parancsok[<ref refid="classlista" kindref="compound">moz</ref>]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;~&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>(parancsok[<ref refid="classlista" kindref="compound">moz</ref><sp/>+<sp/>1]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;|&apos;</highlight><highlight class="normal"><sp/>||<sp/>parancsok[<ref refid="classlista" kindref="compound">moz</ref><sp/>+<sp/>1]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;&amp;&apos;</highlight><highlight class="normal"><sp/>||<sp/>parancsok[<ref refid="classlista" kindref="compound">moz</ref><sp/>+<sp/>1]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;^&apos;</highlight><highlight class="normal">))<ref refid="classlista" kindref="compound">ideiglenes</ref>[<ref refid="classlista" kindref="compound">index</ref><sp/>+<sp/>1]<sp/>=<sp/>parancsok[<ref refid="classlista" kindref="compound">moz</ref><sp/>+<sp/>1];</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="text__module_8cpp_1a9529dd0d41184fa0192241df7e922780" kindref="member">muv_list</ref>(<ref refid="classlista" kindref="compound">ideiglenes</ref>[<ref refid="classlista" kindref="compound">index</ref>],<sp/><ref refid="classlista" kindref="compound">ideiglenes</ref>[<ref refid="classlista" kindref="compound">index</ref><sp/>+<sp/>1],<sp/><ref refid="classlista" kindref="compound">index</ref>,<sp/><ref refid="classlista" kindref="compound">hely</ref>,<sp/><ref refid="classlista" kindref="compound">fsag</ref>,<sp/><ref refid="classlista" kindref="compound">moz</ref>,<sp/><ref refid="classlista" kindref="compound">fs</ref>,<sp/><ref refid="classlista" kindref="compound">maxfsag</ref>,<sp/><ref refid="classmodule__t_1a7d61b23e49096510cf223ffbced16f5f" kindref="member">be_ertek</ref>);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="comment">//m�veleti<sp/>lista<sp/>befejezve</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="text__module_8cpp_1a5e761d3e1f203f5db1ab8e87710494bf" kindref="member">vegrehajt</ref>(<ref refid="classlista" kindref="compound">maxfsag</ref>,<sp/><ref refid="classlista" kindref="compound">hely</ref>,<sp/><ref refid="classlista" kindref="compound">fsag</ref>,<sp/><ref refid="classlista" kindref="compound">ideiglenes</ref>,<sp/><ref refid="classlista" kindref="compound">hossz</ref>);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">ideiglenes</ref>[0]<sp/>!=<sp/><ref refid="classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a" kindref="member">ki_ertek</ref>[<ref refid="classlista" kindref="compound">i</ref>])<sp/>{</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtext__module__t_1a316e7ea9bed76e5ef68bbb4cd4da95ef" kindref="member">set_ki</ref>(<ref refid="classlista" kindref="compound">i</ref>,<sp/><ref refid="classlista" kindref="compound">ideiglenes</ref>[0],<sp/><ref refid="classlista" kindref="compound">wait_for_do</ref>);</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classlista" kindref="compound">ideiglenes</ref>;</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">veg</ref>++;</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">kez</ref><sp/>=<sp/><ref refid="classlista" kindref="compound">veg</ref>;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">i</ref><sp/>=<sp/>0;<sp/><ref refid="classlista" kindref="compound">i</ref><sp/>&lt;<sp/><ref refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" kindref="member">be_db</ref>;<sp/><ref refid="classlista" kindref="compound">i</ref>++)</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>be_old[<ref refid="classlista" kindref="compound">i</ref>]<sp/>=<sp/><ref refid="classmodule__t_1a7d61b23e49096510cf223ffbced16f5f" kindref="member">be_ertek</ref>[<ref refid="classlista" kindref="compound">i</ref>];</highlight></codeline>
+<codeline lineno="284"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="288" refid="classtext__module__t_1a1cf4972e177e238c9bf5968e5adb2c0c" refkind="member"><highlight class="normal"><ref refid="classtext__module__t_1a1cf4972e177e238c9bf5968e5adb2c0c" kindref="member">text_module_t::~text_module_t</ref>(){</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classmodule__t_1a7d61b23e49096510cf223ffbced16f5f" kindref="member">be_ertek</ref>;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/>be_old;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a" kindref="member">ki_ertek</ref>;</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/>parancsok;</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1a7d61b23e49096510cf223ffbced16f5f" kindref="member">be_ertek</ref><sp/>=<sp/><ref refid="classlista" kindref="compound">NULL</ref>;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>be_old<sp/>=<sp/><ref refid="classlista" kindref="compound">NULL</ref>;</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a" kindref="member">ki_ertek</ref><sp/>=<sp/><ref refid="classlista" kindref="compound">NULL</ref>;</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>parancsok<sp/>=<sp/><ref refid="classlista" kindref="compound">NULL</ref>;</highlight></codeline>
+<codeline lineno="297"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="text_module.cpp"/>
+  </compounddef>
+</doxygen>

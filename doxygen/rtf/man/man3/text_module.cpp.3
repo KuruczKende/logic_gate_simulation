@@ -1,0 +1,191 @@
+.TH "text_module.cpp" 3 "nharamkkor_vs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+text_module.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'text_module\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBuint8_t\fP \fBmynot\fP (\fBuint8_t\fP \fBa\fP)"
+.br
+.ti -1c
+.RI "\fBuint8_t\fP \fBmyand\fP (\fBuint8_t\fP \fBa\fP, \fBuint8_t\fP \fBb\fP)"
+.br
+.ti -1c
+.RI "\fBuint8_t\fP \fBmyor\fP (\fBuint8_t\fP \fBa\fP, \fBuint8_t\fP \fBb\fP)"
+.br
+.ti -1c
+.RI "\fBuint8_t\fP \fBmyxor\fP (\fBuint8_t\fP \fBa\fP, \fBuint8_t\fP \fBb\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBlepteto\fP (\fBsize_t\fP \fBtorlendo\fP, \fBsize_t\fP \fBindex\fP, \fBlista\fP< \fBsize_t\fP > &\fBhely\fP, \fBchar\fP *&\fBideiglenes\fP, \fBsize_t\fP &\fBhossz\fP)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBmuvs\fP (\fBsize_t\fP \fBindex\fP, \fBlista\fP< \fBsize_t\fP > &\fBhely\fP, \fBchar\fP *&\fBideiglenes\fP, \fBsize_t\fP &\fBhossz\fP, \fBbool\fP \fBneg\fP, \fBuint8_t\fP &ertek, \fBsize_t\fP &\fBiertek\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmuv_list\fP (\fBchar\fP &\fBc\fP, \fBchar\fP &\fBcn\fP, \fBsize_t\fP &\fBindex\fP, \fBlista\fP< \fBsize_t\fP > &\fBhely\fP, \fBlista\fP< \fBsize_t\fP > &\fBfsag\fP, \fBsize_t\fP &\fBmoz\fP, \fBsize_t\fP &\fBfs\fP, \fBsize_t\fP &\fBmaxfsag\fP, \fBuint8_t\fP *&be_ertek)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBvegrehajt\fP (\fBsize_t\fP &\fBmaxfsag\fP, \fBlista\fP< \fBsize_t\fP > &\fBhely\fP, \fBlista\fP< \fBsize_t\fP > &\fBfsag\fP, \fBchar\fP *&\fBideiglenes\fP, \fBsize_t\fP &\fBhossz\fP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBvoid\fP lepteto (\fBsize_t\fP torlendo, \fBsize_t\fP index, \fBlista\fP< \fBsize_t\fP > & hely, \fBchar\fP *& ideiglenes, \fBsize_t\fP & hossz)"
+Remove a specified number of elements from the given index in the list and update the list accordingly\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fItorlendo\fP the number of elements to remove 
+.br
+\fIindex\fP the index from which to start removal 
+.br
+\fIhely\fP the list containing the indices 
+.br
+\fIideiglenes\fP the temporary character array 
+.br
+\fIhossz\fP the length of the character array 
+.RE
+.PP
+
+.SS "\fBvoid\fP muv_list (\fBchar\fP & c, \fBchar\fP & cn, \fBsize_t\fP & index, \fBlista\fP< \fBsize_t\fP > & hely, \fBlista\fP< \fBsize_t\fP > & fsag, \fBsize_t\fP & moz, \fBsize_t\fP & fs, \fBsize_t\fP & maxfsag, \fBuint8_t\fP *& be_ertek)"
+Updates the muv list based on the given character\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIc\fP the current character 
+.br
+\fIcn\fP the next character 
+.br
+\fIindex\fP the index 
+.br
+\fIhely\fP the list of locations 
+.br
+\fIfsag\fP the list of priorities 
+.br
+\fImoz\fP the number of moves 
+.br
+\fIfs\fP the current priority value 
+.br
+\fImaxfsag\fP the maximum priority value in the list 
+.br
+\fIbe_ertek\fP the input values 
+.RE
+.PP
+
+.SS "\fBbool\fP muvs (\fBsize_t\fP index, \fBlista\fP< \fBsize_t\fP > & hely, \fBchar\fP *& ideiglenes, \fBsize_t\fP & hossz, \fBbool\fP neg, \fBuint8_t\fP & ertek, \fBsize_t\fP & iertek)"
+Function for performing a specific operation based on the input parameters\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The index parameter for the operation 
+.br
+\fIhely\fP the list containing the indices 
+.br
+\fIideiglenes\fP the temporary character array 
+.br
+\fIhossz\fP the length of the character array 
+.br
+\fIneg\fP Boolean value indicating negation 
+.br
+\fIertek\fP the return value 
+.br
+\fIiertek\fP the index of the return value to be placed
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the task is successfully performed, false otherwise 
+.RE
+.PP
+
+.SS "\fBuint8_t\fP myand (\fBuint8_t\fP a, \fBuint8_t\fP b)"
+Calculates the AND operation between two input values\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP the first input 
+.br
+\fIb\fP the second input
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the result of the AND operation between the two inputs 
+.RE
+.PP
+
+.SS "\fBuint8_t\fP mynot (\fBuint8_t\fP a)"
+A function that performs a NOT operation on the inputs\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP The input value to perform the NOT operation on\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The result of the NOT operation\&. 
+.RE
+.PP
+
+.SS "\fBuint8_t\fP myor (\fBuint8_t\fP a, \fBuint8_t\fP b)"
+Calculates the OR operation between two input values\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP the first input 
+.br
+\fIb\fP the second input
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the result of the OR operation between the two inputs 
+.RE
+.PP
+
+.SS "\fBuint8_t\fP myxor (\fBuint8_t\fP a, \fBuint8_t\fP b)"
+Calculates the XOR operation between two input values\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP the first input 
+.br
+\fIb\fP the second input
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the result of the XOR operation between the two inputs 
+.RE
+.PP
+
+.SS "\fBvoid\fP vegrehajt (\fBsize_t\fP & maxfsag, \fBlista\fP< \fBsize_t\fP > & hely, \fBlista\fP< \fBsize_t\fP > & fsag, \fBchar\fP *& ideiglenes, \fBsize_t\fP & hossz)"
+Executes a series of operations on the input parameters to modify the ideiglenes array and the hely list\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImaxfsag\fP the maximum priority value in the list 
+.br
+\fIhely\fP the list of locations 
+.br
+\fIfsag\fP the list of priorities 
+.br
+\fIideiglenes\fP the character array to be modified 
+.br
+\fIhossz\fP the length of ideiglenes 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for nharamkkor_vs from the source code\&.

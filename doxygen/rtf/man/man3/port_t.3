@@ -1,0 +1,73 @@
+.TH "port_t" 3 "nharamkkor_vs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+port_t
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <port\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBport_t\fP (\fBmodule_t\fP *modulep, \fBsize_t\fP idx)"
+.br
+.ti -1c
+.RI "\fBmodule_t\fP * \fBdoit\fP (\fBuint8_t\fP ertek)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBsetin\fP (\fBuint8_t\fP ertek)"
+.br
+.ti -1c
+.RI "\fBmodule_t\fP * \fBget_module\fP ()"
+.br
+.ti -1c
+.RI "\fBsize_t\fP \fBget_idx\fP ()"
+.br
+.ti -1c
+.RI "\fB~port_t\fP ()"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "port_t::port_t (\fBmodule_t\fP * modulep, \fBsize_t\fP idx)\fR [inline]\fP"
+
+.SS "port_t::~port_t ()"
+Destructor for \fBport_t\fP class\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBmodule_t\fP * port_t::doit (\fBuint8_t\fP ertek)"
+
+.SS "\fBsize_t\fP port_t::get_idx ()"
+Get the index value\&.
+.PP
+\fBReturns\fP
+.RS 4
+the index value 
+.RE
+.PP
+
+.SS "\fBmodule_t\fP * port_t::get_module ()"
+Retrieves the module associated with the port\&.
+.PP
+\fBReturns\fP
+.RS 4
+a pointer to the module 
+.RE
+.PP
+
+.SS "\fBvoid\fP port_t::setin (\fBuint8_t\fP ertek)"
+Set the value of the module input specified by the port\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIertek\fP the value to set the module input specified by the port\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for nharamkkor_vs from the source code\&.

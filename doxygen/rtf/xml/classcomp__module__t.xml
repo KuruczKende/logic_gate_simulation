@@ -1,0 +1,578 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classcomp__module__t" kind="class" language="C++" prot="public">
+    <compoundname>comp_module_t</compoundname>
+    <basecompoundref refid="classshell__module__t" prot="public" virt="non-virtual">shell_module_t</basecompoundref>
+    <includes refid="comp__module_8h" local="no">comp_module.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcomp__module__t_1a282748625daf95c7b75f694e2cbc8eef" prot="private" static="no" mutable="no">
+        <type><ref refid="classshell__module__t" kindref="compound">shell_module_t</ref></type>
+        <definition>shell_module_t comp_module_t::end_module</definition>
+        <argsstring></argsstring>
+        <name>end_module</name>
+        <qualifiedname>comp_module_t::end_module</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="comp_module.h" line="6" column="20" bodyfile="comp_module.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcomp__module__t_1ab71b3a4691b7db1ab310c21ec29e8749" prot="private" static="no" mutable="no">
+        <type><ref refid="classmodule__t" kindref="compound">module_t</ref> **</type>
+        <definition>module_t** comp_module_t::modules</definition>
+        <argsstring></argsstring>
+        <name>modules</name>
+        <qualifiedname>comp_module_t::modules</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="comp_module.h" line="7" column="14" bodyfile="comp_module.h" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcomp__module__t_1a1ffef641e0801d4df0d621c1621d7f40" prot="private" static="no" mutable="no">
+        <type><ref refid="classlista" kindref="compound">size_t</ref></type>
+        <definition>size_t comp_module_t::m_db</definition>
+        <argsstring></argsstring>
+        <name>m_db</name>
+        <qualifiedname>comp_module_t::m_db</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="comp_module.h" line="8" column="12" bodyfile="comp_module.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcomp__module__t_1abb8ebf7b49242f1bec6584a9439a95ac" prot="private" static="no" mutable="no">
+        <type><ref refid="classlista" kindref="compound">char</ref> *</type>
+        <definition>char* comp_module_t::modules_coms</definition>
+        <argsstring></argsstring>
+        <name>modules_coms</name>
+        <qualifiedname>comp_module_t::modules_coms</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="comp_module.h" line="9" column="10" bodyfile="comp_module.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcomp__module__t_1ac0c8f89cc41c87d65de52fc652d35827" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>comp_module_t::comp_module_t</definition>
+        <argsstring>(char *modules_coms, lista&lt; prot_module_t * &gt; &amp;prot_modules)</argsstring>
+        <name>comp_module_t</name>
+        <qualifiedname>comp_module_t::comp_module_t</qualifiedname>
+        <param>
+          <type><ref refid="classlista" kindref="compound">char</ref> *</type>
+          <declname>modules_coms</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">lista</ref>&lt; <ref refid="classprot__module__t" kindref="compound">prot_module_t</ref> * &gt; &amp;</type>
+          <declname>prot_modules</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor for the <ref refid="classcomp__module__t" kindref="compound">comp_module_t</ref> class.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>modules_coms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the character array containing module command </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>prot_modules</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list of modules prototypes </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="comp_module.h" line="11" column="5" bodyfile="comp_module.cpp" bodystart="143" bodyend="160"/>
+        <references refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" compoundref="module_8h" startline="14">module_t::be_db</references>
+        <references refid="classmodule__t_1a7d61b23e49096510cf223ffbced16f5f" compoundref="module_8h" startline="16">module_t::be_ertek</references>
+        <references refid="classcomp__module__t_1a97d5cb5be2c89a3e8da221e02a20243b" compoundref="comp__module_8cpp" startline="100" endline="110">comp_create_modules</references>
+        <references refid="classcomp__module__t_1a63951fff0c2c203661e19a86f10d522c" compoundref="comp__module_8cpp" startline="111" endline="135">comp_fill_module</references>
+        <references refid="classshell__module__t_1a93ba970d90ff94f92e355ea110ba0f45" compoundref="shell__module_8cpp" startline="26" endline="40">shell_module_t::init</references>
+        <references refid="classmodule__t_1a525593566e11dc7186152b4770e12253" compoundref="module_8h" startline="15">module_t::ki_db</references>
+        <references refid="classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a" compoundref="module_8h" startline="17">module_t::ki_ertek</references>
+        <references refid="classmodule__t_1a7e972df261abe0ad96181db1f0f004d5" compoundref="module_8h" startline="18">module_t::ki_ports</references>
+        <references refid="comp__module_8cpp_1a72fad6f3a585cf1547f2fbcd87ec7a90" compoundref="comp__module_8cpp" startline="31" endline="62">muvcount</references>
+        <referencedby refid="classcomp__module__t_1a211b1bfd46a32ac3038ffc7e687da84e" compoundref="comp__module_8cpp" startline="183" endline="195">copy</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcomp__module__t_1a1720364e7995afa45aaa3a6d696dc1e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>comp_module_t::comp_module_t</definition>
+        <argsstring>(size_t be_db, size_t ki_db, size_t m_db)</argsstring>
+        <name>comp_module_t</name>
+        <qualifiedname>comp_module_t::comp_module_t</qualifiedname>
+        <param>
+          <type><ref refid="classlista" kindref="compound">size_t</ref></type>
+          <declname>be_db</declname>
+          <defname>be_dab</defname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">size_t</ref></type>
+          <declname>ki_db</declname>
+          <defname>ki_dab</defname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">size_t</ref></type>
+          <declname>m_db</declname>
+          <defname>m_dab</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor for <ref refid="classcomp__module__t" kindref="compound">comp_module_t</ref> class.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>be_db</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of inputs </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ki_db</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of outputs </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>m_db</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of the modules </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>w_db</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of wires </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="comp_module.h" line="13" column="5" bodyfile="comp_module.cpp" bodystart="169" bodyend="182"/>
+        <references refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" compoundref="module_8h" startline="14">module_t::be_db</references>
+        <references refid="classmodule__t_1a7d61b23e49096510cf223ffbced16f5f" compoundref="module_8h" startline="16">module_t::be_ertek</references>
+        <references refid="classshell__module__t_1a93ba970d90ff94f92e355ea110ba0f45" compoundref="shell__module_8cpp" startline="26" endline="40">shell_module_t::init</references>
+        <references refid="classmodule__t_1a525593566e11dc7186152b4770e12253" compoundref="module_8h" startline="15">module_t::ki_db</references>
+        <references refid="classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a" compoundref="module_8h" startline="17">module_t::ki_ertek</references>
+        <references refid="classmodule__t_1a7e972df261abe0ad96181db1f0f004d5" compoundref="module_8h" startline="18">module_t::ki_ports</references>
+      </memberdef>
+      <memberdef kind="function" id="classcomp__module__t_1a211b1bfd46a32ac3038ffc7e687da84e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classmodule__t" kindref="compound">module_t</ref> *</type>
+        <definition>module_t * comp_module_t::copy</definition>
+        <argsstring>() override</argsstring>
+        <name>copy</name>
+        <qualifiedname>comp_module_t::copy</qualifiedname>
+        <reimplements refid="classmodule__t_1ac55b2034283f3488767d6c110ddad55d">copy</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="comp_module.h" line="14" column="14" bodyfile="comp_module.cpp" bodystart="183" bodyend="195"/>
+        <references refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" compoundref="module_8h" startline="14">module_t::be_db</references>
+        <references refid="classcomp__module__t_1a97d5cb5be2c89a3e8da221e02a20243b" compoundref="comp__module_8cpp" startline="100" endline="110">comp_create_modules</references>
+        <references refid="classcomp__module__t_1a63951fff0c2c203661e19a86f10d522c" compoundref="comp__module_8cpp" startline="111" endline="135">comp_fill_module</references>
+        <references refid="classcomp__module__t_1ac0c8f89cc41c87d65de52fc652d35827" compoundref="comp__module_8cpp" startline="143" endline="160">comp_module_t</references>
+        <references refid="classcomp__module__t_1aca2e7434a78ef8a7486f76d2aca92bb9" compoundref="comp__module_8h" startline="21" endline="23">get_ki_num</references>
+        <references refid="comp__module_8cpp_1a72fad6f3a585cf1547f2fbcd87ec7a90" compoundref="comp__module_8cpp" startline="31" endline="62">muvcount</references>
+        <referencedby refid="classcomp__module__t_1a97d5cb5be2c89a3e8da221e02a20243b" compoundref="comp__module_8cpp" startline="100" endline="110">comp_create_modules</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcomp__module__t_1a8bf16b365b70e4701c507b4342c8ad8e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classlista" kindref="compound">void</ref></type>
+        <definition>void comp_module_t::set_ki_port</definition>
+        <argsstring>(size_t ki_index, module_t *modulep, size_t be_index)</argsstring>
+        <name>set_ki_port</name>
+        <qualifiedname>comp_module_t::set_ki_port</qualifiedname>
+        <reimplements refid="classmodule__t_1a57c0215cd97886fdbbf55a59ead9205a">set_ki_port</reimplements>
+        <param>
+          <type><ref refid="classlista" kindref="compound">size_t</ref></type>
+          <declname>ki_index</declname>
+        </param>
+        <param>
+          <type><ref refid="classmodule__t" kindref="compound">module_t</ref> *</type>
+          <declname>modulep</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">size_t</ref></type>
+          <declname>be_index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="comp_module.h" line="15" column="10" bodyfile="comp_module.h" bodystart="15" bodyend="17"/>
+        <references refid="classmodule__t_1a57c0215cd97886fdbbf55a59ead9205a" compoundref="module_8cpp" startline="3" endline="9">module_t::set_ki_port</references>
+      </memberdef>
+      <memberdef kind="function" id="classcomp__module__t_1a6372ba5509ea9bee27623838dff87ad0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classlista" kindref="compound">uint8_t</ref></type>
+        <definition>uint8_t comp_module_t::get_ki_ertek</definition>
+        <argsstring>(size_t i)</argsstring>
+        <name>get_ki_ertek</name>
+        <qualifiedname>comp_module_t::get_ki_ertek</qualifiedname>
+        <reimplements refid="classmodule__t_1a74f223430fdcfa4e8cb9b143b29dab5d">get_ki_ertek</reimplements>
+        <param>
+          <type><ref refid="classlista" kindref="compound">size_t</ref></type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="comp_module.h" line="18" column="13" bodyfile="comp_module.h" bodystart="18" bodyend="20"/>
+        <references refid="classmodule__t_1a74f223430fdcfa4e8cb9b143b29dab5d" compoundref="module_8h" startline="27" endline="27">module_t::get_ki_ertek</references>
+      </memberdef>
+      <memberdef kind="function" id="classcomp__module__t_1aca2e7434a78ef8a7486f76d2aca92bb9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classlista" kindref="compound">size_t</ref></type>
+        <definition>size_t comp_module_t::get_ki_num</definition>
+        <argsstring>()</argsstring>
+        <name>get_ki_num</name>
+        <qualifiedname>comp_module_t::get_ki_num</qualifiedname>
+        <reimplements refid="classmodule__t_1a5bfb7a115938e38ae555af4c83bb431c">get_ki_num</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="comp_module.h" line="21" column="12" bodyfile="comp_module.h" bodystart="21" bodyend="23"/>
+        <references refid="classmodule__t_1a5bfb7a115938e38ae555af4c83bb431c" compoundref="module_8h" startline="26" endline="26">module_t::get_ki_num</references>
+        <referencedby refid="classcomp__module__t_1a211b1bfd46a32ac3038ffc7e687da84e" compoundref="comp__module_8cpp" startline="183" endline="195">copy</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcomp__module__t_1adef32bb2f85715f8945476ac3fb8a196" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlista" kindref="compound">void</ref></type>
+        <definition>void comp_module_t::set_connection</definition>
+        <argsstring>(char c, module_t *&amp;base, size_t ki_index)</argsstring>
+        <name>set_connection</name>
+        <qualifiedname>comp_module_t::set_connection</qualifiedname>
+        <param>
+          <type><ref refid="classlista" kindref="compound">char</ref></type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type><ref refid="classmodule__t" kindref="compound">module_t</ref> *&amp;</type>
+          <declname>base</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">size_t</ref></type>
+          <declname>ki_index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="comp_module.h" line="24" column="10" bodyfile="comp_module.cpp" bodystart="63" bodyend="81"/>
+        <references refid="classmodule__t_1a57c0215cd97886fdbbf55a59ead9205a" compoundref="module_8cpp" startline="3" endline="9">module_t::set_ki_port</references>
+        <referencedby refid="classcomp__module__t_1a63951fff0c2c203661e19a86f10d522c" compoundref="comp__module_8cpp" startline="111" endline="135">comp_fill_module</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcomp__module__t_1a97d5cb5be2c89a3e8da221e02a20243b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlista" kindref="compound">void</ref></type>
+        <definition>void comp_module_t::comp_create_modules</definition>
+        <argsstring>(bool copy, lista&lt; size_t &gt; &amp;vegk, lista&lt; size_t &gt; &amp;kezk, lista&lt; prot_module_t * &gt; *prot_modules, module_t **&amp;modules_ref)</argsstring>
+        <name>comp_create_modules</name>
+        <qualifiedname>comp_module_t::comp_create_modules</qualifiedname>
+        <param>
+          <type><ref refid="classlista" kindref="compound">bool</ref></type>
+          <declname>copy</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">lista</ref>&lt; <ref refid="classlista" kindref="compound">size_t</ref> &gt; &amp;</type>
+          <declname>vegk</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">lista</ref>&lt; <ref refid="classlista" kindref="compound">size_t</ref> &gt; &amp;</type>
+          <declname>kezk</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">lista</ref>&lt; <ref refid="classprot__module__t" kindref="compound">prot_module_t</ref> * &gt; *</type>
+          <declname>prot_modules</declname>
+        </param>
+        <param>
+          <type><ref refid="classmodule__t" kindref="compound">module_t</ref> **&amp;</type>
+          <declname>modules_ref</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Fills modules based on previous calculations.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>copy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if for coping modules </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>m_db</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of the modules </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>be_db</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of inputs </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ki_db</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of outputs </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>w_db</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of wires </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>modules_coms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the character array containing module command </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vegk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the list of the starter indexes </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kezk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the list of the end indexes </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>modules</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>array of modules </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>end_module</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the end module </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ki_wires</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output wires(inputs) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>wires</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>inner wires </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>prot_modules</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list of modules prototypes </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>modules_ref</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to modules </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="comp_module.h" line="25" column="10" bodyfile="comp_module.cpp" bodystart="100" bodyend="110"/>
+        <references refid="classcomp__module__t_1a211b1bfd46a32ac3038ffc7e687da84e" compoundref="comp__module_8cpp" startline="183" endline="195">copy</references>
+        <references refid="classmodule__t_1ac55b2034283f3488767d6c110ddad55d">module_t::copy</references>
+        <references refid="comp__module_8cpp_1a4e937192165d4187e4bd5e4d70967eb5" compoundref="comp__module_8cpp" startline="13" endline="19">eggyezik</references>
+        <referencedby refid="classcomp__module__t_1ac0c8f89cc41c87d65de52fc652d35827" compoundref="comp__module_8cpp" startline="143" endline="160">comp_module_t</referencedby>
+        <referencedby refid="classcomp__module__t_1a211b1bfd46a32ac3038ffc7e687da84e" compoundref="comp__module_8cpp" startline="183" endline="195">copy</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcomp__module__t_1a63951fff0c2c203661e19a86f10d522c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlista" kindref="compound">void</ref></type>
+        <definition>void comp_module_t::comp_fill_module</definition>
+        <argsstring>(lista&lt; size_t &gt; &amp;vegk)</argsstring>
+        <name>comp_fill_module</name>
+        <qualifiedname>comp_module_t::comp_fill_module</qualifiedname>
+        <param>
+          <type><ref refid="classlista" kindref="compound">lista</ref>&lt; <ref refid="classlista" kindref="compound">size_t</ref> &gt; &amp;</type>
+          <declname>vegk</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="comp_module.h" line="26" column="10" bodyfile="comp_module.cpp" bodystart="111" bodyend="135"/>
+        <references refid="classlista_1a3f48539cd27ef435ea20315183a7c48e" compoundref="lista_8cpp" startline="38" endline="45">lista&lt; T &gt;::add</references>
+        <references refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" compoundref="module_8h" startline="14">module_t::be_db</references>
+        <references refid="classmodule__t_1a7e972df261abe0ad96181db1f0f004d5" compoundref="module_8h" startline="18">module_t::ki_ports</references>
+        <references refid="classmodule__t_1a67f5c31043ebfd97506f367b83b02f14" compoundref="module_8h" startline="24" endline="24">module_t::set_be</references>
+        <references refid="classcomp__module__t_1adef32bb2f85715f8945476ac3fb8a196" compoundref="comp__module_8cpp" startline="63" endline="81">set_connection</references>
+        <references refid="classmodule__t_1a57c0215cd97886fdbbf55a59ead9205a" compoundref="module_8cpp" startline="3" endline="9">module_t::set_ki_port</references>
+        <referencedby refid="classcomp__module__t_1ac0c8f89cc41c87d65de52fc652d35827" compoundref="comp__module_8cpp" startline="143" endline="160">comp_module_t</referencedby>
+        <referencedby refid="classcomp__module__t_1a211b1bfd46a32ac3038ffc7e687da84e" compoundref="comp__module_8cpp" startline="183" endline="195">copy</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcomp__module__t_1abf92dd303a6e29a879eda4af3b3c33a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>comp_module_t::~comp_module_t</definition>
+        <argsstring>()</argsstring>
+        <name>~comp_module_t</name>
+        <qualifiedname>comp_module_t::~comp_module_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destructor for the <ref refid="classcomp__module__t" kindref="compound">comp_module_t</ref> class, responsible for cleaning up memory and resources. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="comp_module.h" line="27" column="5" bodyfile="comp_module.cpp" bodystart="199" bodyend="207"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>comp_module_t</label>
+        <link refid="classcomp__module__t"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>module_t</label>
+        <link refid="classmodule__t"/>
+      </node>
+      <node id="2">
+        <label>shell_module_t</label>
+        <link refid="classshell__module__t"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>comp_module_t</label>
+        <link refid="classcomp__module__t"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>lista&lt; port&lt; module_t * &gt; &gt;</label>
+        <link refid="classlista"/>
+      </node>
+      <node id="3">
+        <label>module_t</label>
+        <link refid="classmodule__t"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>ki_ports</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>shell_module_t</label>
+        <link refid="classshell__module__t"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="comp_module.h" line="5" column="1" bodyfile="comp_module.h" bodystart="5" bodyend="28"/>
+    <listofallmembers>
+      <member refid="classshell__module__t_1a4e060254af234565da1f0381e82a4afa" prot="public" virt="virtual"><scope>comp_module_t</scope><name>add_to_list</name></member>
+      <member refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" prot="protected" virt="non-virtual"><scope>comp_module_t</scope><name>be_db</name></member>
+      <member refid="classmodule__t_1a7d61b23e49096510cf223ffbced16f5f" prot="protected" virt="non-virtual"><scope>comp_module_t</scope><name>be_ertek</name></member>
+      <member refid="classcomp__module__t_1a97d5cb5be2c89a3e8da221e02a20243b" prot="public" virt="non-virtual"><scope>comp_module_t</scope><name>comp_create_modules</name></member>
+      <member refid="classcomp__module__t_1a63951fff0c2c203661e19a86f10d522c" prot="public" virt="non-virtual"><scope>comp_module_t</scope><name>comp_fill_module</name></member>
+      <member refid="classcomp__module__t_1ac0c8f89cc41c87d65de52fc652d35827" prot="public" virt="non-virtual"><scope>comp_module_t</scope><name>comp_module_t</name></member>
+      <member refid="classcomp__module__t_1a1720364e7995afa45aaa3a6d696dc1e9" prot="public" virt="non-virtual"><scope>comp_module_t</scope><name>comp_module_t</name></member>
+      <member refid="classcomp__module__t_1a211b1bfd46a32ac3038ffc7e687da84e" prot="public" virt="virtual"><scope>comp_module_t</scope><name>copy</name></member>
+      <member refid="classcomp__module__t_1a282748625daf95c7b75f694e2cbc8eef" prot="private" virt="non-virtual"><scope>comp_module_t</scope><name>end_module</name></member>
+      <member refid="classmodule__t_1afc483f4ee25f18ae47b5b1bdad294785" prot="public" virt="non-virtual"><scope>comp_module_t</scope><name>get_be_ertek</name></member>
+      <member refid="classmodule__t_1a3986b0f8ab95dbccec8616f2196e7bba" prot="public" virt="non-virtual"><scope>comp_module_t</scope><name>get_be_num</name></member>
+      <member refid="classcomp__module__t_1a6372ba5509ea9bee27623838dff87ad0" prot="public" virt="virtual"><scope>comp_module_t</scope><name>get_ki_ertek</name></member>
+      <member refid="classcomp__module__t_1aca2e7434a78ef8a7486f76d2aca92bb9" prot="public" virt="virtual"><scope>comp_module_t</scope><name>get_ki_num</name></member>
+      <member refid="classshell__module__t_1a93ba970d90ff94f92e355ea110ba0f45" prot="public" virt="non-virtual"><scope>comp_module_t</scope><name>init</name></member>
+      <member refid="classmodule__t_1a525593566e11dc7186152b4770e12253" prot="protected" virt="non-virtual"><scope>comp_module_t</scope><name>ki_db</name></member>
+      <member refid="classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a" prot="protected" virt="non-virtual"><scope>comp_module_t</scope><name>ki_ertek</name></member>
+      <member refid="classmodule__t_1a7e972df261abe0ad96181db1f0f004d5" prot="protected" virt="non-virtual"><scope>comp_module_t</scope><name>ki_ports</name></member>
+      <member refid="classcomp__module__t_1a1ffef641e0801d4df0d621c1621d7f40" prot="private" virt="non-virtual"><scope>comp_module_t</scope><name>m_db</name></member>
+      <member refid="classmodule__t_1a37273f61cb094f04a2d42f519a498d68" prot="public" virt="non-virtual"><scope>comp_module_t</scope><name>module_t</name></member>
+      <member refid="classcomp__module__t_1ab71b3a4691b7db1ab310c21ec29e8749" prot="private" virt="non-virtual"><scope>comp_module_t</scope><name>modules</name></member>
+      <member refid="classcomp__module__t_1abb8ebf7b49242f1bec6584a9439a95ac" prot="private" virt="non-virtual"><scope>comp_module_t</scope><name>modules_coms</name></member>
+      <member refid="classshell__module__t_1ad51fd55322054ad381801aaeae0bcecb" prot="public" virt="virtual"><scope>comp_module_t</scope><name>set_be</name></member>
+      <member refid="classcomp__module__t_1adef32bb2f85715f8945476ac3fb8a196" prot="public" virt="non-virtual"><scope>comp_module_t</scope><name>set_connection</name></member>
+      <member refid="classcomp__module__t_1a8bf16b365b70e4701c507b4342c8ad8e" prot="public" virt="virtual"><scope>comp_module_t</scope><name>set_ki_port</name></member>
+      <member refid="classshell__module__t_1a4a7a9a6a40113732874939fa57900d5b" prot="public" virt="non-virtual"><scope>comp_module_t</scope><name>shell_module_t</name></member>
+      <member refid="classmodule__t_1ab299b7a5380d778a6c6d9d78285c837e" prot="public" virt="virtual"><scope>comp_module_t</scope><name>vegrehajtas</name></member>
+      <member refid="classcomp__module__t_1abf92dd303a6e29a879eda4af3b3c33a9" prot="public" virt="non-virtual"><scope>comp_module_t</scope><name>~comp_module_t</name></member>
+      <member refid="classmodule__t_1a74181e5ee6b99a623d75ce02304c1340" prot="public" virt="virtual"><scope>comp_module_t</scope><name>~module_t</name></member>
+      <member refid="classshell__module__t_1a03b36f2ced4390eb8512e94cfb8c2b81" prot="public" virt="virtual"><scope>comp_module_t</scope><name>~shell_module_t</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

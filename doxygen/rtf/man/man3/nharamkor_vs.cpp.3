@@ -1,0 +1,381 @@
+.TH "nharamkor_vs.cpp" 3 "nharamkkor_vs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nharamkor_vs.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <iostream>\fP
+.br
+\fR#include <fstream>\fP
+.br
+\fR#include 'comp_module\&.h'\fP
+.br
+\fR#include 'text_module\&.h'\fP
+.br
+\fR#include 'karakter_keszlet\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBbool\fP \fBismod\fP (\fBchar\fP \fBc\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmodulator\fP (\fBuint8_t\fP \fBc\fP, \fBuint8_t\fP &\fBmods\fP)"
+.br
+.ti -1c
+.RI "\fBuint8_t\fP \fBujmnev_ell\fP (\fBconst\fP \fBchar\fP *nev, \fBlista\fP< \fBprot_module_t\fP * > &modules)"
+.br
+.ti -1c
+.RI "\fBuint8_t\fP \fBkisbetujo\fP (\fBconst\fP \fBchar\fP *\fBstr\fP)"
+.br
+.ti -1c
+.RI "\fBuint8_t\fP \fBkisbetujo2\fP (\fBconst\fP \fBchar\fP *\fBstr\fP)"
+.br
+.ti -1c
+.RI "\fBuint8_t\fP \fBnagybetujo\fP (\fBconst\fP \fBchar\fP *\fBstr\fP)"
+.br
+.ti -1c
+.RI "\fBuint8_t\fP \fBmodulesteszt\fP (\fBconst\fP \fBchar\fP *\fBstr\fP, \fBlista\fP< \fBprot_module_t\fP * > &modules)"
+.br
+.ti -1c
+.RI "\fBuint8_t\fP \fBtest_module\fP (\fBconst\fP \fBchar\fP *\fBstr\fP, \fBlista\fP< \fBprot_module_t\fP * > &\fBmodulok\fP, \fBbool\fP add=\fBtrue\fP)"
+.br
+.ti -1c
+.RI "template<\fBtypename\fP \fBT\fP > \fBbool\fP \fBinstruct_handler_char_handler\fP (\fBuint8_t\fP *\fBinputs\fP, \fBuint8_t\fP \fBc\fP, \fBT\fP &\fBstate\fP, \fBuint8_t\fP &\fBmods\fP, \fBsize_t\fP &\fBnumber\fP)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBinstruct_handler\fP (\fBchar\fP *\fBs\fP, \fBmodule_t\fP *&\fBm_main\fP, \fBuint8_t\fP &\fBmods\fP, \fBsize_t\fP &\fBnumber\fP, \fBlista\fP< \fBmodule_t\fP * > &\fBwait_to_do_modules\fP)"
+.br
+.ti -1c
+.RI "\fBchar\fP * \fBgetstring\fP (\fBstd::istream\fP &\fBin\fP, \fBsize_t\fP \fBh\fP=0)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBprint_module_error\fP (\fBuint8_t\fP \fBerr\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBprint\fP (\fBmodule_t\fP *&\fBm_main\fP, \fBbool\fP \fBkezd\fP=\fBtrue\fP, \fBbool\fP \fBlezar\fP=\fBtrue\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBinput_handler\fP (\fBstd::istream\fP &\fBin\fP, \fBlista\fP< \fBmodule_t\fP * > &\fBwait_to_do_modules\fP, \fBuint8_t\fP &\fBmods\fP, \fBlista\fP< \fBprot_module_t\fP * > &\fBmodulok\fP, \fBmodule_t\fP *&\fBm_main\fP, \fBlista\fP< \fBchar\fP * > &\fBinsts\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBinput_handler_module\fP (\fBchar\fP *\fBs\fP, \fBlista\fP< \fBprot_module_t\fP * > &\fBmodulok\fP, \fBmodule_t\fP *&\fBm_main\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBinput_handler_read\fP (\fBchar\fP *\fBs\fP, \fBlista\fP< \fBmodule_t\fP * > &\fBwait_to_do_wires\fP, \fBuint8_t\fP &\fBmods\fP, \fBlista\fP< \fBprot_module_t\fP * > &\fBmodulok\fP, \fBmodule_t\fP *&\fBm_main\fP, \fBlista\fP< \fBchar\fP * > &\fBinsts\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBinput_handler_write\fP (\fBchar\fP *\fBs\fP, \fBlista\fP< \fBchar\fP * > &\fBinsts\fP)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBinput_handler_do\fP (\fBchar\fP *\fBs\fP, \fBlista\fP< \fBmodule_t\fP * > &\fBwait_to_do_modules\fP, \fBuint8_t\fP &\fBmods\fP, \fBmodule_t\fP *&\fBm_main\fP)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBmain\fP ()"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBchar\fP * getstring (\fBstd::istream\fP & in, \fBsize_t\fP h = \fR0\fP)"
+Recursively reads characters from the input stream and stores them in a dynamically allocated char array\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIin\fP the input stream to read from 
+.br
+\fIh\fP the current size of the char array being built
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a dynamically allocated char array containing the characters read from the input stream 
+.RE
+.PP
+
+.SS "\fBvoid\fP input_handler (\fBstd::istream\fP & in, \fBlista\fP< \fBmodule_t\fP * > & wait_to_do_modules, \fBuint8_t\fP & mods, \fBlista\fP< \fBprot_module_t\fP * > & modulok, \fBmodule_t\fP *& m_main, \fBlista\fP< \fBchar\fP * > & insts)"
+Handles input from the given input stream and performs various operations based on the input\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIin\fP the input stream to read from 
+.br
+\fIw_inputs\fP array of wire inputs 
+.br
+\fIwait_to_do_wires\fP list of \fBwire_t\fP pointers to wires, waiting to be processed 
+.br
+\fImods\fP uint8_t representing modifications 
+.br
+\fImodulok\fP list of \fBprot_module_t\fP pointers representing modules 
+.br
+\fIm_main\fP pointer to the main module 
+.br
+\fIinsts\fP list of instructions 
+.RE
+.PP
+
+.SS "\fBbool\fP input_handler_do (\fBchar\fP * s, \fBlista\fP< \fBmodule_t\fP * > & wait_to_do_modules, \fBuint8_t\fP & mods, \fBmodule_t\fP *& m_main)"
+A function that handles input based on the given parameters\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIs\fP the input character array 
+.br
+\fIw_inputs\fP array of wire inputs 
+.br
+\fIwait_to_do_wires\fP list of \fBwire_t\fP pointers to wires, waiting to be processed 
+.br
+\fImods\fP a uint8_t representing modifications 
+.br
+\fIm_main\fP pointer to the main module
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if input handling is successful, false otherwise 
+.RE
+.PP
+
+.SS "\fBvoid\fP input_handler_module (\fBchar\fP * s, \fBlista\fP< \fBprot_module_t\fP * > & modulok, \fBmodule_t\fP *& m_main)"
+Handles input for new module and sets the main module if the module is '_main'\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIs\fP input string 
+.br
+\fIw_inputs\fP array of wire inputs 
+.br
+\fImodulok\fP list of modules 
+.br
+\fIm_main\fP pointer to the main module 
+.RE
+.PP
+
+.SS "\fBvoid\fP input_handler_read (\fBchar\fP * s, \fBlista\fP< \fBmodule_t\fP * > & wait_to_do_wires, \fBuint8_t\fP & mods, \fBlista\fP< \fBprot_module_t\fP * > & modulok, \fBmodule_t\fP *& m_main, \fBlista\fP< \fBchar\fP * > & insts)"
+A function to handle reading file, processing it\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIs\fP the input file name 
+.br
+\fIw_inputs\fP array of wire inputs 
+.br
+\fIwait_to_do_wires\fP list of \fBwire_t\fP pointers to wires, waiting to be processed 
+.br
+\fImods\fP a uint8_t representing modifications 
+.br
+\fImodulok\fP list of modules 
+.br
+\fIm_main\fP pointer to the main module 
+.br
+\fIinsts\fP list of instructions 
+.RE
+.PP
+
+.SS "\fBvoid\fP input_handler_write (\fBchar\fP * s, \fBlista\fP< \fBchar\fP * > & insts)"
+A function to handle writing instructions to file if the user wants\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIs\fP the output file name 
+.br
+\fIinsts\fP list of instructions 
+.RE
+.PP
+
+.SS "\fBbool\fP instruct_handler (\fBchar\fP * s, \fBmodule_t\fP *& m_main, \fBuint8_t\fP & mods, \fBsize_t\fP & number, \fBlista\fP< \fBmodule_t\fP * > & wait_to_do_modules)"
+A function to handle instructions\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIs\fP the instruction string 
+.br
+\fIw_inputs\fP an array of \fBwire_t\fP inputs 
+.br
+\fIwait_to_do_wires\fP a list of \fBwire_t\fP pointers to wires, waiting to be processed 
+.br
+\fImods\fP a uint8_t representing modifications 
+.br
+\fInumber\fP a size_t representing a number
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the function execution is successful, false otherwise 
+.RE
+.PP
+
+.SS "template<\fBtypename\fP \fBT\fP > \fBbool\fP instruct_handler_char_handler (\fBuint8_t\fP * inputs, \fBuint8_t\fP c, \fBT\fP & state, \fBuint8_t\fP & mods, \fBsize_t\fP & number)"
+A template function to handle different types of input characters and modify state accordingly\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIinputs\fP pointer to an array of uint8_t to store inputs 
+.br
+\fIc\fP the input character to handle 
+.br
+\fIstate\fP a reference to a template type T representing the current state 
+.br
+\fImods\fP a reference to a uint8_t to store modifiers 
+.br
+\fInumber\fP a reference to a size_t to store a number
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the input character is processed successfully, false otherwise 
+.RE
+.PP
+
+.SS "\fBbool\fP ismod (\fBchar\fP c)"
+Check if the character is a special symbol\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIc\fP the character to be checked
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the character is '', '-', '+', or '!', false otherwise 
+.RE
+.PP
+
+.SS "\fBuint8_t\fP kisbetujo (\fBconst\fP \fBchar\fP * str)"
+Checks if the input string contains at least one of each lowercase letter up to the 'biggest' letter in use\&. And not contains syntactic error\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIstr\fP pointer to the input string
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+2 if wrong format, 1 if wrong character usage, 0 if it's valid 
+.RE
+.PP
+
+.SS "\fBuint8_t\fP kisbetujo2 (\fBconst\fP \fBchar\fP * str)"
+Checks if the input string contains at least one of each lowercase letter up to the 'biggest' letter in use and after a specific character every letter used as output\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIstr\fP pointer to the input string
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+1 if a letter used as an output more than once, 2 if it's not valid, 0 if it's valid 
+.RE
+.PP
+
+.SS "\fBint\fP main ()"
+Main function\&.\&.\&. That's all\&. 
+.SS "\fBvoid\fP modulator (\fBuint8_t\fP c, \fBuint8_t\fP & mods)"
+Modifies the given mods variable based on the input character\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIc\fP the character input to determine the modification 
+.br
+\fImods\fP the variable to be modified based on the input character 
+.RE
+.PP
+
+.SS "\fBuint8_t\fP modulesteszt (\fBconst\fP \fBchar\fP * str, \fBlista\fP< \fBprot_module_t\fP * > & modules)"
+Function to check and validate modules based on input string\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIstr\fP The input string to check against modules\&. 
+.br
+\fImodules\fP A list of modules to compare against the input string\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 if successful, 1 if module does not exist, 2 if wrong input number, 3 if wrong output number\&. 
+.RE
+.PP
+
+.SS "\fBuint8_t\fP nagybetujo (\fBconst\fP \fBchar\fP * str)"
+A function that checks the wiring connections of uppercase letters in the input string\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIstr\fP a pointer to the input string to be checked
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 if the wiring connections are correct, 1 if a letter used as an output more than once, 2 if there are incorrect wiring connections 
+.RE
+.PP
+
+.SS "\fBvoid\fP print (\fBmodule_t\fP *& m_main, \fBbool\fP kezd = \fR\fBtrue\fP\fP, \fBbool\fP lezar = \fR\fBtrue\fP\fP)"
+Prints the contents of the module to the console in a formatted manner\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIm_main\fP a pointer to the module to be printed 
+.br
+\fIkezd\fP flag indicating whether to include the beginning formatting 
+.br
+\fIlezar\fP flag indicating whether to include the ending formatting 
+.RE
+.PP
+
+.SS "\fBbool\fP print_module_error (\fBuint8_t\fP err)"
+A function that prints error messages based on the error code passed in\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIerr\fP the error code to determine which error message to print
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if error code is 0, false otherwise 
+.RE
+.PP
+
+.SS "\fBuint8_t\fP test_module (\fBconst\fP \fBchar\fP * str, \fBlista\fP< \fBprot_module_t\fP * > & modulok, \fBbool\fP add = \fR\fBtrue\fP\fP)"
+Function to test a module with the given name and commands\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIstr\fP the name and commands of the module to be tested 
+.br
+\fImodulok\fP a list of module pointers to be tested against 
+.br
+\fIadd\fP flag to indicate whether to add the module
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 if successful, error code otherwise 
+.RE
+.PP
+
+.SS "\fBuint8_t\fP ujmnev_ell (\fBconst\fP \fBchar\fP * nev, \fBlista\fP< \fBprot_module_t\fP * > & modules)"
+Check if the given name meets certain criteria and is not already in use\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fInev\fP The name to be checked 
+.br
+\fImodules\fP A list of modules to compare the name against
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 if the name is valid and not in use, 1 if the name not starts with '_', 2 if the name contains invalid characters, 3 if the name is already in use 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for nharamkkor_vs from the source code\&.

@@ -1,0 +1,127 @@
+\doxysection{wire\+\_\+t Class Reference}
+\label{classwire__t}\index{wire\_t@{wire\_t}}
+
+
+{\ttfamily \#include $<$wire.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ wire\+\_\+t} ()
+\item 
+\textbf{ void} \textbf{ add} (\textbf{ port\+\_\+t} $\ast$\textbf{ newport})
+\item 
+\textbf{ void} \textbf{ add} (\textbf{ module\+\_\+t} $\ast$modulep, \textbf{ size\+\_\+t} idx)
+\item 
+\textbf{ void} \textbf{ set} (\textbf{ uint8\+\_\+t} ertek)
+\item 
+\textbf{ void} \textbf{ setin} ()
+\item 
+\textbf{ uint8\+\_\+t} \textbf{ get} ()
+\item 
+\textbf{ void} \textbf{ doit} (\textbf{ lista}$<$ \textbf{ module\+\_\+t} $\ast$ $>$ \&\textbf{ wait\+\_\+for\+\_\+do})
+\item 
+\textbf{ $\sim$wire\+\_\+t} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\label{classwire__t_aa66dbdfdc6ccf987cf6e8cfa03a62b95} 
+\index{wire\_t@{wire\_t}!wire\_t@{wire\_t}}
+\index{wire\_t@{wire\_t}!wire\_t@{wire\_t}}
+\doxysubsubsection{wire\_t()}
+{\footnotesize\ttfamily wire\+\_\+t\+::wire\+\_\+t (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor for the \doxyref{wire\+\_\+t}{p.}{classwire__t} class. \label{classwire__t_a9c68e62ee57f625c992ce3b0d3aee94a} 
+\index{wire\_t@{wire\_t}!````~wire\_t@{$\sim$wire\_t}}
+\index{````~wire\_t@{$\sim$wire\_t}!wire\_t@{wire\_t}}
+\doxysubsubsection{$\sim$wire\_t()}
+{\footnotesize\ttfamily wire\+\_\+t\+::$\sim$wire\+\_\+t (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor for the \doxyref{wire\+\_\+t}{p.}{classwire__t} class, delete all the ports. Here is the call graph for this function\+:
+% FIG 0
+
+
+\doxysubsection{Member Function Documentation}
+\label{classwire__t_a199d2d627c1f640220818cdcbc21d4fb} 
+\index{wire\_t@{wire\_t}!add@{add}}
+\index{add@{add}!wire\_t@{wire\_t}}
+\doxysubsubsection{add()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \textbf{ void} wire\+\_\+t\+::add (\begin{DoxyParamCaption}\item[{\textbf{ module\+\_\+t} $\ast$}]{modulep,  }\item[{\textbf{ size\+\_\+t}}]{idx }\end{DoxyParamCaption})}
+
+Adds a new port to the wire with the given module pointer and index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em modulep} & pointer to the module to add \\
+\hline
+{\em idx} & index of the port to add \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 1
+\label{classwire__t_aa2554dfd22a8816510937796d04f7b66} 
+\index{wire\_t@{wire\_t}!add@{add}}
+\index{add@{add}!wire\_t@{wire\_t}}
+\doxysubsubsection{add()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \textbf{ void} wire\+\_\+t\+::add (\begin{DoxyParamCaption}\item[{\textbf{ port\+\_\+t} $\ast$}]{newport }\end{DoxyParamCaption})}
+
+Adds a new port to the wire.
+
+
+\begin{DoxyParams}{Parameters}
+{\em newport} & pointer to the port to be added \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 2
+\label{classwire__t_a7197d613264ea00f51325b593955c149} 
+\index{wire\_t@{wire\_t}!doit@{doit}}
+\index{doit@{doit}!wire\_t@{wire\_t}}
+\doxysubsubsection{doit()}
+{\footnotesize\ttfamily \textbf{ void} wire\+\_\+t\+::doit (\begin{DoxyParamCaption}\item[{\textbf{ lista}$<$ \textbf{ module\+\_\+t} $\ast$ $>$ \&}]{wait\+\_\+for\+\_\+do }\end{DoxyParamCaption})}
+
+A function that adds the modules of ports to a list of modules after setting inputs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em wait\+\_\+for\+\_\+do} & list of \doxyref{module\+\_\+t}{p.}{classmodule__t} pointers to modules, waiting to be processed \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 3
+\label{classwire__t_a82fa390ce85c6938dc54ab48ebd51cc1} 
+\index{wire\_t@{wire\_t}!get@{get}}
+\index{get@{get}!wire\_t@{wire\_t}}
+\doxysubsubsection{get()}
+{\footnotesize\ttfamily \textbf{ uint8\+\_\+t} wire\+\_\+t\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Return the value of ertek. \label{classwire__t_a1c814f666ad69664219db12bd62c75b7} 
+\index{wire\_t@{wire\_t}!set@{set}}
+\index{set@{set}!wire\_t@{wire\_t}}
+\doxysubsubsection{set()}
+{\footnotesize\ttfamily \textbf{ void} wire\+\_\+t\+::set (\begin{DoxyParamCaption}\item[{\textbf{ uint8\+\_\+t}}]{ertek }\end{DoxyParamCaption})}
+
+Set the value of ertek.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ertek} & The new value to set \\
+\hline
+\end{DoxyParams}
+\label{classwire__t_afb467831d8761cf47e16df0104f6715f} 
+\index{wire\_t@{wire\_t}!setin@{setin}}
+\index{setin@{setin}!wire\_t@{wire\_t}}
+\doxysubsubsection{setin()}
+{\footnotesize\ttfamily \textbf{ void} wire\+\_\+t\+::setin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Set the input of all the ports. Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ wire.\+h}\item 
+\textbf{ wire.\+cpp}\end{DoxyCompactItemize}

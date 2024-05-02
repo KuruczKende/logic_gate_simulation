@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="module_8cpp" kind="file" language="C++">
+    <compoundname>module.cpp</compoundname>
+    <includes refid="module_8h" local="yes">module.h</includes>
+    <incdepgraph>
+      <node id="6">
+        <label>memtrace.h</label>
+        <link refid="memtrace_8h"/>
+      </node>
+      <node id="1">
+        <label>module.cpp</label>
+        <link refid="module_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>module.h</label>
+        <link refid="module_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ossz.h</label>
+        <link refid="ossz_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>cstring</label>
+      </node>
+      <node id="4">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="module_8h" kindref="compound">module.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="classmodule__t_1a57c0215cd97886fdbbf55a59ead9205a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmodule__t_1a57c0215cd97886fdbbf55a59ead9205a" kindref="member">module_t::set_ki_port</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">ki_index</ref>,<sp/><ref refid="classmodule__t" kindref="compound">module_t</ref>*<sp/>modulep,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">be_index</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">ki_index</ref><sp/>&gt;=<sp/><ref refid="classmodule__t_1a525593566e11dc7186152b4770e12253" kindref="member">ki_db</ref>)</highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;over<sp/>indexed&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">ki_index</ref><sp/>&lt;<sp/>0)</highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;under<sp/>indexed&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">be_index</ref><sp/>&gt;=<sp/>modulep-&gt;<ref refid="classmodule__t_1a3986b0f8ab95dbccec8616f2196e7bba" kindref="member">get_be_num</ref>())</highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;over<sp/>indexed&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">be_index</ref><sp/>&lt;<sp/>0)</highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;under<sp/>indexed&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1a7e972df261abe0ad96181db1f0f004d5" kindref="member">ki_ports</ref>[<ref refid="classlista" kindref="compound">ki_index</ref>].<ref refid="classlista_1a3f48539cd27ef435ea20315183a7c48e" kindref="member">add</ref>(<ref refid="classlista" kindref="compound">port&lt;module_t*&gt;</ref>{modulep,<sp/><ref refid="classlista" kindref="compound">be_index</ref>});</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="13" refid="classmodule__t_1a74181e5ee6b99a623d75ce02304c1340" refkind="member"><highlight class="normal"><ref refid="classmodule__t_1a74181e5ee6b99a623d75ce02304c1340" kindref="member">module_t::~module_t</ref>(){</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classmodule__t_1a7d61b23e49096510cf223ffbced16f5f" kindref="member">be_ertek</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a" kindref="member">ki_ertek</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classmodule__t_1a7e972df261abe0ad96181db1f0f004d5" kindref="member">ki_ports</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="module.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,299 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="ossz_8h" kind="file" language="C++">
+    <compoundname>ossz.h</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="no">cstring</includes>
+    <includes refid="memtrace_8h" local="yes">memtrace.h</includes>
+    <includedby refid="lista_8cpp" local="yes">lista.cpp</includedby>
+    <includedby refid="module_8h" local="yes">module.h</includedby>
+    <includedby refid="port_8h" local="yes">port.h</includedby>
+    <includedby refid="wire_8h" local="yes">wire.h</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>memtrace.h</label>
+        <link refid="memtrace_8h"/>
+      </node>
+      <node id="1">
+        <label>ossz.h</label>
+        <link refid="ossz_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>cstring</label>
+      </node>
+      <node id="2">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="9">
+        <label>comp_module.cpp</label>
+        <link refid="comp__module_8cpp"/>
+      </node>
+      <node id="8">
+        <label>comp_module.h</label>
+        <link refid="comp__module_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lista.cpp</label>
+        <link refid="lista_8cpp"/>
+      </node>
+      <node id="4">
+        <label>module.cpp</label>
+        <link refid="module_8cpp"/>
+      </node>
+      <node id="3">
+        <label>module.h</label>
+        <link refid="module_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>nharamkor_vs.cpp</label>
+        <link refid="nharamkor__vs_8cpp"/>
+      </node>
+      <node id="1">
+        <label>ossz.h</label>
+        <link refid="ossz_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>port.cpp</label>
+        <link refid="port_8cpp"/>
+      </node>
+      <node id="16">
+        <label>port.h</label>
+        <link refid="port_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>prot_modules.cpp</label>
+        <link refid="prot__modules_8cpp"/>
+      </node>
+      <node id="7">
+        <label>prot_modules.h</label>
+        <link refid="prot__modules_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>shell_module.cpp</label>
+        <link refid="shell__module_8cpp"/>
+      </node>
+      <node id="11">
+        <label>shell_module.h</label>
+        <link refid="shell__module_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>text_module.cpp</label>
+        <link refid="text__module_8cpp"/>
+      </node>
+      <node id="13">
+        <label>text_module.h</label>
+        <link refid="text__module_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>wire.cpp</label>
+        <link refid="wire_8cpp"/>
+      </node>
+      <node id="17">
+        <label>wire.h</label>
+        <link refid="wire_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classlista" prot="public">lista</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="ossz_8h_1a4c601b4f90966724c2de786d8bd9eb82" prot="public" static="no">
+        <name>low</name>
+        <initializer>&apos;0&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ossz.h" line="8" column="9" bodyfile="ossz.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="ossz_8h_1a9ce2716323ceb0e2133340a161f33a6c" prot="public" static="no">
+        <name>high</name>
+        <initializer>&apos;1&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ossz.h" line="9" column="9" bodyfile="ossz.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" prot="public" static="no">
+        <name>undet</name>
+        <initializer>&apos;?&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ossz.h" line="10" column="9" bodyfile="ossz.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="ossz_8h_1a4e937192165d4187e4bd5e4d70967eb5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlista" kindref="compound">bool</ref></type>
+        <definition>bool eggyezik</definition>
+        <argsstring>(const char *str, const char *str2, size_t kez, size_t veg)</argsstring>
+        <name>eggyezik</name>
+        <param>
+          <type><ref refid="classlista" kindref="compound">const</ref> <ref refid="classlista" kindref="compound">char</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">const</ref> <ref refid="classlista" kindref="compound">char</ref> *</type>
+          <declname>str2</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">size_t</ref></type>
+          <declname>kez</declname>
+        </param>
+        <param>
+          <type><ref refid="classlista" kindref="compound">size_t</ref></type>
+          <declname>veg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks if a substring of str matches str2 within the specified range.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to the string to be checked </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to the string to compare against </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kez</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting index of the substring to compare </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>veg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ending index of the substring to compare (exclusive)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the substring matches, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ossz.h" line="30" column="6" bodyfile="comp_module.cpp" bodystart="13" bodyend="19" declfile="ossz.h" declline="30" declcolumn="6"/>
+        <referencedby refid="classcomp__module__t_1a97d5cb5be2c89a3e8da221e02a20243b" compoundref="comp__module_8cpp" startline="100" endline="110">comp_module_t::comp_create_modules</referencedby>
+        <referencedby refid="nharamkor__vs_8cpp_1a079dcfedb64af966eab0a78d9a4c979d" compoundref="nharamkor__vs_8cpp" startline="175" endline="195">modulesteszt</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>OSSZ_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OSSZ_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="memtrace_8h" kindref="compound">memtrace.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="ossz_8h_1a4c601b4f90966724c2de786d8bd9eb82" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>low<sp/>&apos;0&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="ossz_8h_1a9ce2716323ceb0e2133340a161f33a6c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>high<sp/>&apos;1&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>undet<sp/>&apos;?&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="13" refid="classlista" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classlista" kindref="compound">lista</ref>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">T</ref><sp/>elem;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">lista</ref>*<sp/>next=<ref refid="classlista_1adfa22c0202d7ac7abfe006dbd3b5a12a" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">T</ref>*<sp/>getin(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">i</ref>);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18" refid="classlista_1adfa22c0202d7ac7abfe006dbd3b5a12a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classlista_1adfa22c0202d7ac7abfe006dbd3b5a12a" kindref="member">lista</ref>():next(<ref refid="classlista" kindref="compound">NULL</ref>){}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">T</ref>&amp;<sp/><ref refid="classlista_1a574c4c2ef856e559622c2183daa6a3d8" kindref="member">operator[]</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">i</ref>);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlista_1a3f48539cd27ef435ea20315183a7c48e" kindref="member">add</ref>(<ref refid="classlista" kindref="compound">T</ref><sp/>ertek);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlista_1a3f48539cd27ef435ea20315183a7c48e" kindref="member">add</ref>(<ref refid="classlista" kindref="compound">lista&lt;T&gt;</ref>&amp;<sp/><ref refid="classlista" kindref="compound">addlist</ref>);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista_1a5baaf78ac201a75e49f18110daed7fd6" kindref="member">length</ref>();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlista_1a91e03590c673ff5b3b928acc9dc6275d" kindref="member">rem</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">i</ref>);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlista_1a12a87ad57faeebe390e6514514dd85a7" kindref="member">din</ref>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlista_1a10bc0895ed694524a7031254718607ed" kindref="member">dinl</ref>();</highlight></codeline>
+<codeline lineno="26" refid="classlista_1a32532b105feb9833f4a17473b82e3554" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classlista_1a32532b105feb9833f4a17473b82e3554" kindref="member">~lista</ref>(){</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>next;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="ossz_8h_1a4e937192165d4187e4bd5e4d70967eb5" kindref="member">eggyezik</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classlista" kindref="compound">str</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classlista" kindref="compound">str2</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">kez</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">veg</ref>);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="ossz.h"/>
+  </compounddef>
+</doxygen>

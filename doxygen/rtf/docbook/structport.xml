@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structport" xml:lang="en-US">
+<title>port&lt; T &gt; Struct Template Reference</title>
+<indexterm><primary>port&lt; T &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;module.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classlista">T</link> <link linkend="_structport_1a4b9f62c49ef7b3ea2be54ed1aecf78b2">modulep</link></para>
+</listitem>
+            <listitem><para><link linkend="_classlista">size_t</link> <link linkend="_structport_1aaa7e87c1b80e07ec806910492d97b067">portszam</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structport_1a4b9f62c49ef7b3ea2be54ed1aecf78b2"/><section>
+    <title>modulep</title>
+<indexterm><primary>modulep</primary><secondary>port&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>port&lt; T &gt;</primary><secondary>modulep</secondary></indexterm>
+<computeroutput>template&lt;<link linkend="_classlista">typename</link> <link linkend="_classlista">T</link> &gt; </computeroutput><para><computeroutput><link linkend="_classlista">T</link> <link linkend="_structport">port</link>&lt; <link linkend="_classlista">T</link> &gt;::modulep</computeroutput></para></section>
+<anchor xml:id="_structport_1aaa7e87c1b80e07ec806910492d97b067"/><section>
+    <title>portszam</title>
+<indexterm><primary>portszam</primary><secondary>port&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>port&lt; T &gt;</primary><secondary>portszam</secondary></indexterm>
+<computeroutput>template&lt;<link linkend="_classlista">typename</link> <link linkend="_classlista">T</link> &gt; </computeroutput><para><computeroutput><link linkend="_classlista">size_t</link> <link linkend="_structport">port</link>&lt; <link linkend="_classlista">T</link> &gt;::portszam</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_module_8h">module.h</link></section>
+</section>

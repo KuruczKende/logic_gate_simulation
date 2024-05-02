@@ -1,0 +1,207 @@
+\doxysection{module\+\_\+t Class Reference}
+\label{classmodule__t}\index{module\_t@{module\_t}}
+
+
+{\ttfamily \#include $<$module.\+h$>$}
+
+
+
+Inheritance diagram for module\+\_\+t\+:
+% FIG 0
+
+
+Collaboration diagram for module\+\_\+t\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ module\+\_\+t} ()
+\item 
+\textbf{ virtual} \textbf{ module\+\_\+t} $\ast$ \textbf{ copy} ()=0
+\item 
+\textbf{ virtual} \textbf{ void} \textbf{ vegrehajtas} (\textbf{ lista}$<$ \textbf{ module\+\_\+t} $\ast$ $>$ \&\textbf{ wait\+\_\+for\+\_\+do})
+\item 
+\textbf{ virtual} \textbf{ void} \textbf{ add\+\_\+to\+\_\+list} (\textbf{ lista}$<$ \textbf{ module\+\_\+t} $\ast$ $>$ \&\textbf{ wait\+\_\+for\+\_\+do}, \textbf{ size\+\_\+t} \textbf{ be})
+\item 
+\textbf{ virtual} \textbf{ void} \textbf{ set\+\_\+be} (\textbf{ size\+\_\+t} \textbf{ index}, \textbf{ uint8\+\_\+t} ertek)
+\item 
+\textbf{ virtual} \textbf{ void} \textbf{ set\+\_\+ki\+\_\+port} (\textbf{ size\+\_\+t} \textbf{ ki\+\_\+index}, \textbf{ module\+\_\+t} $\ast$modulep, \textbf{ size\+\_\+t} \textbf{ be\+\_\+index})
+\item 
+\textbf{ virtual} \textbf{ size\+\_\+t} \textbf{ get\+\_\+ki\+\_\+num} ()
+\item 
+\textbf{ virtual} \textbf{ uint8\+\_\+t} \textbf{ get\+\_\+ki\+\_\+ertek} (\textbf{ size\+\_\+t} \textbf{ i})
+\item 
+\textbf{ size\+\_\+t} \textbf{ get\+\_\+be\+\_\+num} ()
+\item 
+\textbf{ uint8\+\_\+t} \textbf{ get\+\_\+be\+\_\+ertek} (\textbf{ size\+\_\+t} \textbf{ i})
+\item 
+\textbf{ virtual} \textbf{ $\sim$module\+\_\+t} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ size\+\_\+t} \textbf{ be\+\_\+db}
+\item 
+\textbf{ size\+\_\+t} \textbf{ ki\+\_\+db}
+\item 
+\textbf{ uint8\+\_\+t} $\ast$ \textbf{ be\+\_\+ertek}
+\item 
+\textbf{ uint8\+\_\+t} $\ast$ \textbf{ ki\+\_\+ertek}
+\item 
+\textbf{ lista}$<$ \textbf{ port}$<$ \textbf{ module\+\_\+t} $\ast$ $>$ $>$ $\ast$ \textbf{ ki\+\_\+ports}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\label{classmodule__t_a37273f61cb094f04a2d42f519a498d68} 
+\index{module\_t@{module\_t}!module\_t@{module\_t}}
+\index{module\_t@{module\_t}!module\_t@{module\_t}}
+\doxysubsubsection{module\_t()}
+{\footnotesize\ttfamily module\+\_\+t\+::module\+\_\+t (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\label{classmodule__t_a74181e5ee6b99a623d75ce02304c1340} 
+\index{module\_t@{module\_t}!````~module\_t@{$\sim$module\_t}}
+\index{````~module\_t@{$\sim$module\_t}!module\_t@{module\_t}}
+\doxysubsubsection{$\sim$module\_t()}
+{\footnotesize\ttfamily module\+\_\+t\+::$\sim$module\+\_\+t (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor for the \doxyref{module\+\_\+t}{p.}{classmodule__t} class. Deletes all the output wires in the module. 
+
+\doxysubsection{Member Function Documentation}
+\label{classmodule__t_a1261616ace799b6efe1050be4355e697} 
+\index{module\_t@{module\_t}!add\_to\_list@{add\_to\_list}}
+\index{add\_to\_list@{add\_to\_list}!module\_t@{module\_t}}
+\doxysubsubsection{add\_to\_list()}
+{\footnotesize\ttfamily \textbf{ virtual} \textbf{ void} module\+\_\+t\+::add\+\_\+to\+\_\+list (\begin{DoxyParamCaption}\item[{\textbf{ lista}$<$ \textbf{ module\+\_\+t} $\ast$ $>$ \&}]{wait\+\_\+for\+\_\+do,  }\item[{\textbf{ size\+\_\+t}}]{be }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \textbf{ shell\+\_\+module\+\_\+t} \doxyref{}{p.}{classshell__module__t_a4e060254af234565da1f0381e82a4afa}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\label{classmodule__t_ac55b2034283f3488767d6c110ddad55d} 
+\index{module\_t@{module\_t}!copy@{copy}}
+\index{copy@{copy}!module\_t@{module\_t}}
+\doxysubsubsection{copy()}
+{\footnotesize\ttfamily \textbf{ virtual} \textbf{ module\+\_\+t} $\ast$ module\+\_\+t\+::copy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \textbf{ comp\+\_\+module\+\_\+t} \doxyref{}{p.}{classcomp__module__t_a211b1bfd46a32ac3038ffc7e687da84e}, \textbf{ shell\+\_\+module\+\_\+t} \doxyref{}{p.}{classshell__module__t_a61c53afecd1b6308eaba06c685420371}, and \textbf{ text\+\_\+module\+\_\+t} \doxyref{}{p.}{classtext__module__t_aaf977a7392dec08258e5e7dcee94f6a1}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\label{classmodule__t_afc483f4ee25f18ae47b5b1bdad294785} 
+\index{module\_t@{module\_t}!get\_be\_ertek@{get\_be\_ertek}}
+\index{get\_be\_ertek@{get\_be\_ertek}!module\_t@{module\_t}}
+\doxysubsubsection{get\_be\_ertek()}
+{\footnotesize\ttfamily \textbf{ uint8\+\_\+t} module\+\_\+t\+::get\+\_\+be\+\_\+ertek (\begin{DoxyParamCaption}\item[{\textbf{ size\+\_\+t}}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\label{classmodule__t_a3986b0f8ab95dbccec8616f2196e7bba} 
+\index{module\_t@{module\_t}!get\_be\_num@{get\_be\_num}}
+\index{get\_be\_num@{get\_be\_num}!module\_t@{module\_t}}
+\doxysubsubsection{get\_be\_num()}
+{\footnotesize\ttfamily \textbf{ size\+\_\+t} module\+\_\+t\+::get\+\_\+be\+\_\+num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 4
+\label{classmodule__t_a74f223430fdcfa4e8cb9b143b29dab5d} 
+\index{module\_t@{module\_t}!get\_ki\_ertek@{get\_ki\_ertek}}
+\index{get\_ki\_ertek@{get\_ki\_ertek}!module\_t@{module\_t}}
+\doxysubsubsection{get\_ki\_ertek()}
+{\footnotesize\ttfamily \textbf{ virtual} \textbf{ uint8\+\_\+t} module\+\_\+t\+::get\+\_\+ki\+\_\+ertek (\begin{DoxyParamCaption}\item[{\textbf{ size\+\_\+t}}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \textbf{ comp\+\_\+module\+\_\+t} \doxyref{}{p.}{classcomp__module__t_a6372ba5509ea9bee27623838dff87ad0}.
+
+Here is the caller graph for this function\+:
+% FIG 5
+\label{classmodule__t_a5bfb7a115938e38ae555af4c83bb431c} 
+\index{module\_t@{module\_t}!get\_ki\_num@{get\_ki\_num}}
+\index{get\_ki\_num@{get\_ki\_num}!module\_t@{module\_t}}
+\doxysubsubsection{get\_ki\_num()}
+{\footnotesize\ttfamily \textbf{ virtual} \textbf{ size\+\_\+t} module\+\_\+t\+::get\+\_\+ki\+\_\+num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \textbf{ comp\+\_\+module\+\_\+t} \doxyref{}{p.}{classcomp__module__t_aca2e7434a78ef8a7486f76d2aca92bb9}.
+
+Here is the caller graph for this function\+:
+% FIG 6
+\label{classmodule__t_a67f5c31043ebfd97506f367b83b02f14} 
+\index{module\_t@{module\_t}!set\_be@{set\_be}}
+\index{set\_be@{set\_be}!module\_t@{module\_t}}
+\doxysubsubsection{set\_be()}
+{\footnotesize\ttfamily \textbf{ virtual} \textbf{ void} module\+\_\+t\+::set\+\_\+be (\begin{DoxyParamCaption}\item[{\textbf{ size\+\_\+t}}]{index,  }\item[{\textbf{ uint8\+\_\+t}}]{ertek }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \textbf{ shell\+\_\+module\+\_\+t} \doxyref{}{p.}{classshell__module__t_ad51fd55322054ad381801aaeae0bcecb}.
+
+Here is the caller graph for this function\+:
+% FIG 7
+\label{classmodule__t_a57c0215cd97886fdbbf55a59ead9205a} 
+\index{module\_t@{module\_t}!set\_ki\_port@{set\_ki\_port}}
+\index{set\_ki\_port@{set\_ki\_port}!module\_t@{module\_t}}
+\doxysubsubsection{set\_ki\_port()}
+{\footnotesize\ttfamily \textbf{ void} module\+\_\+t\+::set\+\_\+ki\+\_\+port (\begin{DoxyParamCaption}\item[{\textbf{ size\+\_\+t}}]{ki\+\_\+index,  }\item[{\textbf{ module\+\_\+t} $\ast$}]{modulep,  }\item[{\textbf{ size\+\_\+t}}]{be\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \textbf{ comp\+\_\+module\+\_\+t} \doxyref{}{p.}{classcomp__module__t_a8bf16b365b70e4701c507b4342c8ad8e}.
+
+Here is the call graph for this function\+:
+% FIG 8
+Here is the caller graph for this function\+:
+% FIG 9
+\label{classmodule__t_ab299b7a5380d778a6c6d9d78285c837e} 
+\index{module\_t@{module\_t}!vegrehajtas@{vegrehajtas}}
+\index{vegrehajtas@{vegrehajtas}!module\_t@{module\_t}}
+\doxysubsubsection{vegrehajtas()}
+{\footnotesize\ttfamily \textbf{ virtual} \textbf{ void} module\+\_\+t\+::vegrehajtas (\begin{DoxyParamCaption}\item[{\textbf{ lista}$<$ \textbf{ module\+\_\+t} $\ast$ $>$ \&}]{wait\+\_\+for\+\_\+do }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \textbf{ text\+\_\+module\+\_\+t} \doxyref{}{p.}{classtext__module__t_a85cea3d8a0adb3b18631c8f1a9f249ff}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\label{classmodule__t_a9d7892f6fee300c9b7c1c0fc7da54232} 
+\index{module\_t@{module\_t}!be\_db@{be\_db}}
+\index{be\_db@{be\_db}!module\_t@{module\_t}}
+\doxysubsubsection{be\_db}
+{\footnotesize\ttfamily \textbf{ size\+\_\+t} module\+\_\+t\+::be\+\_\+db\hspace{0.3cm}{\ttfamily [protected]}}
+
+\label{classmodule__t_a7d61b23e49096510cf223ffbced16f5f} 
+\index{module\_t@{module\_t}!be\_ertek@{be\_ertek}}
+\index{be\_ertek@{be\_ertek}!module\_t@{module\_t}}
+\doxysubsubsection{be\_ertek}
+{\footnotesize\ttfamily \textbf{ uint8\+\_\+t}$\ast$ module\+\_\+t\+::be\+\_\+ertek\hspace{0.3cm}{\ttfamily [protected]}}
+
+\label{classmodule__t_a525593566e11dc7186152b4770e12253} 
+\index{module\_t@{module\_t}!ki\_db@{ki\_db}}
+\index{ki\_db@{ki\_db}!module\_t@{module\_t}}
+\doxysubsubsection{ki\_db}
+{\footnotesize\ttfamily \textbf{ size\+\_\+t} module\+\_\+t\+::ki\+\_\+db\hspace{0.3cm}{\ttfamily [protected]}}
+
+\label{classmodule__t_ac1bf5bb87b1ce8e261399e50e2a7780a} 
+\index{module\_t@{module\_t}!ki\_ertek@{ki\_ertek}}
+\index{ki\_ertek@{ki\_ertek}!module\_t@{module\_t}}
+\doxysubsubsection{ki\_ertek}
+{\footnotesize\ttfamily \textbf{ uint8\+\_\+t}$\ast$ module\+\_\+t\+::ki\+\_\+ertek\hspace{0.3cm}{\ttfamily [protected]}}
+
+\label{classmodule__t_a7e972df261abe0ad96181db1f0f004d5} 
+\index{module\_t@{module\_t}!ki\_ports@{ki\_ports}}
+\index{ki\_ports@{ki\_ports}!module\_t@{module\_t}}
+\doxysubsubsection{ki\_ports}
+{\footnotesize\ttfamily \textbf{ lista}$<$\textbf{ port}$<$\textbf{ module\+\_\+t}$\ast$$>$ $>$$\ast$ module\+\_\+t\+::ki\+\_\+ports\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ module.\+h}\item 
+\textbf{ module.\+cpp}\end{DoxyCompactItemize}

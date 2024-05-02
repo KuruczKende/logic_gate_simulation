@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.10.0" xml:lang="en-US">
+  <compound refid="classcomp__module__t" kind="class"><name>comp_module_t</name>
+    <member refid="classcomp__module__t_1a282748625daf95c7b75f694e2cbc8eef" kind="variable"><name>end_module</name></member>
+    <member refid="classcomp__module__t_1ab71b3a4691b7db1ab310c21ec29e8749" kind="variable"><name>modules</name></member>
+    <member refid="classcomp__module__t_1a1ffef641e0801d4df0d621c1621d7f40" kind="variable"><name>m_db</name></member>
+    <member refid="classcomp__module__t_1abb8ebf7b49242f1bec6584a9439a95ac" kind="variable"><name>modules_coms</name></member>
+    <member refid="classcomp__module__t_1ac0c8f89cc41c87d65de52fc652d35827" kind="function"><name>comp_module_t</name></member>
+    <member refid="classcomp__module__t_1a1720364e7995afa45aaa3a6d696dc1e9" kind="function"><name>comp_module_t</name></member>
+    <member refid="classcomp__module__t_1a211b1bfd46a32ac3038ffc7e687da84e" kind="function"><name>copy</name></member>
+    <member refid="classcomp__module__t_1a8bf16b365b70e4701c507b4342c8ad8e" kind="function"><name>set_ki_port</name></member>
+    <member refid="classcomp__module__t_1a6372ba5509ea9bee27623838dff87ad0" kind="function"><name>get_ki_ertek</name></member>
+    <member refid="classcomp__module__t_1aca2e7434a78ef8a7486f76d2aca92bb9" kind="function"><name>get_ki_num</name></member>
+    <member refid="classcomp__module__t_1adef32bb2f85715f8945476ac3fb8a196" kind="function"><name>set_connection</name></member>
+    <member refid="classcomp__module__t_1a97d5cb5be2c89a3e8da221e02a20243b" kind="function"><name>comp_create_modules</name></member>
+    <member refid="classcomp__module__t_1a63951fff0c2c203661e19a86f10d522c" kind="function"><name>comp_fill_module</name></member>
+    <member refid="classcomp__module__t_1abf92dd303a6e29a879eda4af3b3c33a9" kind="function"><name>~comp_module_t</name></member>
+  </compound>
+  <compound refid="classlista" kind="class"><name>lista</name>
+    <member refid="classlista_1a1662927cc34d5705fca82b562b6cc9db" kind="variable"><name>elem</name></member>
+    <member refid="classlista_1ad0b6abe961976a78f19b24f5f41fc348" kind="variable"><name>next</name></member>
+    <member refid="classlista_1ab9adc555787a1f3ae0c702c7f346f913" kind="function"><name>getin</name></member>
+    <member refid="classlista_1adfa22c0202d7ac7abfe006dbd3b5a12a" kind="function"><name>lista</name></member>
+    <member refid="classlista_1a574c4c2ef856e559622c2183daa6a3d8" kind="function"><name>operator[]</name></member>
+    <member refid="classlista_1a3f48539cd27ef435ea20315183a7c48e" kind="function"><name>add</name></member>
+    <member refid="classlista_1a4e645a0ec15e70328ca134042d2cb472" kind="function"><name>add</name></member>
+    <member refid="classlista_1a5baaf78ac201a75e49f18110daed7fd6" kind="function"><name>length</name></member>
+    <member refid="classlista_1a91e03590c673ff5b3b928acc9dc6275d" kind="function"><name>rem</name></member>
+    <member refid="classlista_1a12a87ad57faeebe390e6514514dd85a7" kind="function"><name>din</name></member>
+    <member refid="classlista_1a10bc0895ed694524a7031254718607ed" kind="function"><name>dinl</name></member>
+    <member refid="classlista_1a32532b105feb9833f4a17473b82e3554" kind="function"><name>~lista</name></member>
+    <member refid="classlista_1aac7cb376f5838f4066d942568f76e2f8" kind="function"><name>length</name></member>
+    <member refid="classlista_1a8d4db93520ace0ab526a9216c6a5752f" kind="function"><name>operator[]</name></member>
+    <member refid="classlista_1aa870ba8bee0571905ddf13989a20771f" kind="function"><name>add</name></member>
+    <member refid="classlista_1af18653548b66d6fb0cf64f072af2ce5f" kind="function"><name>rem</name></member>
+    <member refid="classlista_1a9922b34e782b64acb0a49ed094235a09" kind="function"><name>add</name></member>
+    <member refid="classlista_1a63b12e4a060461a5f6ff5d70509d1557" kind="function"><name>rem</name></member>
+    <member refid="classlista_1a109c5c3dc7ce61b1af2f9855725d8124" kind="function"><name>din</name></member>
+    <member refid="classlista_1aed76a25ed6b3baa557e090ef61438e34" kind="function"><name>length</name></member>
+    <member refid="classlista_1aea0369b980fb015afed0ff316c99aa23" kind="function"><name>operator[]</name></member>
+    <member refid="classlista_1a7e56ae1942730012157db8ebd0ba2e72" kind="function"><name>add</name></member>
+    <member refid="classlista_1a36d2b975e1455b85f06856f3521eeb6a" kind="function"><name>din</name></member>
+    <member refid="classlista_1aa7190850a17e42ae410130a9260f70ae" kind="function"><name>add</name></member>
+    <member refid="classlista_1a6139219e2eff257c10414e9e342cc7cc" kind="function"><name>length</name></member>
+    <member refid="classlista_1a1646f73a271e2c94eba918e5231fc28d" kind="function"><name>operator[]</name></member>
+    <member refid="classlista_1a1de4c9370b8ac96048341832f6a981e8" kind="function"><name>dinl</name></member>
+  </compound>
+  <compound refid="classmodule__t" kind="class"><name>module_t</name>
+    <member refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" kind="variable"><name>be_db</name></member>
+    <member refid="classmodule__t_1a525593566e11dc7186152b4770e12253" kind="variable"><name>ki_db</name></member>
+    <member refid="classmodule__t_1a7d61b23e49096510cf223ffbced16f5f" kind="variable"><name>be_ertek</name></member>
+    <member refid="classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a" kind="variable"><name>ki_ertek</name></member>
+    <member refid="classmodule__t_1a7e972df261abe0ad96181db1f0f004d5" kind="variable"><name>ki_ports</name></member>
+    <member refid="classmodule__t_1a37273f61cb094f04a2d42f519a498d68" kind="function"><name>module_t</name></member>
+    <member refid="classmodule__t_1ac55b2034283f3488767d6c110ddad55d" kind="function"><name>copy</name></member>
+    <member refid="classmodule__t_1ab299b7a5380d778a6c6d9d78285c837e" kind="function"><name>vegrehajtas</name></member>
+    <member refid="classmodule__t_1a1261616ace799b6efe1050be4355e697" kind="function"><name>add_to_list</name></member>
+    <member refid="classmodule__t_1a67f5c31043ebfd97506f367b83b02f14" kind="function"><name>set_be</name></member>
+    <member refid="classmodule__t_1a57c0215cd97886fdbbf55a59ead9205a" kind="function"><name>set_ki_port</name></member>
+    <member refid="classmodule__t_1a5bfb7a115938e38ae555af4c83bb431c" kind="function"><name>get_ki_num</name></member>
+    <member refid="classmodule__t_1a74f223430fdcfa4e8cb9b143b29dab5d" kind="function"><name>get_ki_ertek</name></member>
+    <member refid="classmodule__t_1a3986b0f8ab95dbccec8616f2196e7bba" kind="function"><name>get_be_num</name></member>
+    <member refid="classmodule__t_1afc483f4ee25f18ae47b5b1bdad294785" kind="function"><name>get_be_ertek</name></member>
+    <member refid="classmodule__t_1a74181e5ee6b99a623d75ce02304c1340" kind="function"><name>~module_t</name></member>
+  </compound>
+  <compound refid="structport" kind="struct"><name>port</name>
+    <member refid="structport_1a4b9f62c49ef7b3ea2be54ed1aecf78b2" kind="variable"><name>modulep</name></member>
+    <member refid="structport_1aaa7e87c1b80e07ec806910492d97b067" kind="variable"><name>portszam</name></member>
+  </compound>
+  <compound refid="structport_3_01module__t_01_5_01_4" kind="struct"><name>port&lt; module_t * &gt;</name>
+    <member refid="structport_3_01module__t_01_5_01_4_1abc6c880243f0f83358600d9352a5e46e" kind="variable"><name>modulep</name></member>
+    <member refid="structport_3_01module__t_01_5_01_4_1af634c74d5bcc68e929e444d37791b763" kind="variable"><name>portszam</name></member>
+  </compound>
+  <compound refid="classport__t" kind="class"><name>port_t</name>
+    <member refid="classport__t_1ac5b8e9dd3a40d320940429ee0bafae49" kind="variable"><name>modulep</name></member>
+    <member refid="classport__t_1a754f2a2e3dc652fdad016a3de130bf36" kind="variable"><name>idx</name></member>
+    <member refid="classport__t_1adea50f5f8958c8004d5a6b2b78ecf224" kind="function"><name>port_t</name></member>
+    <member refid="classport__t_1a4c14574cc72efb7ad610854eb1e8dc65" kind="function"><name>doit</name></member>
+    <member refid="classport__t_1a2278dcab6ec2cef8ccd16b50d3a11a30" kind="function"><name>setin</name></member>
+    <member refid="classport__t_1a938e73e0989342ca72ca9d8bafb07215" kind="function"><name>get_module</name></member>
+    <member refid="classport__t_1aa0f1926935279c428585bdd5ba6d2c64" kind="function"><name>get_idx</name></member>
+    <member refid="classport__t_1a69908e74e365a3eefac6391db550c6a3" kind="function"><name>~port_t</name></member>
+  </compound>
+  <compound refid="classprot__module__t" kind="class"><name>prot_module_t</name>
+    <member refid="classprot__module__t_1ae30a7f7f68afbaf3826b99005139a261" kind="variable"><name>nev</name></member>
+    <member refid="classprot__module__t_1a6a8b0d47d35565a7b5bb0ae2e6644927" kind="variable"><name>prot</name></member>
+    <member refid="classprot__module__t_1a640322af18b531fb4028fb3a1d3b31a3" kind="function"><name>prot_module_t</name></member>
+    <member refid="classprot__module__t_1a5194bb873cf8059008b9622b5539445c" kind="function"><name>getnev</name></member>
+    <member refid="classprot__module__t_1a4de31208867af3c8b5cec052a5d374c8" kind="function"><name>getprot</name></member>
+    <member refid="classprot__module__t_1a4fe49a54cfc0d3a54f59e472bd31533b" kind="function"><name>~prot_module_t</name></member>
+  </compound>
+  <compound refid="classshell__module__t" kind="class"><name>shell_module_t</name>
+    <member refid="classshell__module__t_1a4a7a9a6a40113732874939fa57900d5b" kind="function"><name>shell_module_t</name></member>
+    <member refid="classshell__module__t_1a93ba970d90ff94f92e355ea110ba0f45" kind="function"><name>init</name></member>
+    <member refid="classshell__module__t_1a61c53afecd1b6308eaba06c685420371" kind="function"><name>copy</name></member>
+    <member refid="classshell__module__t_1a4e060254af234565da1f0381e82a4afa" kind="function"><name>add_to_list</name></member>
+    <member refid="classshell__module__t_1ad51fd55322054ad381801aaeae0bcecb" kind="function"><name>set_be</name></member>
+    <member refid="classshell__module__t_1a03b36f2ced4390eb8512e94cfb8c2b81" kind="function"><name>~shell_module_t</name></member>
+  </compound>
+  <compound refid="classtext__module__t" kind="class"><name>text_module_t</name>
+    <member refid="classtext__module__t_1a9c4ca4fc4c58fe261e267159909e5d75" kind="variable"><name>be_old</name></member>
+    <member refid="classtext__module__t_1a008096314aaf451297fb7f50974fa4ca" kind="variable"><name>parancsok</name></member>
+    <member refid="classtext__module__t_1a0005ad3d2530fb2880040ecc0b04cdf7" kind="function"><name>text_module_t</name></member>
+    <member refid="classtext__module__t_1ab587f38fd7f0b7970abbd63550dfa252" kind="function"><name>text_module_t</name></member>
+    <member refid="classtext__module__t_1aaf977a7392dec08258e5e7dcee94f6a1" kind="function"><name>copy</name></member>
+    <member refid="classtext__module__t_1a85cea3d8a0adb3b18631c8f1a9f249ff" kind="function"><name>vegrehajtas</name></member>
+    <member refid="classtext__module__t_1a316e7ea9bed76e5ef68bbb4cd4da95ef" kind="function"><name>set_ki</name></member>
+    <member refid="classtext__module__t_1a1cf4972e177e238c9bf5968e5adb2c0c" kind="function"><name>~text_module_t</name></member>
+  </compound>
+  <compound refid="classwire__t" kind="class"><name>wire_t</name>
+    <member refid="classwire__t_1a9d73d04d723d0cc883e8ae0ad754fb63" kind="variable"><name>ertek</name></member>
+    <member refid="classwire__t_1ac29c1c1dbc6da65e4bf3738cb94a500b" kind="variable"><name>ports</name></member>
+    <member refid="classwire__t_1aa66dbdfdc6ccf987cf6e8cfa03a62b95" kind="function"><name>wire_t</name></member>
+    <member refid="classwire__t_1aa2554dfd22a8816510937796d04f7b66" kind="function"><name>add</name></member>
+    <member refid="classwire__t_1a199d2d627c1f640220818cdcbc21d4fb" kind="function"><name>add</name></member>
+    <member refid="classwire__t_1a1c814f666ad69664219db12bd62c75b7" kind="function"><name>set</name></member>
+    <member refid="classwire__t_1afb467831d8761cf47e16df0104f6715f" kind="function"><name>setin</name></member>
+    <member refid="classwire__t_1a82fa390ce85c6938dc54ab48ebd51cc1" kind="function"><name>get</name></member>
+    <member refid="classwire__t_1a7197d613264ea00f51325b593955c149" kind="function"><name>doit</name></member>
+    <member refid="classwire__t_1a9c68e62ee57f625c992ce3b0d3aee94a" kind="function"><name>~wire_t</name></member>
+  </compound>
+  <compound refid="comp__module_8cpp" kind="file"><name>comp_module.cpp</name>
+    <member refid="comp__module_8cpp_1a4e937192165d4187e4bd5e4d70967eb5" kind="function"><name>eggyezik</name></member>
+    <member refid="comp__module_8cpp_1a72fad6f3a585cf1547f2fbcd87ec7a90" kind="function"><name>muvcount</name></member>
+  </compound>
+  <compound refid="comp__module_8h" kind="file"><name>comp_module.h</name>
+  </compound>
+  <compound refid="karakter__keszlet_8h" kind="file"><name>karakter_keszlet.h</name>
+    <member refid="karakter__keszlet_8h_1adcfa746252c8707e3eacd9c7d865c0a0" kind="variable"><name>kk</name></member>
+  </compound>
+  <compound refid="lista_8cpp" kind="file"><name>lista.cpp</name>
+  </compound>
+  <compound refid="memtrace_8cpp" kind="file"><name>memtrace.cpp</name>
+  </compound>
+  <compound refid="memtrace_8h" kind="file"><name>memtrace.h</name>
+  </compound>
+  <compound refid="module_8cpp" kind="file"><name>module.cpp</name>
+  </compound>
+  <compound refid="module_8h" kind="file"><name>module.h</name>
+  </compound>
+  <compound refid="nharamkor__vs_8cpp" kind="file"><name>nharamkor_vs.cpp</name>
+    <member refid="nharamkor__vs_8cpp_1ac668e8600ca0b3a3afa71eccef9ce070" kind="function"><name>ismod</name></member>
+    <member refid="nharamkor__vs_8cpp_1afbce817d76bf9bc1a433c1d83fc15d0b" kind="function"><name>modulator</name></member>
+    <member refid="nharamkor__vs_8cpp_1a8394f5d2589de5e083e551414e4d1a92" kind="function"><name>ujmnev_ell</name></member>
+    <member refid="nharamkor__vs_8cpp_1adce48f6d81618ca9096f5b88a6e333ab" kind="function"><name>kisbetujo</name></member>
+    <member refid="nharamkor__vs_8cpp_1afb58d022f3fcaf90e41950da473cca92" kind="function"><name>kisbetujo2</name></member>
+    <member refid="nharamkor__vs_8cpp_1a7f4e4e25704216d56a1bbe815546d655" kind="function"><name>nagybetujo</name></member>
+    <member refid="nharamkor__vs_8cpp_1a079dcfedb64af966eab0a78d9a4c979d" kind="function"><name>modulesteszt</name></member>
+    <member refid="nharamkor__vs_8cpp_1a079960085332785c1fb971533a9912a9" kind="function"><name>test_module</name></member>
+    <member refid="nharamkor__vs_8cpp_1a89f3b5151cdc6346dcca285bca7084a6" kind="function"><name>instruct_handler_char_handler</name></member>
+    <member refid="nharamkor__vs_8cpp_1a989b6e5b3b8815b8088e8f8ba6d7752c" kind="function"><name>instruct_handler</name></member>
+    <member refid="nharamkor__vs_8cpp_1abe6c24302d4150af8e6211ec3a45ad0d" kind="function"><name>getstring</name></member>
+    <member refid="nharamkor__vs_8cpp_1a3e0f7cbe319cdfbb528b924d817885fd" kind="function"><name>print_module_error</name></member>
+    <member refid="nharamkor__vs_8cpp_1a8e7995ef24cddb91ed4b4d47a03deb4d" kind="function"><name>print</name></member>
+    <member refid="nharamkor__vs_8cpp_1ab44d8e6ed4c39cb1c0cf792429db848e" kind="function"><name>input_handler</name></member>
+    <member refid="nharamkor__vs_8cpp_1a28f543ce27108ae4de42d9991865237e" kind="function"><name>input_handler_module</name></member>
+    <member refid="nharamkor__vs_8cpp_1ab7c916fb6815401293901bf9e02feb5d" kind="function"><name>input_handler_read</name></member>
+    <member refid="nharamkor__vs_8cpp_1aedc7074de3b40368806c1c432f215d92" kind="function"><name>input_handler_write</name></member>
+    <member refid="nharamkor__vs_8cpp_1af09a2309c4133585955f671c2be21293" kind="function"><name>input_handler_do</name></member>
+    <member refid="nharamkor__vs_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="ossz_8h" kind="file"><name>ossz.h</name>
+    <member refid="ossz_8h_1a4c601b4f90966724c2de786d8bd9eb82" kind="define"><name>low</name></member>
+    <member refid="ossz_8h_1a9ce2716323ceb0e2133340a161f33a6c" kind="define"><name>high</name></member>
+    <member refid="ossz_8h_1a0caf0c0a211316c3867bcd0975c086b0" kind="define"><name>undet</name></member>
+    <member refid="ossz_8h_1a4e937192165d4187e4bd5e4d70967eb5" kind="function"><name>eggyezik</name></member>
+  </compound>
+  <compound refid="port_8cpp" kind="file"><name>port.cpp</name>
+  </compound>
+  <compound refid="port_8h" kind="file"><name>port.h</name>
+  </compound>
+  <compound refid="prot__modules_8cpp" kind="file"><name>prot_modules.cpp</name>
+  </compound>
+  <compound refid="prot__modules_8h" kind="file"><name>prot_modules.h</name>
+  </compound>
+  <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="shell__module_8cpp" kind="file"><name>shell_module.cpp</name>
+  </compound>
+  <compound refid="shell__module_8h" kind="file"><name>shell_module.h</name>
+  </compound>
+  <compound refid="text__module_8cpp" kind="file"><name>text_module.cpp</name>
+    <member refid="text__module_8cpp_1ad670db7bf59a28c821825d5c379811bb" kind="function"><name>mynot</name></member>
+    <member refid="text__module_8cpp_1a5a820a0e7dd4578abeb30e7d82396f01" kind="function"><name>myand</name></member>
+    <member refid="text__module_8cpp_1adc5c1b52d18783f933cb564cea81b221" kind="function"><name>myor</name></member>
+    <member refid="text__module_8cpp_1a42e733bd26080ab8d6cb4213dc6c4cfc" kind="function"><name>myxor</name></member>
+    <member refid="text__module_8cpp_1a03a0ce27639dfeafbf0b8e3e94741651" kind="function"><name>lepteto</name></member>
+    <member refid="text__module_8cpp_1a0409fbc3d883fb339196f392b177dab7" kind="function"><name>muvs</name></member>
+    <member refid="text__module_8cpp_1a9529dd0d41184fa0192241df7e922780" kind="function"><name>muv_list</name></member>
+    <member refid="text__module_8cpp_1a5e761d3e1f203f5db1ab8e87710494bf" kind="function"><name>vegrehajt</name></member>
+  </compound>
+  <compound refid="text__module_8h" kind="file"><name>text_module.h</name>
+  </compound>
+  <compound refid="wire_8cpp" kind="file"><name>wire.cpp</name>
+  </compound>
+  <compound refid="wire_8h" kind="file"><name>wire.h</name>
+  </compound>
+  <compound refid="md__r_e_a_d_m_e" kind="page"><name>md__r_e_a_d_m_e</name>
+  </compound>
+</doxygenindex>

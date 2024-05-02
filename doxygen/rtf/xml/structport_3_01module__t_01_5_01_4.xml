@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structport_3_01module__t_01_5_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>port&lt; module_t * &gt;</compoundname>
+    <includes refid="module_8h" local="no">module.h</includes>
+    <templateparamlist>
+    </templateparamlist>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structport_3_01module__t_01_5_01_4_1abc6c880243f0f83358600d9352a5e46e" prot="public" static="no" mutable="no">
+        <type><ref refid="classmodule__t" kindref="compound">module_t</ref> *</type>
+        <definition>module_t* port&lt; module_t * &gt;::modulep</definition>
+        <argsstring></argsstring>
+        <name>modulep</name>
+        <qualifiedname>port&lt; module_t * &gt;::modulep</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module.h" line="36" column="14" bodyfile="module.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structport_3_01module__t_01_5_01_4_1af634c74d5bcc68e929e444d37791b763" prot="public" static="no" mutable="no">
+        <type><ref refid="classlista" kindref="compound">size_t</ref></type>
+        <definition>size_t port&lt; module_t * &gt;::portszam</definition>
+        <argsstring></argsstring>
+        <name>portszam</name>
+        <qualifiedname>port&lt; module_t * &gt;::portszam</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="module.h" line="37" column="12" bodyfile="module.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>lista&lt; port&lt; module_t * &gt; &gt;</label>
+        <link refid="classlista"/>
+      </node>
+      <node id="2">
+        <label>module_t</label>
+        <link refid="classmodule__t"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ki_ports</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>port&lt; module_t * &gt;</label>
+        <link refid="structport_3_01module__t_01_5_01_4"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>modulep</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="module.h" line="34" column="1" bodyfile="module.h" bodystart="35" bodyend="38"/>
+    <listofallmembers>
+      <member refid="structport_3_01module__t_01_5_01_4_1abc6c880243f0f83358600d9352a5e46e" prot="public" virt="non-virtual"><scope>port&lt; module_t * &gt;</scope><name>modulep</name></member>
+      <member refid="structport_3_01module__t_01_5_01_4_1af634c74d5bcc68e929e444d37791b763" prot="public" virt="non-virtual"><scope>port&lt; module_t * &gt;</scope><name>portszam</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

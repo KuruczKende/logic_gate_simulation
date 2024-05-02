@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="shell__module_8cpp" kind="file" language="C++">
+    <compoundname>shell_module.cpp</compoundname>
+    <includes refid="shell__module_8h" local="yes">shell_module.h</includes>
+    <incdepgraph>
+      <node id="7">
+        <label>memtrace.h</label>
+        <link refid="memtrace_8h"/>
+      </node>
+      <node id="3">
+        <label>module.h</label>
+        <link refid="module_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ossz.h</label>
+        <link refid="ossz_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>shell_module.cpp</label>
+        <link refid="shell__module_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>shell_module.h</label>
+        <link refid="shell__module_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>cstring</label>
+      </node>
+      <node id="5">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="shell__module_8h" kindref="compound">shell_module.h</ref>&quot;</highlight></codeline>
+<codeline lineno="7" refid="classshell__module__t_1a4a7a9a6a40113732874939fa57900d5b" refkind="member"><highlight class="normal"><ref refid="classshell__module__t_1a4a7a9a6a40113732874939fa57900d5b" kindref="member">shell_module_t::shell_module_t</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>ports)<sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" kindref="member">be_db</ref><sp/>=<sp/><ref refid="classmodule__t_1a525593566e11dc7186152b4770e12253" kindref="member">ki_db</ref><sp/>=<sp/>ports;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ports<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a" kindref="member">ki_ertek</ref><sp/>=<sp/><ref refid="classmodule__t_1a7d61b23e49096510cf223ffbced16f5f" kindref="member">be_ertek</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1a7e972df261abe0ad96181db1f0f004d5" kindref="member">ki_ports</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a" kindref="member">ki_ertek</ref><sp/>=<sp/><ref refid="classmodule__t_1a7d61b23e49096510cf223ffbced16f5f" kindref="member">be_ertek</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">uint8_t</ref>[ports];</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1a7e972df261abe0ad96181db1f0f004d5" kindref="member">ki_ports</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">lista&lt;port&lt;module_t*&gt;</ref>&gt;[ports];</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18" refid="classshell__module__t_1a61c53afecd1b6308eaba06c685420371" refkind="member"><highlight class="normal"><ref refid="classmodule__t" kindref="compound">module_t</ref>*<sp/><ref refid="classshell__module__t_1a61c53afecd1b6308eaba06c685420371" kindref="member">shell_module_t::copy</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classshell__module__t_1a4a7a9a6a40113732874939fa57900d5b" kindref="member">shell_module_t</ref>(this-&gt;<ref refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" kindref="member">be_db</ref>);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26" refid="classshell__module__t_1a93ba970d90ff94f92e355ea110ba0f45" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classshell__module__t_1a93ba970d90ff94f92e355ea110ba0f45" kindref="member">shell_module_t::init</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>ports)<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classmodule__t_1a7d61b23e49096510cf223ffbced16f5f" kindref="member">be_ertek</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classmodule__t_1a7e972df261abe0ad96181db1f0f004d5" kindref="member">ki_ports</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1a9d7892f6fee300c9b7c1c0fc7da54232" kindref="member">be_db</ref><sp/>=<sp/><ref refid="classmodule__t_1a525593566e11dc7186152b4770e12253" kindref="member">ki_db</ref><sp/>=<sp/>ports;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ports<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a" kindref="member">ki_ertek</ref><sp/>=<sp/><ref refid="classmodule__t_1a7d61b23e49096510cf223ffbced16f5f" kindref="member">be_ertek</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1a7e972df261abe0ad96181db1f0f004d5" kindref="member">ki_ports</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a" kindref="member">ki_ertek</ref><sp/>=<sp/><ref refid="classmodule__t_1a7d61b23e49096510cf223ffbced16f5f" kindref="member">be_ertek</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">uint8_t</ref>[ports];</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">i</ref><sp/>=<sp/>0;<sp/><ref refid="classlista" kindref="compound">i</ref><sp/>&lt;<sp/>ports;<sp/><ref refid="classlista" kindref="compound">i</ref>++)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a" kindref="member">ki_ertek</ref>[<ref refid="classlista" kindref="compound">i</ref>]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;?&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1a7e972df261abe0ad96181db1f0f004d5" kindref="member">ki_ports</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">lista&lt;port&lt;module_t*&gt;</ref>&gt;[ports];</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47" refid="classshell__module__t_1ad51fd55322054ad381801aaeae0bcecb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classshell__module__t_1ad51fd55322054ad381801aaeae0bcecb" kindref="member">shell_module_t::set_be</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">index</ref>,<sp/><ref refid="classlista" kindref="compound">uint8_t</ref><sp/>ertek)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">index</ref><sp/>&gt;=<sp/><ref refid="classmodule__t_1a525593566e11dc7186152b4770e12253" kindref="member">ki_db</ref>)</highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;over<sp/>indexed&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classlista" kindref="compound">index</ref><sp/>&lt;<sp/>0)</highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;under<sp/>indexed&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmodule__t_1ac1bf5bb87b1ce8e261399e50e2a7780a" kindref="member">ki_ertek</ref>[<ref refid="classlista" kindref="compound">index</ref>]<sp/>=<sp/>ertek;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">i</ref><sp/>=<sp/>0;<sp/><ref refid="classlista" kindref="compound">i</ref><sp/>&lt;<sp/><ref refid="classmodule__t_1a7e972df261abe0ad96181db1f0f004d5" kindref="member">ki_ports</ref>[<ref refid="classlista" kindref="compound">index</ref>].<ref refid="classlista_1a5baaf78ac201a75e49f18110daed7fd6" kindref="member">length</ref>();<sp/><ref refid="classlista" kindref="compound">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">port&lt;module_t*&gt;</ref><sp/><ref refid="classlista" kindref="compound">p</ref><sp/>=<sp/><ref refid="classmodule__t_1a7e972df261abe0ad96181db1f0f004d5" kindref="member">ki_ports</ref>[<ref refid="classlista" kindref="compound">index</ref>][<ref refid="classlista" kindref="compound">i</ref>];</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">p</ref>.modulep-&gt;set_be(<ref refid="classlista" kindref="compound">p</ref>.portszam,<sp/>ertek);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="classshell__module__t_1a4e060254af234565da1f0381e82a4afa" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classshell__module__t_1a4e060254af234565da1f0381e82a4afa" kindref="member">shell_module_t::add_to_list</ref>(<ref refid="classlista" kindref="compound">lista&lt;module_t*&gt;</ref>&amp;<sp/><ref refid="classlista" kindref="compound">wait_for_do</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">be</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classlista" kindref="compound">i</ref><sp/>=<sp/>0;<sp/><ref refid="classlista" kindref="compound">i</ref><sp/>&lt;<sp/><ref refid="classmodule__t_1a7e972df261abe0ad96181db1f0f004d5" kindref="member">ki_ports</ref>[<ref refid="classlista" kindref="compound">be</ref>].<ref refid="classlista_1a5baaf78ac201a75e49f18110daed7fd6" kindref="member">length</ref>();<sp/><ref refid="classlista" kindref="compound">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">port&lt;module_t*&gt;</ref><sp/><ref refid="classlista" kindref="compound">p</ref><sp/>=<sp/><ref refid="classmodule__t_1a7e972df261abe0ad96181db1f0f004d5" kindref="member">ki_ports</ref>[<ref refid="classlista" kindref="compound">be</ref>][<ref refid="classlista" kindref="compound">i</ref>];</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlista" kindref="compound">p</ref>.modulep-&gt;add_to_list(<ref refid="classlista" kindref="compound">wait_for_do</ref>,<sp/><ref refid="classlista" kindref="compound">p</ref>.portszam);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66" refid="classshell__module__t_1a03b36f2ced4390eb8512e94cfb8c2b81" refkind="member"><highlight class="normal"><ref refid="classshell__module__t_1a03b36f2ced4390eb8512e94cfb8c2b81" kindref="member">shell_module_t::~shell_module_t</ref>(){</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="shell_module.cpp"/>
+  </compounddef>
+</doxygen>

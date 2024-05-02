@@ -1,0 +1,220 @@
+\doxysection{text\+\_\+module.\+cpp File Reference}
+\label{text__module_8cpp}\index{text\_module.cpp@{text\_module.cpp}}
+{\ttfamily \#include "{}text\+\_\+module.\+h"{}}\newline
+Include dependency graph for text\+\_\+module.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ uint8\+\_\+t} \textbf{ mynot} (\textbf{ uint8\+\_\+t} \textbf{ a})
+\item 
+\textbf{ uint8\+\_\+t} \textbf{ myand} (\textbf{ uint8\+\_\+t} \textbf{ a}, \textbf{ uint8\+\_\+t} \textbf{ b})
+\item 
+\textbf{ uint8\+\_\+t} \textbf{ myor} (\textbf{ uint8\+\_\+t} \textbf{ a}, \textbf{ uint8\+\_\+t} \textbf{ b})
+\item 
+\textbf{ uint8\+\_\+t} \textbf{ myxor} (\textbf{ uint8\+\_\+t} \textbf{ a}, \textbf{ uint8\+\_\+t} \textbf{ b})
+\item 
+\textbf{ void} \textbf{ lepteto} (\textbf{ size\+\_\+t} \textbf{ torlendo}, \textbf{ size\+\_\+t} \textbf{ index}, \textbf{ lista}$<$ \textbf{ size\+\_\+t} $>$ \&\textbf{ hely}, \textbf{ char} $\ast$\&\textbf{ ideiglenes}, \textbf{ size\+\_\+t} \&\textbf{ hossz})
+\item 
+\textbf{ bool} \textbf{ muvs} (\textbf{ size\+\_\+t} \textbf{ index}, \textbf{ lista}$<$ \textbf{ size\+\_\+t} $>$ \&\textbf{ hely}, \textbf{ char} $\ast$\&\textbf{ ideiglenes}, \textbf{ size\+\_\+t} \&\textbf{ hossz}, \textbf{ bool} \textbf{ neg}, \textbf{ uint8\+\_\+t} \&ertek, \textbf{ size\+\_\+t} \&\textbf{ iertek})
+\item 
+\textbf{ void} \textbf{ muv\+\_\+list} (\textbf{ char} \&\textbf{ c}, \textbf{ char} \&\textbf{ cn}, \textbf{ size\+\_\+t} \&\textbf{ index}, \textbf{ lista}$<$ \textbf{ size\+\_\+t} $>$ \&\textbf{ hely}, \textbf{ lista}$<$ \textbf{ size\+\_\+t} $>$ \&\textbf{ fsag}, \textbf{ size\+\_\+t} \&\textbf{ moz}, \textbf{ size\+\_\+t} \&\textbf{ fs}, \textbf{ size\+\_\+t} \&\textbf{ maxfsag}, \textbf{ uint8\+\_\+t} $\ast$\&be\+\_\+ertek)
+\item 
+\textbf{ void} \textbf{ vegrehajt} (\textbf{ size\+\_\+t} \&\textbf{ maxfsag}, \textbf{ lista}$<$ \textbf{ size\+\_\+t} $>$ \&\textbf{ hely}, \textbf{ lista}$<$ \textbf{ size\+\_\+t} $>$ \&\textbf{ fsag}, \textbf{ char} $\ast$\&\textbf{ ideiglenes}, \textbf{ size\+\_\+t} \&\textbf{ hossz})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\label{text__module_8cpp_a03a0ce27639dfeafbf0b8e3e94741651} 
+\index{text\_module.cpp@{text\_module.cpp}!lepteto@{lepteto}}
+\index{lepteto@{lepteto}!text\_module.cpp@{text\_module.cpp}}
+\doxysubsubsection{lepteto()}
+{\footnotesize\ttfamily \textbf{ void} lepteto (\begin{DoxyParamCaption}\item[{\textbf{ size\+\_\+t}}]{torlendo,  }\item[{\textbf{ size\+\_\+t}}]{index,  }\item[{\textbf{ lista}$<$ \textbf{ size\+\_\+t} $>$ \&}]{hely,  }\item[{\textbf{ char} $\ast$\&}]{ideiglenes,  }\item[{\textbf{ size\+\_\+t} \&}]{hossz }\end{DoxyParamCaption})}
+
+Remove a specified number of elements from the given index in the list and update the list accordingly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em torlendo} & the number of elements to remove \\
+\hline
+{\em index} & the index from which to start removal \\
+\hline
+{\em hely} & the list containing the indices \\
+\hline
+{\em ideiglenes} & the temporary character array \\
+\hline
+{\em hossz} & the length of the character array \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\label{text__module_8cpp_a9529dd0d41184fa0192241df7e922780} 
+\index{text\_module.cpp@{text\_module.cpp}!muv\_list@{muv\_list}}
+\index{muv\_list@{muv\_list}!text\_module.cpp@{text\_module.cpp}}
+\doxysubsubsection{muv\_list()}
+{\footnotesize\ttfamily \textbf{ void} muv\+\_\+list (\begin{DoxyParamCaption}\item[{\textbf{ char} \&}]{c,  }\item[{\textbf{ char} \&}]{cn,  }\item[{\textbf{ size\+\_\+t} \&}]{index,  }\item[{\textbf{ lista}$<$ \textbf{ size\+\_\+t} $>$ \&}]{hely,  }\item[{\textbf{ lista}$<$ \textbf{ size\+\_\+t} $>$ \&}]{fsag,  }\item[{\textbf{ size\+\_\+t} \&}]{moz,  }\item[{\textbf{ size\+\_\+t} \&}]{fs,  }\item[{\textbf{ size\+\_\+t} \&}]{maxfsag,  }\item[{\textbf{ uint8\+\_\+t} $\ast$\&}]{be\+\_\+ertek }\end{DoxyParamCaption})}
+
+Updates the muv list based on the given character.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & the current character \\
+\hline
+{\em cn} & the next character \\
+\hline
+{\em index} & the index \\
+\hline
+{\em hely} & the list of locations \\
+\hline
+{\em fsag} & the list of priorities \\
+\hline
+{\em moz} & the number of moves \\
+\hline
+{\em fs} & the current priority value \\
+\hline
+{\em maxfsag} & the maximum priority value in the list \\
+\hline
+{\em be\+\_\+ertek} & the input values \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\label{text__module_8cpp_a0409fbc3d883fb339196f392b177dab7} 
+\index{text\_module.cpp@{text\_module.cpp}!muvs@{muvs}}
+\index{muvs@{muvs}!text\_module.cpp@{text\_module.cpp}}
+\doxysubsubsection{muvs()}
+{\footnotesize\ttfamily \textbf{ bool} muvs (\begin{DoxyParamCaption}\item[{\textbf{ size\+\_\+t}}]{index,  }\item[{\textbf{ lista}$<$ \textbf{ size\+\_\+t} $>$ \&}]{hely,  }\item[{\textbf{ char} $\ast$\&}]{ideiglenes,  }\item[{\textbf{ size\+\_\+t} \&}]{hossz,  }\item[{\textbf{ bool}}]{neg,  }\item[{\textbf{ uint8\+\_\+t} \&}]{ertek,  }\item[{\textbf{ size\+\_\+t} \&}]{iertek }\end{DoxyParamCaption})}
+
+Function for performing a specific operation based on the input parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index parameter for the operation \\
+\hline
+{\em hely} & the list containing the indices \\
+\hline
+{\em ideiglenes} & the temporary character array \\
+\hline
+{\em hossz} & the length of the character array \\
+\hline
+{\em neg} & Boolean value indicating negation \\
+\hline
+{\em ertek} & the return value \\
+\hline
+{\em iertek} & the index of the return value to be placed\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the task is successfully performed, false otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+\label{text__module_8cpp_a5a820a0e7dd4578abeb30e7d82396f01} 
+\index{text\_module.cpp@{text\_module.cpp}!myand@{myand}}
+\index{myand@{myand}!text\_module.cpp@{text\_module.cpp}}
+\doxysubsubsection{myand()}
+{\footnotesize\ttfamily \textbf{ uint8\+\_\+t} myand (\begin{DoxyParamCaption}\item[{\textbf{ uint8\+\_\+t}}]{a,  }\item[{\textbf{ uint8\+\_\+t}}]{b }\end{DoxyParamCaption})}
+
+Calculates the AND operation between two input values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the first input \\
+\hline
+{\em b} & the second input\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the result of the AND operation between the two inputs 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 7
+\label{text__module_8cpp_ad670db7bf59a28c821825d5c379811bb} 
+\index{text\_module.cpp@{text\_module.cpp}!mynot@{mynot}}
+\index{mynot@{mynot}!text\_module.cpp@{text\_module.cpp}}
+\doxysubsubsection{mynot()}
+{\footnotesize\ttfamily \textbf{ uint8\+\_\+t} mynot (\begin{DoxyParamCaption}\item[{\textbf{ uint8\+\_\+t}}]{a }\end{DoxyParamCaption})}
+
+A function that performs a NOT operation on the inputs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The input value to perform the NOT operation on.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the NOT operation. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 8
+\label{text__module_8cpp_adc5c1b52d18783f933cb564cea81b221} 
+\index{text\_module.cpp@{text\_module.cpp}!myor@{myor}}
+\index{myor@{myor}!text\_module.cpp@{text\_module.cpp}}
+\doxysubsubsection{myor()}
+{\footnotesize\ttfamily \textbf{ uint8\+\_\+t} myor (\begin{DoxyParamCaption}\item[{\textbf{ uint8\+\_\+t}}]{a,  }\item[{\textbf{ uint8\+\_\+t}}]{b }\end{DoxyParamCaption})}
+
+Calculates the OR operation between two input values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the first input \\
+\hline
+{\em b} & the second input\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the result of the OR operation between the two inputs 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 9
+\label{text__module_8cpp_a42e733bd26080ab8d6cb4213dc6c4cfc} 
+\index{text\_module.cpp@{text\_module.cpp}!myxor@{myxor}}
+\index{myxor@{myxor}!text\_module.cpp@{text\_module.cpp}}
+\doxysubsubsection{myxor()}
+{\footnotesize\ttfamily \textbf{ uint8\+\_\+t} myxor (\begin{DoxyParamCaption}\item[{\textbf{ uint8\+\_\+t}}]{a,  }\item[{\textbf{ uint8\+\_\+t}}]{b }\end{DoxyParamCaption})}
+
+Calculates the XOR operation between two input values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the first input \\
+\hline
+{\em b} & the second input\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the result of the XOR operation between the two inputs 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 10
+\label{text__module_8cpp_a5e761d3e1f203f5db1ab8e87710494bf} 
+\index{text\_module.cpp@{text\_module.cpp}!vegrehajt@{vegrehajt}}
+\index{vegrehajt@{vegrehajt}!text\_module.cpp@{text\_module.cpp}}
+\doxysubsubsection{vegrehajt()}
+{\footnotesize\ttfamily \textbf{ void} vegrehajt (\begin{DoxyParamCaption}\item[{\textbf{ size\+\_\+t} \&}]{maxfsag,  }\item[{\textbf{ lista}$<$ \textbf{ size\+\_\+t} $>$ \&}]{hely,  }\item[{\textbf{ lista}$<$ \textbf{ size\+\_\+t} $>$ \&}]{fsag,  }\item[{\textbf{ char} $\ast$\&}]{ideiglenes,  }\item[{\textbf{ size\+\_\+t} \&}]{hossz }\end{DoxyParamCaption})}
+
+Executes a series of operations on the input parameters to modify the ideiglenes array and the hely list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em maxfsag} & the maximum priority value in the list \\
+\hline
+{\em hely} & the list of locations \\
+\hline
+{\em fsag} & the list of priorities \\
+\hline
+{\em ideiglenes} & the character array to be modified \\
+\hline
+{\em hossz} & the length of ideiglenes \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 11
+Here is the caller graph for this function\+:
+% FIG 12
