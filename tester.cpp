@@ -33,7 +33,7 @@ bool tester_t::ismod(char c) {
  *
  * @return 0 if the name is valid and not in use, 1 if the name not starts with '_', 2 if the name contains invalid characters, 3 if the name is already in use
  */
-uint8_t tester_t::ujmnev_ell(const char* nev) {
+uint8_t tester_t::ujmnevEll(const char* nev) {
     if (nev[0] != '_') return 1;//nincs _
     for (size_t i = 0; i < strlen(nev); i++)
         if (!kk[(size_t)(nev[i])]) return 2;// rossz karakterek
@@ -177,7 +177,7 @@ uint8_t tester_t::modulesteszt(const char* str) {
  *
  * @return 0 if successful, error code otherwise
  */
-uint8_t tester_t::test_module(const char* str, bool add) {
+uint8_t tester_t::testModule(const char* str, bool add) {
     char* nev = new char[strlen(str) + 1];
     char* parancsok = nev;
     strcpy_s(nev, strlen(str) + 1, str);
@@ -187,7 +187,7 @@ uint8_t tester_t::test_module(const char* str, bool add) {
     }
     *parancsok = '\0';
     parancsok++;
-    uint8_t un = ujmnev_ell(nev);
+    uint8_t un = ujmnevEll(nev);
     if (un != 0) { delete[] nev; return un + 1; }// rossz név
     if (parancsok[0] == '_') {//comp_module
         uint8_t kb = kisbetujo2(parancsok), nb = nagybetujo(parancsok), mt = modulesteszt(parancsok);
@@ -212,7 +212,7 @@ uint8_t tester_t::test_module(const char* str, bool add) {
  *
  * @return true if error code is 0, false otherwise
  */
-bool tester_t::print_module_error(uint8_t err) {
+bool tester_t::printModuleError(uint8_t err) {
     switch (err)
     {
     case 0:  return true;

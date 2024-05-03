@@ -35,7 +35,7 @@ void simulator_t::modulator(uint8_t c) {
  * @return true if the input character is processed successfully, false otherwise
  */
 template<typename T>
-bool simulator_t::instruct_handler_char_handler(uint8_t* inputs, uint8_t c, T& state, size_t& number) {
+bool simulator_t::instructHandlerCharHandler(uint8_t* inputs, uint8_t c, T& state, size_t& number) {
     enum { input, num, mod };
     if (isalpha(c) && state == (T)input) {
         if (isupper(c))
@@ -63,22 +63,22 @@ bool simulator_t::instruct_handler_char_handler(uint8_t* inputs, uint8_t c, T& s
  *
  * @param s the instruction string
  * @param w_inputs an array of wire_t inputs
- * @param wait_to_do_wires a list of wire_t pointers to wires, waiting to be processed
+ * @param waitToDo_wires a list of wire_t pointers to wires, waiting to be processed
  * @param mods a uint8_t representing modifications
  * @param number a size_t representing a number
  *
  * @return true if the function execution is successful, false otherwise
  */
-bool simulator_t::instruct_handler(char* s, size_t& number) {
+bool simulator_t::instructHandler(char* s, size_t& number) {
     enum { input, num, mod }state = input;
     uint8_t inputs[26];
     for (size_t i = 0; i < 26; i++)
         inputs[i] = '?';
     number = 0;
     for (size_t i = 0; i < strlen(s); i++)
-        if (!instruct_handler_char_handler(inputs, s[i], state, number))return false;
+        if (!instructHandlerCharHandler(inputs, s[i], state, number))return false;
     if (mMain != nullptr) {
-        mMain->setInputsTo(inputs, wait_to_do_modules);
+        mMain->setInputsTo(inputs, waitToDoModules);
     }
     return true;
 }
@@ -113,8 +113,8 @@ char* simulator_t::getstring(std::istream& in, size_t h) {
  * @param modulok list of modules
  * @param mMain pointer to the main module
  */
-void simulator_t::input_handler_module(char* s) {
-    if (print_module_error(test_module(s))) {
+void simulator_t::inputHandlerModule(char* s) {
+    if (printModuleError(testModule(s))) {
         if (strcmp(modulok[modulok.length() - 1]->nev, "_main") == 0) {
             outStream << "main setted\n";
             mMain = modulok[modulok.length() - 1]->prot->copy();
@@ -126,20 +126,20 @@ void simulator_t::input_handler_module(char* s) {
  *
  * @param s the input file name
  * @param w_inputs array of wire inputs
- * @param wait_to_do_wires list of wire_t pointers to wires, waiting to be processed
+ * @param waitToDo_wires list of wire_t pointers to wires, waiting to be processed
  * @param mods a uint8_t representing modifications
  * @param modulok list of modules
  * @param mMain pointer to the main module
  * @param insts list of instructions
  */
-void simulator_t::input_handler_read(char* s) {
+void simulator_t::inputHandlerRead(char* s) {
     std::ifstream inf(&(s[1]));
     if (inf.fail()) {
         inf.clear(); return;
     }
     outStream << "sikeres megnyitas\n";
     while (!inf.eof()) {
-        input_handler(inf);
+        inputHandler(inf);
     }
     inf.close();
 }
@@ -149,7 +149,7 @@ void simulator_t::input_handler_read(char* s) {
  * @param s the output file name
  * @param insts list of instructions
  */
-void simulator_t::input_handler_write(char* s) {
+void simulator_t::inputHandlerWrite(char* s) {
     std::ofstream outf(&(s[1]));
     if (outf.fail()) {
         outf.clear(); return;
@@ -171,27 +171,27 @@ void simulator_t::input_handler_write(char* s) {
  *
  * @param s the input character array
  * @param w_inputs array of wire inputs
- * @param wait_to_do_wires list of wire_t pointers to wires, waiting to be processed
+ * @param waitToDo_wires list of wire_t pointers to wires, waiting to be processed
  * @param mods  a uint8_t representing modifications
  * @param mMain pointer to the main module
  *
  * @return true if input handling is successful, false otherwise
  */
-bool simulator_t::input_handler_do(char* s) {
+bool simulator_t::inputHandlerDo(char* s) {
     size_t number;
     bool addmain = false;
-    if (!instruct_handler(s, number))return false;
+    if (!instructHandler(s, number))return false;
     if ((mode & 0b00000010) == 0b00000010) {
         mode &= 0b11111101;
         //console clear
     }
     for (size_t i = 0; i < number; i++) {
-        lista<module_t*> wait_to_do_modules2;
-        while (wait_to_do_modules.length() > 0) {
-            wait_to_do_modules[0]->vegrehajtas(wait_to_do_modules2);
-            wait_to_do_modules.rem(0);
+        lista<module_t*> waitToDoModules2;
+        while (waitToDoModules.length() > 0) {
+            waitToDoModules[0]->vegrehajtas(waitToDoModules2);
+            waitToDoModules.rem(0);
         }
-        wait_to_do_modules.add(wait_to_do_modules2);
+        waitToDoModules.add(waitToDoModules2);
         if ((mode & 0b00000001) == 0b00000001 && mMain != nullptr)
             mMain->print(outStream, i == 0, i == number - 1);
     }
@@ -205,28 +205,28 @@ bool simulator_t::input_handler_do(char* s) {
  *
  * @param in the input stream to read from
  * @param w_inputs array of wire inputs
- * @param wait_to_do_wires list of wire_t pointers to wires, waiting to be processed
+ * @param waitToDo_wires list of wire_t pointers to wires, waiting to be processed
  * @param mods uint8_t representing modifications
  * @param modulok list of prot_module_t pointers representing modules
  * @param mMain pointer to the main module
  * @param insts list of instructions
  */
-void simulator_t::input_handler(std::istream& in) {
+void simulator_t::inputHandler(std::istream& in) {
     if (end()) return;
     char* s = getstring(in);
     if (s[0] == '\0') { delete[] s; return; }
     insts.add(s);
     if (s[0] == '_') {//új module
-        input_handler_module(s);
+        inputHandlerModule(s);
     }
     else if (s[0] == '<') {//fájlból olvasás
-        input_handler_read(s);
+        inputHandlerRead(s);
     }
     else if (s[0] == '>') {//fájlba írás
-        input_handler_write(s);
+        inputHandlerWrite(s);
     }
     else {//végrehajtás
-        if (!input_handler_do(s))outStream << "rossz vegrehajtas utasitas\n";
+        if (!inputHandlerDo(s))outStream << "rossz vegrehajtas utasitas\n";
     }
 }
 simulator_t::~simulator_t() {

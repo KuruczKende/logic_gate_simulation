@@ -11,13 +11,13 @@ protected:
     std::ostream& outStream;
     bool eggyezik(const char* str, const char* str2, size_t kez, size_t veg);
     bool ismod(char c);
-    uint8_t ujmnev_ell(const char* nev);
+    uint8_t ujmnevEll(const char* nev);
     uint8_t kisbetujo(const char* str);
     uint8_t kisbetujo2(const char* str);
     uint8_t nagybetujo(const char* str);
     uint8_t modulesteszt(const char* str);
-    uint8_t test_module(const char* str, bool add = true);
-    bool print_module_error(uint8_t err);
+    uint8_t testModule(const char* str, bool add = true);
+    bool printModuleError(uint8_t err);
 public:
     tester_t(std::istream& in, std::ostream& out) :inStream(in), outStream(out) {}
     ~tester_t() {

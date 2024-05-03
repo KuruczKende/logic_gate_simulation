@@ -2,25 +2,25 @@
 #include "module.h"
 
 /**
- * Retrieve the element at index i in the lista.
+ * Retrieve the element at Idx i in the lista.
  *
- * @param i the index of the element to retrieve
+ * @param i the Idx of the element to retrieve
  *
- * @return a reference to the element at index i
+ * @return a reference to the element at Idx i
  */
 template<typename T>
 T& lista<T>::operator[](size_t i){
-    if(0>i)throw "under indexed";
+    if(0>i)throw "under Idxed";
     if(this->length()>i)
         return *(this->getin(i));
-    throw "over indexed";
+    throw "over Idxed";
 }
 /**
- * Retrieve the element at index i in the lista.
+ * Retrieve the element at Idx i in the lista.
  *
- * @param i the index of the element to retrieve
+ * @param i the Idx of the element to retrieve
  *
- * @return a pointer to the element at index i
+ * @return a pointer to the element at Idx i
  */
 template<typename T>
 T* lista<T>::getin(size_t i){
@@ -64,13 +64,13 @@ size_t lista<T>::length(){
     return next->length()+1;
 }
 /**
- * Removes an element at the specified index in the lista object.
+ * Removes an element at the specified Idx in the lista object.
  *
- * @param i the index of the element to be removed
+ * @param i the Idx of the element to be removed
  */
 template<typename T>
 void lista<T>::rem(size_t i){
-    if(0>i)throw "under indexed";
+    if(0>i)throw "under Idxed";
     if(length()>i){
         if(i==0){
             lista<T>* n=next;
@@ -82,7 +82,7 @@ void lista<T>::rem(size_t i){
         else
             next->rem(i-1);
     }
-    else throw "over indexed";
+    else throw "over Idxed";
 }
 /**
  * A function that recursively deletes inner elements.
@@ -111,10 +111,10 @@ size_t lista<size_t>::length(){
 }
 template<>
 size_t& lista<size_t>::operator[](size_t i){
-    if(0>i)throw "under indexed";
+    if(0>i)throw "under Idxed";
     if(length()>i)
         return *getin(i);
-    throw "over indexed";
+    throw "over Idxed";
 }
 
 template<>
@@ -128,7 +128,7 @@ void lista<size_t>::add(size_t ertek) {
 }
 template<>
 void lista<size_t>::rem(size_t i){
-    if(0>i)throw "under indexed";
+    if(0>i)throw "under Idxed";
     if(length()>i){
         if(i==0){
             lista<size_t>* n=next;
@@ -140,7 +140,7 @@ void lista<size_t>::rem(size_t i){
         else
             next->rem(i-1);
     }
-    else throw "over indexed";
+    else throw "over Idxed";
 }
 //module_t*
 /*template<>
@@ -159,7 +159,7 @@ void lista<module_t*>::add(lista<module_t*>& addlist) {
 }
 template<>
 void lista<module_t*>::rem(size_t i) {
-    if (0 > i)throw "under indexed";
+    if (0 > i)throw "under Idxed";
     if (length() > i) {
         if (i == 0) {
             lista<module_t*>* n = next;
@@ -171,7 +171,7 @@ void lista<module_t*>::rem(size_t i) {
         else
             next->rem(i - 1);
     }
-    else throw "over indexed";
+    else throw "over Idxed";
 }
 //port_t*
 template<>
@@ -182,10 +182,10 @@ size_t lista<port<module_t*>>::length() {
 }
 template<>
 port<module_t*>& lista<port<module_t*>>::operator[](size_t i) {
-    if (0 > i)throw "under indexed";
+    if (0 > i)throw "under Idxed";
     if (length() > i)
         return *getin(i);
-    throw "over indexed";
+    throw "over Idxed";
 }
 
 template<>
@@ -218,10 +218,10 @@ size_t lista<prot_module_t*>::length(){
 }
 template<>
 prot_module_t*& lista<prot_module_t*>::operator[](size_t i){
-    if(0>i)throw "under indexed";
+    if(0>i)throw "under Idxed";
     if(length()>i)
         return *getin(i);
-    throw "over indexed";
+    throw "over Idxed";
 }
 
 template<>
@@ -257,10 +257,10 @@ size_t lista<char*>::length() {
 }
 template<>
 char*& lista<char*>::operator[](size_t i) {
-    if (0 > i)throw "under indexed";
+    if (0 > i)throw "under Idxed";
     if (length() > i)
         return *getin(i);
-    throw "over indexed";
+    throw "over Idxed";
 }
 template<>
 void lista<char*>::dinl() {//delete inner list

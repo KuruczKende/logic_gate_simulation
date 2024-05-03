@@ -58,51 +58,51 @@ uint8_t text_module_t::myxor(uint8_t a, uint8_t b) {
     return a != b ? high : low;
 }
 /**
- * Remove a specified number of elements from the given index in the list and update the list accordingly.
+ * Remove a specified number of elements from the given Idx in the list and update the list accordingly.
  *
  * @param torlendo the number of elements to remove
- * @param index the index from which to start removal
+ * @param Idx the Idx from which to start removal
  * @param hely the list containing the indices
  * @param ideiglenes the temporary character array
  * @param hossz the length of the character array
  */
-void text_module_t::lepteto(size_t torlendo, size_t index, lista<size_t>& hely, char*& ideiglenes, size_t& hossz) {
-    for (size_t k = hely[index]; k < hossz - torlendo; k++)
+void text_module_t::lepteto(size_t torlendo, size_t Idx, lista<size_t>& hely, char*& ideiglenes, size_t& hossz) {
+    for (size_t k = hely[Idx]; k < hossz - torlendo; k++)
         ideiglenes[k] = ideiglenes[k + torlendo];
-    for (size_t k = index; k < hely.length(); k++)
+    for (size_t k = Idx; k < hely.length(); k++)
         hely[k] -= torlendo;
     hossz -= torlendo;
 }
 /**
  * Function for performing a specific operation based on the input parameters.
  *
- * @param index The index parameter for the operation
+ * @param Idx The Idx parameter for the operation
  * @param hely the list containing the indices
  * @param ideiglenes the temporary character array
  * @param hossz the length of the character array
  * @param neg Boolean value indicating negation
  * @param ertek the return value
- * @param iertek the index of the return value to be placed
+ * @param iertek the Idx of the return value to be placed
  *
  * @return True if the task is successfully performed, false otherwise
  */
-bool text_module_t::muvs(size_t index, lista<size_t>& hely, char*& ideiglenes, size_t& hossz, bool neg, uint8_t& ertek, size_t& iertek) {
-    size_t findex = hely[index] + (size_t)(neg ? 1 : 0);
-    switch (ideiglenes[findex]) {
+bool text_module_t::muvs(size_t Idx, lista<size_t>& hely, char*& ideiglenes, size_t& hossz, bool neg, uint8_t& ertek, size_t& iertek) {
+    size_t fIdx = hely[Idx] + (size_t)(neg ? 1 : 0);
+    switch (ideiglenes[fIdx]) {
     case '&':
-        ertek = myand(ideiglenes[hely[index] - 1], ideiglenes[findex + 1]);
+        ertek = myand(ideiglenes[hely[Idx] - 1], ideiglenes[fIdx + 1]);
         break;
     case '|':
-        ertek = myor(ideiglenes[hely[index] - 1], ideiglenes[findex + 1]);
+        ertek = myor(ideiglenes[hely[Idx] - 1], ideiglenes[fIdx + 1]);
         break;
     case '^':
-        ertek = myxor(ideiglenes[hely[index] - 1], ideiglenes[findex + 1]);
+        ertek = myxor(ideiglenes[hely[Idx] - 1], ideiglenes[fIdx + 1]);
         break;
     default:
         return false;
     }
-    iertek = hely[index] - 1;
-    lepteto(neg ? 3 : 2, index, hely, ideiglenes, hossz);
+    iertek = hely[Idx] - 1;
+    lepteto(neg ? 3 : 2, Idx, hely, ideiglenes, hossz);
     if (neg)ertek = mynot(ertek);
     return true;
 }
@@ -112,30 +112,30 @@ bool text_module_t::muvs(size_t index, lista<size_t>& hely, char*& ideiglenes, s
  * @param parancsok The command string used to initialize the text_module_t object
  */
 text_module_t::text_module_t(const char* parancsok) {
-    ki_db = 1;
-    be_db = 0;
+    kiDb = 1;
+    beDb = 0;
     int idx = -1;
     this->parancsok = new char[strlen(parancsok) + 1];
     strcpy_s(this->parancsok, strlen(parancsok) + 1, parancsok);
     while (parancsok[++idx] != '\0') {
         if (parancsok[idx] == ',')
-            ki_db++;
-        if (parancsok[idx] <= 'z' && (size_t)parancsok[idx] > be_db)
-            be_db = parancsok[idx];
+            kiDb++;
+        if (parancsok[idx] <= 'z' && (size_t)parancsok[idx] > beDb)
+            beDb = parancsok[idx];
     }
     if (idx == 0)//nincs parancs
-        ki_db = 0;
-    if (be_db >= 'a')//van input
-        be_db -= 'a' - 1;
+        kiDb = 0;
+    if (beDb >= 'a')//van input
+        beDb -= 'a' - 1;
     else
-        be_db = 0;
-    ki_ertek = new uint8_t[ki_db];
-    for (size_t i = 0; i < ki_db; i++) ki_ertek[i] = undet;
-    be_ertek = new uint8_t[be_db];
-    for (size_t i = 0; i < be_db; i++) be_ertek[i] = undet;
-    be_old = new uint8_t[be_db];
-    for (size_t i = 0; i < be_db; i++) be_old[i] = undet;
-    ki_ports = new lista<port<module_t*>> [ki_db];
+        beDb = 0;
+    kiErtek = new uint8_t[kiDb];
+    for (size_t i = 0; i < kiDb; i++) kiErtek[i] = undet;
+    beErtek = new uint8_t[beDb];
+    for (size_t i = 0; i < beDb; i++) beErtek[i] = undet;
+    beOld = new uint8_t[beDb];
+    for (size_t i = 0; i < beDb; i++) beOld[i] = undet;
+    kiPorts = new lista<port<module_t*>> [kiDb];
 }
 text_module_t::text_module_t(const text_module_t& refe):text_module_t(refe.parancsok) {}
 module_t* text_module_t::copy() {
@@ -146,26 +146,26 @@ module_t* text_module_t::copy() {
  *
  * @param c the current character
  * @param cn the next character
- * @param index the index
+ * @param Idx the Idx
  * @param hely the list of locations
  * @param fsag the list of priorities
  * @param moz the number of moves
  * @param fs the current priority value
  * @param maxfsag the maximum priority value in the list
- * @param be_ertek the input values
+ * @param beErtek the input values
  */
-void text_module_t::muv_list(char& c, char& cn, size_t& index, lista<size_t>& hely, lista<size_t>& fsag, size_t& moz, size_t& fs, size_t& maxfsag) {
+void text_module_t::muvList(char& c, char& cn, size_t& Idx, lista<size_t>& hely, lista<size_t>& fsag, size_t& moz, size_t& fs, size_t& maxfsag) {
     switch (c) {
     case '~':
         if (cn == '|' || cn == '&' || cn == '^') {
-            hely.add(index);
+            hely.add(Idx);
             fsag.add(fs);
             if (fs > maxfsag)maxfsag = fs;
             moz++;
-            index++;
+            Idx++;
         }
         else {//bemenet/const/zarojeles ertek
-            hely.add(index);
+            hely.add(Idx);
             fsag.add(fs + 1);
             if (fs + 1 > maxfsag)maxfsag = fs + 1;
         }
@@ -179,17 +179,17 @@ void text_module_t::muv_list(char& c, char& cn, size_t& index, lista<size_t>& he
     case '|':
     case '&':
     case '^':
-        hely.add(index);
+        hely.add(Idx);
         fsag.add(fs);
         if (fs > maxfsag)maxfsag = fs;
         break;
     default://bemenet/const
         if (c != '0' && c != '1')
-            c = be_ertek[c - 'a'];
+            c = beErtek[c - 'a'];
         break;
     }
     moz++;
-    index++;
+    Idx++;
 }
 /**
  * Executes a series of operations on the input parameters to modify the ideiglenes array and the hely list.
@@ -228,29 +228,29 @@ void text_module_t::vegrehajt(size_t& maxfsag, lista<size_t>& hely, lista<size_t
         }
     }
 }
-void text_module_t::set_ki(size_t index, uint8_t ertek, lista<module_t*>& wait_for_do) {
-    ki_ertek[index] = ertek;
-    for (size_t i = 0; i < ki_ports[index].length(); i++) {
-        port<module_t*> p = ki_ports[index][i];
-        p.modulep->set_be(p.portszam, ertek);
-        p.modulep->add_to_list(wait_for_do, p.portszam);
+void text_module_t::setKi(size_t Idx, uint8_t ertek, lista<module_t*>& waitForDo) {
+    kiErtek[Idx] = ertek;
+    for (size_t i = 0; i < kiPorts[Idx].length(); i++) {
+        port<module_t*> p = kiPorts[Idx][i];
+        p.modulep->setBe(p.portszam, ertek);
+        p.modulep->addToList(waitForDo, p.portszam);
     }
 }
 /**
  * Executes the logic for vegrehajtas.
  *
- * @param wait_for_do list of wire_t pointers to wires, waiting to be processed
+ * @param waitForDo list of wire_t pointers to wires, waiting to be processed
  */
-void text_module_t::vegrehajtas(lista<module_t*>& wait_for_do) {
+void text_module_t::vegrehajtas(lista<module_t*>& waitForDo) {
     size_t kez = 0, veg = 0;
-    for (size_t i = 0; i < ki_db; i++) {
+    for (size_t i = 0; i < kiDb; i++) {
         while (parancsok[veg] != ',' && parancsok[veg] != '\0')veg++;
         bool trigger = true;
         if (parancsok[kez] == '[') {
             trigger = false;
             kez++;
             while (parancsok[kez] != ']'){
-                if (be_ertek[parancsok[kez] - 'a'] != be_old[parancsok[kez] - 'a'])
+                if (beErtek[parancsok[kez] - 'a'] != beOld[parancsok[kez] - 'a'])
                     trigger = true;
                 kez++;
             }
@@ -263,35 +263,35 @@ void text_module_t::vegrehajtas(lista<module_t*>& wait_for_do) {
             lista<size_t> fsag;
             size_t moz = kez;
             size_t fs = 0;
-            size_t index = 0;
+            size_t Idx = 0;
             size_t maxfsag = 0;
             while (moz < veg) {
-                ideiglenes[index] = parancsok[moz];
-                if(parancsok[moz] == '~' && (parancsok[moz + 1] == '|' || parancsok[moz + 1] == '&' || parancsok[moz + 1] == '^'))ideiglenes[index + 1] = parancsok[moz + 1];
-                muv_list(ideiglenes[index], ideiglenes[index + 1], index, hely, fsag, moz, fs, maxfsag);
+                ideiglenes[Idx] = parancsok[moz];
+                if(parancsok[moz] == '~' && (parancsok[moz + 1] == '|' || parancsok[moz + 1] == '&' || parancsok[moz + 1] == '^'))ideiglenes[Idx + 1] = parancsok[moz + 1];
+                muvList(ideiglenes[Idx], ideiglenes[Idx + 1], Idx, hely, fsag, moz, fs, maxfsag);
             }//m�veleti lista befejezve
             vegrehajt(maxfsag, hely, fsag, ideiglenes, hossz);
-            if (ideiglenes[0] != ki_ertek[i]) {
-                set_ki(i, ideiglenes[0], wait_for_do);
+            if (ideiglenes[0] != kiErtek[i]) {
+                setKi(i, ideiglenes[0], waitForDo);
             }
             delete[] ideiglenes;
         }
         veg++;
         kez = veg;
     }
-    for (size_t i = 0; i < be_db; i++)
-        be_old[i] = be_ertek[i];
+    for (size_t i = 0; i < beDb; i++)
+        beOld[i] = beErtek[i];
 }
 /**
  * Destructor for the text_module_t class. Deletes the dynamically allocated memory.
  */
 text_module_t::~text_module_t(){
-    delete[] be_ertek;
-    delete[] be_old;
-    delete[] ki_ertek;
+    delete[] beErtek;
+    delete[] beOld;
+    delete[] kiErtek;
     delete[] parancsok;
-    be_ertek = NULL;
-    be_old = NULL;
-    ki_ertek = NULL;
+    beErtek = NULL;
+    beOld = NULL;
+    kiErtek = NULL;
     parancsok = NULL;
 }

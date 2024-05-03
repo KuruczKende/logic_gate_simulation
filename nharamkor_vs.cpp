@@ -16,7 +16,7 @@ int main()
 {
     simulator_t* sim=new simulator_t(std::cin,std::cout);
     while (!sim->end()) {
-        sim->input_handler(std::cin);
+        sim->inputHandler(std::cin);
     }
     delete sim;
     return 0;
@@ -34,15 +34,16 @@ int main()
         /*TEST("modul", "text_module"); {
             EXPECT_STREQ("", oss.str().c_str());
         } END; */
-        sim->input_handler(iss);
-        sim->input_handler(iss);
-        sim->input_handler(iss);
-        sim->input_handler(iss);
-        sim->input_handler(iss);
-        sim->input_handler(iss);
+        sim->inputHandler(iss);
+        sim->inputHandler(iss);
+        sim->inputHandler(iss);
+        sim->inputHandler(iss);
+        sim->inputHandler(iss);
+        sim->inputHandler(iss);
         delete sim;
     }
     std::cout << "faszom kivan";
     return 0;
 }
 #endif
+//

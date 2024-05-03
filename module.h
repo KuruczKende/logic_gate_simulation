@@ -11,25 +11,23 @@ struct port
 
 class module_t {
 protected:
-    size_t be_db;
-    size_t ki_db;
-    uint8_t* be_ertek;
-    uint8_t* ki_ertek;
-    lista<port<module_t*>>* ki_ports;
+    size_t beDb;
+    size_t kiDb;
+    uint8_t* beErtek;
+    uint8_t* kiErtek;
+    lista<port<module_t*>>* kiPorts;
 public:
-    module_t() :be_db(0), ki_db(0), be_ertek(nullptr), ki_ertek(nullptr), ki_ports(nullptr){};
+    module_t() :beDb(0), kiDb(0), beErtek(nullptr), kiErtek(nullptr), kiPorts(nullptr){};
     virtual module_t* copy() = 0;
-    virtual void vegrehajtas(lista<module_t*>& wait_for_do) { return; }
-    virtual void add_to_list(lista<module_t*>& wait_for_do, size_t be) { wait_for_do.add(this);}
-    virtual void set_be(size_t index, uint8_t ertek) { be_ertek[index] = ertek; };
-    virtual void set_ki_port(size_t ki_index, module_t* modulep, size_t be_index);
-    virtual uint8_t get_ki_ertek(size_t i) { return ki_ertek[i]; }
-    virtual size_t get_ki_num() { return ki_db; }
-    bool is_be_good(size_t n) { return n == be_db; }
-    virtual bool is_ki_good(size_t n) { return n == get_ki_num(); }
+    virtual void vegrehajtas(lista<module_t*>& waitForDo) { return; }
+    virtual void addToList(lista<module_t*>& waitForDo, size_t be) { waitForDo.add(this);}
+    virtual void setBe(size_t Idx, uint8_t ertek) { beErtek[Idx] = ertek; };
+    virtual void setKiPort(size_t kiIdx, module_t* modulep, size_t beIdx);
+    virtual uint8_t getKiErtek(size_t i) { return kiErtek[i]; }
+    virtual size_t getKiNum() { return kiDb; }
     virtual uint8_t testModule(const char* str, size_t& k, size_t& v);
     void print(std::ostream& os, bool kezd = true, bool lezar = true);
-    void setInputsTo(uint8_t* inputs, lista<module_t*>& wait_to_do_modules);
+    void setInputsTo(uint8_t* inputs, lista<module_t*>& waitToDoModules);
     virtual ~module_t();
 };
 
