@@ -115,7 +115,7 @@ void comp_module_t::compFillModule(lista<size_t>& vegk) {
         while (modulesComs[j] != ',') {
             if (modulesComs[j] == '0' || modulesComs[j] == '1')
                 modules[i]->setBe(k, modulesComs[j]);
-            else if (modulesComs[j] >= 'a' && modulesComs[j] < 'a' + beDb)
+            else if (modulesComs[j] >= 'a' && modulesComs[j] < 'a' + (char)beDb)
                 kiPorts[modulesComs[j] - 'a'].add(port<module_t*>{modules[i], k});
             k++;j++;
         }
@@ -125,7 +125,7 @@ void comp_module_t::compFillModule(lista<size_t>& vegk) {
                 k++;j++;
             }
             else {
-                if (modulesComs[j] >= 'a' + beDb)
+                if (modulesComs[j] >= 'a' + (char)beDb)
                     modules[i]->setKiPort(k, &endModule, modulesComs[j] - 'a' - beDb);
                 setConnection(modulesComs[j++], modules[i], k++);
             }
@@ -142,7 +142,7 @@ void comp_module_t::compFillModule(lista<size_t>& vegk) {
  */
 comp_module_t::comp_module_t(char* modulesComs, lista<prot_module_t*>& protModules) {
     this->modulesComs = new char[strlen(modulesComs) + 1];
-    strcpy_s(this->modulesComs, strlen(modulesComs) + 1, modulesComs);
+    strcpy(this->modulesComs, modulesComs);
     size_t kiDab;
     lista<size_t> vegk;
     lista<size_t> kezk;
@@ -185,10 +185,9 @@ module_t* comp_module_t::copy() {
     size_t kiDab = getKiNum();
     comp_module_t* ret = new comp_module_t(beDb, kiDab, mDb);
     ret->modulesComs = new char[strlen(modulesComs) + 1];
-    strcpy_s(ret->modulesComs, strlen(modulesComs) + 1, modulesComs);
+    strcpy(ret->modulesComs, modulesComs);
     lista<size_t> vegk;
     lista<size_t> kezk;
-    size_t kuka;
     ret->muvcount(vegk, kezk);
     ret->compCreateModules(true, vegk, kezk, nullptr, modules);
     ret->compFillModule(vegk);

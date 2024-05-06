@@ -82,14 +82,7 @@ bool simulator_t::instructHandler(char* s, size_t& number) {
     }
     return true;
 }
-/**
- * Recursively reads characters from the input stream and stores them in a dynamically allocated char array.
- *
- * @param in the input stream to read from
- * @param h the current size of the char array being built
- *
- * @return a dynamically allocated char array containing the characters read from the input stream
- */
+
 char* simulator_t::getstring(std::istream& in, size_t h) {
     char c;
     char* ret;
@@ -105,33 +98,34 @@ char* simulator_t::getstring(std::istream& in, size_t h) {
     return ret;
 }
 
-/**
- * Handles input for new module and sets the main module if the module is "_main".
- *
- * @param s input string
- * @param w_inputs array of wire inputs
- * @param modulok list of modules
- * @param mMain pointer to the main module
- */
 void simulator_t::inputHandlerModule(char* s) {
-    if (printModuleError(testModule(s))) {
+    try {
+        testModule(s);
         if (strcmp(modulok[modulok.length() - 1]->nev, "_main") == 0) {
             outStream << "main setted\n";
             mMain = modulok[modulok.length() - 1]->prot->copy();
         }
     }
+    catch(int err){
+        switch (err)
+        {
+        case 1:  outStream << "nincs : jel\n"; break;
+        case 2:  outStream << "nem _ val kezdodo nev\n"; break;
+        case 3:  outStream << "rossz karakter a nevben\n"; break;
+        case 4:  outStream << "mar foglalt nev\n"; break;
+        case 5:  outStream << "masodik kivezetes comp_module-ban\n"; break;
+        case 6:  outStream << "nem jo bekotes comp_module-ban\n"; break;
+        case 7:  outStream << "nemletezo module comp_module-ban\n"; break;
+        case 8:  outStream << "rossz inputszam comp_module-ban\n"; break;
+        case 9:  outStream << "rossz outputszam comp_module-ban\n"; break;
+        case 10: outStream << "nem jo bekotes text_module-ban\n"; break;
+        case 11: outStream << "nem jo forma text_module-ban\n"; break;
+        case 12: outStream << "rossz karakterek a text_module-ban\n"; break;
+        default: outStream << "unhandlered error\n"; break;
+        }
+    }
 }
-/**
- * A function to handle reading file, processing it.
- *
- * @param s the input file name
- * @param w_inputs array of wire inputs
- * @param waitToDo_wires list of wire_t pointers to wires, waiting to be processed
- * @param mods a uint8_t representing modifications
- * @param modulok list of modules
- * @param mMain pointer to the main module
- * @param insts list of instructions
- */
+
 void simulator_t::inputHandlerRead(char* s) {
     std::ifstream inf(&(s[1]));
     if (inf.fail()) {
@@ -143,12 +137,7 @@ void simulator_t::inputHandlerRead(char* s) {
     }
     inf.close();
 }
-/**
- * A function to handle writing instructions to file if the user wants.
- *
- * @param s the output file name
- * @param insts list of instructions
- */
+
 void simulator_t::inputHandlerWrite(char* s) {
     std::ofstream outf(&(s[1]));
     if (outf.fail()) {
@@ -165,6 +154,7 @@ void simulator_t::inputHandlerWrite(char* s) {
         }
     }
     outf.close();
+    outStream << "sikeres mentes\n";
 }
 /**
  * A function that handles input based on the given parameters.
@@ -179,11 +169,10 @@ void simulator_t::inputHandlerWrite(char* s) {
  */
 bool simulator_t::inputHandlerDo(char* s) {
     size_t number;
-    bool addmain = false;
     if (!instructHandler(s, number))return false;
     if ((mode & 0b00000010) == 0b00000010) {
         mode &= 0b11111101;
-        //console clear
+        system("cls");
     }
     for (size_t i = 0; i < number; i++) {
         lista<module_t*> waitToDoModules2;

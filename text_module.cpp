@@ -116,7 +116,7 @@ text_module_t::text_module_t(const char* parancsok) {
     beDb = 0;
     int idx = -1;
     this->parancsok = new char[strlen(parancsok) + 1];
-    strcpy_s(this->parancsok, strlen(parancsok) + 1, parancsok);
+    strcpy(this->parancsok, parancsok);
     while (parancsok[++idx] != '\0') {
         if (parancsok[idx] == ',')
             kiDb++;

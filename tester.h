@@ -16,8 +16,7 @@ protected:
     uint8_t kisbetujo2(const char* str);
     uint8_t nagybetujo(const char* str);
     uint8_t modulesteszt(const char* str);
-    uint8_t testModule(const char* str, bool add = true);
-    bool printModuleError(uint8_t err);
+    void testModule(const char* str, bool add = true);
 public:
     tester_t(std::istream& in, std::ostream& out) :inStream(in), outStream(out) {}
     ~tester_t() {

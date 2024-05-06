@@ -1,0 +1,3 @@
+_and:a&b
+_main:_and(ab,c)
+Ab2+

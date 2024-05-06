@@ -18,7 +18,7 @@ class simulator_t :public tester_t {
     void inputHandlerWrite(char* s);
     bool inputHandlerDo(char* s);
 public:
-    simulator_t(std::istream& in, std::ostream& out) :tester_t(in, out), mode(0), mMain(nullptr) {}
+    simulator_t(std::istream& in, std::ostream& out) :tester_t(in, out), mMain(nullptr), mode(0){}
     void inputHandler(std::istream& in);
     bool end() { return ((mode & 0b10000000) == 0b10000000); }
     ~simulator_t();

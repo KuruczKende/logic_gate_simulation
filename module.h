@@ -44,7 +44,7 @@ struct prot_module_t {
     prot_module_t(const char* nev = nullptr, module_t* prot = nullptr) :nev(nullptr), prot(prot) {
         if (nev == nullptr) return;
         this->nev = new char[strlen(nev) + 1];
-        strcpy_s(this->nev, strlen(nev) + 1, nev);
+        strcpy(this->nev, nev);
     }
     ~prot_module_t() {
         delete prot;//ez még valamiért el van baszva
