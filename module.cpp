@@ -1,5 +1,12 @@
 #include "module.h"
 
+/**
+ * Sets the KiPort of the module.
+ *
+ * @param kiIdx The index of the KiPort.
+ * @param modulep A pointer to the module.
+ * @param beIdx The index of the BePort.
+ */
 void module_t::setKiPort(size_t kiIdx, module_t* modulep, size_t beIdx) {
     if (kiIdx >= kiDb)throw "over Idxed";
     if (kiIdx < 0)throw "under Idxed";
@@ -8,14 +15,23 @@ void module_t::setKiPort(size_t kiIdx, module_t* modulep, size_t beIdx) {
     kiPorts[kiIdx].add(port<module_t*>{modulep, beIdx});
 }
 
+/**
+ * Tests the module input and output numbers.
+ *
+ * @param str The input string.
+ * @param k The reference to the index of the input string.
+ * @param v The reference to the index of the input string.
+ *
+ * @return The result of the test.
+ */
 uint8_t module_t::testModule(const char* str, size_t& k, size_t& v){
     size_t out = this->getKiNum();
     v = k = v + 1;
     while (str[v] != ',' && v < k + beDb) v++;
-    if (str[v] != ',' || v != k + beDb) return 1;//rossz inputszám
+    if (str[v] != ',' || v != k + beDb) return 1;//rossz inputszï¿½m
     v = k = v + 1;
     while (str[v] != ')' && v < k + out) v++;
-    if (str[v] != ')' || v != k + out) return 2;//rossz outputszám
+    if (str[v] != ')' || v != k + out) return 2;//rossz outputszï¿½m
     v = k = v + 1;
     return 0;
 }
@@ -23,7 +39,7 @@ uint8_t module_t::testModule(const char* str, size_t& k, size_t& v){
 /**
  * Prints the contents of the module to the console in a formatted manner.
  *
- * @param mMain a pointer to the module to be printed
+ * @param os ostream written to
  * @param kezd flag indicating whether to include the beginning formatting
  * @param lezar flag indicating whether to include the ending formatting
  */
@@ -55,6 +71,12 @@ void module_t::print( std::ostream& os, bool kezd, bool lezar) {
     }
 }
 
+/**
+ * Sets the inputs of the module based on the provided array and updates the waitToDoModules list accordingly.
+ *
+ * @param inputs pointer to an array of input values
+ * @param waitToDoModules list of modules to be updated
+ */
 void module_t::setInputsTo(uint8_t* inputs, lista<module_t*>& waitToDoModules) {
     for (size_t i = 0; i < beDb; i++)
         if (inputs[i] != '?')

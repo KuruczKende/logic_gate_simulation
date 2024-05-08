@@ -1,10 +1,9 @@
 #include "simulator.h"
 
 /**
- * Modifies the given mods variable based on the input character.
+ * Sets the mode of the simulator based on the given character.
  *
- * @param c the character input to determine the modification
- * @param mods the variable to be modified based on the input character
+ * @param c the character representing the mode to set
  */
 void simulator_t::modulator(uint8_t c) {
     switch (c) {
@@ -24,12 +23,11 @@ void simulator_t::modulator(uint8_t c) {
 }
 
 /**
- * A template function to handle different types of input characters and modify state accordingly.
+ * Handles a character in the instructHandler function.
  *
  * @param inputs pointer to an array of uint8_t to store inputs
  * @param c the input character to handle
  * @param state a reference to a template type T representing the current state
- * @param mods a reference to a uint8_t to store modifiers
  * @param number a reference to a size_t to store a number
  *
  * @return true if the input character is processed successfully, false otherwise
@@ -59,15 +57,12 @@ bool simulator_t::instructHandlerCharHandler(uint8_t* inputs, uint8_t c, T& stat
 }
 
 /**
- * A function to handle instructions.
+ * Handles instructions provided in a character array, updating the input state and number.
  *
- * @param s the instruction string
- * @param w_inputs an array of wire_t inputs
- * @param waitToDo_wires a list of wire_t pointers to wires, waiting to be processed
- * @param mods a uint8_t representing modifications
- * @param number a size_t representing a number
+ * @param s pointer to a character array containing instructions
+ * @param number a reference to a size_t to store the updated number
  *
- * @return true if the function execution is successful, false otherwise
+ * @return true if all characters are processed successfully, false otherwise
  */
 bool simulator_t::instructHandler(char* s, size_t& number) {
     enum { input, num, mod }state = input;
@@ -83,6 +78,15 @@ bool simulator_t::instructHandler(char* s, size_t& number) {
     return true;
 }
 
+/**
+ * Recursively reads characters from the input stream until it reaches the end of the file or a newline character.
+ * The characters are stored in a dynamically allocated character array, which is returned at the end.
+ *
+ * @param in The input stream from which to read characters.
+ * @param h The current index in the character array.
+ *
+ * @return A dynamically allocated character array containing the characters read from the input stream.
+ */
 char* simulator_t::getstring(std::istream& in, size_t h) {
     char c;
     char* ret;
@@ -98,6 +102,11 @@ char* simulator_t::getstring(std::istream& in, size_t h) {
     return ret;
 }
 
+/**
+ * Handles the input module based on the provided character array.
+ *
+ * @param s The character array representing the input module.
+ */
 void simulator_t::inputHandlerModule(char* s) {
     try {
         testModule(s);
@@ -126,6 +135,11 @@ void simulator_t::inputHandlerModule(char* s) {
     }
 }
 
+/**
+ * Reads input from a file specified by the given character array and handles it.
+ *
+ * @param s The character array specifying the file name to read from.
+ */
 void simulator_t::inputHandlerRead(char* s) {
     std::ifstream inf(&(s[1]));
     if (inf.fail()) {
@@ -138,6 +152,11 @@ void simulator_t::inputHandlerRead(char* s) {
     inf.close();
 }
 
+/**
+ * Writes the instructions to a file specified by the given character array.
+ *
+ * @param s The character array specifying the file name to write to.
+ */
 void simulator_t::inputHandlerWrite(char* s) {
     std::ofstream outf(&(s[1]));
     if (outf.fail()) {
@@ -157,15 +176,11 @@ void simulator_t::inputHandlerWrite(char* s) {
     outStream << "sikeres mentes\n";
 }
 /**
- * A function that handles input based on the given parameters.
+ * Handles the input provided in the character array `s`.
  *
- * @param s the input character array
- * @param w_inputs array of wire inputs
- * @param waitToDo_wires list of wire_t pointers to wires, waiting to be processed
- * @param mods  a uint8_t representing modifications
- * @param mMain pointer to the main module
+ * @param s The character array containing the input.
  *
- * @return true if input handling is successful, false otherwise
+ * @return `true` if the input is successfully processed, `false` otherwise.
  */
 bool simulator_t::inputHandlerDo(char* s) {
     size_t number;
@@ -190,34 +205,32 @@ bool simulator_t::inputHandlerDo(char* s) {
 }
 
 /**
- * Handles input from the given input stream and performs various operations based on the input.
+ * Handles input from the input stream and processes it accordingly.
  *
- * @param in the input stream to read from
- * @param w_inputs array of wire inputs
- * @param waitToDo_wires list of wire_t pointers to wires, waiting to be processed
- * @param mods uint8_t representing modifications
- * @param modulok list of prot_module_t pointers representing modules
- * @param mMain pointer to the main module
- * @param insts list of instructions
+ * @param in The input stream to read characters from.
+ *
  */
 void simulator_t::inputHandler(std::istream& in) {
     if (end()) return;
     char* s = getstring(in);
     if (s[0] == '\0') { delete[] s; return; }
     insts.add(s);
-    if (s[0] == '_') {//új module
+    if (s[0] == '_') {//ï¿½j module
         inputHandlerModule(s);
     }
-    else if (s[0] == '<') {//fájlból olvasás
+    else if (s[0] == '<') {//fï¿½jlbï¿½l olvasï¿½s
         inputHandlerRead(s);
     }
-    else if (s[0] == '>') {//fájlba írás
+    else if (s[0] == '>') {//fï¿½jlba ï¿½rï¿½s
         inputHandlerWrite(s);
     }
-    else {//végrehajtás
+    else {//vï¿½grehajtï¿½s
         if (!inputHandlerDo(s))outStream << "rossz vegrehajtas utasitas\n";
     }
 }
+/**
+ * Destructor for the simulator_t class, cleans up memory and resources.
+ */
 simulator_t::~simulator_t() {
     insts.dinl();
     delete mMain;

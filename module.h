@@ -47,7 +47,7 @@ struct prot_module_t {
         strcpy(this->nev, nev);
     }
     ~prot_module_t() {
-        delete prot;//ez még valamiért el van baszva
+        delete prot;
         delete[] nev;
     }
 };

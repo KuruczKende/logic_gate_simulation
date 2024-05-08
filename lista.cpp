@@ -10,7 +10,6 @@
  */
 template<typename T>
 T& lista<T>::operator[](size_t i){
-    if(0>i)throw "under Idxed";
     if(this->length()>i)
         return *(this->getin(i));
     throw "over Idxed";
@@ -70,7 +69,6 @@ size_t lista<T>::length(){
  */
 template<typename T>
 void lista<T>::rem(size_t i){
-    if(0>i)throw "under Idxed";
     if(length()>i){
         if(i==0){
             lista<T>* n=next;
@@ -111,7 +109,6 @@ size_t lista<size_t>::length(){
 }
 template<>
 size_t& lista<size_t>::operator[](size_t i){
-    if(0>i)throw "under Idxed";
     if(length()>i)
         return *getin(i);
     throw "over Idxed";
@@ -128,7 +125,6 @@ void lista<size_t>::add(size_t ertek) {
 }
 template<>
 void lista<size_t>::rem(size_t i){
-    if(0>i)throw "under Idxed";
     if(length()>i){
         if(i==0){
             lista<size_t>* n=next;
@@ -143,15 +139,6 @@ void lista<size_t>::rem(size_t i){
     else throw "over Idxed";
 }
 //module_t*
-/*template<>
-void lista<module_t*>::add(module_t* ertek) {
-    if (next == NULL){
-        next = new lista<module_t*>();
-        elem=ertek;
-    }
-    else
-        next->add(ertek);
-}*/
 template<>
 void lista<module_t*>::add(lista<module_t*>& addlist) {
     for (size_t i = 0; i < addlist.length(); i++)
@@ -159,7 +146,6 @@ void lista<module_t*>::add(lista<module_t*>& addlist) {
 }
 template<>
 void lista<module_t*>::rem(size_t i) {
-    if (0 > i)throw "under Idxed";
     if (length() > i) {
         if (i == 0) {
             lista<module_t*>* n = next;
@@ -173,6 +159,12 @@ void lista<module_t*>::rem(size_t i) {
     }
     else throw "over Idxed";
 }
+template<>
+void lista<module_t*>::din() {//delete inner list
+    if (next == NULL)return;
+    next->din();
+    delete elem;
+}
 //port_t*
 template<>
 size_t lista<port<module_t*>>::length() {
@@ -182,12 +174,10 @@ size_t lista<port<module_t*>>::length() {
 }
 template<>
 port<module_t*>& lista<port<module_t*>>::operator[](size_t i) {
-    if (0 > i)throw "under Idxed";
     if (length() > i)
         return *getin(i);
     throw "over Idxed";
 }
-
 template<>
 void lista<port<module_t*>>::add(port<module_t*> ertek) {
     if (next == NULL){
@@ -202,13 +192,6 @@ void lista<port<module_t*>>::add(lista<port<module_t*>>& addlist) {
     for (size_t i = 0; i < addlist.length(); i++)
         add(addlist[i]);
 }
-//module_t*
-template<>
-void lista<module_t*>::din() {//delete inner list
-    if (next == NULL)return;
-    next->din();
-    delete elem;
-}
 //prot_module_t*
 template<>
 size_t lista<prot_module_t*>::length(){
@@ -218,7 +201,6 @@ size_t lista<prot_module_t*>::length(){
 }
 template<>
 prot_module_t*& lista<prot_module_t*>::operator[](size_t i){
-    if(0>i)throw "under Idxed";
     if(length()>i)
         return *getin(i);
     throw "over Idxed";
@@ -257,7 +239,6 @@ size_t lista<char*>::length() {
 }
 template<>
 char*& lista<char*>::operator[](size_t i) {
-    if (0 > i)throw "under Idxed";
     if (length() > i)
         return *getin(i);
     throw "over Idxed";

@@ -20,15 +20,10 @@ bool comp_module_t::eggyezik(const char* str, const char* str2, size_t kez, size
 /**
  * Calculates various counts and values based on the input string.
  *
- * @param modulesComs the character array containing module command
  * @param vegk the list of the starter Idxes
  * @param kezk the list of the end Idxes
- * @param mDb the calculated number of modules based on characters in modulesComs
- * @param beDb the calculated number of inputs based on characters in modulesComs
- * @param kiDb the calculated number of outputs based on characters in modulesComs
- * @param wDb the calculated number of wires based on characters in modulesComs
  */
-void comp_module_t::muvcount( lista<size_t>& vegk, lista<size_t>& kezk) {
+void comp_module_t::muvCount( lista<size_t>& vegk, lista<size_t>& kezk) {
     mDb = 0;
     bool port = false, outport = false;
     uint8_t maxInner = 'A' - 1, maxIn = 'a' - 1, maxOut = 'a' - 1, minOut = 'z' + 1;
@@ -83,17 +78,8 @@ void comp_module_t::setConnection(char c, module_t*& base, size_t kiIdx) {
  * Fills modules based on previous calculations.
  *
  * @param copy if for coping modules
- * @param mDb number of the modules
- * @param beDb number of inputs
- * @param kiDb number of outputs
- * @param wDb number of wires
- * @param modulesComs the character array containing module command
  * @param vegk the list of the starter Idxes
  * @param kezk the list of the end Idxes
- * @param modules array of modules
- * @param endModule the end module
- * @param ki_wires output wires(inputs)
- * @param wires inner wires
  * @param protModules list of modules prototypes
  * @param moduleRef reference to modules
  */
@@ -108,6 +94,11 @@ void comp_module_t::compCreateModules(bool copy, lista<size_t>& vegk, lista<size
             modules[i] = moduleRef[i]->copy();
     }
 }
+/**
+ * Fills the components of a module based on the command string.
+ *
+ * @param vegk A list of starting indices for each module command.
+ */
 void comp_module_t::compFillModule(lista<size_t>& vegk) {
     for (size_t i = 0; i < mDb; i++) {
         size_t j = vegk[i] + 1;
@@ -132,7 +123,7 @@ void comp_module_t::compFillModule(lista<size_t>& vegk) {
         }
     }
 
-}//ezt ketté kell választani elõször minden modult létre kell hozni, majd utána csinálni a bekötéseket
+}
 
 /**
  * Constructor for the comp_module_t class.
@@ -146,7 +137,7 @@ comp_module_t::comp_module_t(char* modulesComs, lista<prot_module_t*>& protModul
     size_t kiDab;
     lista<size_t> vegk;
     lista<size_t> kezk;
-    muvcount(vegk, kezk);
+    muvCount(vegk, kezk);
     kiDab = kiDb;
     beErtek = kiErtek = new uint8_t[beDb];
     for (size_t i = 0; i < beDb; i++) {
@@ -165,7 +156,6 @@ comp_module_t::comp_module_t(char* modulesComs, lista<prot_module_t*>& protModul
  * @param beDb number of inputs
  * @param kiDb number of outputs
  * @param mDb number of the modules
- * @param wDb number of wires
  */
 comp_module_t::comp_module_t(size_t beDab, size_t kiDab, size_t mDab) {
     this->beDb = this->kiDb = beDab;
@@ -181,6 +171,11 @@ comp_module_t::comp_module_t(size_t beDab, size_t kiDab, size_t mDab) {
         kiErtek[i] = '?';
     }
 }
+/**
+ * Creates a deep copy of the current comp_module_t object.
+ *
+ * @return A pointer to the newly created comp_module_t object.
+ */
 module_t* comp_module_t::copy() {
     size_t kiDab = getKiNum();
     comp_module_t* ret = new comp_module_t(beDb, kiDab, mDb);
@@ -188,7 +183,7 @@ module_t* comp_module_t::copy() {
     strcpy(ret->modulesComs, modulesComs);
     lista<size_t> vegk;
     lista<size_t> kezk;
-    ret->muvcount(vegk, kezk);
+    ret->muvCount(vegk, kezk);
     ret->compCreateModules(true, vegk, kezk, nullptr, modules);
     ret->compFillModule(vegk);
     ret->kiDb = ret->beDb;

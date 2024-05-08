@@ -58,13 +58,13 @@ uint8_t text_module_t::myxor(uint8_t a, uint8_t b) {
     return a != b ? high : low;
 }
 /**
- * Remove a specified number of elements from the given Idx in the list and update the list accordingly.
+ * Moves elements in the ideiglenes and hely array based on the given parameters.
  *
- * @param torlendo the number of elements to remove
- * @param Idx the Idx from which to start removal
- * @param hely the list containing the indices
- * @param ideiglenes the temporary character array
- * @param hossz the length of the character array
+ * @param torlendo the number of elements to skip
+ * @param Idx the starting index in the hely array
+ * @param hely the list of indices
+ * @param ideiglenes the array of characters to modify
+ * @param hossz the size of the ideiglenes array
  */
 void text_module_t::lepteto(size_t torlendo, size_t Idx, lista<size_t>& hely, char*& ideiglenes, size_t& hossz) {
     for (size_t k = hely[Idx]; k < hossz - torlendo; k++)
@@ -74,17 +74,17 @@ void text_module_t::lepteto(size_t torlendo, size_t Idx, lista<size_t>& hely, ch
     hossz -= torlendo;
 }
 /**
- * Function for performing a specific operation based on the input parameters.
+ * Moves elements in the ideiglenes array based on the given parameters.
  *
- * @param Idx The Idx parameter for the operation
- * @param hely the list containing the indices
- * @param ideiglenes the temporary character array
- * @param hossz the length of the character array
- * @param neg Boolean value indicating negation
- * @param ertek the return value
- * @param iertek the Idx of the return value to be placed
+ * @param Idx the index used to calculate fIdx
+ * @param hely the list of indices used for calculations
+ * @param ideiglenes the array of characters to switch on
+ * @param hossz the size of the array
+ * @param neg a flag indicating negation
+ * @param ertek the result of the operation
+ * @param iertek the index position
  *
- * @return True if the task is successfully performed, false otherwise
+ * @return true if operation succeeds, false otherwise
  */
 bool text_module_t::muvs(size_t Idx, lista<size_t>& hely, char*& ideiglenes, size_t& hossz, bool neg, uint8_t& ertek, size_t& iertek) {
     size_t fIdx = hely[Idx] + (size_t)(neg ? 1 : 0);
@@ -107,21 +107,21 @@ bool text_module_t::muvs(size_t Idx, lista<size_t>& hely, char*& ideiglenes, siz
     return true;
 }
 /**
- * Constructor for text_module_t class that initializes the variables based on the input command string.
+ * Constructor for initializing a text module based on input instructions.
  *
- * @param parancsok The command string used to initialize the text_module_t object
+ * @param instuctions The input instructions to initialize the text module.
  */
-text_module_t::text_module_t(const char* parancsok) {
+text_module_t::text_module_t(const char* instuctions) {
     kiDb = 1;
     beDb = 0;
     int idx = -1;
-    this->parancsok = new char[strlen(parancsok) + 1];
-    strcpy(this->parancsok, parancsok);
-    while (parancsok[++idx] != '\0') {
-        if (parancsok[idx] == ',')
+    this->instuctions = new char[strlen(instuctions) + 1];
+    strcpy(this->instuctions, instuctions);
+    while (instuctions[++idx] != '\0') {
+        if (instuctions[idx] == ',')
             kiDb++;
-        if (parancsok[idx] <= 'z' && (size_t)parancsok[idx] > beDb)
-            beDb = parancsok[idx];
+        if (instuctions[idx] <= 'z' && (size_t)instuctions[idx] > beDb)
+            beDb = instuctions[idx];
     }
     if (idx == 0)//nincs parancs
         kiDb = 0;
@@ -137,22 +137,22 @@ text_module_t::text_module_t(const char* parancsok) {
     for (size_t i = 0; i < beDb; i++) beOld[i] = undet;
     kiPorts = new lista<port<module_t*>> [kiDb];
 }
-text_module_t::text_module_t(const text_module_t& refe):text_module_t(refe.parancsok) {}
+
+text_module_t::text_module_t(const text_module_t& refe):text_module_t(refe.instuctions) {}
 module_t* text_module_t::copy() {
     return new text_module_t(*this);
 }
 /**
- * Updates the muv list based on the given character.
+ * Updates the given lists and variables based on the character and its neighbor.
  *
- * @param c the current character
- * @param cn the next character
- * @param Idx the Idx
- * @param hely the list of locations
- * @param fsag the list of priorities
- * @param moz the number of moves
- * @param fs the current priority value
- * @param maxfsag the maximum priority value in the list
- * @param beErtek the input values
+ * @param c The current character being processed.
+ * @param cn The neighboring character of the current character.
+ * @param Idx The current index of the character being processed.
+ * @param hely The list of indices where a gate starts.
+ * @param fsag The list of gate depths at each index.
+ * @param moz The current index of the character being processed.
+ * @param fs The current depth of the gate being processed.
+ * @param maxfsag The maximum depth of any gate in the list.
  */
 void text_module_t::muvList(char& c, char& cn, size_t& Idx, lista<size_t>& hely, lista<size_t>& fsag, size_t& moz, size_t& fs, size_t& maxfsag) {
     switch (c) {
@@ -192,13 +192,13 @@ void text_module_t::muvList(char& c, char& cn, size_t& Idx, lista<size_t>& hely,
     Idx++;
 }
 /**
- * Executes a series of operations on the input parameters to modify the ideiglenes array and the hely list.
+ * Executes certain operations based on the input parameters.
  *
- * @param maxfsag the maximum priority value in the list
- * @param hely the list of locations
- * @param fsag the list of priorities
- * @param ideiglenes the character array to be modified
- * @param hossz the length of ideiglenes
+ * @param maxfsag The maximum gate depth.
+ * @param hely List of indices where gates start.
+ * @param fsag List of gate depths at each index.
+ * @param ideiglenes Temporary character array.
+ * @param hossz Length of the character array.
  */
 void text_module_t::vegrehajt(size_t& maxfsag, lista<size_t>& hely, lista<size_t>& fsag, char*& ideiglenes, size_t& hossz) {
     for (int j = maxfsag; j >= 0; j--) {
@@ -228,6 +228,13 @@ void text_module_t::vegrehajt(size_t& maxfsag, lista<size_t>& hely, lista<size_t
         }
     }
 }
+/**
+ * Sets the value of a given input port and updates the corresponding output ports.
+ *
+ * @param Idx The index of the input port.
+ * @param ertek The value to be set for the input port.
+ * @param waitForDo A list of module pointers to be updated.
+ */
 void text_module_t::setKi(size_t Idx, uint8_t ertek, lista<module_t*>& waitForDo) {
     kiErtek[Idx] = ertek;
     for (size_t i = 0; i < kiPorts[Idx].length(); i++) {
@@ -237,20 +244,20 @@ void text_module_t::setKi(size_t Idx, uint8_t ertek, lista<module_t*>& waitForDo
     }
 }
 /**
- * Executes the logic for vegrehajtas.
+ * Executes a series of instructions based on certain triggers and updates the output ports accordingly.
  *
- * @param waitForDo list of wire_t pointers to wires, waiting to be processed
+ * @param waitForDo A list of module pointers to be updated after execution.
  */
 void text_module_t::vegrehajtas(lista<module_t*>& waitForDo) {
     size_t kez = 0, veg = 0;
     for (size_t i = 0; i < kiDb; i++) {
-        while (parancsok[veg] != ',' && parancsok[veg] != '\0')veg++;
+        while (instuctions[veg] != ',' && instuctions[veg] != '\0')veg++;
         bool trigger = true;
-        if (parancsok[kez] == '[') {
+        if (instuctions[kez] == '[') {
             trigger = false;
             kez++;
-            while (parancsok[kez] != ']'){
-                if (beErtek[parancsok[kez] - 'a'] != beOld[parancsok[kez] - 'a'])
+            while (instuctions[kez] != ']'){
+                if (beErtek[instuctions[kez] - 'a'] != beOld[instuctions[kez] - 'a'])
                     trigger = true;
                 kez++;
             }
@@ -266,10 +273,10 @@ void text_module_t::vegrehajtas(lista<module_t*>& waitForDo) {
             size_t Idx = 0;
             size_t maxfsag = 0;
             while (moz < veg) {
-                ideiglenes[Idx] = parancsok[moz];
-                if(parancsok[moz] == '~' && (parancsok[moz + 1] == '|' || parancsok[moz + 1] == '&' || parancsok[moz + 1] == '^'))ideiglenes[Idx + 1] = parancsok[moz + 1];
+                ideiglenes[Idx] = instuctions[moz];
+                if(instuctions[moz] == '~' && (instuctions[moz + 1] == '|' || instuctions[moz + 1] == '&' || instuctions[moz + 1] == '^'))ideiglenes[Idx + 1] = instuctions[moz + 1];
                 muvList(ideiglenes[Idx], ideiglenes[Idx + 1], Idx, hely, fsag, moz, fs, maxfsag);
-            }//m�veleti lista befejezve
+            }
             vegrehajt(maxfsag, hely, fsag, ideiglenes, hossz);
             if (ideiglenes[0] != kiErtek[i]) {
                 setKi(i, ideiglenes[0], waitForDo);
@@ -283,15 +290,15 @@ void text_module_t::vegrehajtas(lista<module_t*>& waitForDo) {
         beOld[i] = beErtek[i];
 }
 /**
- * Destructor for the text_module_t class. Deletes the dynamically allocated memory.
+ * Destructor for the text_module_t class.
  */
 text_module_t::~text_module_t(){
     delete[] beErtek;
     delete[] beOld;
     delete[] kiErtek;
-    delete[] parancsok;
+    delete[] instuctions;
     beErtek = NULL;
     beOld = NULL;
     kiErtek = NULL;
-    parancsok = NULL;
+    instuctions = NULL;
 }

@@ -15,6 +15,11 @@ shell_module_t::shell_module_t(size_t ports) {
         kiPorts = new lista<port<module_t*>>[ports];
     }
 }
+/**
+ * Creates a new instance of the shell_module_t class by copying the current instance.
+ *
+ * @return A pointer to the newly created shell_module_t instance.
+ */
 module_t* shell_module_t::copy() {
     return new shell_module_t(this->beDb);
 }
@@ -54,6 +59,12 @@ void shell_module_t::setBe(size_t Idx, uint8_t ertek) {
     }
 }
 
+/**
+ * Adds elements to the waitForDo list based on the kiPorts at index 'be'.
+ *
+ * @param waitForDo the list to add elements to
+ * @param be the index to access kiPorts
+ */
 void shell_module_t::addToList(lista<module_t*>& waitForDo, size_t be) {
     for (size_t i = 0; i < kiPorts[be].length(); i++) {
         port<module_t*> p = kiPorts[be][i];
