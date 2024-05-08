@@ -1,4 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_annotated" xml:lang="en-US">
-<title>Class List</title>
-Here are the classes, structs, unions and interfaces with brief descriptions:<link linkend="_classcomp__module__t">comp_module_t</link><link linkend="_classlista">lista&lt; T &gt;</link><link linkend="_classmodule__t">module_t</link><link linkend="_structport">port&lt; T &gt;</link><link linkend="_structport_3_01module__t_01_5_01_4">port&lt; module_t * &gt;</link><link linkend="_classport__t">port_t</link><link linkend="_classprot__module__t">prot_module_t</link><link linkend="_classshell__module__t">shell_module_t</link><link linkend="_classtext__module__t">text_module_t</link><link linkend="_classwire__t">wire_t</link></section>

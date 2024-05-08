@@ -1,5 +1,0 @@
-var searchData=
-[
-  ['add_0',['add',['../classlista.html#a3f48539cd27ef435ea20315183a7c48e',1,'lista::add(T ertek)'],['../classlista.html#a4e645a0ec15e70328ca134042d2cb472',1,'lista::add(lista&lt; T &gt; &amp;addlist)'],['../classwire__t.html#aa2554dfd22a8816510937796d04f7b66',1,'wire_t::add(port_t *newport)'],['../classwire__t.html#a199d2d627c1f640220818cdcbc21d4fb',1,'wire_t::add(module_t *modulep, size_t idx)'],['../classlista.html#aa870ba8bee0571905ddf13989a20771f',1,'lista::add(size_t ertek)'],['../classlista.html#a9922b34e782b64acb0a49ed094235a09',1,'lista::add(lista&lt; module_t * &gt; &amp;addlist)'],['../classlista.html#a7e56ae1942730012157db8ebd0ba2e72',1,'lista::add(prot_module_t *ertek)'],['../classlista.html#aa7190850a17e42ae410130a9260f70ae',1,'lista::add(char *ertek)']]],
-  ['add_5fto_5flist_1',['add_to_list',['../classmodule__t.html#a1261616ace799b6efe1050be4355e697',1,'module_t::add_to_list()'],['../classshell__module__t.html#a4e060254af234565da1f0381e82a4afa',1,'shell_module_t::add_to_list()']]]
-];
