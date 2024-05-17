@@ -77,9 +77,9 @@ void module_t::print( std::ostream& os, bool kezd, bool lezar) {
  * @param inputs pointer to an array of input values
  * @param waitToDoModules list of modules to be updated
  */
-void module_t::setInputsTo(uint8_t* inputs, lista<module_t*>& waitToDoModules) {
+void module_t::setInputsTo(trilean* inputs, lista<module_t*>& waitToDoModules) {
     for (size_t i = 0; i < beDb; i++)
-        if (inputs[i] != '?')
+        if (inputs[i] != undet)
             if (inputs[i] != beErtek[i]) {
                 setBe(i, inputs[i]);
                 addToList(waitToDoModules, i);

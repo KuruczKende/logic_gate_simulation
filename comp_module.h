@@ -16,7 +16,7 @@ public:
     comp_module_t(size_t beDb, size_t kiDb, size_t mDb);
     module_t* copy() override;
     void setKiPort(size_t kiIdx, module_t* modulep, size_t beIdx) {endModule.setKiPort(kiIdx, modulep, beIdx);}
-    uint8_t getKiErtek(size_t i) {return endModule.getKiErtek(i);}
+    trilean getKiErtek(size_t i) {return endModule.getKiErtek(i);}
     size_t getKiNum() {return endModule.getKiNum();}
     ~comp_module_t();
 };

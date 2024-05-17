@@ -139,7 +139,7 @@ comp_module_t::comp_module_t(char* modulesComs, lista<prot_module_t*>& protModul
     lista<size_t> kezk;
     muvCount(vegk, kezk);
     kiDab = kiDb;
-    beErtek = kiErtek = new uint8_t[beDb];
+    beErtek = kiErtek = new trilean[beDb];
     for (size_t i = 0; i < beDb; i++) {
         beErtek[i] = '?';
     }
@@ -162,7 +162,7 @@ comp_module_t::comp_module_t(size_t beDab, size_t kiDab, size_t mDab) {
     this->mDb = mDab;
     endModule.init(kiDab);
     modules = new module_t * [mDab];
-    beErtek = kiErtek = new uint8_t[beDab];
+    beErtek = kiErtek = new trilean[beDab];
     for (size_t i = 0; i < beDab; i++) {
         beErtek[i] = '?';
     }

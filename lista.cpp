@@ -34,7 +34,7 @@ T* lista<T>::getin(size_t i){
  */
 template<typename T>
 void lista<T>::add(T ertek){
-    if(next==NULL){
+    if(next==nullptr){
         next = new lista<T>();
         elem=ertek;
     }
@@ -58,7 +58,7 @@ void lista<T>::add(lista<T>& addlist){
  */
 template<typename T>
 size_t lista<T>::length(){
-    if(next==NULL)
+    if(next==nullptr)
         return 0;
     return next->length()+1;
 }
@@ -74,7 +74,7 @@ void lista<T>::rem(size_t i){
             lista<T>* n=next;
             elem=n->elem;
             next=n->next;
-            n->next=NULL;
+            n->next=nullptr;
             delete n;
         }
         else
@@ -87,7 +87,7 @@ void lista<T>::rem(size_t i){
  */
 template<typename T>
 void lista<T>::din(){//delete inner
-    if(next == NULL)return;
+    if(next == nullptr)return;
     next->din();
     delete elem;
 }
@@ -96,14 +96,14 @@ void lista<T>::din(){//delete inner
  */
 template<typename T>
 void lista<T>::dinl(){//delete inner list
-    if(next == NULL)return;
+    if(next == nullptr)return;
     next->dinl();
     delete[] elem;
 }
 //size_t
 template<>
 size_t lista<size_t>::length(){
-    if(next==NULL)
+    if(next==nullptr)
         return 0;
     return next->length()+1;
 }
@@ -116,7 +116,7 @@ size_t& lista<size_t>::operator[](size_t i){
 
 template<>
 void lista<size_t>::add(size_t ertek) {
-    if (next == NULL){
+    if (next == nullptr){
         next = new lista<size_t>();
         elem=ertek;
     }
@@ -130,7 +130,7 @@ void lista<size_t>::rem(size_t i){
             lista<size_t>* n=next;
             elem=n->elem;
             next=n->next;
-            n->next=NULL;
+            n->next=nullptr;
             delete n;
         }
         else
@@ -151,7 +151,7 @@ void lista<module_t*>::rem(size_t i) {
             lista<module_t*>* n = next;
             elem = n->elem;
             next = n->next;
-            n->next = NULL;
+            n->next = nullptr;
             delete n;
         }
         else
@@ -161,14 +161,14 @@ void lista<module_t*>::rem(size_t i) {
 }
 template<>
 void lista<module_t*>::din() {//delete inner list
-    if (next == NULL)return;
+    if (next == nullptr)return;
     next->din();
     delete elem;
 }
 //port_t*
 template<>
 size_t lista<port<module_t*>>::length() {
-    if (next == NULL)
+    if (next == nullptr)
         return 0;
     return next->length() + 1;
 }
@@ -180,7 +180,7 @@ port<module_t*>& lista<port<module_t*>>::operator[](size_t i) {
 }
 template<>
 void lista<port<module_t*>>::add(port<module_t*> ertek) {
-    if (next == NULL){
+    if (next == nullptr){
         next = new lista<port<module_t*>>();
         elem=ertek;
     }
@@ -195,7 +195,7 @@ void lista<port<module_t*>>::add(lista<port<module_t*>>& addlist) {
 //prot_module_t*
 template<>
 size_t lista<prot_module_t*>::length(){
-    if(next==NULL)
+    if(next==nullptr)
         return 0;
     return next->length()+1;
 }
@@ -208,7 +208,7 @@ prot_module_t*& lista<prot_module_t*>::operator[](size_t i){
 
 template<>
 void lista<prot_module_t*>::add(prot_module_t* ertek) {
-    if (next == NULL){
+    if (next == nullptr){
         next = new lista<prot_module_t*>();
         elem=ertek;
     }
@@ -217,14 +217,14 @@ void lista<prot_module_t*>::add(prot_module_t* ertek) {
 }
 template<>
 void lista<prot_module_t*>::din() {//delete inner list
-    if (next == NULL)return;
+    if (next == nullptr)return;
     next->din();
     delete elem;
 }
 //char*
 template<>
 void lista<char*>::add(char* ertek) {
-    if (next == NULL) {
+    if (next == nullptr) {
         next = new lista<char*>();
         elem = ertek;
     }
@@ -233,7 +233,7 @@ void lista<char*>::add(char* ertek) {
 }
 template<>
 size_t lista<char*>::length() {
-    if (next == NULL)
+    if (next == nullptr)
         return 0;
     return next->length() + 1;
 }
@@ -245,7 +245,7 @@ char*& lista<char*>::operator[](size_t i) {
 }
 template<>
 void lista<char*>::dinl() {//delete inner list
-    if (next == NULL)return;
+    if (next == nullptr)return;
     next->dinl();
     delete[] elem;
 }

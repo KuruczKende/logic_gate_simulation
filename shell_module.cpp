@@ -11,7 +11,7 @@ shell_module_t::shell_module_t(size_t ports) {
         kiPorts = nullptr;
     }
     else {
-        kiErtek = beErtek = new uint8_t[ports];
+        kiErtek = beErtek = new trilean[ports];
         kiPorts = new lista<port<module_t*>>[ports];
     }
 }
@@ -37,7 +37,7 @@ void shell_module_t::init(size_t ports) {
         kiPorts = nullptr;
     }
     else {
-        kiErtek = beErtek = new uint8_t[ports];
+        kiErtek = beErtek = new trilean[ports];
         for (size_t i = 0; i < ports; i++)
             kiErtek[i] = '?';
         kiPorts = new lista<port<module_t*>>[ports];
@@ -49,7 +49,7 @@ void shell_module_t::init(size_t ports) {
  * @param Idx the Idx at which to set the value
  * @param ertek the value to set
  */
-void shell_module_t::setBe(size_t Idx, uint8_t ertek) {
+void shell_module_t::setBe(size_t Idx, trilean ertek) {
     if (Idx >= kiDb)throw "over Idxed";
     if (Idx < 0)throw "under Idxed";
     kiErtek[Idx] = ertek;

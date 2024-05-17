@@ -1,62 +1,5 @@
 #include "text_module.h"
-/**
- * A function that performs a NOT operation on the inputs.
- *
- * @param a The input value to perform the NOT operation on.
- *
- * @return The result of the NOT operation.
- */
-uint8_t text_module_t::mynot(uint8_t a) {
-    switch (a) {
-    case low:return high;
-    case high:return low;
-    default:return undet;
-    }
-}
-/**
- * Calculates the AND operation between two input values.
- *
- * @param a the first input
- * @param b the second input
- *
- * @return the result of the AND operation between the two inputs
- */
-uint8_t text_module_t::myand(uint8_t a, uint8_t b) {
-    switch (a + b) {
-    case undet + high:return undet;
-    case undet + undet:return undet;
-    case high + high:return high;
-    default:return low;
-    }
-}
-/**
- * Calculates the OR operation between two input values.
- *
- * @param a the first input
- * @param b the second input
- *
- * @return the result of the OR operation between the two inputs
- */
-uint8_t text_module_t::myor(uint8_t a, uint8_t b) {
-    switch (a + b) {
-    case undet + low:return undet;
-    case undet + undet:return undet;
-    case low + low:return low;
-    default:return high;
-    }
-}
-/**
- * Calculates the XOR operation between two input values.
- *
- * @param a the first input
- * @param b the second input
- *
- * @return the result of the XOR operation between the two inputs
- */
-uint8_t text_module_t::myxor(uint8_t a, uint8_t b) {
-    if (a == undet || b == undet)return undet;
-    return a != b ? high : low;
-}
+
 /**
  * Moves elements in the ideiglenes and hely array based on the given parameters.
  *
@@ -86,24 +29,24 @@ void text_module_t::lepteto(size_t torlendo, size_t Idx, lista<size_t>& hely, ch
  *
  * @return true if operation succeeds, false otherwise
  */
-bool text_module_t::muvs(size_t Idx, lista<size_t>& hely, char*& ideiglenes, size_t& hossz, bool neg, uint8_t& ertek, size_t& iertek) {
+bool text_module_t::muvs(size_t Idx, lista<size_t>& hely, char*& ideiglenes, size_t& hossz, bool neg, trilean& ertek, size_t& iertek) {
     size_t fIdx = hely[Idx] + (size_t)(neg ? 1 : 0);
     switch (ideiglenes[fIdx]) {
     case '&':
-        ertek = myand(ideiglenes[hely[Idx] - 1], ideiglenes[fIdx + 1]);
+        ertek = trilean(ideiglenes[hely[Idx] - 1]) & trilean(ideiglenes[fIdx + 1]);
         break;
     case '|':
-        ertek = myor(ideiglenes[hely[Idx] - 1], ideiglenes[fIdx + 1]);
+        ertek = trilean(ideiglenes[hely[Idx] - 1]) | trilean(ideiglenes[fIdx + 1]);
         break;
     case '^':
-        ertek = myxor(ideiglenes[hely[Idx] - 1], ideiglenes[fIdx + 1]);
+        ertek = trilean(ideiglenes[hely[Idx] - 1]) ^ trilean(ideiglenes[fIdx + 1]);
         break;
     default:
         return false;
     }
     iertek = hely[Idx] - 1;
     lepteto(neg ? 3 : 2, Idx, hely, ideiglenes, hossz);
-    if (neg)ertek = mynot(ertek);
+    if (neg)ertek = !ertek;
     return true;
 }
 /**
@@ -123,17 +66,15 @@ text_module_t::text_module_t(const char* instuctions) {
         if (instuctions[idx] <= 'z' && (size_t)instuctions[idx] > beDb)
             beDb = instuctions[idx];
     }
-    if (idx == 0)//nincs parancs
-        kiDb = 0;
     if (beDb >= 'a')//van input
         beDb -= 'a' - 1;
     else
         beDb = 0;
-    kiErtek = new uint8_t[kiDb];
+    kiErtek = new trilean[kiDb];
     for (size_t i = 0; i < kiDb; i++) kiErtek[i] = undet;
-    beErtek = new uint8_t[beDb];
+    beErtek = new trilean[beDb];
     for (size_t i = 0; i < beDb; i++) beErtek[i] = undet;
-    beOld = new uint8_t[beDb];
+    beOld = new trilean[beDb];
     for (size_t i = 0; i < beDb; i++) beOld[i] = undet;
     kiPorts = new lista<port<module_t*>> [kiDb];
 }
@@ -205,11 +146,11 @@ void text_module_t::vegrehajt(size_t& maxfsag, lista<size_t>& hely, lista<size_t
         for (size_t i = 0; i < hely.length(); i++) {
             if ((int)fsag[i] == j) {
                 size_t iertek;
-                uint8_t ertek;
+                trilean ertek;
                 if (ideiglenes[hely[i]] == '~') {
                     if (!muvs(i, hely, ideiglenes, hossz, true, ertek, iertek)) {
                         iertek = hely[i];
-                        ertek = mynot(ideiglenes[hely[i] + 1]);
+                        ertek = !ideiglenes[hely[i] + 1];
                         lepteto(1, i, hely, ideiglenes, hossz);
                     }
                 }
@@ -235,7 +176,7 @@ void text_module_t::vegrehajt(size_t& maxfsag, lista<size_t>& hely, lista<size_t
  * @param ertek The value to be set for the input port.
  * @param waitForDo A list of module pointers to be updated.
  */
-void text_module_t::setKi(size_t Idx, uint8_t ertek, lista<module_t*>& waitForDo) {
+void text_module_t::setKi(size_t Idx, trilean ertek, lista<module_t*>& waitForDo) {
     kiErtek[Idx] = ertek;
     for (size_t i = 0; i < kiPorts[Idx].length(); i++) {
         port<module_t*> p = kiPorts[Idx][i];
@@ -297,8 +238,8 @@ text_module_t::~text_module_t(){
     delete[] beOld;
     delete[] kiErtek;
     delete[] instuctions;
-    beErtek = NULL;
-    beOld = NULL;
-    kiErtek = NULL;
-    instuctions = NULL;
+    beErtek = nullptr;
+    beOld = nullptr;
+    kiErtek = nullptr;
+    instuctions = nullptr;
 }

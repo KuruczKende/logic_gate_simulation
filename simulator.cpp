@@ -33,27 +33,27 @@ void simulator_t::modulator(uint8_t c) {
  * @return true if the input character is processed successfully, false otherwise
  */
 template<typename T>
-bool simulator_t::instructHandlerCharHandler(uint8_t* inputs, uint8_t c, T& state, size_t& number) {
+void simulator_t::instructHandlerCharHandler(trilean* inputs, uint8_t c, T& state, size_t& number) {
     enum { input, num, mod };
     if (isalpha(c) && state == (T)input) {
         if (isupper(c))
-            inputs[c - 'A'] = '1';
+            inputs[c - 'A'] = high;
         if (islower(c))
-            inputs[c - 'a'] = '0';
-        return true;
+            inputs[c - 'a'] = low;
+        return;
     }
     else if (isdigit(c) && (state == (T)input || state == (T)num)) {
         state = (T)num;
         number *= 10;
         number += c - '0';
-        return true;
+        return;
     }
     else if (ismod(c) && (state == (T)input || state == (T)num || state == (T)mod)) {
         state = (T)mod;
         modulator(c);
-        return true;
+        return;
     }
-    return false;
+    throw "rossz vegrehajtas utasitas\n";
 }
 
 /**
@@ -64,18 +64,17 @@ bool simulator_t::instructHandlerCharHandler(uint8_t* inputs, uint8_t c, T& stat
  *
  * @return true if all characters are processed successfully, false otherwise
  */
-bool simulator_t::instructHandler(char* s, size_t& number) {
+void simulator_t::instructHandler(char* s, size_t& number) {
     enum { input, num, mod }state = input;
-    uint8_t inputs[26];
+    trilean inputs[26];
     for (size_t i = 0; i < 26; i++)
-        inputs[i] = '?';
+        inputs[i] = undet;
     number = 0;
     for (size_t i = 0; i < strlen(s); i++)
-        if (!instructHandlerCharHandler(inputs, s[i], state, number))return false;
+        instructHandlerCharHandler(inputs, s[i], state, number);
     if (mMain != nullptr) {
         mMain->setInputsTo(inputs, waitToDoModules);
     }
-    return true;
 }
 
 /**
@@ -182,9 +181,9 @@ void simulator_t::inputHandlerWrite(char* s) {
  *
  * @return `true` if the input is successfully processed, `false` otherwise.
  */
-bool simulator_t::inputHandlerDo(char* s) {
+void simulator_t::inputHandlerDo(char* s) {
     size_t number;
-    if (!instructHandler(s, number))return false;
+    instructHandler(s, number);
     if ((mode & 0b00000010) == 0b00000010) {
         mode &= 0b11111101;
         system("cls");
@@ -201,14 +200,12 @@ bool simulator_t::inputHandlerDo(char* s) {
     }
     if ((mode & 0b00000001) != 0b00000001 && number != 0 && mMain != nullptr)
         mMain->print(outStream);
-    return true;
 }
 
 /**
  * Handles input from the input stream and processes it accordingly.
  *
  * @param in The input stream to read characters from.
- *
  */
 void simulator_t::inputHandler(std::istream& in) {
     if (end()) return;
@@ -225,8 +222,19 @@ void simulator_t::inputHandler(std::istream& in) {
         inputHandlerWrite(s);
     }
     else {//v�grehajt�s
-        if (!inputHandlerDo(s))outStream << "rossz vegrehajtas utasitas\n";
+        try {
+            inputHandlerDo(s);
+        }
+        catch (const char* e) {
+            outStream << e;
+        }
     }
+}
+/**
+ * Handles input from the default input stream and processes it accordingly.
+ */
+void simulator_t::inputHandler() {
+    inputHandler(inStream);
 }
 /**
  * Destructor for the simulator_t class, cleans up memory and resources.
