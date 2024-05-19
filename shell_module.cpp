@@ -21,7 +21,7 @@ shell_module_t::shell_module_t(size_t ports) {
  *
  * @return A pointer to the newly created shell_module_t instance.
  */
-module_t* shell_module_t::copy() {
+module_t* shell_module_t::copy() const {
     return new shell_module_t(this->beDb);
 }
 /**

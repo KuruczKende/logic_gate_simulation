@@ -5,7 +5,7 @@
  *
  * @param c the character representing the mode to set
  */
-void simulator_t::modulator(uint8_t c) {
+void simulator_t::modulator(char c) {
     switch (c) {
     case '%':
         mode |= 0b00000010;
@@ -22,17 +22,32 @@ void simulator_t::modulator(uint8_t c) {
     }
 }
 /**
+ * Checks if a given character is a modifier character.
+ *
+ * @param c The character to be checked.
+ *
+ * @return True if the character is '%', '-', '+', or '!', false otherwise.
+ */
+bool simulator_t::ismod(char c) const {
+    switch (c) {
+    case '%':
+    case '-':
+    case '+':
+    case '!':
+        return true;
+    default: return false;
+    }
+}
+/**
  * Handles a character in the instructHandler function.
  *
  * @param inputs pointer to an array of uint8_t to store inputs
  * @param c the input character to handle
  * @param state a reference to a template type T representing the current state
  * @param number a reference to a size_t to store a number
- *
- * @return true if the input character is processed successfully, false otherwise
  */
 template<typename T>
-void simulator_t::instructHandlerCharHandler(trilean* inputs, uint8_t c, T& state, size_t& number) {
+void simulator_t::instructHandlerCharHandler(trilean* inputs, char c, T& state, size_t& number) {
     enum { input, num, mod };
     if (isalpha(c) && state == (T)input) {
         if (isupper(c))
@@ -59,8 +74,6 @@ void simulator_t::instructHandlerCharHandler(trilean* inputs, uint8_t c, T& stat
  *
  * @param s pointer to a character array containing instructions
  * @param number a reference to a size_t to store the updated number
- *
- * @return true if all characters are processed successfully, false otherwise
  */
 void simulator_t::instructHandler(char* s, size_t& number) {
     enum { input, num, mod }state = input;
@@ -83,7 +96,7 @@ void simulator_t::instructHandler(char* s, size_t& number) {
  *
  * @return A dynamically allocated character array containing the characters read from the input stream.
  */
-char* simulator_t::getstring(std::istream& in, size_t h) {
+char* simulator_t::getstring(std::istream& in, size_t h) const{
     char c;
     char* ret;
     in.get(c);
@@ -110,23 +123,8 @@ void simulator_t::inputHandlerModule(char* s) {
             mMain = modulok[modulok.length() - 1]->prot->copy();
         }
     }
-    catch(int err){
-        switch (err)
-        {
-        case 1:  outStream << "nincs : jel\n"; break;
-        case 2:  outStream << "nem _ val kezdodo nev\n"; break;
-        case 3:  outStream << "rossz karakter a nevben\n"; break;
-        case 4:  outStream << "mar foglalt nev\n"; break;
-        case 5:  outStream << "masodik kivezetes comp_module-ban\n"; break;
-        case 6:  outStream << "nem jo bekotes comp_module-ban\n"; break;
-        case 7:  outStream << "nemletezo module comp_module-ban\n"; break;
-        case 8:  outStream << "rossz inputszam comp_module-ban\n"; break;
-        case 9:  outStream << "rossz outputszam comp_module-ban\n"; break;
-        case 10: outStream << "nem jo bekotes text_module-ban\n"; break;
-        case 11: outStream << "nem jo forma text_module-ban\n"; break;
-        case 12: outStream << "rossz karakterek a text_module-ban\n"; break;
-        default: outStream << "unhandlered error\n"; break;
-        }
+    catch (const char* err) {
+        outStream << err;
     }
 }
 /**
@@ -172,8 +170,6 @@ void simulator_t::inputHandlerWrite(char* s) {
  * Handles the input provided in the character array `s`.
  *
  * @param s The character array containing the input.
- *
- * @return `true` if the input is successfully processed, `false` otherwise.
  */
 void simulator_t::inputHandlerDo(char* s) {
     size_t number;

@@ -84,7 +84,7 @@ void comp_module_t::setConnection(char c, module_t*& base, size_t kiIdx) {
  * @param protModules list of modules prototypes
  * @param moduleRef reference to modules
  */
-void comp_module_t::compCreateModules(bool copy, lista<size_t>& vegk, lista<size_t>& kezk, lista<prot_module_t*>* protModules, module_t**& moduleRef) {
+void comp_module_t::compCreateModules(bool copy, lista<size_t>& vegk, lista<size_t>& kezk, lista<prot_module_t*>* protModules, module_t**const moduleRef) {
     for (size_t i = 0; i < mDb; i++) {
         if (!copy) {
             size_t j = 0;
@@ -145,7 +145,7 @@ comp_module_t::comp_module_t(char* modulesComs, lista<prot_module_t*>& protModul
     kiPorts = new lista<port<module_t*>>[beDb];
     endModule.init(kiDab);
     modules = new module_t * [mDb];
-    compCreateModules(false, vegk, kezk, &protModules, modules);
+    compCreateModules(false, vegk, kezk, &protModules, nullptr);
     compFillModule(vegk);
     kiDb = beDb;
 }
@@ -175,7 +175,7 @@ comp_module_t::comp_module_t(size_t beDab, size_t kiDab, size_t mDab) {
  *
  * @return A pointer to the newly created comp_module_t object.
  */
-module_t* comp_module_t::copy() {
+module_t* comp_module_t::copy() const{
     size_t kiDab = getKiNum();
     comp_module_t* ret = new comp_module_t(beDb, kiDab, mDb);
     ret->modulesComs = new char[strlen(modulesComs) + 1];

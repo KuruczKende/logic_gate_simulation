@@ -13,7 +13,7 @@ class text_module_t : public module_t {
 public:
     text_module_t(const char* instuctions);
     text_module_t(const text_module_t& refe);
-    module_t* copy() override;
+    module_t* copy() const override;
     void vegrehajtas(lista<module_t*>& waitForDo) override;
     ~text_module_t();
 };

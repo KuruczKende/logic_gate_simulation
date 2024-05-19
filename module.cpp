@@ -20,19 +20,16 @@ void module_t::setKiPort(size_t kiIdx, module_t* modulep, size_t beIdx) {
  * @param str The input string.
  * @param k The reference to the index of the input string.
  * @param v The reference to the index of the input string.
- *
- * @return The result of the test.
  */
-uint8_t module_t::testModule(const char* str, size_t& k, size_t& v){
+void module_t::testModule(const char* str, size_t& k, size_t& v) const{
     size_t out = this->getKiNum();
     v = k = v + 1;
     while (str[v] != ',' && v < k + beDb) v++;
-    if (str[v] != ',' || v != k + beDb) return 1;//rossz inputsz�m
+    if (str[v] != ',' || v != k + beDb) throw "rossz inputszam comp_module-ban\n";//rossz inputsz�m
     v = k = v + 1;
     while (str[v] != ')' && v < k + out) v++;
-    if (str[v] != ')' || v != k + out) return 2;//rossz outputsz�m
+    if (str[v] != ')' || v != k + out) throw "rossz outputszam comp_module-ban\n";//rossz outputsz�m
     v = k = v + 1;
-    return 0;
 }
 /**
  * Prints the contents of the module to the console in a formatted manner.
@@ -41,7 +38,7 @@ uint8_t module_t::testModule(const char* str, size_t& k, size_t& v){
  * @param kezd flag indicating whether to include the beginning formatting
  * @param lezar flag indicating whether to include the ending formatting
  */
-void module_t::print( std::ostream& os, bool kezd, bool lezar) {
+void module_t::print( std::ostream& os, bool kezd, bool lezar) const {
     size_t out = getKiNum();
     if (kezd) {
         os << (char)218;

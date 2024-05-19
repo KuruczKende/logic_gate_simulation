@@ -30,7 +30,7 @@ public:
         if ((v == undet )|| (uint8_t(b) == undet))return trilean(undet);
         return trilean((v != uint8_t(b)) ? high : low);
     }
-    trilean operator!()  const {
+    trilean operator~()  const {
         switch (v) {
         case low:return trilean(high);
         case high:return trilean(low);
@@ -49,12 +49,14 @@ class lista{
     T elem;
     lista* next=nullptr;
     T* getin(size_t i);
+    const T* getin(size_t i) const;
 public:
     lista():next(nullptr){}
     T& operator[](size_t i);
+    T operator[](size_t i) const;
     void add(T ertek);
     void add(lista<T>& addlist);
-    size_t length();
+    size_t length() const;
     void rem(size_t i);
     void din();
     void dinl();

@@ -46,7 +46,7 @@ bool text_module_t::muvs(size_t Idx, lista<size_t>& hely, char*& ideiglenes, siz
     }
     iertek = hely[Idx] - 1;
     lepteto(neg ? 3 : 2, Idx, hely, ideiglenes, hossz);
-    if (neg)ertek = !ertek;
+    if (neg)ertek = ~ertek;
     return true;
 }
 /**
@@ -79,7 +79,7 @@ text_module_t::text_module_t(const char* instuctions) {
     kiPorts = new lista<port<module_t*>> [kiDb];
 }
 text_module_t::text_module_t(const text_module_t& refe):text_module_t(refe.instuctions) {}
-module_t* text_module_t::copy() {
+module_t* text_module_t::copy() const {
     return new text_module_t(*this);
 }
 /**
@@ -149,7 +149,7 @@ void text_module_t::vegrehajt(size_t& maxfsag, lista<size_t>& hely, lista<size_t
                 if (ideiglenes[hely[i]] == '~') {
                     if (!muvs(i, hely, ideiglenes, hossz, true, ertek, iertek)) {
                         iertek = hely[i];
-                        ertek = !trilean(ideiglenes[hely[i] + 1]);
+                        ertek = ~trilean(ideiglenes[hely[i] + 1]);
                         lepteto(1, i, hely, ideiglenes, hossz);
                     }
                 }
