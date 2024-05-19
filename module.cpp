@@ -1,5 +1,5 @@
 #include "module.h"
-
+#include "memtrace.h"
 /**
  * Sets the KiPort of the module.
  *
@@ -14,7 +14,6 @@ void module_t::setKiPort(size_t kiIdx, module_t* modulep, size_t beIdx) {
     if (beIdx < 0)throw "under Idxed";
     kiPorts[kiIdx].add(port<module_t*>{modulep, beIdx});
 }
-
 /**
  * Tests the module input and output numbers.
  *
@@ -35,7 +34,6 @@ uint8_t module_t::testModule(const char* str, size_t& k, size_t& v){
     v = k = v + 1;
     return 0;
 }
-
 /**
  * Prints the contents of the module to the console in a formatted manner.
  *
@@ -70,7 +68,6 @@ void module_t::print( std::ostream& os, bool kezd, bool lezar) {
         os << (char)217 << '\n';
     }
 }
-
 /**
  * Sets the inputs of the module based on the provided array and updates the waitToDoModules list accordingly.
  *

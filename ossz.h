@@ -1,14 +1,11 @@
 #ifndef OSSZ_H
 #define OSSZ_H
-
 #include <iostream>
 #include <cstring>
 #include "memtrace.h"
-
 #define low '0'
 #define high '1'
 #define undet '?'
-
 class trilean{
     uint8_t v;
 public:
@@ -47,7 +44,6 @@ public:
         return v;
     }
 };
-
 template<typename T>
 class lista{
     T elem;

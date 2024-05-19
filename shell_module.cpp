@@ -1,4 +1,5 @@
 #include "shell_module.h"
+#include "memtrace.h"
 /**
  * Constructor for shell_module_t class.
  *
@@ -58,7 +59,6 @@ void shell_module_t::setBe(size_t Idx, trilean ertek) {
         p.modulep->setBe(p.portszam, ertek);
     }
 }
-
 /**
  * Adds elements to the waitForDo list based on the kiPorts at index 'be'.
  *

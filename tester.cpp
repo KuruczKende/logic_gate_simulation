@@ -1,5 +1,5 @@
 #include "tester.h"
-
+#include "memtrace.h"
 /**
  * Checks if a substring of str matches str2 within the specified range.
  *
@@ -17,7 +17,6 @@ bool tester_t::eggyezik(const char* str, const char* str2, size_t kez, size_t ve
             return false;
     return true;
 }
-
 /**
  * Checks if a given character is a modifier character.
  *
@@ -35,7 +34,6 @@ bool tester_t::ismod(char c) {
     default: return false;
     }
 }
-
 /**
  * Checks if the given name meets certain criteria.
  *
@@ -51,7 +49,6 @@ uint8_t tester_t::ujmnevEll(const char* nev) {
         if (strcmp(nev, modulok[i]->nev) == 0) return 3;//m�r foglalt
     return 0;
 }
-
 /**
  * Checks if a given string is a valid input.
  *
@@ -86,7 +83,15 @@ uint8_t tester_t::kisbetujo(const char* str) {
             notch = false;
             if (islower(str[i])) b[str[i] - 'a'] = true;
         }
-        else if (str[i] != '(' && str[i] != ')')
+        else if (str[i] == '(') {
+            ertek = false;
+            notch = false;
+        }
+        else if (str[i] == ')') {
+            ertek = true;
+            notch = false;
+        }
+        else
             return 3;
     }
     int j = 0;
@@ -94,7 +99,6 @@ uint8_t tester_t::kisbetujo(const char* str) {
     while (j < 26) if (b[j++]) return 1;
     return 0;
 }
-
 /**
  * Checks if a given string is a valid input for a comp_module_t
  *
@@ -122,7 +126,6 @@ uint8_t tester_t::kisbetujo2(const char* str) {
     while (j < 26)if (ib[j] || ob[j++]) return 2;//nem j� bek�t�sek
     return 0;
 }
-
 /**
  * Checks if a given string is a valid input for a comp_module_t.
  *
@@ -155,7 +158,6 @@ uint8_t tester_t::nagybetujo(const char* str) {
     }
     return 0;
 }
-
 /**
  * Tests the modules in the given string.
  *
@@ -177,7 +179,6 @@ uint8_t tester_t::modulesteszt(const char* str) {
     }
     return 0;
 }
-
 /**
  * A description of the entire C++ function.
  *

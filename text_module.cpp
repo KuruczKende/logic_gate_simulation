@@ -1,5 +1,5 @@
 #include "text_module.h"
-
+#include "memtrace.h"
 /**
  * Moves elements in the ideiglenes and hely array based on the given parameters.
  *
@@ -78,7 +78,6 @@ text_module_t::text_module_t(const char* instuctions) {
     for (size_t i = 0; i < beDb; i++) beOld[i] = undet;
     kiPorts = new lista<port<module_t*>> [kiDb];
 }
-
 text_module_t::text_module_t(const text_module_t& refe):text_module_t(refe.instuctions) {}
 module_t* text_module_t::copy() {
     return new text_module_t(*this);
@@ -150,14 +149,14 @@ void text_module_t::vegrehajt(size_t& maxfsag, lista<size_t>& hely, lista<size_t
                 if (ideiglenes[hely[i]] == '~') {
                     if (!muvs(i, hely, ideiglenes, hossz, true, ertek, iertek)) {
                         iertek = hely[i];
-                        ertek = !ideiglenes[hely[i] + 1];
+                        ertek = !trilean(ideiglenes[hely[i] + 1]);
                         lepteto(1, i, hely, ideiglenes, hossz);
                     }
                 }
                 else
                     muvs(i, hely, ideiglenes, hossz, false, ertek, iertek);
                 if (iertek > 0 && iertek < hossz)
-                    if (ideiglenes[iertek - 1] == '(' && ideiglenes[iertek + 1] == ')') {
+                    while (ideiglenes[iertek - 1] == '(' && ideiglenes[iertek + 1] == ')') {
                         for (size_t k = i; k < hely.length(); k++)
                             hely[k] -= 2;
                         for (size_t k = iertek; k < hossz - 2; k++)

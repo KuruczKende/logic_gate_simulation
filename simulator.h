@@ -1,8 +1,8 @@
 #ifndef SIMULATOR_H
 #define SIMULATOR_H
 #include "tester.h"
+#include "memtrace.h"
 #include <fstream>
-
 class simulator_t :public tester_t {
     module_t* mMain;
     lista<module_t*> waitToDoModules;
@@ -20,7 +20,7 @@ class simulator_t :public tester_t {
     void inputHandler(std::istream& in);
 public:
     simulator_t(std::istream& in, std::ostream& out) :tester_t(in, out), mMain(nullptr), mode(0){}
-    void inputHandler();
+    void operator()();
     bool end() { return ((mode & 0b10000000) == 0b10000000); }
     ~simulator_t();
 };

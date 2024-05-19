@@ -1,6 +1,7 @@
 #ifndef SHELL_MODULE_H
 #define SHELL_MODULE_H
 #include "module.h"
+#include "memtrace.h"
 class shell_module_t : public module_t {
 public:
     shell_module_t(size_t ports = 0);

@@ -1,4 +1,10 @@
-﻿  nharamkor_vs.cpp
+﻿  comp_module.cpp
+  lista.cpp
+  module.cpp
+  nharamkor_vs.cpp
+  shell_module.cpp
   simulator.cpp
+  tester.cpp
+  text_module.cpp
   Generating Code...
   nharamkor_vs.vcxproj -> E:\Desktop\Cpp\logic_gate_simulation\Debug\nharamkor_vs.exe

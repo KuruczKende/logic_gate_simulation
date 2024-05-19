@@ -1,7 +1,7 @@
 #ifndef MODULE_H
 #define MODULE_H
 #include "ossz.h"
-
+#include "memtrace.h"
 template<typename T>
 struct port
 {
@@ -35,8 +35,6 @@ struct port<module_t*>
     module_t* modulep;
     size_t portszam;
 };
-
-
 struct prot_module_t {
     char* nev;
     module_t* prot;
@@ -50,5 +48,4 @@ struct prot_module_t {
         delete[] nev;
     }
 };
-
 #endif

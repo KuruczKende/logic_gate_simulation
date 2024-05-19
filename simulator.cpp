@@ -1,5 +1,5 @@
 #include "simulator.h"
-
+#include "memtrace.h"
 /**
  * Sets the mode of the simulator based on the given character.
  *
@@ -21,7 +21,6 @@ void simulator_t::modulator(uint8_t c) {
         break;
     }
 }
-
 /**
  * Handles a character in the instructHandler function.
  *
@@ -55,7 +54,6 @@ void simulator_t::instructHandlerCharHandler(trilean* inputs, uint8_t c, T& stat
     }
     throw "rossz vegrehajtas utasitas\n";
 }
-
 /**
  * Handles instructions provided in a character array, updating the input state and number.
  *
@@ -76,7 +74,6 @@ void simulator_t::instructHandler(char* s, size_t& number) {
         mMain->setInputsTo(inputs, waitToDoModules);
     }
 }
-
 /**
  * Recursively reads characters from the input stream until it reaches the end of the file or a newline character.
  * The characters are stored in a dynamically allocated character array, which is returned at the end.
@@ -100,7 +97,6 @@ char* simulator_t::getstring(std::istream& in, size_t h) {
     }
     return ret;
 }
-
 /**
  * Handles the input module based on the provided character array.
  *
@@ -133,7 +129,6 @@ void simulator_t::inputHandlerModule(char* s) {
         }
     }
 }
-
 /**
  * Reads input from a file specified by the given character array and handles it.
  *
@@ -150,7 +145,6 @@ void simulator_t::inputHandlerRead(char* s) {
     }
     inf.close();
 }
-
 /**
  * Writes the instructions to a file specified by the given character array.
  *
@@ -201,7 +195,6 @@ void simulator_t::inputHandlerDo(char* s) {
     if ((mode & 0b00000001) != 0b00000001 && number != 0 && mMain != nullptr)
         mMain->print(outStream);
 }
-
 /**
  * Handles input from the input stream and processes it accordingly.
  *
@@ -233,7 +226,7 @@ void simulator_t::inputHandler(std::istream& in) {
 /**
  * Handles input from the default input stream and processes it accordingly.
  */
-void simulator_t::inputHandler() {
+void simulator_t::operator()() {
     inputHandler(inStream);
 }
 /**

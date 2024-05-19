@@ -3,7 +3,7 @@
 #include "comp_module.h"
 #include "text_module.h"
 #include "karakter_keszlet.h"
-
+#include "memtrace.h"
 class tester_t {
 protected:
     lista<prot_module_t*> modulok;

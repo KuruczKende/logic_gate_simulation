@@ -1,6 +1,7 @@
 #ifndef TEXT_MODULE_H
 #define TEXT_MODULE_H
 #include "module.h"
+#include "memtrace.h"
 class text_module_t : public module_t {
     trilean* beOld;
     char* instuctions;

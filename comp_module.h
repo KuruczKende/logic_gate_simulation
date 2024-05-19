@@ -1,6 +1,7 @@
 #ifndef COMP_MODULE_H
 #define COMP_MODULE_H
 #include "shell_module.h"
+#include "memtrace.h"
 class comp_module_t : public shell_module_t {
     shell_module_t endModule;
     module_t** modules;

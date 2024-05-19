@@ -1,5 +1,6 @@
 #include "comp_module.h"
 #include "text_module.h"
+#include "memtrace.h"
 /**
  * Checks if a substring of str matches str2 within the specified range.
  *
@@ -122,9 +123,7 @@ void comp_module_t::compFillModule(lista<size_t>& vegk) {
             }
         }
     }
-
 }
-
 /**
  * Constructor for the comp_module_t class.
  *

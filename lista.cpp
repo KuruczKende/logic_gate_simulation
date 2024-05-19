@@ -1,6 +1,6 @@
 #include "ossz.h"
 #include "module.h"
-
+#include "memtrace.h"
 /**
  * Retrieve the element at Idx i in the lista.
  *
@@ -113,7 +113,6 @@ size_t& lista<size_t>::operator[](size_t i){
         return *getin(i);
     throw "over Idxed";
 }
-
 template<>
 void lista<size_t>::add(size_t ertek) {
     if (next == nullptr){
@@ -122,21 +121,6 @@ void lista<size_t>::add(size_t ertek) {
     }
     else
         next->add(ertek);
-}
-template<>
-void lista<size_t>::rem(size_t i){
-    if(length()>i){
-        if(i==0){
-            lista<size_t>* n=next;
-            elem=n->elem;
-            next=n->next;
-            n->next=nullptr;
-            delete n;
-        }
-        else
-            next->rem(i-1);
-    }
-    else throw "over Idxed";
 }
 //module_t*
 template<>
@@ -158,12 +142,6 @@ void lista<module_t*>::rem(size_t i) {
             next->rem(i - 1);
     }
     else throw "over Idxed";
-}
-template<>
-void lista<module_t*>::din() {//delete inner list
-    if (next == nullptr)return;
-    next->din();
-    delete elem;
 }
 //port_t*
 template<>
@@ -187,11 +165,6 @@ void lista<port<module_t*>>::add(port<module_t*> ertek) {
     else
         next->add(ertek);
 }
-template<>
-void lista<port<module_t*>>::add(lista<port<module_t*>>& addlist) {
-    for (size_t i = 0; i < addlist.length(); i++)
-        add(addlist[i]);
-}
 //prot_module_t*
 template<>
 size_t lista<prot_module_t*>::length(){
@@ -205,7 +178,6 @@ prot_module_t*& lista<prot_module_t*>::operator[](size_t i){
         return *getin(i);
     throw "over Idxed";
 }
-
 template<>
 void lista<prot_module_t*>::add(prot_module_t* ertek) {
     if (next == nullptr){
